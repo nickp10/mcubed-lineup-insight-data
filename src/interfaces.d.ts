@@ -19,6 +19,7 @@ export interface IPlayer {
 	battingOrder?: string;
 	isStarted?: boolean;
 	name: string;
+	team: string;
 	stats?: IPlayerStats[];
 }
 

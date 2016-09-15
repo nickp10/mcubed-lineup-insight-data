@@ -1,6 +1,7 @@
 /// <reference path="../../typings/index.d.ts" />
 
-import { IDataRetriever, ISiteDataRetriever, IPlayer } from "../interfaces";
+import { IDataRetriever, ISiteDataRetriever, IPlayer, IPlayerStats } from "../interfaces";
+import * as cheerio from "cheerio";
 import * as http from "http";
 import * as https from "https";
 import * as Promise from "promise";
@@ -11,6 +12,10 @@ interface IIncomingMessage extends http.IncomingMessage {
 }
 
 export default class NumberFire implements IDataRetriever {
+	static nameRegex = /(.*?)\s\((.*?,\s)?(.*?)\)/;
+	static nameRegexNameGroup = 1;
+	static nameRegexTeamGroup = 3;
+
 	static mlbSetSiteURL = "/mlb/daily-fantasy/set-dfs-site";
 	static nbaSetSiteURL = "/nba/daily-fantasy/set-dfs-site";
 	static nflSetSiteURL = "/nfl/daily-fantasy/set-dfs-site";
@@ -74,9 +79,53 @@ export default class NumberFire implements IDataRetriever {
 					Cookie: cookieHeader
 				}
 			}).then((dataResp) => {
-				return undefined;
+				return this.parsePlayers(cheerio.load(dataResp.body));
 			});
 		});
+	}
+
+	parsePlayers($: CheerioStatic): IPlayer[] {
+		const players: {[key:string]: IPlayer} = { };
+		$(".projection-table__body tr").each((index, item) => {
+			const playerId = $(item).data("player-id");
+			let player = players[playerId];
+			if (!player) {
+				player = {
+					name: "",
+					team: ""
+				};
+				players[playerId] = player;
+			}
+			const playerName = $(item).find(".full a").text();
+			if (playerName) {
+				const playerNameMatch = playerName.trim().match(NumberFire.nameRegex);
+				if (playerNameMatch) {
+					player.name = playerNameMatch[NumberFire.nameRegexNameGroup];
+					player.team = playerNameMatch[NumberFire.nameRegexTeamGroup];
+				}
+			}
+			const points = $(item).find(".fp").text();
+			if (points) {
+				const stats: IPlayerStats = {
+					source: "NumberFire",
+					projectedPoints: parseFloat(points.trim())
+				};
+				let playerStats = player.stats;
+				if (!playerStats) {
+					playerStats = [];
+					player.stats = playerStats;
+				}
+				playerStats.push(stats);
+			}
+		});
+		const playersArray: IPlayer[] = [];
+		for (const key in players) {
+			const player = players[key];
+			if (player.name && player.team) {
+				playersArray.push(player);
+			}
+		}
+		return playersArray;
 	}
 
 	sendHttpsRequest(request: https.RequestOptions, data?: string): Promise.IThenable<IIncomingMessage> {
