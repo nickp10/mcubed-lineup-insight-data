@@ -3,7 +3,7 @@
   "dependencies": {},
   "globalDependencies": {
     "cheerio": "registry:dt/cheerio#0.17.0+20160407085313",
-    "node": "registry:env/node#6.0.0+20160902022231",
+    "node": "registry:env/node#6.0.0+20160918225031",
     "promise": "registry:dt/promise#7.1.1+20160602154553",
     "set-cookie-parser": "registry:dt/set-cookie-parser#0.0.0+20160825162929"
   }
