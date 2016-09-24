@@ -6,41 +6,41 @@ import * as http from "http";
 import * as https from "https";
 import * as Promise from "promise";
 import * as setCookieParser from "set-cookie-parser";
+import * as utils from "../utils";
 
 interface IIncomingMessage extends http.IncomingMessage {
 	body?: string;
 }
 
 export default class NumberFire implements IDataRetriever {
-	static nameRegex = /(.*?)\s\((.*?,\s)?(.*?)\)/;
-	static nameRegexNameGroup = 1;
-	static nameRegexTeamGroup = 3;
+	// IDs for setting the DFS site to retrieve projection stats for
+	static fanDuelID = "3";
+	static draftKingsID = "4";
+	static yahooID = "13";
 
+	// URL to post the DFS site ID to for each sport
 	static mlbSetSiteURL = "/mlb/daily-fantasy/set-dfs-site";
 	static nbaSetSiteURL = "/nba/daily-fantasy/set-dfs-site";
 	static nflSetSiteURL = "/nfl/daily-fantasy/set-dfs-site";
 	static nhlSetSiteURL = "/nhl/daily-fantasy/set-dfs-site";
 
+	// URLs for retrieving projections for each sport
 	static mlbDataSiteURLs = [
 		"/mlb/daily-fantasy/daily-baseball-projections/pitchers",
 		"/mlb/daily-fantasy/daily-baseball-projections/batters"
 	];
 	static nbaDataSiteURLs = [
-		"",
-		""
+		"/nba/daily-fantasy/daily-basketball-projections"
 	];
 	static nflDataSiteURLs = [
-		"",
-		""
+		"/nfl/daily-fantasy/daily-football-projections",
+		"/nfl/daily-fantasy/daily-football-projections/K",
+		"/nfl/daily-fantasy/daily-football-projections/D"
 	];
 	static nhlDataSiteURLs = [
-		"",
-		""
+		"nhl/daily-fantasy/daily-hockey-projections/skaters",
+		"nhl/daily-fantasy/daily-hockey-projections/goalies"
 	];
-
-	static fanDuelID = "3";
-	static draftKingsID = "4";
-	static yahooID = "13";
 
 	fanDuel = {
 		mlb: () => this.getData(NumberFire.mlbSetSiteURL, NumberFire.fanDuelID, NumberFire.mlbDataSiteURLs),
@@ -70,17 +70,24 @@ export default class NumberFire implements IDataRetriever {
 			method: "POST"
 		}, `site=${siteID}`).then((setSiteResp) => {
 			const setCookies = setCookieParser(setSiteResp);
-			const cookieHeader = setCookies.map(c => `${c.name}=${c.value}`);
-			return this.sendHttpsRequest({
-				hostname: "www.numberfire.com",
-				path: dataSiteURLs[0],
-				method: "GET",
-				headers: {
-					Cookie: cookieHeader
-				}
-			}).then((dataResp) => {
-				return this.parsePlayers(cheerio.load(dataResp.body));
+			const cookieHeaders = setCookies.map(c => `${c.name}=${c.value}`);
+			const dataPromises = dataSiteURLs.map(dataSiteURL => this.getDataForURL(dataSiteURL, cookieHeaders));
+			return Promise.all(dataPromises).then((playersArrays) => {
+				return utils.flattenArray<IPlayer>(playersArrays);
 			});
+		});
+	}
+
+	getDataForURL(dataSiteURL: string, cookieHeaders: string[]): Promise.IThenable<IPlayer[]> {
+		return this.sendHttpsRequest({
+			hostname: "www.numberfire.com",
+			path: dataSiteURL,
+			method: "GET",
+			headers: {
+				Cookie: cookieHeaders
+			}
+		}).then((dataResp) => {
+			return this.parsePlayers(cheerio.load(dataResp.body));
 		});
 	}
 
@@ -90,20 +97,11 @@ export default class NumberFire implements IDataRetriever {
 			const playerId = $(item).data("player-id");
 			let player = players[playerId];
 			if (!player) {
-				player = {
-					name: "",
-					team: ""
-				};
+				player = utils.createPlayer();
 				players[playerId] = player;
 			}
-			const playerName = $(item).find(".full a").text();
-			if (playerName) {
-				const playerNameMatch = playerName.trim().match(NumberFire.nameRegex);
-				if (playerNameMatch) {
-					player.name = playerNameMatch[NumberFire.nameRegexNameGroup];
-					player.team = playerNameMatch[NumberFire.nameRegexTeamGroup];
-				}
-			}
+			const playerNameTeam = $(item).find(".full a").text();
+			utils.updatePlayerCombinedNameTeam(player, playerNameTeam);
 			const points = $(item).find(".fp").text();
 			if (points) {
 				const stats: IPlayerStats = {

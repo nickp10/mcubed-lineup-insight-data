@@ -29,6 +29,7 @@
   "dependencies": {
     "cheerio": "^0.22.0",
     "promise": "^7.1.1",
-    "set-cookie-parser": "^1.0.2"
+    "set-cookie-parser": "^1.0.2",
+    "string": "^3.3.1"
   }
 }
