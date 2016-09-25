@@ -32,4 +32,5 @@ class Data {
 	}
 }
 
-export = Data;
+const data = new Data();
+export = data;
