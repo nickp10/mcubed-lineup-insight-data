@@ -21,8 +21,7 @@
     "compile": "gulp compile",
     "compile-test": "gulp compile-test",
     "gulp": "gulp",
-    "setup": "npm install && typings install && gulp compile",
-    "setup-dev": "npm install && typings install",
+    "prepublish": "typings install && gulp compile",
     "test": "gulp test",
     "typings": "typings"
   },
