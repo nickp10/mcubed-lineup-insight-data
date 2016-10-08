@@ -38,8 +38,8 @@ export default class NumberFire implements IDataRetriever {
 		"/nfl/daily-fantasy/daily-football-projections/D"
 	];
 	static nhlDataSiteURLs = [
-		"nhl/daily-fantasy/daily-hockey-projections/skaters",
-		"nhl/daily-fantasy/daily-hockey-projections/goalies"
+		"/nhl/daily-fantasy/daily-hockey-projections/skaters",
+		"/nhl/daily-fantasy/daily-hockey-projections/goalies"
 	];
 
 	fanDuel = {
