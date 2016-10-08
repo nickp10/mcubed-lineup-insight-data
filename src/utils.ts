@@ -18,6 +18,7 @@ class Utils {
 		// MLB
 		"CHW": "CWS",
 		"KCR": "KAN",
+		"SF": "SFG",
 		"TBR": "TAM",
 
 		// NBA

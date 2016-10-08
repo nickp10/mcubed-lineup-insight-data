@@ -17,7 +17,7 @@ export interface ISiteDataRetriever {
 
 export interface IPlayer {
 	battingOrder?: string;
-	isStarted?: boolean;
+	isStarting?: boolean;
 	name: string;
 	team: string;
 	stats?: IPlayerStats[];

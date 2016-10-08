@@ -16,13 +16,16 @@
   "homepage": "https://github.com/nickp10/mcubed-lineup-insight-data#readme",
   "scripts": {
     "compile": "gulp compile",
+    "compile-test": "gulp compile-test",
     "gulp": "gulp",
     "setup": "npm install && typings install && gulp compile",
     "setup-dev": "npm install && typings install",
+    "test": "gulp test",
     "typings": "typings"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-mocha": "^3.0.1",
     "gulp-typescript": "^3.0.0",
     "typescript": "^2.0.3",
     "typings": "^1.4.0"
