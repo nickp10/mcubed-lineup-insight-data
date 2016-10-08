@@ -23,6 +23,14 @@ Developer Setup
 1. Use `git clone` to clone this repository
 1. In the root directory of the module, run: `npm install`
 
+Versioning
+----
+This package will follow the semantic versioning (X.X.X) and will be updated as such:
+
+* Bug fixes and minor changes will increment the last number. This will include maintenance efforts for the current set of contest sites, data retrievers, and sports.
+* New features that do not break the API will increment the middle number. This will include adding contest sites, data retrievers, sports, and additional data.
+* Major releases or changes that will break the API will increment the first number. This will include renaming properties or otherwise refactoring the API.
+
 Attribution
 ----
 Thanks to the following websites for providing the data that makes this node module possible:
