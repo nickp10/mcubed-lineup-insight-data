@@ -13,14 +13,15 @@ _NOTE: This node module is meant to be used as a dependency of another node modu
 	* Chocolatey (for Windows): `choco install nodejs.install`
 2. Create a node module (if you do not have a node module to use already)
 	* From an empty directory, run: `npm init -y`
-3. Install the module by running: `npm install mcubed-lineup-insight-data --save-dev`
+3. Install the module by running: `npm install mcubed-lineup-insight-data --save`
 
 Developer Setup
 ----
 1. Install Node.js
 	* Manual install: http://www.nodejs.org
 	* Chocolatey (for Windows): `choco install nodejs.install`
-1. Run the developer setup script: `npm run setup-dev`
+1. Use `git clone` to clone this repository
+1. In the root directory of the module, run: `npm install`
 
 Attribution
 ----
@@ -29,6 +30,7 @@ Thanks to the following websites for providing the data that makes this node mod
 * [DraftKings](https://www.draftkings.com)
 * [FanDuel](https://www.fanduel.com)
 * [Yahoo](https://sports.yahoo.com/dailyfantasy/)
+* [Daily Fantasy Sports Rankings](https://www.dailyfantasysportsrankings.com/)
 * [NumberFire](https://www.numberfire.com/)
 * [RotoGrinders](https://www.rotogrinders.com/)
 * [RotoWire](http://www.rotowire.com/)
