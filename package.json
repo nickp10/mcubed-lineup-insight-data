@@ -1,9 +1,12 @@
 {
   "name": "mcubed-lineup-insight-data",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Retrieves fantasy sports data",
-  "bin": "build/cli.js",
-  "main": "build/data.js",
+  "bin": "build/src/cli.js",
+  "main": "build/src/data.js",
+  "files": [
+    "build/src/"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nickp10/mcubed-lineup-insight-data.git"
