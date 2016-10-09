@@ -2,15 +2,9 @@
 
 import { IDataRetriever, ISiteDataRetriever, IPlayer, IPlayerStats } from "../interfaces";
 import * as cheerio from "cheerio";
-import * as http from "http";
-import * as https from "https";
 import * as Promise from "promise";
 import * as setCookieParser from "set-cookie-parser";
 import * as utils from "../utils";
-
-interface IIncomingMessage extends http.IncomingMessage {
-	body?: string;
-}
 
 export default class NumberFire implements IDataRetriever {
 	// IDs for setting the DFS site to retrieve projection stats for
@@ -64,7 +58,7 @@ export default class NumberFire implements IDataRetriever {
 	};
 
 	getData(setSiteURL: string, siteID: string, dataSiteURLs: string[]): Promise.IThenable<IPlayer[]> {
-		return this.sendHttpsRequest({
+		return utils.sendHttpsRequest({
 			hostname: "www.numberfire.com",
 			path: setSiteURL,
 			method: "POST"
@@ -79,7 +73,7 @@ export default class NumberFire implements IDataRetriever {
 	}
 
 	getDataForURL(dataSiteURL: string, cookieHeaders: string[]): Promise.IThenable<IPlayer[]> {
-		return this.sendHttpsRequest({
+		return utils.sendHttpsRequest({
 			hostname: "www.numberfire.com",
 			path: dataSiteURL,
 			method: "GET",
@@ -124,32 +118,5 @@ export default class NumberFire implements IDataRetriever {
 			}
 		}
 		return playersArray;
-	}
-
-	sendHttpsRequest(request: https.RequestOptions, data?: string): Promise.IThenable<IIncomingMessage> {
-		return new Promise<IIncomingMessage>((resolve, reject) => {
-			const headers = request.headers || { };
-			request.headers = headers;
-			if (data) {
-				headers["Content-Type"] = "application/x-www-form-urlencoded";
-				headers["Content-Length"] = data.length;
-			}
-			const req = https.request(request, (resp: IIncomingMessage) => {
-				let body = "";
-				resp.on("data", (data) => {
-					body += data;
-				});
-				resp.on("end", () => {
-					resp.body = body;
-					resolve(resp);
-				});
-			}).on("error", (error: Error) => {
-				reject(error.message);
-			});
-			if (data) {
-				req.write(data);
-			}
-			req.end();
-		});
 	}
 }

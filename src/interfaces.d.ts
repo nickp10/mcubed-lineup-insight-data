@@ -1,6 +1,11 @@
 /// <reference path="../typings/index.d.ts" />
 
+import * as http from "http";
 import * as Promise from "promise";
+
+export interface IIncomingMessage extends http.IncomingMessage {
+	body?: string;
+}
 
 export interface IDataRetriever {
 	draftKings?: ISiteDataRetriever;

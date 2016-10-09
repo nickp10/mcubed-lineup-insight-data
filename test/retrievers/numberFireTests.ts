@@ -1,6 +1,5 @@
 /// <reference path="../../typings/index.d.ts" />
 
-import * as assert from "assert";
 import * as cheerio from "cheerio";
 import * as fs from "fs";
 import NumberFire from "../../src/retrievers/numberFire";

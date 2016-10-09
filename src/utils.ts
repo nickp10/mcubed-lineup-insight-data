@@ -1,4 +1,6 @@
-import { IPlayer } from "./interfaces";
+import { IIncomingMessage, IPlayer } from "./interfaces";
+import * as http from "http";
+import * as https from "https";
 import * as S from "string";
 
 class Utils {
@@ -143,6 +145,33 @@ class Utils {
 			team = this.alternateTeams[team] || team;
 			player.team = team;
 		}
+	}
+
+	sendHttpsRequest(request: https.RequestOptions, data?: string): Promise.IThenable<IIncomingMessage> {
+		return new Promise<IIncomingMessage>((resolve, reject) => {
+			const headers = request.headers || { };
+			request.headers = headers;
+			if (data) {
+				headers["Content-Type"] = "application/x-www-form-urlencoded";
+				headers["Content-Length"] = data.length;
+			}
+			const req = https.request(request, (resp: IIncomingMessage) => {
+				let body = "";
+				resp.on("data", (data) => {
+					body += data;
+				});
+				resp.on("end", () => {
+					resp.body = body;
+					resolve(resp);
+				});
+			}).on("error", (error: Error) => {
+				reject(error.message);
+			});
+			if (data) {
+				req.write(data);
+			}
+			req.end();
+		});
 	}
 }
 
