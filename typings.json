@@ -5,7 +5,7 @@
     "argv": "registry:dt/argv#0.0.0+20160523040018",
     "cheerio": "registry:dt/cheerio#0.17.0+20160930124405",
     "mocha": "registry:dt/mocha#2.2.5+20160720003353",
-    "node": "registry:env/node#6.0.0+20160918225031",
+    "node": "registry:env/node#6.0.0+20161019193037",
     "promise": "registry:dt/promise#7.1.1+20160602154553",
     "set-cookie-parser": "registry:dt/set-cookie-parser#0.0.0+20160825162929",
     "string": "registry:dt/string#0.0.0+20160316155526"

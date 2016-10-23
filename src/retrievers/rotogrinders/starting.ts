@@ -29,7 +29,7 @@ export default class RGStarting implements IDataRetriever {
 
 	getData(contest: string, sport: string): Promise.IThenable<IPlayer[]> {
 		return utils.sendHttpsRequest({
-			hostname: "www.rotogrinders.com",
+			hostname: "rotogrinders.com",
 			path: `/lineups/${sport}?site=${contest}`,
 			method: "GET"
 		}).then((dataResp) => {
