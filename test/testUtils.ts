@@ -16,16 +16,22 @@ class TestUtils {
 		assert.equal(matchingPlayers.length, 1, `No players match with name: ${expectedPlayer.name}`);
 		const actualPlayer = matchingPlayers[0];
 		assert.equal(actualPlayer.team, expectedPlayer.team);
-		assert.equal(actualPlayer.stats.length, expectedPlayer.stats.length);
-		for (let i = 0; i < actualPlayer.stats.length; i++) {
-			const actualStats = actualPlayer.stats[i];
-			const expectedStats = expectedPlayer.stats[i];
-			assert.equal(actualStats.source, expectedStats.source);
-			assert.equal(actualStats.projectedCeiling, expectedStats.projectedCeiling);
-			assert.equal(actualStats.projectedFloor, expectedStats.projectedFloor);
-			assert.equal(actualStats.projectedPoints, expectedStats.projectedPoints);
-			assert.equal(actualStats.recentAveragePoints, expectedStats.recentAveragePoints);
-			assert.equal(actualStats.seasonAveragePoints, expectedStats.seasonAveragePoints);
+		assert.equal(actualPlayer.isStarter, expectedPlayer.isStarter);
+		assert.equal(actualPlayer.battingOrder, expectedPlayer.battingOrder);
+		if (expectedPlayer.stats) {
+			assert.equal(actualPlayer.stats.length, expectedPlayer.stats.length);
+			for (let i = 0; i < actualPlayer.stats.length; i++) {
+				const actualStats = actualPlayer.stats[i];
+				const expectedStats = expectedPlayer.stats[i];
+				assert.equal(actualStats.source, expectedStats.source);
+				assert.equal(actualStats.projectedCeiling, expectedStats.projectedCeiling);
+				assert.equal(actualStats.projectedFloor, expectedStats.projectedFloor);
+				assert.equal(actualStats.projectedPoints, expectedStats.projectedPoints);
+				assert.equal(actualStats.recentAveragePoints, expectedStats.recentAveragePoints);
+				assert.equal(actualStats.seasonAveragePoints, expectedStats.seasonAveragePoints);
+			}
+		} else {
+			assert.equal(actualPlayer.stats, undefined);
 		}
 	}
 }
