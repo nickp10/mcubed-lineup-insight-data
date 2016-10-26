@@ -9,7 +9,7 @@ Command Line
 This node module can be run from the command line using `mcubed-lineup-insight-data -c DraftKings -s NFL`. The arguments for the command line interface are:
 
 * *-c / --contestType* - **Required.** Specifies the contest type to retrieve the data for. This option is case-insensitive and should be one of the following: DraftKings, FanDuel, or Yahoo.
-* *-s / --sportType* - **Required.** Specifies the sport to retreive the data for. This option is case-insensitive and should be one of the following: MLB, NBA, NFL, or NHL.
+* *-s / --sport* - **Required.** Specifies the sport to retrieve the data for. This option is case-insensitive and should be one of the following: MLB, NBA, NFL, or NHL.
 
 When run from the command line, an array of [Players](#Player) will be written as a JSON formatted string to the standard output.
 
@@ -41,7 +41,7 @@ Instances of this class are returned from calling the `getData` function from th
 * `isStarter?: boolean` - Optionally specifies if the player is in the starting lineup.
 * `name: string` - Specifies the name of the player (formatted as "First Last Suffix").
 * `team: string` - Specifies the team abbreviation the player plays for.
-* `stats: PlayerStats[]` - Specifies an array of [PlayerStats](#PlayerStats) associated with the player.
+* `stats?: PlayerStats[]` - Optionally specifies an array of [PlayerStats](#PlayerStats) associated with the player.
 
 #### <a name="PlayerStats"></a>PlayerStats
 Instances of this class are associated with a [Player](#Player).
@@ -51,7 +51,7 @@ Instances of this class are associated with a [Player](#Player).
 * `projectedFloor?: number` - Optionally specifies the projected floor for the player.
 * `projectedPoints?: number` - Optionally specifies the projected points for the player.
 * `recentAveragePoints?: number` - Optionally specifies the average number of points the player has scored recently.
-* `seasonAveragePoints?: number` - Optionally specifies the average number of poitns the player has scored on the season.
+* `seasonAveragePoints?: number` - Optionally specifies the average number of points the player has scored on the season.
 
 Developer Setup
 ----
