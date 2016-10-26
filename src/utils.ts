@@ -127,6 +127,7 @@ class Utils {
 	 */
 	updatePlayer(player: IPlayer, name?: string, team?: string): void {
 		if (name) {
+			name = name.trim();
 			const index = name.indexOf(", ");
 			if (index >= 0) {
 				const first = name.substr(0, index);
@@ -137,6 +138,7 @@ class Utils {
 			player.name = name;
 		}
 		if (team) {
+			team = team.trim();
 			const index = team.indexOf(" ");
 			if (index >= 0) {
 				team = team.substr(0, index);

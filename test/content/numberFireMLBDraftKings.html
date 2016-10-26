@@ -10,7 +10,7 @@
 
     <meta name="apple-itunes-app" content="app-id=1137467890">
 
-    <link rel="stylesheet" type="text/css" href="/css/main.min.css?v=117">
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css?v=123">
     <script src="//use.typekit.net/hvg3qyl.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <script type="text/javascript">
@@ -49,12 +49,12 @@
 
 					var mapping = googletag.sizeMapping().
 
-							addSize([0,0], [336,280]).
+							addSize([0,0], [320,50]).
 							addSize([768,0], [728,90]).
 							addSize([1024,0], [970,90]).
 							build();
 
-			google_ad_slots['div-gpt-ad-1470281974013-0'] = googletag.defineSlot('/133200912/R_MLB_PlayerProjections_970x90_728x90_336x280_Top', [[336,280],[728,90],[970,90]], 'div-gpt-ad-1470281974013-0').defineSizeMapping(mapping).addService(googletag.pubads());
+			google_ad_slots['div-gpt-ad-1474923349031-0'] = googletag.defineSlot('/133200912/R_MLB_PlayerProjections_970x90_728x90_320x50_Top', [[320,50],[728,90],[970,90]], 'div-gpt-ad-1474923349031-0').defineSizeMapping(mapping).addService(googletag.pubads());
 					var mapping = googletag.sizeMapping().
 
 							addSize([0,0], [336,280]).
@@ -185,7 +185,8 @@
 			appId      : '103292676390270', // App ID from the App Dashboard
 			status     : true, // check the login status upon init?
 			cookie     : true, // set sessions cookies to allow your server to access the session?
-			xfbml		 : true
+			xfbml		 : true,
+			version    : 'v2.8'
 		});
 	};
 
@@ -193,20 +194,20 @@
 	// Note that the debug version is being actively developed and might
 	// contain some type checks that are overly strict.
 	// Please report such bugs using the bugs tool.
-	(function(d, debug){
-		var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+	(function(d, s, id){
+		var js, fjs = d.getElementsByTagName(s)[0];
 		if (d.getElementById(id)) {return;}
-		js = d.createElement('script'); js.id = id; js.async = true;
-		js.src = "//connect.facebook.net/en_US/all.js";
-		ref.parentNode.insertBefore(js, ref);
-	}(document, /*debug*/ false));
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+
 	function postToFeed(title, desc, url, image){
 		var obj = {method: 'feed',link: url, picture: image,name: title,description: desc};
 		function callback(response){}
 		FB.ui(obj, callback);
 	}
 </script>
-
 <script type="text/javascript">var hasoffers_domain = "https://numberfire.go2cloud.org";</script><script type="text/javascript" src="https://media.go2speed.org/assets/js/dl.js"></script>
     <div class="full-overlay" data-overlay></div>
 
@@ -330,22 +331,22 @@
                         <a href="/nfl/fantasy/fantasy-football-projections">Projections <i class="nf-icon icon-arrow-right"></i></a>
                         <ul class="sub-nav-tier-two">
                             <li>
-                                <a href="/nfl/fantasy/fantasy-football-projections">Week 5 Fantasy Projections</a>
+                                <a href="/nfl/fantasy/fantasy-football-projections">Week 8 Fantasy Projections</a>
                             </li>
                             <li>
-                                <a href="/nfl/fantasy/fantasy-football-ppr-projections">Week 5 Fantasy PPR Projections</a>
+                                <a href="/nfl/fantasy/fantasy-football-ppr-projections">Week 8 Fantasy PPR Projections</a>
                             </li>
                             <li>
-                                <a href="/nfl/daily-fantasy/daily-football-projections">Week 5 Daily Football Projections</a>
+                                <a href="/nfl/daily-fantasy/daily-football-projections">Week 8 Daily Football Projections</a>
                             </li>
                             <li>
-                                <a href="/nfl/games">Week 5 Game Projections</a>
+                                <a href="/nfl/games">Week 8 Game Projections</a>
                             </li>
                             <li>
-                                <a href="/nfl/survivor-pool">Week 5 Survivor Pool Analysis</a>
+                                <a href="/nfl/survivor-pool">Week 8 Survivor Pool Analysis</a>
                             </li>
                             <li>
-                                <a href="/nfl/survivor-pool-matrix">Week 5 Survivor Pool Matrix</a>
+                                <a href="/nfl/survivor-pool-matrix">Week 8 Survivor Pool Matrix</a>
                             </li>
                             <li>
                                 <a href="/nfl/daily-fantasy/who-do-i-start">Who Do I Start? Tool</a>
@@ -386,7 +387,7 @@
                     <li class="has-sub-nav"><a href="/nfl/teams/power-rankings">Rankings <i class="nf-icon icon-arrow-right"></i></a>
                         <ul class="sub-nav-tier-two">
                             <li>
-                               <a href="/nfl/fantasy/fantasy-football-rankings">Week 5 Fantasy Football Rankings</a>
+                               <a href="/nfl/fantasy/fantasy-football-rankings">Week 8 Fantasy Football Rankings</a>
                             </li>
                             <li>
                                <a href="/nfl/teams/power-rankings">Team Power Rankings</a>
@@ -509,10 +510,19 @@
                     <li class="has-sub-nav"><a href="/nba/daily-fantasy">Daily Fantasy <i class="nf-icon icon-arrow-right"></i></a>
                         <ul class="sub-nav-tier-two">
                             <li>
+                                <a href="/nba/daily-fantasy/">DFS Helper</a>
+                            </li>
+                            <li>
                                 <a href="/nba/daily-fantasy/daily-basketball-projections">DFS Projections</a>
                             </li>
                             <li>
                                 <a href="/nba/daily-fantasy/lineup-generator">DFS Lineup Generator</a>
+                            </li>
+                            <li>
+                                <a href="/nba/daily-fantasy/advanced-stats">DFS Advanced Stats</a>
+                            </li>
+                            <li>
+                                <a href="/nba/daily-fantasy/trends">DFS Trends</a>
                             </li>
                             <li>
                                 <a href="/nba/daily-fantasy/games">DFS Starting Lineups &amp; Game Info</a>
@@ -1061,22 +1071,22 @@
            <ul class="secondary-nav" data-sub-nav-value="projections">
                <li class="back" data-sub-nav-back-button><i class="nf-icon icon-arrow-left"></i> Back</li>
                <li>
-                   <a href="/nfl/fantasy/fantasy-football-projections">Week 5 Fantasy Projections</a>
+                   <a href="/nfl/fantasy/fantasy-football-projections">Week 8 Fantasy Projections</a>
                </li>
                <li>
-                   <a href="/nfl/fantasy/fantasy-football-ppr-projections">Week 5 Fantasy PPR Projections</a>
+                   <a href="/nfl/fantasy/fantasy-football-ppr-projections">Week 8 Fantasy PPR Projections</a>
                </li>
                <li>
-                   <a href="/nfl/daily-fantasy/daily-football-projections">Week 5 Daily Football Projections</a>
+                   <a href="/nfl/daily-fantasy/daily-football-projections">Week 8 Daily Football Projections</a>
                </li>
                <li>
-                   <a href="/nfl/games">Week 5 Game Projections</a>
+                   <a href="/nfl/games">Week 8 Game Projections</a>
                </li>
                <li>
-                   <a href="/nfl/survivor-pool">Week 5 Survivor Pool Analysis</a>
+                   <a href="/nfl/survivor-pool">Week 8 Survivor Pool Analysis</a>
                </li>
                <li>
-                   <a href="/nfl/survivor-pool-matrix">Week 5 Survivor Pool Matrix</a>
+                   <a href="/nfl/survivor-pool-matrix">Week 8 Survivor Pool Matrix</a>
                </li>
                <li>
                    <a href="/nfl/daily-fantasy/who-do-i-start">Who Do I Start? Tool</a>
@@ -1117,7 +1127,7 @@
            <ul class="secondary-nav" data-sub-nav-value="rankings">
                <li class="back" data-sub-nav-back-button><i class="nf-icon icon-arrow-left"></i> Back</li>
                <li>
-                   <a href="/nfl/fantasy/fantasy-football-rankings">Week 5 Fantasy Football Rankings</a>
+                   <a href="/nfl/fantasy/fantasy-football-rankings">Week 8 Fantasy Football Rankings</a>
                 </li>
                 <li>
                    <a href="/nfl/teams/power-rankings">Team Power Rankings</a>
@@ -1267,10 +1277,19 @@
             <ul class="secondary-nav" data-sub-nav-value="daily-fantasy">
                 <li class="back" data-sub-nav-back-button><i class="nf-icon icon-arrow-left"></i> Back</li>
                 <li>
+                    <a href="/nba/daily-fantasy/">DFS Helper</a>
+                </li>
+                <li>
                     <a href="/nba/daily-fantasy/daily-basketball-projections">DFS Projections</a>
                 </li>
                 <li>
                     <a href="/nba/daily-fantasy/lineup-generator">DFS Lineup Generator</a>
+                </li>
+                <li>
+                    <a href="/nba/daily-fantasy/advanced-stats">DFS Advanced Stats</a>
+                </li>
+                <li>
+                    <a href="/nba/daily-fantasy/trends">DFS Trends</a>
                 </li>
                 <li>
                     <a href="/nba/daily-fantasy/games">DFS Starting Lineups &amp; Game Info</a>
@@ -1548,9 +1567,9 @@
                 <li>
                     <div class="copyright">
                         <p>
-                            &copy; 2009-2016 numberFire, Inc. Certain headlines thanks to Rotoworld.
+                            &copy; 2009-2016 numberFire, Inc. Certain headlines thanks to Rotoworld. Weather info <a href="https://darksky.net/poweredby/" target="_blank" style="color: #bbb">Powered by Dark Sky</a>
                         </p>
-                        <p>
+            			<p>
                             All rights reserved. Stop stealing our stuff and ripping off our features, please.
                         </p>
                     </div>
@@ -1559,7 +1578,7 @@
         </div>
     </div>
 </nav>
-
+    
     <!--<div class="template-main-scoreboard"></div>-->
 
         <main class="grid">
@@ -1651,7 +1670,7 @@
 <div class="grid__two-col grid__two-col--reversed dfs">
 
 	<!-- Top Page Ad -->
-	<div class="grid--1-1 leaderboard ad-unit" id="div-gpt-ad-1470281974013-0"></div>
+	<div class="grid--1-1 leaderboard ad-unit" id="div-gpt-ad-1474923349031-0"></div>
 	<section class="grid__two-col--sidebar grid__two-col--reversed--sidebar dfs-options grid--1-2">
 		<div class="dfs-options__hed">
     Options
@@ -1838,7 +1857,7 @@
                 <select class="dropdown-custom dfs-option" data-option-group="stack" data-option-key="stack_team_abbrev" data-sport-path="mlb">
                     <option value="0" >None</option>
                                                                 <option value="CHC" >CHC</option>
-                                            <option value="SF" >SF</option>
+                                            <option value="CLE" >CLE</option>
                                     </select>
             </div>
             <div class="grid--1-2">
@@ -1893,8 +1912,7 @@
 				</p>
 			</div>
 
-			
-				<div class="dfs-main__position-drop">
+							<div class="dfs-main__option-drop projection-drop dfs-main__dfs-drop">
 					<select class="dropdown-custom  dropdown-navigation">
 						<option value="/mlb/daily-fantasy/daily-baseball-projections" selected>Batters</option>
 						<option value="/mlb/daily-fantasy/daily-baseball-projections/pitchers" >Pitchers</option>
@@ -1907,6 +1925,14 @@
 						<option value="/mlb/daily-fantasy/daily-baseball-projections/DH" >DH</option>
 						<option value="/mlb/daily-fantasy/daily-baseball-projections/SP" >SP</option>
 						<option value="/mlb/daily-fantasy/daily-baseball-projections/RP" >RP</option>
+					</select>
+
+					<select class="dropdown-custom dropdown-navigation">
+						<option value="/mlb/fantasy/remaining-projections/batters">Remaining Projections</option>
+						<option value="/mlb/daily-fantasy/daily-baseball-projections/batters" selected="selected">Daily Baseball Projections</option>
+						<option value="/mlb/fantasy/weekly-projections/batters">Weekly Projections</option>
+						<option value="/mlb/fantasy/yearly-projections/batters">Yearly Projections</option>
+						<option value="/mlb/fantasy/season-stats/batters">Season Stats</option>
 					</select>
 				</div>
 
@@ -1926,270 +1952,284 @@
                 </tr>
             </thead>
             <tbody class="projection-table__body">
-                                                                                        <tr class="" data-row-index="1" data-sport-path="mlb" data-player-id="4811">
-                    <td class="team-player cta ">
-                        <i class="nf-icon icon-locked" data-player-id="4811" data-sport-path="mlb"></i>
-                        <i class="nf-icon icon-exclude" data-player-id="4811" data-sport-path="mlb"></i>
-                        <span class="full">
-                            <a href="/mlb/players/kris-bryant">
-                                Kris Bryant (3B/OF, CHC)
-                            </a>
+                                                                                        <tr class="" data-row-index="1" data-sport-path="mlb" data-player-id="167">
+                    <td class="team-player cta left-aligned " data-player-id="167">
+                        <i class="nf-icon icon-locked" data-sport-path="mlb" data-player-id="167"></i>
+                        <i class="nf-icon icon-exclude" data-sport-path="mlb" data-player-id="167"></i>
+                        <span class="player-info">
+                            <a class="abbrev" href="/mlb/players/carlos-santana">
+                                C. Santana                            </a>
+                            <a class="full" href="/mlb/players/carlos-santana">
+                                Carlos Santana                            </a>
+                            <div class="player-info--game-info">
+                                <span class="team-player__team active">
+                                    CLE                                </span>
+                                    &nbsp;@&nbsp;
+                                <span class="team-player__team ">
+                                    CHC                                </span>
+                                                                <span class="gametime">
+                                    Wed 7:00pm                                </span>
+                            </div>
                         </span>
-                        <span class="abbrev">
-                            <a href="/mlb/players/kris-bryant">
-                                K. Bryant (3B/OF, CHC)
-                            </a>
-                        </span>
-                                            </td>
+                    </td>
                 </tr>
                                             <tr class="" data-row-index="2" data-sport-path="mlb" data-player-id="67">
-                    <td class="team-player cta ">
-                        <i class="nf-icon icon-locked" data-player-id="67" data-sport-path="mlb"></i>
-                        <i class="nf-icon icon-exclude" data-player-id="67" data-sport-path="mlb"></i>
-                        <span class="full">
-                            <a href="/mlb/players/anthony-rizzo">
-                                Anthony Rizzo (1B, CHC)
-                            </a>
+                    <td class="team-player cta left-aligned " data-player-id="67">
+                        <i class="nf-icon icon-locked" data-sport-path="mlb" data-player-id="67"></i>
+                        <i class="nf-icon icon-exclude" data-sport-path="mlb" data-player-id="67"></i>
+                        <span class="player-info">
+                            <a class="abbrev" href="/mlb/players/anthony-rizzo">
+                                A. Rizzo                            </a>
+                            <a class="full" href="/mlb/players/anthony-rizzo">
+                                Anthony Rizzo                            </a>
+                            <div class="player-info--game-info">
+                                <span class="team-player__team ">
+                                    CLE                                </span>
+                                    &nbsp;@&nbsp;
+                                <span class="team-player__team active">
+                                    CHC                                </span>
+                                                                <span class="gametime">
+                                    Wed 7:00pm                                </span>
+                            </div>
                         </span>
-                        <span class="abbrev">
-                            <a href="/mlb/players/anthony-rizzo">
-                                A. Rizzo (1B, CHC)
-                            </a>
-                        </span>
-                                            </td>
+                    </td>
                 </tr>
-                                            <tr class="" data-row-index="3" data-sport-path="mlb" data-player-id="150">
-                    <td class="team-player cta ">
-                        <i class="nf-icon icon-locked" data-player-id="150" data-sport-path="mlb"></i>
-                        <i class="nf-icon icon-exclude" data-player-id="150" data-sport-path="mlb"></i>
-                        <span class="full">
-                            <a href="/mlb/players/buster-posey">
-                                Buster Posey (C, SF)
-                            </a>
+                                            <tr class="" data-row-index="3" data-sport-path="mlb" data-player-id="445">
+                    <td class="team-player cta left-aligned " data-player-id="445">
+                        <i class="nf-icon icon-locked" data-sport-path="mlb" data-player-id="445"></i>
+                        <i class="nf-icon icon-exclude" data-sport-path="mlb" data-player-id="445"></i>
+                        <span class="player-info">
+                            <a class="abbrev" href="/mlb/players/jason-kipnis">
+                                J. Kipnis                            </a>
+                            <a class="full" href="/mlb/players/jason-kipnis">
+                                Jason Kipnis                            </a>
+                            <div class="player-info--game-info">
+                                <span class="team-player__team active">
+                                    CLE                                </span>
+                                    &nbsp;@&nbsp;
+                                <span class="team-player__team ">
+                                    CHC                                </span>
+                                                                <span class="gametime">
+                                    Wed 7:00pm                                </span>
+                            </div>
                         </span>
-                        <span class="abbrev">
-                            <a href="/mlb/players/buster-posey">
-                                B. Posey (C, SF)
-                            </a>
-                        </span>
-                                            </td>
+                    </td>
                 </tr>
-                                            <tr class="" data-row-index="4" data-sport-path="mlb" data-player-id="103">
-                    <td class="team-player cta ">
-                        <i class="nf-icon icon-locked" data-player-id="103" data-sport-path="mlb"></i>
-                        <i class="nf-icon icon-exclude" data-player-id="103" data-sport-path="mlb"></i>
-                        <span class="full">
-                            <a href="/mlb/players/brandon-belt">
-                                Brandon Belt (1B, SF)
-                            </a>
+                                            <tr class="" data-row-index="4" data-sport-path="mlb" data-player-id="83">
+                    <td class="team-player cta left-aligned " data-player-id="83">
+                        <i class="nf-icon icon-locked" data-sport-path="mlb" data-player-id="83"></i>
+                        <i class="nf-icon icon-exclude" data-sport-path="mlb" data-player-id="83"></i>
+                        <span class="player-info">
+                            <a class="abbrev" href="/mlb/players/ben-zobrist">
+                                B. Zobrist                            </a>
+                            <a class="full" href="/mlb/players/ben-zobrist">
+                                Ben Zobrist                            </a>
+                            <div class="player-info--game-info">
+                                <span class="team-player__team ">
+                                    CLE                                </span>
+                                    &nbsp;@&nbsp;
+                                <span class="team-player__team active">
+                                    CHC                                </span>
+                                                                <span class="gametime">
+                                    Wed 7:00pm                                </span>
+                            </div>
                         </span>
-                        <span class="abbrev">
-                            <a href="/mlb/players/brandon-belt">
-                                B. Belt (1B, SF)
-                            </a>
-                        </span>
-                                            </td>
+                    </td>
                 </tr>
-                                            <tr class="" data-row-index="5" data-sport-path="mlb" data-player-id="286">
-                    <td class="team-player cta ">
-                        <i class="nf-icon icon-locked" data-player-id="286" data-sport-path="mlb"></i>
-                        <i class="nf-icon icon-exclude" data-player-id="286" data-sport-path="mlb"></i>
-                        <span class="full">
-                            <a href="/mlb/players/dexter-fowler">
-                                Dexter Fowler (OF, CHC)
-                            </a>
+                                            <tr class="" data-row-index="5" data-sport-path="mlb" data-player-id="4540">
+                    <td class="team-player cta left-aligned " data-player-id="4540">
+                        <i class="nf-icon icon-locked" data-sport-path="mlb" data-player-id="4540"></i>
+                        <i class="nf-icon icon-exclude" data-sport-path="mlb" data-player-id="4540"></i>
+                        <span class="player-info">
+                            <a class="abbrev" href="/mlb/players/jose-ramirez">
+                                J. Ramirez                            </a>
+                            <a class="full" href="/mlb/players/jose-ramirez">
+                                Jose Ramirez                            </a>
+                            <div class="player-info--game-info">
+                                <span class="team-player__team active">
+                                    CLE                                </span>
+                                    &nbsp;@&nbsp;
+                                <span class="team-player__team ">
+                                    CHC                                </span>
+                                                                <span class="gametime">
+                                    Wed 7:00pm                                </span>
+                            </div>
                         </span>
-                        <span class="abbrev">
-                            <a href="/mlb/players/dexter-fowler">
-                                D. Fowler (OF, CHC)
-                            </a>
-                        </span>
-                                            </td>
+                    </td>
                 </tr>
-                                            <tr class="" data-row-index="6" data-sport-path="mlb" data-player-id="279">
-                    <td class="team-player cta ">
-                        <i class="nf-icon icon-locked" data-player-id="279" data-sport-path="mlb"></i>
-                        <i class="nf-icon icon-exclude" data-player-id="279" data-sport-path="mlb"></i>
-                        <span class="full">
-                            <a href="/mlb/players/denard-span">
-                                Denard Span (OF, SF)
-                            </a>
+                                            <tr class="" data-row-index="6" data-sport-path="mlb" data-player-id="4928">
+                    <td class="team-player cta left-aligned " data-player-id="4928">
+                        <i class="nf-icon icon-locked" data-sport-path="mlb" data-player-id="4928"></i>
+                        <i class="nf-icon icon-exclude" data-sport-path="mlb" data-player-id="4928"></i>
+                        <span class="player-info">
+                            <a class="abbrev" href="/mlb/players/francisco-lindor">
+                                F. Lindor                            </a>
+                            <a class="full" href="/mlb/players/francisco-lindor">
+                                Francisco Lindor                            </a>
+                            <div class="player-info--game-info">
+                                <span class="team-player__team active">
+                                    CLE                                </span>
+                                    &nbsp;@&nbsp;
+                                <span class="team-player__team ">
+                                    CHC                                </span>
+                                                                <span class="gametime">
+                                    Wed 7:00pm                                </span>
+                            </div>
                         </span>
-                        <span class="abbrev">
-                            <a href="/mlb/players/denard-span">
-                                D. Span (OF, SF)
-                            </a>
-                        </span>
-                                            </td>
+                    </td>
                 </tr>
-                                            <tr class="" data-row-index="7" data-sport-path="mlb" data-player-id="396">
-                    <td class="team-player cta ">
-                        <i class="nf-icon icon-locked" data-player-id="396" data-sport-path="mlb"></i>
-                        <i class="nf-icon icon-exclude" data-player-id="396" data-sport-path="mlb"></i>
-                        <span class="full">
-                            <a href="/mlb/players/hunter-pence">
-                                Hunter Pence (OF, SF)
-                            </a>
+                                            <tr class="" data-row-index="7" data-sport-path="mlb" data-player-id="615">
+                    <td class="team-player cta left-aligned " data-player-id="615">
+                        <i class="nf-icon icon-locked" data-sport-path="mlb" data-player-id="615"></i>
+                        <i class="nf-icon icon-exclude" data-sport-path="mlb" data-player-id="615"></i>
+                        <span class="player-info">
+                            <a class="abbrev" href="/mlb/players/lonnie-chisenhall">
+                                L. Chisenhall                            </a>
+                            <a class="full" href="/mlb/players/lonnie-chisenhall">
+                                Lonnie Chisenhall                            </a>
+                            <div class="player-info--game-info">
+                                <span class="team-player__team active">
+                                    CLE                                </span>
+                                    &nbsp;@&nbsp;
+                                <span class="team-player__team ">
+                                    CHC                                </span>
+                                                                <span class="gametime">
+                                    Wed 7:00pm                                </span>
+                            </div>
                         </span>
-                        <span class="abbrev">
-                            <a href="/mlb/players/hunter-pence">
-                                H. Pence (OF, SF)
-                            </a>
-                        </span>
-                                            </td>
+                    </td>
                 </tr>
-                                            <tr class="" data-row-index="8" data-sport-path="mlb" data-player-id="5195">
-                    <td class="team-player cta ">
-                        <i class="nf-icon icon-locked" data-player-id="5195" data-sport-path="mlb"></i>
-                        <i class="nf-icon icon-exclude" data-player-id="5195" data-sport-path="mlb"></i>
-                        <span class="full">
-                            <a href="/mlb/players/willson-contreras">
-                                Willson Contreras (C/OF, CHC)
-                            </a>
+                                            <tr class="" data-row-index="8" data-sport-path="mlb" data-player-id="708">
+                    <td class="team-player cta left-aligned " data-player-id="708">
+                        <i class="nf-icon icon-locked" data-sport-path="mlb" data-player-id="708"></i>
+                        <i class="nf-icon icon-exclude" data-sport-path="mlb" data-player-id="708"></i>
+                        <span class="player-info">
+                            <a class="abbrev" href="/mlb/players/mike-napoli">
+                                M. Napoli                            </a>
+                            <a class="full" href="/mlb/players/mike-napoli">
+                                Mike Napoli                            </a>
+                            <div class="player-info--game-info">
+                                <span class="team-player__team active">
+                                    CLE                                </span>
+                                    &nbsp;@&nbsp;
+                                <span class="team-player__team ">
+                                    CHC                                </span>
+                                                                <span class="gametime">
+                                    Wed 7:00pm                                </span>
+                            </div>
                         </span>
-                        <span class="abbrev">
-                            <a href="/mlb/players/willson-contreras">
-                                W. Contreras (C/OF, CHC)
-                            </a>
-                        </span>
-                                            </td>
+                    </td>
                 </tr>
-                                            <tr class="" data-row-index="9" data-sport-path="mlb" data-player-id="105">
-                    <td class="team-player cta ">
-                        <i class="nf-icon icon-locked" data-player-id="105" data-sport-path="mlb"></i>
-                        <i class="nf-icon icon-exclude" data-player-id="105" data-sport-path="mlb"></i>
-                        <span class="full">
-                            <a href="/mlb/players/brandon-crawford">
-                                Brandon Crawford (SS, SF)
-                            </a>
+                                            <tr class="" data-row-index="9" data-sport-path="mlb" data-player-id="219">
+                    <td class="team-player cta left-aligned " data-player-id="219">
+                        <i class="nf-icon icon-locked" data-sport-path="mlb" data-player-id="219"></i>
+                        <i class="nf-icon icon-exclude" data-sport-path="mlb" data-player-id="219"></i>
+                        <span class="player-info">
+                            <a class="abbrev" href="/mlb/players/coco-crisp">
+                                C. Crisp                            </a>
+                            <a class="full" href="/mlb/players/coco-crisp">
+                                Coco Crisp                            </a>
+                            <div class="player-info--game-info">
+                                <span class="team-player__team active">
+                                    CLE                                </span>
+                                    &nbsp;@&nbsp;
+                                <span class="team-player__team ">
+                                    CHC                                </span>
+                                                                <span class="gametime">
+                                    Wed 7:00pm                                </span>
+                            </div>
                         </span>
-                        <span class="abbrev">
-                            <a href="/mlb/players/brandon-crawford">
-                                B. Crawford (SS, SF)
-                            </a>
-                        </span>
-                                            </td>
+                    </td>
                 </tr>
-                                            <tr class="" data-row-index="10" data-sport-path="mlb" data-player-id="443">
-                    <td class="team-player cta ">
-                        <i class="nf-icon icon-locked" data-player-id="443" data-sport-path="mlb"></i>
-                        <i class="nf-icon icon-exclude" data-player-id="443" data-sport-path="mlb"></i>
-                        <span class="full">
-                            <a href="/mlb/players/jason-heyward">
-                                Jason Heyward (OF, CHC)
-                            </a>
+                                            <tr class="" data-row-index="10" data-sport-path="mlb" data-player-id="5098">
+                    <td class="team-player cta left-aligned " data-player-id="5098">
+                        <i class="nf-icon icon-locked" data-sport-path="mlb" data-player-id="5098"></i>
+                        <i class="nf-icon icon-exclude" data-sport-path="mlb" data-player-id="5098"></i>
+                        <span class="player-info">
+                            <a class="abbrev" href="/mlb/players/tyler-naquin">
+                                T. Naquin                            </a>
+                            <a class="full" href="/mlb/players/tyler-naquin">
+                                Tyler Naquin                            </a>
+                            <div class="player-info--game-info">
+                                <span class="team-player__team active">
+                                    CLE                                </span>
+                                    &nbsp;@&nbsp;
+                                <span class="team-player__team ">
+                                    CHC                                </span>
+                                                                <span class="gametime">
+                                    Wed 7:00pm                                </span>
+                            </div>
                         </span>
-                        <span class="abbrev">
-                            <a href="/mlb/players/jason-heyward">
-                                J. Heyward (OF, CHC)
-                            </a>
-                        </span>
-                                            </td>
+                    </td>
                 </tr>
-                                            <tr class="" data-row-index="11" data-sport-path="mlb" data-player-id="83">
-                    <td class="team-player cta ">
-                        <i class="nf-icon icon-locked" data-player-id="83" data-sport-path="mlb"></i>
-                        <i class="nf-icon icon-exclude" data-player-id="83" data-sport-path="mlb"></i>
-                        <span class="full">
-                            <a href="/mlb/players/ben-zobrist">
-                                Ben Zobrist (2B/OF, CHC)
-                            </a>
+                                            <tr class="" data-row-index="11" data-sport-path="mlb" data-player-id="274">
+                    <td class="team-player cta left-aligned " data-player-id="274">
+                        <i class="nf-icon icon-locked" data-sport-path="mlb" data-player-id="274"></i>
+                        <i class="nf-icon icon-exclude" data-sport-path="mlb" data-player-id="274"></i>
+                        <span class="player-info">
+                            <a class="abbrev" href="/mlb/players/david-ross">
+                                D. Ross                            </a>
+                            <a class="full" href="/mlb/players/david-ross">
+                                David Ross                            </a>
+                            <div class="player-info--game-info">
+                                <span class="team-player__team ">
+                                    CLE                                </span>
+                                    &nbsp;@&nbsp;
+                                <span class="team-player__team active">
+                                    CHC                                </span>
+                                                                <span class="gametime">
+                                    Wed 7:00pm                                </span>
+                            </div>
                         </span>
-                        <span class="abbrev">
-                            <a href="/mlb/players/ben-zobrist">
-                                B. Zobrist (2B/OF, CHC)
-                            </a>
-                        </span>
-                                            </td>
+                    </td>
                 </tr>
-                                            <tr class="" data-row-index="12" data-sport-path="mlb" data-player-id="4734">
-                    <td class="team-player cta ">
-                        <i class="nf-icon icon-locked" data-player-id="4734" data-sport-path="mlb"></i>
-                        <i class="nf-icon icon-exclude" data-player-id="4734" data-sport-path="mlb"></i>
-                        <span class="full">
-                            <a href="/mlb/players/javier-baez">
-                                Javier Baez (3B/SS, CHC)
-                            </a>
+                                            <tr class="" data-row-index="12" data-sport-path="mlb" data-player-id="191">
+                    <td class="team-player cta left-aligned " data-player-id="191">
+                        <i class="nf-icon icon-locked" data-sport-path="mlb" data-player-id="191"></i>
+                        <i class="nf-icon icon-exclude" data-sport-path="mlb" data-player-id="191"></i>
+                        <span class="player-info">
+                            <a class="abbrev" href="/mlb/players/chris-coghlan">
+                                C. Coghlan                            </a>
+                            <a class="full" href="/mlb/players/chris-coghlan">
+                                Chris Coghlan                            </a>
+                            <div class="player-info--game-info">
+                                <span class="team-player__team ">
+                                    CLE                                </span>
+                                    &nbsp;@&nbsp;
+                                <span class="team-player__team active">
+                                    CHC                                </span>
+                                                                <span class="gametime">
+                                    Wed 7:00pm                                </span>
+                            </div>
                         </span>
-                        <span class="abbrev">
-                            <a href="/mlb/players/javier-baez">
-                                J. Baez (3B/SS, CHC)
-                            </a>
-                        </span>
-                                            </td>
+                    </td>
                 </tr>
-                                            <tr class="" data-row-index="13" data-sport-path="mlb" data-player-id="62">
-                    <td class="team-player cta ">
-                        <i class="nf-icon icon-locked" data-player-id="62" data-sport-path="mlb"></i>
-                        <i class="nf-icon icon-exclude" data-player-id="62" data-sport-path="mlb"></i>
-                        <span class="full">
-                            <a href="/mlb/players/angel-pagan">
-                                Angel Pagan (OF, SF)
-                            </a>
+                                            <tr class="" data-row-index="13" data-sport-path="mlb" data-player-id="4714">
+                    <td class="team-player cta left-aligned " data-player-id="4714">
+                        <i class="nf-icon icon-locked" data-sport-path="mlb" data-player-id="4714"></i>
+                        <i class="nf-icon icon-exclude" data-sport-path="mlb" data-player-id="4714"></i>
+                        <span class="player-info">
+                            <a class="abbrev" href="/mlb/players/roberto-perez">
+                                R. Perez                            </a>
+                            <a class="full" href="/mlb/players/roberto-perez">
+                                Roberto Perez                            </a>
+                            <div class="player-info--game-info">
+                                <span class="team-player__team active">
+                                    CLE                                </span>
+                                    &nbsp;@&nbsp;
+                                <span class="team-player__team ">
+                                    CHC                                </span>
+                                                                <span class="gametime">
+                                    Wed 7:00pm                                </span>
+                            </div>
                         </span>
-                        <span class="abbrev">
-                            <a href="/mlb/players/angel-pagan">
-                                A. Pagan (OF, SF)
-                            </a>
-                        </span>
-                                            </td>
-                </tr>
-                                            <tr class="" data-row-index="14" data-sport-path="mlb" data-player-id="4853">
-                    <td class="team-player cta ">
-                        <i class="nf-icon icon-locked" data-player-id="4853" data-sport-path="mlb"></i>
-                        <i class="nf-icon icon-exclude" data-player-id="4853" data-sport-path="mlb"></i>
-                        <span class="full">
-                            <a href="/mlb/players/addison-russell">
-                                Addison Russell (2B/SS, CHC)
-                            </a>
-                        </span>
-                        <span class="abbrev">
-                            <a href="/mlb/players/addison-russell">
-                                A. Russell (2B/SS, CHC)
-                            </a>
-                        </span>
-                                            </td>
-                </tr>
-                                            <tr class="" data-row-index="15" data-sport-path="mlb" data-player-id="230">
-                    <td class="team-player cta ">
-                        <i class="nf-icon icon-locked" data-player-id="230" data-sport-path="mlb"></i>
-                        <i class="nf-icon icon-exclude" data-player-id="230" data-sport-path="mlb"></i>
-                        <span class="full">
-                            <a href="/mlb/players/conor-gillaspie">
-                                Conor Gillaspie (3B, SF)
-                            </a>
-                        </span>
-                        <span class="abbrev">
-                            <a href="/mlb/players/conor-gillaspie">
-                                C. Gillaspie (3B, SF)
-                            </a>
-                        </span>
-                                            </td>
-                </tr>
-                                            <tr class="" data-row-index="16" data-sport-path="mlb" data-player-id="4686">
-                    <td class="team-player cta ">
-                        <i class="nf-icon icon-locked" data-player-id="4686" data-sport-path="mlb"></i>
-                        <i class="nf-icon icon-exclude" data-player-id="4686" data-sport-path="mlb"></i>
-                        <span class="full">
-                            <a href="/mlb/players/joe-panik">
-                                Joe Panik (2B, SF)
-                            </a>
-                        </span>
-                        <span class="abbrev">
-                            <a href="/mlb/players/joe-panik">
-                                J. Panik (2B, SF)
-                            </a>
-                        </span>
-                                            </td>
+                    </td>
                 </tr>
                                                                     </tbody>
         </table>
         <table class="projection-table no-fix">
             <thead class="projection-table__head">
                 <tr>
-                    <th colspan="1">
-                        Opp.
-                    </th>
                     <th colspan="11">
                         Stats
                     </th>
@@ -2198,9 +2238,6 @@
                     </th>
                 </tr>
                 <tr>
-                    <th title="Opponent Team">
-                        Team
-                    </th>
                     <th title="Plate Appearances" class="sortable" data-sorting-col="pa">
                         PA
                     </th>
@@ -2246,555 +2283,400 @@
                 </tr>
             </thead>
             <tbody class="projection-table__body">
-                                                                                        <tr class="" data-row-index="1" data-sport-path="mlb" data-player-id="4811">
-                    <td class="opp">
-                        SF                        <span class="gametime">
-                            8:00pm                        </span>
-                    </td>
+                                                                                        <tr class="" data-row-index="1" data-sport-path="mlb" data-player-id="167">
                     <td class="pa">
-                        4.43                    </td>
+                        4.53                    </td>
                     <td class="bb">
-                        0.44                    </td>
-                    <td class="1b">
-                        0.60                    </td>
-                    <td class="2b">
-                        0.19                    </td>
-                    <td class="3b">
-                        0.01                    </td>
-                    <td class="hr">
-                        0.26                    </td>
-                    <td class="r">
-                        0.59                    </td>
-                    <td class="rbi">
-                        0.63                    </td>
-                    <td class="sb">
-                        0.08                    </td>
-                    <td class="k">
-                        0.89                    </td>
-                    <td class="avg">
-                        0.255                    </td>
-                    <td class="fp active">
-                        9.3                    </td>
-                    <td class="cost">
-                        $4,900                    </td>
-                    <td class="value">
-                        1.9                    </td>
-                </tr>
-                                            <tr class="" data-row-index="2" data-sport-path="mlb" data-player-id="67">
-                    <td class="opp">
-                        SF                        <span class="gametime">
-                            8:00pm                        </span>
-                    </td>
-                    <td class="pa">
-                        4.32                    </td>
-                    <td class="bb">
-                        0.38                    </td>
-                    <td class="1b">
-                        0.64                    </td>
-                    <td class="2b">
-                        0.28                    </td>
-                    <td class="3b">
-                        0.01                    </td>
-                    <td class="hr">
-                        0.16                    </td>
-                    <td class="r">
-                        0.66                    </td>
-                    <td class="rbi">
-                        0.66                    </td>
-                    <td class="sb">
-                        0.01                    </td>
-                    <td class="k">
                         0.51                    </td>
-                    <td class="avg">
-                        0.261                    </td>
-                    <td class="fp active">
-                        8.5                    </td>
-                    <td class="cost">
-                        $4,000                    </td>
-                    <td class="value">
-                        2.13                    </td>
-                </tr>
-                                            <tr class="" data-row-index="3" data-sport-path="mlb" data-player-id="150">
-                    <td class="opp">
-                        @CHC                        <span class="gametime">
-                            8:00pm                        </span>
-                    </td>
-                    <td class="pa">
-                        4.44                    </td>
-                    <td class="bb">
-                        0.39                    </td>
-                    <td class="1b">
-                        0.79                    </td>
-                    <td class="2b">
-                        0.31                    </td>
-                    <td class="3b">
-                        0.00                    </td>
-                    <td class="hr">
-                        0.07                    </td>
-                    <td class="r">
-                        0.72                    </td>
-                    <td class="rbi">
-                        0.41                    </td>
-                    <td class="sb">
-                        0.09                    </td>
-                    <td class="k">
-                        0.44                    </td>
-                    <td class="avg">
-                        0.285                    </td>
-                    <td class="fp active">
-                        8.2                    </td>
-                    <td class="cost">
-                        $3,500                    </td>
-                    <td class="value">
-                        2.34                    </td>
-                </tr>
-                                            <tr class="" data-row-index="4" data-sport-path="mlb" data-player-id="103">
-                    <td class="opp">
-                        @CHC                        <span class="gametime">
-                            8:00pm                        </span>
-                    </td>
-                    <td class="pa">
-                        4.56                    </td>
-                    <td class="bb">
-                        0.61                    </td>
-                    <td class="1b">
-                        0.57                    </td>
-                    <td class="2b">
-                        0.20                    </td>
-                    <td class="3b">
-                        0.01                    </td>
-                    <td class="hr">
-                        0.18                    </td>
-                    <td class="r">
-                        0.55                    </td>
-                    <td class="rbi">
-                        0.55                    </td>
-                    <td class="sb">
-                        0.01                    </td>
-                    <td class="k">
-                        1.04                    </td>
-                    <td class="avg">
-                        0.231                    </td>
-                    <td class="fp active">
-                        8.1                    </td>
-                    <td class="cost">
-                        $3,700                    </td>
-                    <td class="value">
-                        2.18                    </td>
-                </tr>
-                                            <tr class="" data-row-index="5" data-sport-path="mlb" data-player-id="286">
-                    <td class="opp">
-                        SF                        <span class="gametime">
-                            8:00pm                        </span>
-                    </td>
-                    <td class="pa">
-                        4.55                    </td>
-                    <td class="bb">
-                        0.66                    </td>
-                    <td class="1b">
-                        0.63                    </td>
-                    <td class="2b">
-                        0.21                    </td>
-                    <td class="3b">
-                        0.00                    </td>
-                    <td class="hr">
-                        0.07                    </td>
-                    <td class="r">
-                        0.52                    </td>
-                    <td class="rbi">
-                        0.35                    </td>
-                    <td class="sb">
-                        0.18                    </td>
-                    <td class="k">
-                        1.00                    </td>
-                    <td class="avg">
-                        0.225                    </td>
-                    <td class="fp active">
-                        7.6                    </td>
-                    <td class="cost">
-                        $4,200                    </td>
-                    <td class="value">
-                        1.81                    </td>
-                </tr>
-                                            <tr class="" data-row-index="6" data-sport-path="mlb" data-player-id="279">
-                    <td class="opp">
-                        @CHC                        <span class="gametime">
-                            8:00pm                        </span>
-                    </td>
-                    <td class="pa">
-                        4.67                    </td>
-                    <td class="bb">
-                        0.33                    </td>
-                    <td class="1b">
-                        0.97                    </td>
-                    <td class="2b">
-                        0.18                    </td>
-                    <td class="3b">
-                        0.02                    </td>
-                    <td class="hr">
-                        0.02                    </td>
-                    <td class="r">
-                        0.47                    </td>
-                    <td class="rbi">
-                        0.30                    </td>
-                    <td class="sb">
-                        0.21                    </td>
-                    <td class="k">
-                        0.64                    </td>
-                    <td class="avg">
-                        0.263                    </td>
-                    <td class="fp active">
-                        7.4                    </td>
-                    <td class="cost">
-                        $4,100                    </td>
-                    <td class="value">
-                        1.81                    </td>
-                </tr>
-                                            <tr class="" data-row-index="7" data-sport-path="mlb" data-player-id="396">
-                    <td class="opp">
-                        @CHC                        <span class="gametime">
-                            8:00pm                        </span>
-                    </td>
-                    <td class="pa">
-                        4.33                    </td>
-                    <td class="bb">
-                        0.34                    </td>
-                    <td class="1b">
-                        0.66                    </td>
-                    <td class="2b">
-                        0.22                    </td>
-                    <td class="3b">
-                        0.01                    </td>
-                    <td class="hr">
-                        0.13                    </td>
-                    <td class="r">
-                        0.40                    </td>
-                    <td class="rbi">
-                        0.57                    </td>
-                    <td class="sb">
-                        0.03                    </td>
-                    <td class="k">
-                        0.78                    </td>
-                    <td class="avg">
-                        0.251                    </td>
-                    <td class="fp active">
-                        7.3                    </td>
-                    <td class="cost">
-                        $3,200                    </td>
-                    <td class="value">
-                        2.27                    </td>
-                </tr>
-                                            <tr class="" data-row-index="8" data-sport-path="mlb" data-player-id="5195">
-                    <td class="opp">
-                        SF                        <span class="gametime">
-                            8:00pm                        </span>
-                    </td>
-                    <td class="pa">
-                        3.77                    </td>
-                    <td class="bb">
-                        0.23                    </td>
-                    <td class="1b">
-                        0.56                    </td>
-                    <td class="2b">
-                        0.19                    </td>
-                    <td class="3b">
-                        0.02                    </td>
-                    <td class="hr">
-                        0.16                    </td>
-                    <td class="r">
-                        0.42                    </td>
-                    <td class="rbi">
-                        0.59                    </td>
-                    <td class="sb">
-                        0.04                    </td>
-                    <td class="k">
-                        0.69                    </td>
-                    <td class="avg">
-                        0.257                    </td>
-                    <td class="fp active">
-                        7.2                    </td>
-                    <td class="cost">
-                        $3,800                    </td>
-                    <td class="value">
-                        1.89                    </td>
-                </tr>
-                                            <tr class="" data-row-index="9" data-sport-path="mlb" data-player-id="105">
-                    <td class="opp">
-                        @CHC                        <span class="gametime">
-                            8:00pm                        </span>
-                    </td>
-                    <td class="pa">
-                        4.22                    </td>
-                    <td class="bb">
-                        0.29                    </td>
-                    <td class="1b">
-                        0.67                    </td>
-                    <td class="2b">
-                        0.25                    </td>
-                    <td class="3b">
-                        0.03                    </td>
-                    <td class="hr">
-                        0.07                    </td>
-                    <td class="r">
-                        0.40                    </td>
-                    <td class="rbi">
-                        0.52                    </td>
-                    <td class="sb">
-                        0.03                    </td>
-                    <td class="k">
-                        0.77                    </td>
-                    <td class="avg">
-                        0.261                    </td>
-                    <td class="fp active">
-                        6.9                    </td>
-                    <td class="cost">
-                        $4,000                    </td>
-                    <td class="value">
-                        1.71                    </td>
-                </tr>
-                                            <tr class="" data-row-index="10" data-sport-path="mlb" data-player-id="443">
-                    <td class="opp">
-                        SF                        <span class="gametime">
-                            8:00pm                        </span>
-                    </td>
-                    <td class="pa">
-                        3.99                    </td>
-                    <td class="bb">
-                        0.24                    </td>
-                    <td class="1b">
-                        0.71                    </td>
-                    <td class="2b">
-                        0.22                    </td>
-                    <td class="3b">
-                        0.02                    </td>
-                    <td class="hr">
-                        0.06                    </td>
-                    <td class="r">
-                        0.36                    </td>
-                    <td class="rbi">
-                        0.39                    </td>
-                    <td class="sb">
-                        0.14                    </td>
-                    <td class="k">
-                        0.39                    </td>
-                    <td class="avg">
-                        0.257                    </td>
-                    <td class="fp active">
-                        6.7                    </td>
-                    <td class="cost">
-                        $3,300                    </td>
-                    <td class="value">
-                        2.03                    </td>
-                </tr>
-                                            <tr class="" data-row-index="11" data-sport-path="mlb" data-player-id="83">
-                    <td class="opp">
-                        SF                        <span class="gametime">
-                            8:00pm                        </span>
-                    </td>
-                    <td class="pa">
-                        4.21                    </td>
-                    <td class="bb">
-                        0.40                    </td>
-                    <td class="1b">
-                        0.72                    </td>
-                    <td class="2b">
-                        0.23                    </td>
-                    <td class="3b">
-                        0.03                    </td>
-                    <td class="hr">
-                        0.04                    </td>
-                    <td class="r">
-                        0.48                    </td>
-                    <td class="rbi">
-                        0.32                    </td>
-                    <td class="sb">
-                        0.05                    </td>
-                    <td class="k">
-                        0.44                    </td>
-                    <td class="avg">
-                        0.254                    </td>
-                    <td class="fp active">
-                        6.7                    </td>
-                    <td class="cost">
-                        $4,300                    </td>
-                    <td class="value">
-                        1.55                    </td>
-                </tr>
-                                            <tr class="" data-row-index="12" data-sport-path="mlb" data-player-id="4734">
-                    <td class="opp">
-                        SF                        <span class="gametime">
-                            8:00pm                        </span>
-                    </td>
-                    <td class="pa">
-                        3.88                    </td>
-                    <td class="bb">
-                        0.13                    </td>
-                    <td class="1b">
-                        0.56                    </td>
-                    <td class="2b">
-                        0.16                    </td>
-                    <td class="3b">
-                        0.07                    </td>
-                    <td class="hr">
-                        0.09                    </td>
-                    <td class="r">
-                        0.41                    </td>
-                    <td class="rbi">
-                        0.45                    </td>
-                    <td class="sb">
-                        0.11                    </td>
-                    <td class="k">
-                        0.75                    </td>
-                    <td class="avg">
-                        0.224                    </td>
-                    <td class="fp active">
-                        6.7                    </td>
-                    <td class="cost">
-                        $4,100                    </td>
-                    <td class="value">
-                        1.62                    </td>
-                </tr>
-                                            <tr class="" data-row-index="13" data-sport-path="mlb" data-player-id="62">
-                    <td class="opp">
-                        @CHC                        <span class="gametime">
-                            8:00pm                        </span>
-                    </td>
-                    <td class="pa">
-                        4.11                    </td>
-                    <td class="bb">
-                        0.20                    </td>
                     <td class="1b">
                         0.73                    </td>
                     <td class="2b">
+                        0.25                    </td>
+                    <td class="3b">
+                        0.02                    </td>
+                    <td class="hr">
                         0.18                    </td>
-                    <td class="3b">
-                        0.02                    </td>
-                    <td class="hr">
+                    <td class="r">
+                        0.67                    </td>
+                    <td class="rbi">
+                        0.58                    </td>
+                    <td class="sb">
                         0.05                    </td>
-                    <td class="r">
-                        0.48                    </td>
-                    <td class="rbi">
-                        0.33                    </td>
-                    <td class="sb">
-                        0.16                    </td>
-                    <td class="k">
-                        0.52                    </td>
-                    <td class="avg">
-                        0.239                    </td>
-                    <td class="fp active">
-                        6.6                    </td>
-                    <td class="cost">
-                        $4,000                    </td>
-                    <td class="value">
-                        1.65                    </td>
-                </tr>
-                                            <tr class="" data-row-index="14" data-sport-path="mlb" data-player-id="4853">
-                    <td class="opp">
-                        SF                        <span class="gametime">
-                            8:00pm                        </span>
-                    </td>
-                    <td class="pa">
-                        4.10                    </td>
-                    <td class="bb">
-                        0.33                    </td>
-                    <td class="1b">
-                        0.49                    </td>
-                    <td class="2b">
-                        0.22                    </td>
-                    <td class="3b">
-                        0.02                    </td>
-                    <td class="hr">
-                        0.07                    </td>
-                    <td class="r">
-                        0.33                    </td>
-                    <td class="rbi">
-                        0.41                    </td>
-                    <td class="sb">
-                        0.04                    </td>
                     <td class="k">
                         0.72                    </td>
                     <td class="avg">
-                        0.200                    </td>
+                        0.294                    </td>
                     <td class="fp active">
-                        5.9                    </td>
+                        9.2                    </td>
                     <td class="cost">
-                        $2,900                    </td>
+                        N/A                    </td>
                     <td class="value">
-                        2.02                    </td>
+                        N/A                    </td>
                 </tr>
-                                            <tr class="" data-row-index="15" data-sport-path="mlb" data-player-id="230">
-                    <td class="opp">
-                        @CHC                        <span class="gametime">
-                            8:00pm                        </span>
-                    </td>
+                                            <tr class="" data-row-index="2" data-sport-path="mlb" data-player-id="67">
                     <td class="pa">
-                        4.00                    </td>
+                        4.53                    </td>
                     <td class="bb">
-                        0.20                    </td>
+                        0.45                    </td>
                     <td class="1b">
-                        0.56                    </td>
+                        0.63                    </td>
                     <td class="2b">
+                        0.23                    </td>
+                    <td class="3b">
+                        0.01                    </td>
+                    <td class="hr">
                         0.21                    </td>
-                    <td class="3b">
-                        0.04                    </td>
-                    <td class="hr">
-                        0.07                    </td>
                     <td class="r">
-                        0.37                    </td>
+                        0.54                    </td>
                     <td class="rbi">
-                        0.32                    </td>
-                    <td class="sb">
-                        0.04                    </td>
-                    <td class="k">
-                        0.47                    </td>
-                    <td class="avg">
-                        0.229                    </td>
-                    <td class="fp active">
-                        5.9                    </td>
-                    <td class="cost">
-                        $3,000                    </td>
-                    <td class="value">
-                        1.95                    </td>
-                </tr>
-                                            <tr class="" data-row-index="16" data-sport-path="mlb" data-player-id="4686">
-                    <td class="opp">
-                        @CHC                        <span class="gametime">
-                            8:00pm                        </span>
-                    </td>
-                    <td class="pa">
-                        3.89                    </td>
-                    <td class="bb">
-                        0.29                    </td>
-                    <td class="1b">
-                        0.58                    </td>
-                    <td class="2b">
-                        0.18                    </td>
-                    <td class="3b">
-                        0.00                    </td>
-                    <td class="hr">
-                        0.04                    </td>
-                    <td class="r">
-                        0.29                    </td>
-                    <td class="rbi">
-                        0.52                    </td>
+                        0.62                    </td>
                     <td class="sb">
                         0.02                    </td>
                     <td class="k">
-                        0.33                    </td>
+                        0.58                    </td>
                     <td class="avg">
-                        0.219                    </td>
+                        0.254                    </td>
                     <td class="fp active">
-                        5.4                    </td>
+                        8.7                    </td>
                     <td class="cost">
-                        $3,500                    </td>
+                        N/A                    </td>
                     <td class="value">
-                        1.54                    </td>
+                        N/A                    </td>
+                </tr>
+                                            <tr class="" data-row-index="3" data-sport-path="mlb" data-player-id="445">
+                    <td class="pa">
+                        4.42                    </td>
+                    <td class="bb">
+                        0.41                    </td>
+                    <td class="1b">
+                        0.69                    </td>
+                    <td class="2b">
+                        0.26                    </td>
+                    <td class="3b">
+                        0.01                    </td>
+                    <td class="hr">
+                        0.16                    </td>
+                    <td class="r">
+                        0.54                    </td>
+                    <td class="rbi">
+                        0.54                    </td>
+                    <td class="sb">
+                        0.04                    </td>
+                    <td class="k">
+                        0.73                    </td>
+                    <td class="avg">
+                        0.272                    </td>
+                    <td class="fp active">
+                        8.3                    </td>
+                    <td class="cost">
+                        N/A                    </td>
+                    <td class="value">
+                        N/A                    </td>
+                </tr>
+                                            <tr class="" data-row-index="4" data-sport-path="mlb" data-player-id="83">
+                    <td class="pa">
+                        4.42                    </td>
+                    <td class="bb">
+                        0.62                    </td>
+                    <td class="1b">
+                        0.69                    </td>
+                    <td class="2b">
+                        0.28                    </td>
+                    <td class="3b">
+                        0.05                    </td>
+                    <td class="hr">
+                        0.11                    </td>
+                    <td class="r">
+                        0.44                    </td>
+                    <td class="rbi">
+                        0.40                    </td>
+                    <td class="sb">
+                        0.03                    </td>
+                    <td class="k">
+                        0.38                    </td>
+                    <td class="avg">
+                        0.278                    </td>
+                    <td class="fp active">
+                        8.1                    </td>
+                    <td class="cost">
+                        N/A                    </td>
+                    <td class="value">
+                        N/A                    </td>
+                </tr>
+                                            <tr class="" data-row-index="5" data-sport-path="mlb" data-player-id="4540">
+                    <td class="pa">
+                        4.09                    </td>
+                    <td class="bb">
+                        0.27                    </td>
+                    <td class="1b">
+                        0.58                    </td>
+                    <td class="2b">
+                        0.25                    </td>
+                    <td class="3b">
+                        0.01                    </td>
+                    <td class="hr">
+                        0.13                    </td>
+                    <td class="r">
+                        0.55                    </td>
+                    <td class="rbi">
+                        0.35                    </td>
+                    <td class="sb">
+                        0.16                    </td>
+                    <td class="k">
+                        0.53                    </td>
+                    <td class="avg">
+                        0.253                    </td>
+                    <td class="fp active">
+                        7.6                    </td>
+                    <td class="cost">
+                        N/A                    </td>
+                    <td class="value">
+                        N/A                    </td>
+                </tr>
+                                            <tr class="" data-row-index="6" data-sport-path="mlb" data-player-id="4928">
+                    <td class="pa">
+                        4.31                    </td>
+                    <td class="bb">
+                        0.30                    </td>
+                    <td class="1b">
+                        0.75                    </td>
+                    <td class="2b">
+                        0.19                    </td>
+                    <td class="3b">
+                        0.02                    </td>
+                    <td class="hr">
+                        0.09                    </td>
+                    <td class="r">
+                        0.45                    </td>
+                    <td class="rbi">
+                        0.38                    </td>
+                    <td class="sb">
+                        0.12                    </td>
+                    <td class="k">
+                        0.65                    </td>
+                    <td class="avg">
+                        0.253                    </td>
+                    <td class="fp active">
+                        7.1                    </td>
+                    <td class="cost">
+                        N/A                    </td>
+                    <td class="value">
+                        N/A                    </td>
+                </tr>
+                                            <tr class="" data-row-index="7" data-sport-path="mlb" data-player-id="615">
+                    <td class="pa">
+                        3.98                    </td>
+                    <td class="bb">
+                        0.17                    </td>
+                    <td class="1b">
+                        0.75                    </td>
+                    <td class="2b">
+                        0.20                    </td>
+                    <td class="3b">
+                        0.01                    </td>
+                    <td class="hr">
+                        0.07                    </td>
+                    <td class="r">
+                        0.42                    </td>
+                    <td class="rbi">
+                        0.38                    </td>
+                    <td class="sb">
+                        0.12                    </td>
+                    <td class="k">
+                        0.63                    </td>
+                    <td class="avg">
+                        0.271                    </td>
+                    <td class="fp active">
+                        6.7                    </td>
+                    <td class="cost">
+                        N/A                    </td>
+                    <td class="value">
+                        N/A                    </td>
+                </tr>
+                                            <tr class="" data-row-index="8" data-sport-path="mlb" data-player-id="708">
+                    <td class="pa">
+                        4.20                    </td>
+                    <td class="bb">
+                        0.57                    </td>
+                    <td class="1b">
+                        0.55                    </td>
+                    <td class="2b">
+                        0.13                    </td>
+                    <td class="3b">
+                        0.00                    </td>
+                    <td class="hr">
+                        0.13                    </td>
+                    <td class="r">
+                        0.39                    </td>
+                    <td class="rbi">
+                        0.35                    </td>
+                    <td class="sb">
+                        0.06                    </td>
+                    <td class="k">
+                        1.17                    </td>
+                    <td class="avg">
+                        0.205                    </td>
+                    <td class="fp active">
+                        6.6                    </td>
+                    <td class="cost">
+                        N/A                    </td>
+                    <td class="value">
+                        N/A                    </td>
+                </tr>
+                                            <tr class="" data-row-index="9" data-sport-path="mlb" data-player-id="219">
+                    <td class="pa">
+                        3.87                    </td>
+                    <td class="bb">
+                        0.34                    </td>
+                    <td class="1b">
+                        0.59                    </td>
+                    <td class="2b">
+                        0.18                    </td>
+                    <td class="3b">
+                        0.04                    </td>
+                    <td class="hr">
+                        0.06                    </td>
+                    <td class="r">
+                        0.29                    </td>
+                    <td class="rbi">
+                        0.32                    </td>
+                    <td class="sb">
+                        0.11                    </td>
+                    <td class="k">
+                        0.51                    </td>
+                    <td class="avg">
+                        0.235                    </td>
+                    <td class="fp active">
+                        6.1                    </td>
+                    <td class="cost">
+                        N/A                    </td>
+                    <td class="value">
+                        N/A                    </td>
+                </tr>
+                                            <tr class="" data-row-index="10" data-sport-path="mlb" data-player-id="5098">
+                    <td class="pa">
+                        3.75                    </td>
+                    <td class="bb">
+                        0.30                    </td>
+                    <td class="1b">
+                        0.52                    </td>
+                    <td class="2b">
+                        0.14                    </td>
+                    <td class="3b">
+                        0.00                    </td>
+                    <td class="hr">
+                        0.10                    </td>
+                    <td class="r">
+                        0.40                    </td>
+                    <td class="rbi">
+                        0.35                    </td>
+                    <td class="sb">
+                        0.05                    </td>
+                    <td class="k">
+                        1.06                    </td>
+                    <td class="avg">
+                        0.223                    </td>
+                    <td class="fp active">
+                        5.7                    </td>
+                    <td class="cost">
+                        N/A                    </td>
+                    <td class="value">
+                        N/A                    </td>
+                </tr>
+                                            <tr class="" data-row-index="11" data-sport-path="mlb" data-player-id="274">
+                    <td class="pa">
+                        3.86                    </td>
+                    <td class="bb">
+                        0.38                    </td>
+                    <td class="1b">
+                        0.43                    </td>
+                    <td class="2b">
+                        0.12                    </td>
+                    <td class="3b">
+                        0.00                    </td>
+                    <td class="hr">
+                        0.14                    </td>
+                    <td class="r">
+                        0.30                    </td>
+                    <td class="rbi">
+                        0.44                    </td>
+                    <td class="sb">
+                        0.00                    </td>
+                    <td class="k">
+                        1.15                    </td>
+                    <td class="avg">
+                        0.204                    </td>
+                    <td class="fp active">
+                        5.6                    </td>
+                    <td class="cost">
+                        N/A                    </td>
+                    <td class="value">
+                        N/A                    </td>
+                </tr>
+                                            <tr class="" data-row-index="12" data-sport-path="mlb" data-player-id="191">
+                    <td class="pa">
+                        4.08                    </td>
+                    <td class="bb">
+                        0.44                    </td>
+                    <td class="1b">
+                        0.48                    </td>
+                    <td class="2b">
+                        0.17                    </td>
+                    <td class="3b">
+                        0.00                    </td>
+                    <td class="hr">
+                        0.07                    </td>
+                    <td class="r">
+                        0.36                    </td>
+                    <td class="rbi">
+                        0.37                    </td>
+                    <td class="sb">
+                        0.04                    </td>
+                    <td class="k">
+                        0.76                    </td>
+                    <td class="avg">
+                        0.190                    </td>
+                    <td class="fp active">
+                        5.6                    </td>
+                    <td class="cost">
+                        N/A                    </td>
+                    <td class="value">
+                        N/A                    </td>
+                </tr>
+                                            <tr class="" data-row-index="13" data-sport-path="mlb" data-player-id="4714">
+                    <td class="pa">
+                        3.64                    </td>
+                    <td class="bb">
+                        0.42                    </td>
+                    <td class="1b">
+                        0.45                    </td>
+                    <td class="2b">
+                        0.14                    </td>
+                    <td class="3b">
+                        0.00                    </td>
+                    <td class="hr">
+                        0.03                    </td>
+                    <td class="r">
+                        0.31                    </td>
+                    <td class="rbi">
+                        0.19                    </td>
+                    <td class="sb">
+                        0.00                    </td>
+                    <td class="k">
+                        0.96                    </td>
+                    <td class="avg">
+                        0.191                    </td>
+                    <td class="fp active">
+                        4.3                    </td>
+                    <td class="cost">
+                        N/A                    </td>
+                    <td class="value">
+                        N/A                    </td>
                 </tr>
                                                                     </tbody>
         </table>
     
 </div>
-
 
 					</div>
     </section>
@@ -2919,7 +2801,7 @@
                         <select class="dropdown-custom-z-index dfs-option" data-option-group="stack" data-option-key="stack_team_abbrev" data-sport-path="mlb">
                             <option value="0" >None</option>
                                                                                         <option value="CHC" >CHC</option>
-                                                            <option value="SF" >SF</option>
+                                                            <option value="CLE" >CLE</option>
                                                     </select>
                     </div>
                     <div class="grid--1-2">
@@ -3035,7 +2917,8 @@
 </section>
 	
 	<!-- Bottom Page Ad -->
-	<div class="grid--1-1 leaderboard ad-unit-bottom ad-unit" id="div-gpt-ad-1470282018023-0"></div></div>    </main>
+	<div class="grid--1-1 leaderboard ad-unit-bottom ad-unit" id="div-gpt-ad-1470282018023-0"></div></div>
+    </main>
     
     <footer class="site-footer">
 	<div class="site-footer__wrap">
@@ -3089,7 +2972,7 @@
 </footer>    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.0/Chart.min.js"></script>
-    <script type="text/javascript" src="/js/nF.js?v=261"></script>
+    <script type="text/javascript" src="/js/nF.js?v=267"></script>
 
     	<script>
 		var _gaq=[['_setAccount','UA-16532199-1'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
@@ -3167,5 +3050,5 @@
 		}
 	</script>
 
-    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"3da06e65a6","applicationID":"6643306","transactionName":"YwBSZxBTW0FWAUwLDFpKc0YRRlpfGC9UADxwBFlfG3RUXEMDSxtAcARZXxtwVEFSAFkOD2QXX1kHUUFbWAxL","queueTime":0,"applicationTime":90,"atts":"T0dREVhJSE8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"3da06e65a6","applicationID":"6643306","transactionName":"YwBSZxBTW0FWAUwLDFpKc0YRRlpfGC9UADxwBFlfG3RUXEMDSxtAcARZXxtwVEFSAFkOD2QXX1kHUUFbWAxL","queueTime":0,"applicationTime":95,"atts":"T0dREVhJSE8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
 </html>

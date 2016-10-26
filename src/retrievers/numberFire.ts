@@ -94,8 +94,9 @@ export default class NumberFire implements IDataRetriever {
 				player = utils.createPlayer();
 				players[playerId] = player;
 			}
-			const playerNameTeam = $(item).find(".full a").text();
-			utils.updatePlayerCombinedNameTeam(player, playerNameTeam);
+			const playerName = $("a.full", item).text();
+			const playerTeam = $(".team-player__team.active", item).text();
+			utils.updatePlayer(player, playerName, playerTeam);
 			const points = $(item).find(".fp").text();
 			if (points) {
 				const stats: IPlayerStats = {
