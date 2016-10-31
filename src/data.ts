@@ -1,12 +1,14 @@
 import { IDataRetriever, ISiteDataRetriever, IPlayer } from "./interfaces";
 import DFSR from "./retrievers/dfsr";
 import NumberFire from "./retrievers/numberFire";
+import RGProjections from "./retrievers/rotogrinders/projections";
 import RGStarting from "./retrievers/rotogrinders/starting";
 
 class Data {
 	retrievers: IDataRetriever[] = [
 		new DFSR(),
 		new NumberFire(),
+		new RGProjections(),
 		new RGStarting()
 	];
 
