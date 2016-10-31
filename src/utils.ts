@@ -26,7 +26,11 @@ class Utils {
 		// NBA
 		"NOP": "NO",
 		"SAS": "SA",
-		"GSW": "GS"
+		"GSW": "GS",
+
+		// NFL
+		"NEP": "NE",
+		"NOS": "NO"
 	};
 
 	/**
