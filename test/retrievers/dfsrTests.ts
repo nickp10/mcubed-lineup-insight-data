@@ -9,7 +9,7 @@ describe("DFSR", () => {
 		it("should parse the projection stats for an MLB DraftKings contest", () => {
 			// Arrange
 			const target = new DFSR();
-			const data = fs.readFileSync("test/content/dfsrMLBDraftKings.csv", "UTF-8");
+			const data = fs.readFileSync("test/content/dfsrMLBDraftKings.csv", "utf-8");
 
 			// Act
 			const players = target.parsePlayers(data, DFSR.mlbIndices);
@@ -22,7 +22,7 @@ describe("DFSR", () => {
 		it("should parse the projection stats for an MLB FanDuel contest", () => {
 			// Arrange
 			const target = new DFSR();
-			const data = fs.readFileSync("test/content/dfsrMLBFanDuel.csv", "UTF-8");
+			const data = fs.readFileSync("test/content/dfsrMLBFanDuel.csv", "utf-8");
 
 			// Act
 			const players = target.parsePlayers(data, DFSR.mlbIndices);
@@ -35,7 +35,7 @@ describe("DFSR", () => {
 		it("should parse the projection stats for an NFL DraftKings contest", () => {
 			// Arrange
 			const target = new DFSR();
-			const data = fs.readFileSync("test/content/dfsrNFLDraftKings.csv", "UTF-8");
+			const data = fs.readFileSync("test/content/dfsrNFLDraftKings.csv", "utf-8");
 
 			// Act
 			const players = target.parsePlayers(data, DFSR.nflIndices);
@@ -48,7 +48,7 @@ describe("DFSR", () => {
 		it("should parse the projection stats for an NFL FanDuel contest", () => {
 			// Arrange
 			const target = new DFSR();
-			const data = fs.readFileSync("test/content/dfsrNFLFanDuel.csv", "UTF-8");
+			const data = fs.readFileSync("test/content/dfsrNFLFanDuel.csv", "utf-8");
 
 			// Act
 			const players = target.parsePlayers(data, DFSR.nflIndices);

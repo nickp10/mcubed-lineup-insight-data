@@ -11,7 +11,7 @@ describe("RGStarting", () => {
 		it("should parse the starting player information for an MLB DraftKings contest", () => {
 			// Arrange
 			const target = new RGStarting();
-			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingMLBDraftKings.html", "UTF-8"));
+			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingMLBDraftKings.html", "utf-8"));
 
 			// Act
 			const players = target.parsePlayers(data, "mlb");
@@ -27,7 +27,7 @@ describe("RGStarting", () => {
 		it("should parse the starting player information for an MLB FanDuel contest", () => {
 			// Arrange
 			const target = new RGStarting();
-			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingMLBFanDuel.html", "UTF-8"));
+			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingMLBFanDuel.html", "utf-8"));
 
 			// Act
 			const players = target.parsePlayers(data, "mlb");
@@ -43,7 +43,7 @@ describe("RGStarting", () => {
 		it("should parse the starting player information for an MLB Yahoo contest", () => {
 			// Arrange
 			const target = new RGStarting();
-			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingMLBYahoo.html", "UTF-8"));
+			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingMLBYahoo.html", "utf-8"));
 
 			// Act
 			const players = target.parsePlayers(data, "mlb");
@@ -59,7 +59,7 @@ describe("RGStarting", () => {
 		it("should parse the starting player information for an NBA DraftKings contest", () => {
 			// Arrange
 			const target = new RGStarting();
-			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNBADraftKings.html", "UTF-8"));
+			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNBADraftKings.html", "utf-8"));
 
 			// Act
 			const players = target.parsePlayers(data, "nba");
@@ -74,7 +74,7 @@ describe("RGStarting", () => {
 		it("should parse the starting player information for an NBA FanDuel contest", () => {
 			// Arrange
 			const target = new RGStarting();
-			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNBAFanDuel.html", "UTF-8"));
+			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNBAFanDuel.html", "utf-8"));
 
 			// Act
 			const players = target.parsePlayers(data, "nba");
@@ -89,7 +89,7 @@ describe("RGStarting", () => {
 		it("should parse the starting player information for an NBA Yahoo contest", () => {
 			// Arrange
 			const target = new RGStarting();
-			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNBAYahoo.html", "UTF-8"));
+			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNBAYahoo.html", "utf-8"));
 
 			// Act
 			const players = target.parsePlayers(data, "nba");
@@ -104,7 +104,7 @@ describe("RGStarting", () => {
 		it("should parse the starting player information for an NFL DraftKings contest", () => {
 			// Arrange
 			const target = new RGStarting();
-			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNFLDraftKings.html", "UTF-8"));
+			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNFLDraftKings.html", "utf-8"));
 
 			// Act
 			const players = target.parsePlayers(data, "nfl");
@@ -118,7 +118,7 @@ describe("RGStarting", () => {
 		it("should parse the starting player information for an NFL FanDuel contest", () => {
 			// Arrange
 			const target = new RGStarting();
-			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNFLFanDuel.html", "UTF-8"));
+			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNFLFanDuel.html", "utf-8"));
 
 			// Act
 			const players = target.parsePlayers(data, "nfl");
@@ -132,7 +132,7 @@ describe("RGStarting", () => {
 		it("should parse the starting player information for an NFL Yahoo contest", () => {
 			// Arrange
 			const target = new RGStarting();
-			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNFLYahoo.html", "UTF-8"));
+			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNFLYahoo.html", "utf-8"));
 
 			// Act
 			const players = target.parsePlayers(data, "nfl");

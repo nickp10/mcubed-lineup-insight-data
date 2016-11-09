@@ -1,17 +1,16 @@
 /// <reference path="../../../typings/index.d.ts" />
 
 import * as assert from "assert";
-import * as cheerio from "cheerio";
 import * as fs from "fs";
 import RGProjections from "../../../src/retrievers/rotogrinders/projections";
 import * as testUtils from "../../testUtils";
 
-describe("RGStarting", () => {
+describe("RGProjections", () => {
 	describe("#parsePlayers()", () => {
 		it("should parse the projections for an NBA DraftKings contest", () => {
 			// Arrange
 			const target = new RGProjections();
-			const data = fs.readFileSync("test/content/rgProjectionsNBADraftKings.html", "UTF-8");
+			const data = fs.readFileSync("test/content/rgProjectionsNBADraftKings.html", "utf-8");
 
 			// Act
 			const players = target.parsePlayers(data);
@@ -25,7 +24,7 @@ describe("RGStarting", () => {
 		it("should parse the projections for an NBA FanDuel contest", () => {
 			// Arrange
 			const target = new RGProjections();
-			const data = fs.readFileSync("test/content/rgProjectionsNBAFanDuel.html", "UTF-8");
+			const data = fs.readFileSync("test/content/rgProjectionsNBAFanDuel.html", "utf-8");
 
 			// Act
 			const players = target.parsePlayers(data);
@@ -39,7 +38,7 @@ describe("RGStarting", () => {
 		it("should parse the projections for an NFL DraftKings contest", () => {
 			// Arrange
 			const target = new RGProjections();
-			const data = fs.readFileSync("test/content/rgProjectionsNFLDraftKings.html", "UTF-8");
+			const data = fs.readFileSync("test/content/rgProjectionsNFLDraftKings.html", "utf-8");
 
 			// Act
 			const players = target.parsePlayers(data);
@@ -52,7 +51,7 @@ describe("RGStarting", () => {
 		it("should parse the projections for an NFL FanDuel contest", () => {
 			// Arrange
 			const target = new RGProjections();
-			const data = fs.readFileSync("test/content/rgProjectionsNFLFanDuel.html", "UTF-8");
+			const data = fs.readFileSync("test/content/rgProjectionsNFLFanDuel.html", "utf-8");
 
 			// Act
 			const players = target.parsePlayers(data);

@@ -2,6 +2,7 @@ import { IDataRetriever, ISiteDataRetriever, IPlayer } from "./interfaces";
 import DFSR from "./retrievers/dfsr";
 import NumberFire from "./retrievers/numberFire";
 import RGProjections from "./retrievers/rotogrinders/projections";
+import RGRecent from "./retrievers/rotogrinders/recent";
 import RGStarting from "./retrievers/rotogrinders/starting";
 
 class Data {
@@ -9,6 +10,7 @@ class Data {
 		new DFSR(),
 		new NumberFire(),
 		new RGProjections(),
+		new RGRecent(),
 		new RGStarting()
 	];
 

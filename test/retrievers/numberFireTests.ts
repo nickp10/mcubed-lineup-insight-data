@@ -10,7 +10,7 @@ describe("NumberFire", () => {
 		it("should parse the projection stats for an MLB DraftKings contest", () => {
 			// Arrange
 			const target = new NumberFire();
-			const data = cheerio.load(fs.readFileSync("test/content/numberFireMLBDraftKings.html", "UTF-8"));
+			const data = cheerio.load(fs.readFileSync("test/content/numberFireMLBDraftKings.html", "utf-8"));
 
 			// Act
 			const players = target.parsePlayers(data);
@@ -23,7 +23,7 @@ describe("NumberFire", () => {
 		it("should parse the projection stats for an MLB FanDuel contest", () => {
 			// Arrange
 			const target = new NumberFire();
-			const data = cheerio.load(fs.readFileSync("test/content/numberFireMLBFanDuel.html", "UTF-8"));
+			const data = cheerio.load(fs.readFileSync("test/content/numberFireMLBFanDuel.html", "utf-8"));
 
 			// Act
 			const players = target.parsePlayers(data);
@@ -36,7 +36,7 @@ describe("NumberFire", () => {
 		it("should parse the projection stats for an MLB Yahoo contest", () => {
 			// Arrange
 			const target = new NumberFire();
-			const data = cheerio.load(fs.readFileSync("test/content/numberFireMLBYahoo.html", "UTF-8"));
+			const data = cheerio.load(fs.readFileSync("test/content/numberFireMLBYahoo.html", "utf-8"));
 
 			// Act
 			const players = target.parsePlayers(data);
@@ -49,7 +49,7 @@ describe("NumberFire", () => {
 		it("should parse the projection stats for an NBA DraftKings contest", () => {
 			// Arrange
 			const target = new NumberFire();
-			const data = cheerio.load(fs.readFileSync("test/content/numberFireNBADraftKings.html", "UTF-8"));
+			const data = cheerio.load(fs.readFileSync("test/content/numberFireNBADraftKings.html", "utf-8"));
 
 			// Act
 			const players = target.parsePlayers(data);
@@ -62,7 +62,7 @@ describe("NumberFire", () => {
 		it("should parse the projection stats for an NBA FanDuel contest", () => {
 			// Arrange
 			const target = new NumberFire();
-			const data = cheerio.load(fs.readFileSync("test/content/numberFireNBAFanDuel.html", "UTF-8"));
+			const data = cheerio.load(fs.readFileSync("test/content/numberFireNBAFanDuel.html", "utf-8"));
 
 			// Act
 			const players = target.parsePlayers(data);
@@ -75,7 +75,7 @@ describe("NumberFire", () => {
 		it("should parse the projection stats for an NBA Yahoo contest", () => {
 			// Arrange
 			const target = new NumberFire();
-			const data = cheerio.load(fs.readFileSync("test/content/numberFireNBAYahoo.html", "UTF-8"));
+			const data = cheerio.load(fs.readFileSync("test/content/numberFireNBAYahoo.html", "utf-8"));
 
 			// Act
 			const players = target.parsePlayers(data);
@@ -88,7 +88,7 @@ describe("NumberFire", () => {
 		it("should parse the projection stats for an NFL DraftKings contest", () => {
 			// Arrange
 			const target = new NumberFire();
-			const data = cheerio.load(fs.readFileSync("test/content/numberFireNFLDraftKings.html", "UTF-8"));
+			const data = cheerio.load(fs.readFileSync("test/content/numberFireNFLDraftKings.html", "utf-8"));
 
 			// Act
 			const players = target.parsePlayers(data);
@@ -101,7 +101,7 @@ describe("NumberFire", () => {
 		it("should parse the projection stats for an NFL FanDuel contest", () => {
 			// Arrange
 			const target = new NumberFire();
-			const data = cheerio.load(fs.readFileSync("test/content/numberFireNFLFanDuel.html", "UTF-8"));
+			const data = cheerio.load(fs.readFileSync("test/content/numberFireNFLFanDuel.html", "utf-8"));
 
 			// Act
 			const players = target.parsePlayers(data);
@@ -114,7 +114,7 @@ describe("NumberFire", () => {
 		it("should parse the projection stats for an NFL Yahoo contest", () => {
 			// Arrange
 			const target = new NumberFire();
-			const data = cheerio.load(fs.readFileSync("test/content/numberFireNFLYahoo.html", "UTF-8"));
+			const data = cheerio.load(fs.readFileSync("test/content/numberFireNFLYahoo.html", "utf-8"));
 
 			// Act
 			const players = target.parsePlayers(data);

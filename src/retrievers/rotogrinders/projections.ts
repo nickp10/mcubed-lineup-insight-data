@@ -1,7 +1,6 @@
 /// <reference path="../../../typings/index.d.ts" />
 
 import { IDataRetriever, ISiteDataRetriever, IPlayer, IPlayerStats } from "../../interfaces";
-import * as cheerio from "cheerio";
 import * as Promise from "promise";
 import * as utils from "../../utils";
 
