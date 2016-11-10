@@ -34,6 +34,44 @@ class Utils {
 	};
 
 	/**
+	 * Defines a mapping between NFL cities and the corresponding mascot.
+	 */
+	nflCityToMascot = {
+		"Arizona": "Cardinals",
+		"Atlanta": "Falcons",
+		"Baltimore": "Ravens",
+		"Buffalo": "Bills",
+		"Carolina": "Panthers",
+		"Chicago": "Bears",
+		"Cincinnati": "Bengals",
+		"Cleveland": "Browns",
+		"Dallas": "Cowboys",
+		"Denver": "Broncos",
+		"Detroit": "Lions",
+		"Green Bay": "Packers",
+		"Houston": "Texans",
+		"Indianapolis": "Colts",
+		"Jacksonville": "Jaguars",
+		"Kansas City": "Chiefs",
+		"Los Angeles": "Rams",
+		"Miami": "Dolphins",
+		"Minnesota": "Vikings",
+		"New England": "Patriots",
+		"New Orleans": "Saints",
+		//"New York": "Giants",
+		//"New York": "Jets",
+		"Oakland": "Raiders",
+		"Philadelphia": "Eagles",
+		"Pittsburgh": "Steelers",
+		"San Diego": "Chargers",
+		"San Francisco": "49ers",
+		"Seattle": "Seahawks",
+		"Tampa Bay": "Buccaneers",
+		"Tennessee": "Titans",
+		"Washington": "Redskins"
+	};
+
+	/**
 	 * Flattens the specified items such that all items from any sub-arrays recursive
 	 * will be returned in a one-dimensional linear array. For example:
 	 * 
@@ -132,13 +170,29 @@ class Utils {
 	updatePlayer(player: IPlayer, name?: string, team?: string): void {
 		if (name) {
 			name = name.trim();
+
+			// Remove values like " - Start" and " - Confirmed"
+			const hyphenIndex = name.indexOf("-");
+			if (hyphenIndex >= 0) {
+				name = name.substr(0, hyphenIndex);
+			}
+
+			// Remove the D/ST from the name for NFL defenses
+			name = name.replace("D/ST", "");
+
+			// If the last name is first, then reverse the names
 			const index = name.indexOf(", ");
 			if (index >= 0) {
 				const first = name.substr(0, index);
 				const last = name.substr(index + 2);
 				name = `${first} ${last}`;
 			}
+
+			// Replace accented characters with the unaccented equivalent
 			name = S(name).latinise().s;
+
+			// Normalize NFL team names (for defense projections)
+			name = this.normalizeNFLName(name);
 			player.name = name;
 		}
 		if (team) {
@@ -151,6 +205,23 @@ class Utils {
 			team = this.alternateTeams[team] || team;
 			player.team = team;
 		}
+	}
+
+	/**
+	 * Normalizes the NFL team names such that if only a city is provided, then it is
+	 * translated to the city name and mascot. For instance, "Denver" would be normalized
+	 * to "Denver Broncos". The only exception is "New York" since it cannot be translated
+	 * accurately to either the "Giants" or the "Jets".
+	 * 
+	 * @param name The name to normalize.
+	 * @returns The normalized NFL team name.
+	 */
+	normalizeNFLName(name: string): string {
+		var mascot = this.nflCityToMascot[name];
+		if (mascot) {
+			return `${name} ${mascot}`;
+		}
+		return name;
 	}
 
 	sendHttpsRequest(request: https.RequestOptions, data?: string): Promise.IThenable<IIncomingMessage> {
