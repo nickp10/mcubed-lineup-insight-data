@@ -11,6 +11,9 @@ class Utils {
 	nameTeamRegexNameGroup = 1;
 	nameTeamRegexTeamGroup = 3;
 
+	validContestTypes = ["fanDuel", "draftKings", "yahoo"];
+	validSports = ["mlb", "nba", "nfl", "nhl"];
+
 	/**
 	 * Defines a mapping of alternate teams.
 	 * The key represents the team name from external sites.
@@ -222,6 +225,28 @@ class Utils {
 			return `${name} ${mascot}`;
 		}
 		return name;
+	}
+
+	coerceContestType(contestType: string): string {
+		let coerceContestType: string = undefined;
+		contestType = contestType.toUpperCase();
+		this.validContestTypes.forEach((validContestType) => {
+			if (validContestType.toUpperCase() === contestType) {
+				coerceContestType = validContestType;
+			}
+		});
+		return coerceContestType;
+	}
+
+	coerceSport(sport: string): string {
+		let coerceSport: string = undefined;
+		sport = sport.toUpperCase();
+		this.validSports.forEach((validSport) => {
+			if (validSport.toUpperCase() === sport) {
+				coerceSport = validSport;
+			}
+		});
+		return coerceSport;
 	}
 
 	sendHttpsRequest(request: https.RequestOptions, data?: string): Promise.IThenable<IIncomingMessage> {
