@@ -4,6 +4,7 @@ import NumberFire from "./retrievers/numberFire";
 import RGProjections from "./retrievers/rotogrinders/projections";
 import RGRecent from "./retrievers/rotogrinders/recent";
 import RGStarting from "./retrievers/rotogrinders/starting";
+import * as utils from "./utils";
 
 class Data {
 	retrievers: IDataRetriever[] = [
@@ -15,6 +16,8 @@ class Data {
 	];
 
 	getData(contestType: string, sport: string): Promise.IThenable<IPlayer[]> {
+		contestType = utils.coerceContestType(contestType);
+		sport = utils.coerceSport(sport);
 		const promises: Promise.IThenable<IPlayer[]>[] = [];
 		this.retrievers.forEach((retriever) => {
 			const siteRetriever: ISiteDataRetriever = retriever[contestType];

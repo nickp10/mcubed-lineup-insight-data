@@ -1,10 +1,9 @@
 /// <reference path="../typings/index.d.ts" />
 
 import * as argv from "argv";
+import * as utils from "./utils";
 
 class Args {
-	static validContestTypes = ["fanDuel", "draftKings", "yahoo"];
-	static validSports = ["mlb", "nba", "nfl", "nhl"];
 	contestType: string;
 	sport: string;
 
@@ -18,35 +17,15 @@ class Args {
 		this.validate();
 	}
 
-	coerceContestType(contestType: string): string {
-		let coerceContestType: string = undefined;
-		Args.validContestTypes.forEach((validContestType) => {
-			if (validContestType.toUpperCase() === contestType) {
-				coerceContestType = validContestType;
-			}
-		});
-		return coerceContestType;
-	}
-
-	coerceSport(sport: string): string {
-		let coerceSport: string = undefined;
-		Args.validSports.forEach((validSport) => {
-			if (validSport.toUpperCase() === sport) {
-				coerceSport = validSport;
-			}
-		});
-		return coerceSport;
-	}
-
 	validate(): void {
 		// Validate contest type
 		if (!this.contestType) {
 			console.error("The -c or --contestType argument must be supplied.");
 			process.exit();
 		}
-		this.contestType = this.coerceContestType(this.contestType.toUpperCase());
+		this.contestType = utils.coerceContestType(this.contestType);
 		if (!this.contestType) {
-			console.error("The -c or --contestType argument must be one of: " + Args.validContestTypes.join(", "));
+			console.error("The -c or --contestType argument must be one of: " + utils.validContestTypes.join(", "));
 			process.exit();
 		}
 
@@ -55,9 +34,9 @@ class Args {
 			console.error("The -s or --sport argument must be supplied.");
 			process.exit();
 		}
-		this.sport = this.coerceSport(this.sport.toUpperCase());
+		this.sport = utils.coerceSport(this.sport);
 		if (!this.sport) {
-			console.error("The -s or --sport argument must be one of: " + Args.validSports.join(", "));
+			console.error("The -s or --sport argument must be one of: " + utils.validSports.join(", "));
 			process.exit();
 		}
 	}
