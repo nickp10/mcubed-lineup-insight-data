@@ -88,7 +88,7 @@ export default class DFSR implements IDataRetriever {
 				if (line) {
 					const parts = line.split(/,/);
 					if (parts && indices.nameIndex < parts.length && indices.teamIndex < parts.length && indices.pointsIndex < parts.length) {
-						const name = parts[indices.nameIndex].replace(" - Start", "");
+						const name = parts[indices.nameIndex];
 						const team = parts[indices.teamIndex];
 						const player = utils.createPlayer(name, team);
 						player.stats = [
