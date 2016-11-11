@@ -172,22 +172,21 @@ class Utils {
 	 */
 	updatePlayer(player: IPlayer, name?: string, team?: string): void {
 		if (name) {
-			name = name.trim();
+			// Remove the D/ST from the name for NFL defenses
+			name = name.replace("D/ST", "");
 
 			// Remove values like " - Start" and " - Confirmed"
-			const hyphenIndex = name.indexOf("-");
+			const hyphenIndex = name.indexOf("- ");
 			if (hyphenIndex >= 0) {
 				name = name.substr(0, hyphenIndex);
 			}
-
-			// Remove the D/ST from the name for NFL defenses
-			name = name.replace("D/ST", "");
+			name = name.trim();
 
 			// If the last name is first, then reverse the names
 			const index = name.indexOf(", ");
 			if (index >= 0) {
-				const first = name.substr(0, index);
-				const last = name.substr(index + 2);
+				const last = name.substr(0, index);
+				const first = name.substr(index + 2);
 				name = `${first} ${last}`;
 			}
 
