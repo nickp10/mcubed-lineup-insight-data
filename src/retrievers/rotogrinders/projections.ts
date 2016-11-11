@@ -12,21 +12,21 @@ export default class RGProjections implements IDataRetriever {
 	draftKings = {
 		mlb: () => this.getData("draftkings", "mlb-pitcher", "mlb-hitter"),
 		nba: () => this.getData("draftkings", "nba-player"),
-		nfl: () => this.getData("draftkings", "nfl-offense", "nfl-defense"),
+		nfl: () => this.getData("draftkings", "nfl-qb", "nfl-flex", "nfl-defense"),
 		nhl: () => this.getData("draftkings", "nhl-skater", "nhl-goalie")
 	};
 
 	fanDuel = {
 		mlb: () => this.getData("fanduel", "mlb-pitcher", "mlb-hitter"),
 		nba: () => this.getData("fanduel", "nba-player"),
-		nfl: () => this.getData("fanduel", "nfl-offense", "nfl-defense", "nfl-kicker"),
+		nfl: () => this.getData("fanduel", "nfl-qb", "nfl-flex", "nfl-defense", "nfl-kicker"),
 		nhl: () => this.getData("fanduel", "nhl-skater", "nhl-goalie")
 	};
 
 	yahoo = {
 		mlb: () => this.getData("yahoo", "mlb-pitcher", "mlb-hitter"),
 		nba: () => this.getData("yahoo", "nba-player"),
-		nfl: () => this.getData("yahoo", "nfl-offense", "nfl-defense"),
+		nfl: () => this.getData("yahoo", "nfl-qb", "nfl-flex", "nfl-defense"),
 		nhl: () => this.getData("yahoo", "nhl-skater", "nhl-goalie")
 	};
 
