@@ -28,12 +28,19 @@ class Utils {
 
 		// NBA
 		"NOP": "NO",
+		"NYK": "NY",
 		"SAS": "SA",
 		"GSW": "GS",
 
 		// NFL
+		"GBP": "GB",
+		"KCC": "KC",
+		"LAR": "LA",
 		"NEP": "NE",
-		"NOS": "NO"
+		"NOS": "NO",
+		"SDC": "SD",
+		"SFO": "SF",
+		"TBB": "TB"
 	};
 
 	/**
