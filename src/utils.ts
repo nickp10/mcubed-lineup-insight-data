@@ -27,10 +27,13 @@ class Utils {
 		"TBR": "TAM",
 
 		// NBA
+		"GSW": "GS",
 		"NOP": "NO",
 		"NYK": "NY",
+		"PHX": "PHO",
+		"UTAH": "UTA",
 		"SAS": "SA",
-		"GSW": "GS",
+		"WSH": "WAS",
 
 		// NFL
 		"GBP": "GB",
