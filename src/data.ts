@@ -38,7 +38,7 @@ class Data {
 					dataItem.forEach((player) => {
 						// Only return players that have a specified salary. If the salary could not be determined,
 						// then -1 should be used for the salary to allow the player's data to be returned.
-						if (player.salary !== 0) {
+						if (player.salary > 0 || player.salary === -1) {
 							data.push(player);
 						}
 					});
