@@ -56,10 +56,11 @@ export default class RGRecent implements IDataRetriever {
 					playersJson.forEach((playerJson) => {
 						const name = playerJson.player;
 						const team = playerJson.team;
+						const salary = parseInt(playerJson.salary);
 						const fpts = parseFloat(playerJson.fpts);
 						const gp = parseInt(playerJson.gp);
 						if (name && team && fpts && gp > 0) {
-							const p = utils.createPlayer(name, team);
+							const p = utils.createPlayer(name, team, salary);
 							const s: IPlayerStats = {
 								source: "RotoGrinders",
 								recentAveragePoints: Math.round((fpts / gp) * 100) / 100

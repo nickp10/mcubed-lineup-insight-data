@@ -132,11 +132,12 @@ class Utils {
 	 * Creates a player with the specified combined name and team.
 	 * 
 	 * @param nameTeam The name and team of the player combined (e.g., `Mike Trout (OF, LAA)`).
+	 * @param salary The salary of the player.
 	 * @returns A player object with the specified name and team.
 	 */
-	createPlayerCombinedNameTeam(nameTeam: string): IPlayer {
+	createPlayerCombinedNameTeam(nameTeam: string, salary: number): IPlayer {
 		const player = this.createPlayer();
-		this.updatePlayerCombinedNameTeam(player, nameTeam);
+		this.updatePlayerCombinedNameTeam(player, nameTeam, salary);
 		return player;
 	}
 
@@ -145,14 +146,15 @@ class Utils {
 	 * 
 	 * @param player The player object to update the name and team for.
 	 * @param nameTeam The name and team of the player combined (e.g., `Mike Trout (OF, LAA)`).
+	 * @param salary The salary of the player.
 	 */
-	updatePlayerCombinedNameTeam(player: IPlayer, nameTeam: string): void {
+	updatePlayerCombinedNameTeam(player: IPlayer, nameTeam: string, salary: number): void {
 		if (nameTeam) {
 			const nameTeamMatch = nameTeam.trim().match(this.nameTeamRegex);
 			if (nameTeamMatch && nameTeamMatch.length >= this.nameTeamRegexNameGroup && nameTeamMatch.length >= this.nameTeamRegexTeamGroup) {
 				const name = nameTeamMatch[this.nameTeamRegexNameGroup];
 				const team = nameTeamMatch[this.nameTeamRegexTeamGroup];
-				this.updatePlayer(player, name, team);
+				this.updatePlayer(player, name, team, salary);
 			}
 		}
 	}
@@ -162,25 +164,28 @@ class Utils {
 	 * 
 	 * @param name The name of the player (in either `First Last` format or `Last, First` format).
 	 * @param team The team of the player.
+	 * @param salary The salary of the player.
 	 * @returns A player object with the specified name and team.
 	 */
-	createPlayer(name?: string, team?: string): IPlayer {
+	createPlayer(name?: string, team?: string, salary?: number): IPlayer {
 		const player: IPlayer = {
 			name: name,
-			team: team
+			team: team,
+			salary: salary
 		};
-		this.updatePlayer(player, name, team);
+		this.updatePlayer(player, name, team, salary);
 		return player;
 	}
 
 	/**
-	 * Updates the player to the specified  name and team.
+	 * Updates the player to the specified name and team.
 	 * 
 	 * @param player The player object to update the name and team for.
 	 * @param name The name of the player (in either `First Last` format or `Last, First` format).
 	 * @param team The team of the player.
+	 * @param salary The salary of the player.
 	 */
-	updatePlayer(player: IPlayer, name?: string, team?: string): void {
+	updatePlayer(player: IPlayer, name?: string, team?: string, salary?: number): void {
 		if (name) {
 			// Remove the D/ST from the name for NFL defenses
 			name = name.replace("D/ST", "");
@@ -216,6 +221,9 @@ class Utils {
 			team = team.toUpperCase();
 			team = this.alternateTeams[team] || team;
 			player.team = team;
+		}
+		if (salary || salary === 0) {
+			player.salary = salary;
 		}
 	}
 

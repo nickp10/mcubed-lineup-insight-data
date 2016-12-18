@@ -96,7 +96,8 @@ export default class NumberFire implements IDataRetriever {
 			}
 			const playerName = $("a.full", item).text();
 			const playerTeam = $(".team-player__team.active", item).text();
-			utils.updatePlayer(player, playerName, playerTeam);
+			const playerSalary = this.parseSalary($(item).find(".cost").text());
+			utils.updatePlayer(player, playerName, playerTeam, playerSalary);
 			const points = $(item).find(".fp").text();
 			if (points) {
 				const stats: IPlayerStats = {
@@ -119,5 +120,15 @@ export default class NumberFire implements IDataRetriever {
 			}
 		}
 		return playersArray;
+	}
+
+	parseSalary(salary: string): number {
+		if (salary) {
+			salary = salary.trim().replace("$", "").replace(",", "");
+			if (salary !== "N/A") {
+				return parseInt(salary);
+			}
+		}
+		return 0;
 	}
 }

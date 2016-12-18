@@ -16,9 +16,9 @@ describe("RGRecent", () => {
 			const players = target.parsePlayers(data);
 
 			// Assert
-			testUtils.assertContainsPlayer(players, { name: "LeBron James", team: "CLE", stats: [{ source: "RotoGrinders", recentAveragePoints: 60.38 }] });
-			testUtils.assertContainsPlayer(players, { name: "Danilo Gallinari", team: "DEN", stats: [{ source: "RotoGrinders", recentAveragePoints: 27.25 }] });
-			testUtils.assertContainsPlayer(players, { name: "DeMarcus Cousins", team: "SAC", stats: [{ source: "RotoGrinders", recentAveragePoints: 44.42 }] });
+			testUtils.assertContainsPlayer(players, { name: "LeBron James", team: "CLE", salary: 9900, stats: [{ source: "RotoGrinders", recentAveragePoints: 60.38 }] });
+			testUtils.assertContainsPlayer(players, { name: "Danilo Gallinari", team: "DEN", salary: 5800, stats: [{ source: "RotoGrinders", recentAveragePoints: 27.25 }] });
+			testUtils.assertContainsPlayer(players, { name: "DeMarcus Cousins", team: "SAC", salary: 10400, stats: [{ source: "RotoGrinders", recentAveragePoints: 44.42 }] });
 		});
 
 		it("should parse the recent stats for an NBA FanDuel contest", () => {
@@ -30,9 +30,9 @@ describe("RGRecent", () => {
 			const players = target.parsePlayers(data);
 
 			// Assert
-			testUtils.assertContainsPlayer(players, { name: "LeBron James", team: "CLE", stats: [{ source: "RotoGrinders", recentAveragePoints: 55.5 }] });
-			testUtils.assertContainsPlayer(players, { name: "Danilo Gallinari", team: "DEN", stats: [{ source: "RotoGrinders", recentAveragePoints: 24.9 }] });
-			testUtils.assertContainsPlayer(players, { name: "DeMarcus Cousins", team: "SAC", stats: [{ source: "RotoGrinders", recentAveragePoints: 42.67 }] });
+			testUtils.assertContainsPlayer(players, { name: "LeBron James", team: "CLE", salary: 9900, stats: [{ source: "RotoGrinders", recentAveragePoints: 55.5 }] });
+			testUtils.assertContainsPlayer(players, { name: "Danilo Gallinari", team: "DEN", salary: 6100, stats: [{ source: "RotoGrinders", recentAveragePoints: 24.9 }] });
+			testUtils.assertContainsPlayer(players, { name: "DeMarcus Cousins", team: "SAC", salary: 9500, stats: [{ source: "RotoGrinders", recentAveragePoints: 42.67 }] });
 		});
 
 		it("should parse the recent stats for an NBA Yahoo contest", () => {
@@ -44,9 +44,9 @@ describe("RGRecent", () => {
 			const players = target.parsePlayers(data);
 
 			// Assert
-			testUtils.assertContainsPlayer(players, { name: "LeBron James", team: "CLE", stats: [{ source: "RotoGrinders", recentAveragePoints: 56 }] });
-			testUtils.assertContainsPlayer(players, { name: "Danilo Gallinari", team: "DEN", stats: [{ source: "RotoGrinders", recentAveragePoints: 26.23 }] });
-			testUtils.assertContainsPlayer(players, { name: "DeMarcus Cousins", team: "SAC", stats: [{ source: "RotoGrinders", recentAveragePoints: 42.83 }] });
+			testUtils.assertContainsPlayer(players, { name: "LeBron James", team: "CLE", salary: 53, stats: [{ source: "RotoGrinders", recentAveragePoints: 56 }] });
+			testUtils.assertContainsPlayer(players, { name: "Danilo Gallinari", team: "DEN", salary: 28, stats: [{ source: "RotoGrinders", recentAveragePoints: 26.23 }] });
+			testUtils.assertContainsPlayer(players, { name: "DeMarcus Cousins", team: "SAC", salary: 52, stats: [{ source: "RotoGrinders", recentAveragePoints: 42.83 }] });
 		});
 	});
 });

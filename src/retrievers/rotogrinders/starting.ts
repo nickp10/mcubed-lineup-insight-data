@@ -54,7 +54,7 @@ export default class RGStarting implements IDataRetriever {
 			if (sport === "nhl" || sport === "mlb") {
 				const pitcher = cheerio("div[class*=pitcher] a", lineup).first();
 				if (pitcher) {
-					const player = this.createPlayer(pitcher, pitcher, sport, team);
+					const player = this.createPlayer(pitcher, pitcher, sport, team, -1);
 					if (player) {
 						players.push(player);
 					}
@@ -79,7 +79,7 @@ export default class RGStarting implements IDataRetriever {
 						const salary = playerItem.attr("data-salary");
 						if (salary) {
 							const playerName = cheerio("span[class=pname] a", playerItem).first();
-							const player = this.createPlayer(playerItem, playerName, sport, team);
+							const player = this.createPlayer(playerItem, playerName, sport, team, this.parseSalary(salary));
 							if (player) {
 								hasSeenPlayer = true;
 								players.push(player);
@@ -92,13 +92,24 @@ export default class RGStarting implements IDataRetriever {
 		return undefined;
 	}
 
-	createPlayer(playerItem: Cheerio, playerName: Cheerio, sport: string, team: string): IPlayer {
+	parseSalary(salary: string): number {
+		salary = salary.replace("$", "").toLowerCase();
+		const thousand = salary.indexOf("k");
+		if (thousand >= 0) {
+			const value = parseFloat(salary.substr(0, thousand));
+			return value * 1000;
+		} else {
+			return parseInt(salary);
+		}
+	}
+
+	createPlayer(playerItem: Cheerio, playerName: Cheerio, sport: string, team: string, salary: number): IPlayer {
 		let name = playerName.attr("title");
 		if (!name) {
 			name = playerName.html();
 		}
 		if (name) {
-			const player = utils.createPlayer(name, team);
+			const player = utils.createPlayer(name, team, salary);
 			if (sport === "mlb") {
 				const startingOrder = cheerio("span[class=order]", playerItem).html();
 				player.battingOrder = this.parseBattingOrder(startingOrder);

@@ -16,8 +16,8 @@ describe("NumberFire", () => {
 			const players = target.parsePlayers(data);
 
 			// Assert
-			testUtils.assertContainsPlayer(players, { name: "Anthony Rizzo", team: "CHC", stats: [ { source: "NumberFire", projectedPoints: 8.7 }] });
-			testUtils.assertContainsPlayer(players, { name: "Jason Kipnis", team: "CLE", stats: [ { source: "NumberFire", projectedPoints: 8.3 }] });
+			testUtils.assertContainsPlayer(players, { name: "Anthony Rizzo", team: "CHC", salary: 0, stats: [ { source: "NumberFire", projectedPoints: 8.7 }] });
+			testUtils.assertContainsPlayer(players, { name: "Jason Kipnis", team: "CLE", salary: 0, stats: [ { source: "NumberFire", projectedPoints: 8.3 }] });
 		});
 
 		it("should parse the projection stats for an MLB FanDuel contest", () => {
@@ -29,8 +29,8 @@ describe("NumberFire", () => {
 			const players = target.parsePlayers(data);
 
 			// Assert
-			testUtils.assertContainsPlayer(players, { name: "Anthony Rizzo", team: "CHC", stats: [ { source: "NumberFire", projectedPoints: 11.4 }] });
-			testUtils.assertContainsPlayer(players, { name: "Jason Kipnis", team: "CLE", stats: [ { source: "NumberFire", projectedPoints: 10.8 }] });
+			testUtils.assertContainsPlayer(players, { name: "Anthony Rizzo", team: "CHC", salary: 0, stats: [ { source: "NumberFire", projectedPoints: 11.4 }] });
+			testUtils.assertContainsPlayer(players, { name: "Jason Kipnis", team: "CLE", salary: 0, stats: [ { source: "NumberFire", projectedPoints: 10.8 }] });
 		});
 
 		it("should parse the projection stats for an MLB Yahoo contest", () => {
@@ -42,8 +42,8 @@ describe("NumberFire", () => {
 			const players = target.parsePlayers(data);
 
 			// Assert
-			testUtils.assertContainsPlayer(players, { name: "Anthony Rizzo", team: "CHC", stats: [ { source: "NumberFire", projectedPoints: 7.2 }] });
-			testUtils.assertContainsPlayer(players, { name: "Jason Kipnis", team: "CLE", stats: [ { source: "NumberFire", projectedPoints: 6.9 }] });
+			testUtils.assertContainsPlayer(players, { name: "Anthony Rizzo", team: "CHC", salary: 0, stats: [ { source: "NumberFire", projectedPoints: 7.2 }] });
+			testUtils.assertContainsPlayer(players, { name: "Jason Kipnis", team: "CLE", salary: 0, stats: [ { source: "NumberFire", projectedPoints: 6.9 }] });
 		});
 
 		it("should parse the projection stats for an NBA DraftKings contest", () => {
@@ -55,8 +55,8 @@ describe("NumberFire", () => {
 			const players = target.parsePlayers(data);
 
 			// Assert
-			testUtils.assertContainsPlayer(players, { name: "Russell Westbrook", team: "OKC", stats: [ { source: "NumberFire", projectedPoints: 60.3 }] });
-			testUtils.assertContainsPlayer(players, { name: "James Harden", team: "HOU", stats: [ { source: "NumberFire", projectedPoints: 56.6 }] });
+			testUtils.assertContainsPlayer(players, { name: "Russell Westbrook", team: "OKC", salary: 11500, stats: [ { source: "NumberFire", projectedPoints: 60.3 }] });
+			testUtils.assertContainsPlayer(players, { name: "James Harden", team: "HOU", salary: 10900, stats: [ { source: "NumberFire", projectedPoints: 56.6 }] });
 		});
 
 		it("should parse the projection stats for an NBA FanDuel contest", () => {
@@ -68,8 +68,8 @@ describe("NumberFire", () => {
 			const players = target.parsePlayers(data);
 
 			// Assert
-			testUtils.assertContainsPlayer(players, { name: "Russell Westbrook", team: "OKC", stats: [ { source: "NumberFire", projectedPoints: 55.3 }] });
-			testUtils.assertContainsPlayer(players, { name: "James Harden", team: "HOU", stats: [ { source: "NumberFire", projectedPoints: 52.4 }] });
+			testUtils.assertContainsPlayer(players, { name: "Russell Westbrook", team: "OKC", salary: 12000, stats: [ { source: "NumberFire", projectedPoints: 55.3 }] });
+			testUtils.assertContainsPlayer(players, { name: "James Harden", team: "HOU", salary: 11200, stats: [ { source: "NumberFire", projectedPoints: 52.4 }] });
 		});
 
 		it("should parse the projection stats for an NBA Yahoo contest", () => {
@@ -81,8 +81,8 @@ describe("NumberFire", () => {
 			const players = target.parsePlayers(data);
 
 			// Assert
-			testUtils.assertContainsPlayer(players, { name: "Russell Westbrook", team: "OKC", stats: [ { source: "NumberFire", projectedPoints: 56.0 }] });
-			testUtils.assertContainsPlayer(players, { name: "James Harden", team: "HOU", stats: [ { source: "NumberFire", projectedPoints: 54.0 }] });
+			testUtils.assertContainsPlayer(players, { name: "Russell Westbrook", team: "OKC", salary: 54, stats: [ { source: "NumberFire", projectedPoints: 56.0 }] });
+			testUtils.assertContainsPlayer(players, { name: "James Harden", team: "HOU", salary: 53, stats: [ { source: "NumberFire", projectedPoints: 54.0 }] });
 		});
 
 		it("should parse the projection stats for an NFL DraftKings contest", () => {
@@ -94,8 +94,8 @@ describe("NumberFire", () => {
 			const players = target.parsePlayers(data);
 
 			// Assert
-			testUtils.assertContainsPlayer(players, { name: "Aaron Rodgers", team: "GB", stats: [ { source: "NumberFire", projectedPoints: 22.2 }] });
-			testUtils.assertContainsPlayer(players, { name: "Melvin Gordon", team: "SD", stats: [ { source: "NumberFire", projectedPoints: 17.4 }] });
+			testUtils.assertContainsPlayer(players, { name: "Aaron Rodgers", team: "GB", salary: 7500, stats: [ { source: "NumberFire", projectedPoints: 22.2 }] });
+			testUtils.assertContainsPlayer(players, { name: "Melvin Gordon", team: "SD", salary: 5700, stats: [ { source: "NumberFire", projectedPoints: 17.4 }] });
 		});
 
 		it("should parse the projection stats for an NFL FanDuel contest", () => {
@@ -107,8 +107,8 @@ describe("NumberFire", () => {
 			const players = target.parsePlayers(data);
 
 			// Assert
-			testUtils.assertContainsPlayer(players, { name: "Aaron Rodgers", team: "GB", stats: [ { source: "NumberFire", projectedPoints: 21.9 }] });
-			testUtils.assertContainsPlayer(players, { name: "Melvin Gordon", team: "SD", stats: [ { source: "NumberFire", projectedPoints: 15.2 }] });
+			testUtils.assertContainsPlayer(players, { name: "Aaron Rodgers", team: "GB", salary: 8800, stats: [ { source: "NumberFire", projectedPoints: 21.9 }] });
+			testUtils.assertContainsPlayer(players, { name: "Melvin Gordon", team: "SD", salary: 7200, stats: [ { source: "NumberFire", projectedPoints: 15.2 }] });
 		});
 
 		it("should parse the projection stats for an NFL Yahoo contest", () => {
@@ -120,8 +120,8 @@ describe("NumberFire", () => {
 			const players = target.parsePlayers(data);
 
 			// Assert
-			testUtils.assertContainsPlayer(players, { name: "Aaron Rodgers", team: "GB", stats: [ { source: "NumberFire", projectedPoints: 21.9 }] });
-			testUtils.assertContainsPlayer(players, { name: "Melvin Gordon", team: "SD", stats: [ { source: "NumberFire", projectedPoints: 15.2 }] });
+			testUtils.assertContainsPlayer(players, { name: "Aaron Rodgers", team: "GB", salary: 37, stats: [ { source: "NumberFire", projectedPoints: 21.9 }] });
+			testUtils.assertContainsPlayer(players, { name: "Melvin Gordon", team: "SD", salary: 30, stats: [ { source: "NumberFire", projectedPoints: 15.2 }] });
 		});
 	});
 });

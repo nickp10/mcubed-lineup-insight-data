@@ -8,6 +8,7 @@ interface IIndexMapping {
 	nameIndex: number;
 	teamIndex: number;
 	pointsIndex: number;
+	salaryIndex: number;
 }
 
 export default class DFSR implements IDataRetriever {
@@ -33,22 +34,26 @@ export default class DFSR implements IDataRetriever {
 	static mlbIndices: IIndexMapping = {
 		nameIndex: 1,
 		teamIndex: 10,
-		pointsIndex: 2
+		pointsIndex: 2,
+		salaryIndex: 3
 	};
 	static nbaIndices: IIndexMapping = {
 		nameIndex: 1,
 		teamIndex: 7,
-		pointsIndex: 2
+		pointsIndex: 2,
+		salaryIndex: 3
 	};
 	static nflIndices: IIndexMapping = {
 		nameIndex: 1,
 		teamIndex: 2,
-		pointsIndex: 4
+		pointsIndex: 4,
+		salaryIndex: 6
 	};
 	static nhlIndices: IIndexMapping = {
 		nameIndex: 1,
 		teamIndex: 6,
-		pointsIndex: 2
+		pointsIndex: 2,
+		salaryIndex: 4
 	};
 
 	draftKings = {
@@ -87,10 +92,11 @@ export default class DFSR implements IDataRetriever {
 			return data.split(/\r?\n/).map(line => {
 				if (line) {
 					const parts = line.split(/,/);
-					if (parts && indices.nameIndex < parts.length && indices.teamIndex < parts.length && indices.pointsIndex < parts.length) {
+					if (parts && indices.nameIndex < parts.length && indices.teamIndex < parts.length && indices.pointsIndex < parts.length && indices.salaryIndex < parts.length) {
 						const name = parts[indices.nameIndex];
 						const team = parts[indices.teamIndex];
-						const player = utils.createPlayer(name, team);
+						const salary = parseInt(parts[indices.salaryIndex]);
+						const player = utils.createPlayer(name, team, salary);
 						player.stats = [
 							{
 								source: "DailyFantasySportsRankings",
