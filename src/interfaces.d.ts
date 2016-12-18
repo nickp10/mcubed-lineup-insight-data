@@ -25,6 +25,7 @@ export interface IPlayer {
 	isStarter?: boolean;
 	name: string;
 	team: string;
+	salary: number;
 	stats?: IPlayerStats[];
 }
 

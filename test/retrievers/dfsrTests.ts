@@ -15,8 +15,8 @@ describe("DFSR", () => {
 			const players = target.parsePlayers(data, DFSR.mlbIndices);
 
 			// Assert
-			testUtils.assertContainsPlayer(players, { name: "Josh Donaldson", team: "TOR", stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 9.811496235 }] });
-			testUtils.assertContainsPlayer(players, { name: "David Ortiz", team: "BOS", stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 10.37103443 }] });
+			testUtils.assertContainsPlayer(players, { name: "Josh Donaldson", team: "TOR", salary: 5400, stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 9.811496235 }] });
+			testUtils.assertContainsPlayer(players, { name: "David Ortiz", team: "BOS", salary: 5200, stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 10.37103443 }] });
 		});
 
 		it("should parse the projection stats for an MLB FanDuel contest", () => {
@@ -28,8 +28,8 @@ describe("DFSR", () => {
 			const players = target.parsePlayers(data, DFSR.mlbIndices);
 
 			// Assert
-			testUtils.assertContainsPlayer(players, { name: "Josh Donaldson", team: "TOR", stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 12.91184611 }] });
-			testUtils.assertContainsPlayer(players, { name: "David Ortiz", team: "BOS", stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 13.78429798 }] });
+			testUtils.assertContainsPlayer(players, { name: "Josh Donaldson", team: "TOR", salary: 3900, stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 12.91184611 }] });
+			testUtils.assertContainsPlayer(players, { name: "David Ortiz", team: "BOS", salary: 4300, stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 13.78429798 }] });
 		});
 
 		it("should parse the projection stats for an NFL DraftKings contest", () => {
@@ -41,8 +41,8 @@ describe("DFSR", () => {
 			const players = target.parsePlayers(data, DFSR.nflIndices);
 
 			// Assert
-			testUtils.assertContainsPlayer(players, { name: "Julio Jones", team: "ATL", stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 20.82037324 }] });
-			testUtils.assertContainsPlayer(players, { name: "Aaron Rodgers", team: "GB", stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 22.44357271 }] });
+			testUtils.assertContainsPlayer(players, { name: "Julio Jones", team: "ATL", salary: 9600, stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 20.82037324 }] });
+			testUtils.assertContainsPlayer(players, { name: "Aaron Rodgers", team: "GB", salary: 7700, stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 22.44357271 }] });
 		});
 
 		it("should parse the projection stats for an NFL FanDuel contest", () => {
@@ -54,8 +54,8 @@ describe("DFSR", () => {
 			const players = target.parsePlayers(data, DFSR.nflIndices);
 
 			// Assert
-			testUtils.assertContainsPlayer(players, { name: "Julio Jones", team: "ATL", stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 17.25377929 }] });
-			testUtils.assertContainsPlayer(players, { name: "Aaron Rodgers", team: "GB", stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 21.84755108 }] });
+			testUtils.assertContainsPlayer(players, { name: "Julio Jones", team: "ATL", salary: 8900, stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 17.25377929 }] });
+			testUtils.assertContainsPlayer(players, { name: "Aaron Rodgers", team: "GB", salary: 9100, stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 21.84755108 }] });
 		});
 	});
 });

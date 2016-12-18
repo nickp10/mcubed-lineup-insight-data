@@ -16,6 +16,7 @@ class TestUtils {
 		assert.equal(matchingPlayers.length, 1, `No players match with name: ${expectedPlayer.name}`);
 		const actualPlayer = matchingPlayers[0];
 		assert.equal(actualPlayer.team, expectedPlayer.team);
+		assert.equal(actualPlayer.salary, expectedPlayer.salary);
 		assert.equal(actualPlayer.isStarter, expectedPlayer.isStarter);
 		assert.equal(actualPlayer.battingOrder, expectedPlayer.battingOrder);
 		if (expectedPlayer.stats) {
