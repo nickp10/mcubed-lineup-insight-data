@@ -2,6 +2,7 @@
 
 import * as assert from "assert";
 import * as fs from "fs";
+import PlayerFactory from "../../../src/playerFactory";
 import RGProjections from "../../../src/retrievers/rotogrinders/projections";
 import * as testUtils from "../../testUtils";
 
@@ -11,9 +12,10 @@ describe("RGProjections", () => {
 			// Arrange
 			const target = new RGProjections();
 			const data = fs.readFileSync("test/content/rgProjectionsNBADraftKings.html", "utf-8");
+			const playerFactory = new PlayerFactory("nba");
 
 			// Act
-			const players = target.parsePlayers(data);
+			const players = target.parsePlayers(playerFactory, data);
 
 			// Assert
 			testUtils.assertContainsPlayer(players, { name: "Blake Griffin", team: "LAC", salary: 8600, stats: [{ source: "RotoGrinders", projectedPoints: 40.83, projectedCeiling: 52.6707, projectedFloor: 28.9893 }] });
@@ -25,9 +27,10 @@ describe("RGProjections", () => {
 			// Arrange
 			const target = new RGProjections();
 			const data = fs.readFileSync("test/content/rgProjectionsNBAFanDuel.html", "utf-8");
+			const playerFactory = new PlayerFactory("nba");
 
 			// Act
-			const players = target.parsePlayers(data);
+			const players = target.parsePlayers(playerFactory, data);
 
 			// Assert
 			testUtils.assertContainsPlayer(players, { name: "Blake Griffin", team: "LAC", salary: 8600, stats: [{ source: "RotoGrinders", projectedPoints: 39.15, projectedCeiling: 50.5035, projectedFloor: 27.7965 }] });
@@ -39,9 +42,10 @@ describe("RGProjections", () => {
 			// Arrange
 			const target = new RGProjections();
 			const data = fs.readFileSync("test/content/rgProjectionsNFLDraftKings.html", "utf-8");
+			const playerFactory = new PlayerFactory("nfl");
 
 			// Act
-			const players = target.parsePlayers(data);
+			const players = target.parsePlayers(playerFactory, data);
 
 			// Assert
 			testUtils.assertContainsPlayer(players, { name: "Tom Brady", team: "NE", salary: 7600, stats: [{ source: "RotoGrinders", projectedPoints: 25.73, projectedCeiling: 31.3906, projectedFloor: 20.0694 }] });
@@ -52,9 +56,10 @@ describe("RGProjections", () => {
 			// Arrange
 			const target = new RGProjections();
 			const data = fs.readFileSync("test/content/rgProjectionsNFLFanDuel.html", "utf-8");
+			const playerFactory = new PlayerFactory("nfl");
 
 			// Act
-			const players = target.parsePlayers(data);
+			const players = target.parsePlayers(playerFactory, data);
 
 			// Assert
 			testUtils.assertContainsPlayer(players, { name: "Tom Brady", team: "NE", salary: 8700, stats: [{ source: "RotoGrinders", projectedPoints: 22.31, projectedCeiling: 27.2182, projectedFloor: 17.4018 }] });

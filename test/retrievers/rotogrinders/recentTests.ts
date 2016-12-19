@@ -2,6 +2,7 @@
 
 import * as assert from "assert";
 import * as fs from "fs";
+import PlayerFactory from "../../../src/playerFactory";
 import RGRecent from "../../../src/retrievers/rotogrinders/recent";
 import * as testUtils from "../../testUtils";
 
@@ -11,9 +12,10 @@ describe("RGRecent", () => {
 			// Arrange
 			const target = new RGRecent();
 			const data = fs.readFileSync("test/content/rgRecentNBADraftKings.html", "utf-8");
+			const playerFactory = new PlayerFactory("nba");
 
 			// Act
-			const players = target.parsePlayers(data);
+			const players = target.parsePlayers(playerFactory, data);
 
 			// Assert
 			testUtils.assertContainsPlayer(players, { name: "LeBron James", team: "CLE", salary: 9900, stats: [{ source: "RotoGrinders", recentAveragePoints: 60.38 }] });
@@ -25,9 +27,10 @@ describe("RGRecent", () => {
 			// Arrange
 			const target = new RGRecent();
 			const data = fs.readFileSync("test/content/rgRecentNBAFanDuel.html", "utf-8");
+			const playerFactory = new PlayerFactory("nba");
 
 			// Act
-			const players = target.parsePlayers(data);
+			const players = target.parsePlayers(playerFactory, data);
 
 			// Assert
 			testUtils.assertContainsPlayer(players, { name: "LeBron James", team: "CLE", salary: 9900, stats: [{ source: "RotoGrinders", recentAveragePoints: 55.5 }] });
@@ -39,9 +42,10 @@ describe("RGRecent", () => {
 			// Arrange
 			const target = new RGRecent();
 			const data = fs.readFileSync("test/content/rgRecentNBAYahoo.html", "utf-8");
+			const playerFactory = new PlayerFactory("nba");
 
 			// Act
-			const players = target.parsePlayers(data);
+			const players = target.parsePlayers(playerFactory, data);
 
 			// Assert
 			testUtils.assertContainsPlayer(players, { name: "LeBron James", team: "CLE", salary: 53, stats: [{ source: "RotoGrinders", recentAveragePoints: 56 }] });

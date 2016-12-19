@@ -2,6 +2,7 @@
 
 import * as fs from "fs";
 import DFSR from "../../src/retrievers/dfsr";
+import PlayerFactory from "../../src/playerFactory";
 import * as testUtils from "../testUtils";
 
 describe("DFSR", () => {
@@ -10,9 +11,10 @@ describe("DFSR", () => {
 			// Arrange
 			const target = new DFSR();
 			const data = fs.readFileSync("test/content/dfsrMLBDraftKings.csv", "utf-8");
+			const playerFactory = new PlayerFactory("mlb");
 
 			// Act
-			const players = target.parsePlayers(data, DFSR.mlbIndices);
+			const players = target.parsePlayers(playerFactory, data, DFSR.mlbIndices);
 
 			// Assert
 			testUtils.assertContainsPlayer(players, { name: "Josh Donaldson", team: "TOR", salary: 5400, stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 9.811496235 }] });
@@ -23,9 +25,10 @@ describe("DFSR", () => {
 			// Arrange
 			const target = new DFSR();
 			const data = fs.readFileSync("test/content/dfsrMLBFanDuel.csv", "utf-8");
+			const playerFactory = new PlayerFactory("mlb");
 
 			// Act
-			const players = target.parsePlayers(data, DFSR.mlbIndices);
+			const players = target.parsePlayers(playerFactory, data, DFSR.mlbIndices);
 
 			// Assert
 			testUtils.assertContainsPlayer(players, { name: "Josh Donaldson", team: "TOR", salary: 3900, stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 12.91184611 }] });
@@ -36,9 +39,10 @@ describe("DFSR", () => {
 			// Arrange
 			const target = new DFSR();
 			const data = fs.readFileSync("test/content/dfsrNFLDraftKings.csv", "utf-8");
+			const playerFactory = new PlayerFactory("nfl");
 
 			// Act
-			const players = target.parsePlayers(data, DFSR.nflIndices);
+			const players = target.parsePlayers(playerFactory, data, DFSR.nflIndices);
 
 			// Assert
 			testUtils.assertContainsPlayer(players, { name: "Julio Jones", team: "ATL", salary: 9600, stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 20.82037324 }] });
@@ -49,9 +53,10 @@ describe("DFSR", () => {
 			// Arrange
 			const target = new DFSR();
 			const data = fs.readFileSync("test/content/dfsrNFLFanDuel.csv", "utf-8");
+			const playerFactory = new PlayerFactory("nfl");
 
 			// Act
-			const players = target.parsePlayers(data, DFSR.nflIndices);
+			const players = target.parsePlayers(playerFactory, data, DFSR.nflIndices);
 
 			// Assert
 			testUtils.assertContainsPlayer(players, { name: "Julio Jones", team: "ATL", salary: 8900, stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 17.25377929 }] });

@@ -1,6 +1,7 @@
 /// <reference path="../../typings/index.d.ts" />
 
 import { IDataRetriever, ISiteDataRetriever, IPlayer, IPlayerStats } from "../interfaces";
+import PlayerFactory from "../playerFactory";
 import * as Promise from "promise";
 import * as utils from "../utils";
 
@@ -57,37 +58,37 @@ export default class DFSR implements IDataRetriever {
 	};
 
 	draftKings = {
-		mlb: () => this.getData(DFSR.draftKingsMLBSiteURL, DFSR.mlbIndices),
-		nba: () => this.getData(DFSR.draftKingsNBASiteURL, DFSR.nbaIndices),
-		nfl: () => this.getData(DFSR.draftKingsNFLSiteURL, DFSR.nflIndices),
-		nhl: () => this.getData(DFSR.draftKingsNHLSiteURL, DFSR.nhlIndices)
+		mlb: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.draftKingsMLBSiteURL, DFSR.mlbIndices),
+		nba: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.draftKingsNBASiteURL, DFSR.nbaIndices),
+		nfl: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.draftKingsNFLSiteURL, DFSR.nflIndices),
+		nhl: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.draftKingsNHLSiteURL, DFSR.nhlIndices)
 	};
 
 	fanDuel = {
-		mlb: () => this.getData(DFSR.fanDuelMLBSiteURL, DFSR.mlbIndices),
-		nba: () => this.getData(DFSR.fanDuelNBASiteURL, DFSR.nbaIndices),
-		nfl: () => this.getData(DFSR.fanDuelNFLSiteURL, DFSR.nflIndices),
-		nhl: () => this.getData(DFSR.fanDuelNHLSiteURL, DFSR.nhlIndices)
+		mlb: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.fanDuelMLBSiteURL, DFSR.mlbIndices),
+		nba: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.fanDuelNBASiteURL, DFSR.nbaIndices),
+		nfl: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.fanDuelNFLSiteURL, DFSR.nflIndices),
+		nhl: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.fanDuelNHLSiteURL, DFSR.nhlIndices)
 	};
 
 	yahoo = {
-		mlb: () => this.getData(DFSR.yahooMLBSiteURL, DFSR.mlbIndices),
-		nba: () => this.getData(DFSR.yahooNBASiteURL, DFSR.nbaIndices),
-		nfl: () => this.getData(DFSR.yahooNFLSiteURL, DFSR.nflIndices),
-		nhl: () => this.getData(DFSR.yahooNHLSiteURL, DFSR.nhlIndices)
+		mlb: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.yahooMLBSiteURL, DFSR.mlbIndices),
+		nba: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.yahooNBASiteURL, DFSR.nbaIndices),
+		nfl: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.yahooNFLSiteURL, DFSR.nflIndices),
+		nhl: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.yahooNHLSiteURL, DFSR.nhlIndices)
 	};
 
-	getData(siteURL: string, indices: IIndexMapping): Promise.IThenable<IPlayer[]> {
+	getData(playerFactory: PlayerFactory, siteURL: string, indices: IIndexMapping): Promise.IThenable<IPlayer[]> {
 		return utils.sendHttpsRequest({
 			hostname: "www.dailyfantasysportsrankings.com",
 			path: siteURL,
 			method: "GET"
 		}).then((dataResp) => {
-			return this.parsePlayers(dataResp.body, indices);
+			return this.parsePlayers(playerFactory, dataResp.body, indices);
 		});
 	}
 
-	parsePlayers(data: string, indices: IIndexMapping): IPlayer[] {
+	parsePlayers(playerFactory: PlayerFactory, data: string, indices: IIndexMapping): IPlayer[] {
 		if (data && indices) {
 			return data.split(/\r?\n/).map(line => {
 				if (line) {
@@ -96,7 +97,7 @@ export default class DFSR implements IDataRetriever {
 						const name = parts[indices.nameIndex];
 						const team = parts[indices.teamIndex];
 						const salary = parseInt(parts[indices.salaryIndex]);
-						const player = utils.createPlayer(name, team, salary);
+						const player = playerFactory.createPlayer(name, team, salary);
 						player.stats = [
 							{
 								source: "DailyFantasySportsRankings",

@@ -1,6 +1,7 @@
 /// <reference path="../typings/index.d.ts" />
 
 import * as http from "http";
+import PlayerFactory from "./playerFactory";
 import * as Promise from "promise";
 
 export interface IIncomingMessage extends http.IncomingMessage {
@@ -14,10 +15,10 @@ export interface IDataRetriever {
 }
 
 export interface ISiteDataRetriever {
-	mlb: () => Promise.IThenable<IPlayer[]>;
-	nba: () => Promise.IThenable<IPlayer[]>;
-	nfl: () => Promise.IThenable<IPlayer[]>;
-	nhl: () => Promise.IThenable<IPlayer[]>;
+	mlb: (playerFactory: PlayerFactory) => Promise.IThenable<IPlayer[]>;
+	nba: (playerFactory: PlayerFactory) => Promise.IThenable<IPlayer[]>;
+	nfl: (playerFactory: PlayerFactory) => Promise.IThenable<IPlayer[]>;
+	nhl: (playerFactory: PlayerFactory) => Promise.IThenable<IPlayer[]>;
 }
 
 export interface IPlayer {

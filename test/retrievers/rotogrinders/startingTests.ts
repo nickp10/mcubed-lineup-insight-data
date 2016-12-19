@@ -3,6 +3,7 @@
 import * as assert from "assert";
 import * as cheerio from "cheerio";
 import * as fs from "fs";
+import PlayerFactory from "../../../src/playerFactory";
 import RGStarting from "../../../src/retrievers/rotogrinders/starting";
 import * as testUtils from "../../testUtils";
 
@@ -12,9 +13,10 @@ describe("RGStarting", () => {
 			// Arrange
 			const target = new RGStarting();
 			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingMLBDraftKings.html", "utf-8"));
+			const playerFactory = new PlayerFactory("mlb");
 
 			// Act
-			const players = target.parsePlayers(data, "mlb");
+			const players = target.parsePlayers(playerFactory, data, "mlb");
 
 			// Assert
 			assert.equal(players.length, 2);
@@ -28,9 +30,10 @@ describe("RGStarting", () => {
 			// Arrange
 			const target = new RGStarting();
 			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingMLBFanDuel.html", "utf-8"));
+			const playerFactory = new PlayerFactory("mlb");
 
 			// Act
-			const players = target.parsePlayers(data, "mlb");
+			const players = target.parsePlayers(playerFactory, data, "mlb");
 
 			// Assert
 			assert.equal(players.length, 2);
@@ -44,9 +47,10 @@ describe("RGStarting", () => {
 			// Arrange
 			const target = new RGStarting();
 			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingMLBYahoo.html", "utf-8"));
+			const playerFactory = new PlayerFactory("mlb");
 
 			// Act
-			const players = target.parsePlayers(data, "mlb");
+			const players = target.parsePlayers(playerFactory, data, "mlb");
 
 			// Assert
 			assert.equal(players.length, 2);
@@ -60,9 +64,10 @@ describe("RGStarting", () => {
 			// Arrange
 			const target = new RGStarting();
 			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNBADraftKings.html", "utf-8"));
+			const playerFactory = new PlayerFactory("nba");
 
 			// Act
-			const players = target.parsePlayers(data, "nba");
+			const players = target.parsePlayers(playerFactory, data, "nba");
 
 			// Assert
 			assert.equal(players.length, 30);
@@ -75,9 +80,10 @@ describe("RGStarting", () => {
 			// Arrange
 			const target = new RGStarting();
 			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNBAFanDuel.html", "utf-8"));
+			const playerFactory = new PlayerFactory("nba");
 
 			// Act
-			const players = target.parsePlayers(data, "nba");
+			const players = target.parsePlayers(playerFactory, data, "nba");
 
 			// Assert
 			assert.equal(players.length, 30);
@@ -90,9 +96,10 @@ describe("RGStarting", () => {
 			// Arrange
 			const target = new RGStarting();
 			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNBAYahoo.html", "utf-8"));
+			const playerFactory = new PlayerFactory("nba");
 
 			// Act
-			const players = target.parsePlayers(data, "nba");
+			const players = target.parsePlayers(playerFactory, data, "nba");
 
 			// Assert
 			assert.equal(players.length, 29);
@@ -105,9 +112,10 @@ describe("RGStarting", () => {
 			// Arrange
 			const target = new RGStarting();
 			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNFLDraftKings.html", "utf-8"));
+			const playerFactory = new PlayerFactory("nfl");
 
 			// Act
-			const players = target.parsePlayers(data, "nfl");
+			const players = target.parsePlayers(playerFactory, data, "nfl");
 
 			// Assert
 			testUtils.assertContainsPlayer(players, { name: "Russell Wilson", team: "SEA", salary: 6700, isStarter: true });
@@ -119,9 +127,10 @@ describe("RGStarting", () => {
 			// Arrange
 			const target = new RGStarting();
 			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNFLFanDuel.html", "utf-8"));
+			const playerFactory = new PlayerFactory("nfl");
 
 			// Act
-			const players = target.parsePlayers(data, "nfl");
+			const players = target.parsePlayers(playerFactory, data, "nfl");
 
 			// Assert
 			testUtils.assertContainsPlayer(players, { name: "Russell Wilson", team: "SEA", salary: 8000, isStarter: true });
@@ -133,9 +142,10 @@ describe("RGStarting", () => {
 			// Arrange
 			const target = new RGStarting();
 			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNFLYahoo.html", "utf-8"));
+			const playerFactory = new PlayerFactory("nfl");
 
 			// Act
-			const players = target.parsePlayers(data, "nfl");
+			const players = target.parsePlayers(playerFactory, data, "nfl");
 
 			// Assert
 			testUtils.assertContainsPlayer(players, { name: "Russell Wilson", team: "SEA", salary: 34, isStarter: true });

@@ -1,6 +1,7 @@
 import { IDataRetriever, ISiteDataRetriever, IPlayer } from "./interfaces";
 import DFSR from "./retrievers/dfsr";
 import NumberFire from "./retrievers/numberFire";
+import PlayerFactory from "./playerFactory";
 import RGProjections from "./retrievers/rotogrinders/projections";
 import RGRecent from "./retrievers/rotogrinders/recent";
 import RGStarting from "./retrievers/rotogrinders/starting";
@@ -22,9 +23,10 @@ class Data {
 		this.retrievers.forEach((retriever) => {
 			const siteRetriever: ISiteDataRetriever = retriever[contestType];
 			if (siteRetriever) {
-				const sportRetriever: () => Promise.IThenable<IPlayer[]> = siteRetriever[sport];
+				const sportRetriever: (playerFactory: PlayerFactory) => Promise.IThenable<IPlayer[]> = siteRetriever[sport];
 				if (sportRetriever) {
-					const retrieverPromise = sportRetriever();
+					const playerFactory = new PlayerFactory(sport);
+					const retrieverPromise = sportRetriever(playerFactory);
 					if (retrieverPromise) {
 						promises.push(retrieverPromise);
 					}

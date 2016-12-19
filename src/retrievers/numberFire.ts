@@ -2,6 +2,7 @@
 
 import { IDataRetriever, ISiteDataRetriever, IPlayer, IPlayerStats } from "../interfaces";
 import * as cheerio from "cheerio";
+import PlayerFactory from "../playerFactory";
 import * as Promise from "promise";
 import * as setCookieParser from "set-cookie-parser";
 import * as utils from "../utils";
@@ -37,27 +38,27 @@ export default class NumberFire implements IDataRetriever {
 	];
 
 	fanDuel = {
-		mlb: () => this.getData(NumberFire.mlbSetSiteURL, NumberFire.fanDuelID, NumberFire.mlbDataSiteURLs),
-		nba: () => this.getData(NumberFire.nbaSetSiteURL, NumberFire.fanDuelID, NumberFire.nbaDataSiteURLs),
-		nfl: () => this.getData(NumberFire.nflSetSiteURL, NumberFire.fanDuelID, NumberFire.nflDataSiteURLs),
-		nhl: () => this.getData(NumberFire.nhlSetSiteURL, NumberFire.fanDuelID, NumberFire.nhlDataSiteURLs)
+		mlb: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.mlbSetSiteURL, NumberFire.fanDuelID, NumberFire.mlbDataSiteURLs),
+		nba: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.nbaSetSiteURL, NumberFire.fanDuelID, NumberFire.nbaDataSiteURLs),
+		nfl: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.nflSetSiteURL, NumberFire.fanDuelID, NumberFire.nflDataSiteURLs),
+		nhl: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.nhlSetSiteURL, NumberFire.fanDuelID, NumberFire.nhlDataSiteURLs)
 	};
 
 	draftKings = {
-		mlb: () => this.getData(NumberFire.mlbSetSiteURL, NumberFire.draftKingsID, NumberFire.mlbDataSiteURLs),
-		nba: () => this.getData(NumberFire.nbaSetSiteURL, NumberFire.draftKingsID, NumberFire.nbaDataSiteURLs),
-		nfl: () => this.getData(NumberFire.nflSetSiteURL, NumberFire.draftKingsID, NumberFire.nflDataSiteURLs),
-		nhl: () => this.getData(NumberFire.nhlSetSiteURL, NumberFire.draftKingsID, NumberFire.nhlDataSiteURLs)
+		mlb: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.mlbSetSiteURL, NumberFire.draftKingsID, NumberFire.mlbDataSiteURLs),
+		nba: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.nbaSetSiteURL, NumberFire.draftKingsID, NumberFire.nbaDataSiteURLs),
+		nfl: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.nflSetSiteURL, NumberFire.draftKingsID, NumberFire.nflDataSiteURLs),
+		nhl: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.nhlSetSiteURL, NumberFire.draftKingsID, NumberFire.nhlDataSiteURLs)
 	};
 
 	yahoo = {
-		mlb: () => this.getData(NumberFire.mlbSetSiteURL, NumberFire.yahooID, NumberFire.mlbDataSiteURLs),
-		nba: () => this.getData(NumberFire.nbaSetSiteURL, NumberFire.yahooID, NumberFire.nbaDataSiteURLs),
-		nfl: () => this.getData(NumberFire.nflSetSiteURL, NumberFire.yahooID, NumberFire.nflDataSiteURLs),
-		nhl: () => this.getData(NumberFire.nhlSetSiteURL, NumberFire.yahooID, NumberFire.nhlDataSiteURLs)
+		mlb: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.mlbSetSiteURL, NumberFire.yahooID, NumberFire.mlbDataSiteURLs),
+		nba: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.nbaSetSiteURL, NumberFire.yahooID, NumberFire.nbaDataSiteURLs),
+		nfl: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.nflSetSiteURL, NumberFire.yahooID, NumberFire.nflDataSiteURLs),
+		nhl: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.nhlSetSiteURL, NumberFire.yahooID, NumberFire.nhlDataSiteURLs)
 	};
 
-	getData(setSiteURL: string, siteID: string, dataSiteURLs: string[]): Promise.IThenable<IPlayer[]> {
+	getData(playerFactory: PlayerFactory, setSiteURL: string, siteID: string, dataSiteURLs: string[]): Promise.IThenable<IPlayer[]> {
 		return utils.sendHttpsRequest({
 			hostname: "www.numberfire.com",
 			path: setSiteURL,
@@ -65,14 +66,14 @@ export default class NumberFire implements IDataRetriever {
 		}, `site=${siteID}`).then((setSiteResp) => {
 			const setCookies = setCookieParser(setSiteResp);
 			const cookieHeaders = setCookies.map(c => `${c.name}=${c.value}`);
-			const dataPromises = dataSiteURLs.map(dataSiteURL => this.getDataForURL(dataSiteURL, cookieHeaders));
+			const dataPromises = dataSiteURLs.map(dataSiteURL => this.getDataForURL(playerFactory, dataSiteURL, cookieHeaders));
 			return Promise.all(dataPromises).then((playersArrays) => {
 				return utils.flattenArray<IPlayer>(playersArrays);
 			});
 		});
 	}
 
-	getDataForURL(dataSiteURL: string, cookieHeaders: string[]): Promise.IThenable<IPlayer[]> {
+	getDataForURL(playerFactory: PlayerFactory, dataSiteURL: string, cookieHeaders: string[]): Promise.IThenable<IPlayer[]> {
 		return utils.sendHttpsRequest({
 			hostname: "www.numberfire.com",
 			path: dataSiteURL,
@@ -81,23 +82,23 @@ export default class NumberFire implements IDataRetriever {
 				Cookie: cookieHeaders
 			}
 		}).then((dataResp) => {
-			return this.parsePlayers(cheerio.load(dataResp.body));
+			return this.parsePlayers(playerFactory, cheerio.load(dataResp.body));
 		});
 	}
 
-	parsePlayers($: CheerioStatic): IPlayer[] {
+	parsePlayers(playerFactory: PlayerFactory, $: CheerioStatic): IPlayer[] {
 		const players: {[key:string]: IPlayer} = { };
 		$(".projection-table__body tr").each((index, item) => {
 			const playerId = $(item).data("player-id");
 			let player = players[playerId];
 			if (!player) {
-				player = utils.createPlayer();
+				player = playerFactory.createPlayer();
 				players[playerId] = player;
 			}
 			const playerName = $("a.full", item).text();
 			const playerTeam = $(".team-player__team.active", item).text();
 			const playerSalary = this.parseSalary($(item).find(".cost").text());
-			utils.updatePlayer(player, playerName, playerTeam, playerSalary);
+			playerFactory.updatePlayer(player, playerName, playerTeam, playerSalary);
 			const points = $(item).find(".fp").text();
 			if (points) {
 				const stats: IPlayerStats = {

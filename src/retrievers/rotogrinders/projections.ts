@@ -1,6 +1,7 @@
 /// <reference path="../../../typings/index.d.ts" />
 
 import { IDataRetriever, ISiteDataRetriever, IPlayer, IPlayerStats } from "../../interfaces";
+import PlayerFactory from "../../playerFactory";
 import * as Promise from "promise";
 import * as utils from "../../utils";
 
@@ -10,34 +11,34 @@ export default class RGProjections implements IDataRetriever {
 	static dataRegexGroup = 1;
 
 	draftKings = {
-		mlb: () => this.getData("draftkings", "mlb-pitcher", "mlb-hitter"),
-		nba: () => this.getData("draftkings", "nba-player"),
-		nfl: () => this.getData("draftkings", "nfl-qb", "nfl-flex", "nfl-defense"),
-		nhl: () => this.getData("draftkings", "nhl-skater", "nhl-goalie")
+		mlb: (playerFactory: PlayerFactory) => this.getData(playerFactory, "draftkings", "mlb-pitcher", "mlb-hitter"),
+		nba: (playerFactory: PlayerFactory) => this.getData(playerFactory, "draftkings", "nba-player"),
+		nfl: (playerFactory: PlayerFactory) => this.getData(playerFactory, "draftkings", "nfl-qb", "nfl-flex", "nfl-defense"),
+		nhl: (playerFactory: PlayerFactory) => this.getData(playerFactory, "draftkings", "nhl-skater", "nhl-goalie")
 	};
 
 	fanDuel = {
-		mlb: () => this.getData("fanduel", "mlb-pitcher", "mlb-hitter"),
-		nba: () => this.getData("fanduel", "nba-player"),
-		nfl: () => this.getData("fanduel", "nfl-qb", "nfl-flex", "nfl-defense", "nfl-kicker"),
-		nhl: () => this.getData("fanduel", "nhl-skater", "nhl-goalie")
+		mlb: (playerFactory: PlayerFactory) => this.getData(playerFactory, "fanduel", "mlb-pitcher", "mlb-hitter"),
+		nba: (playerFactory: PlayerFactory) => this.getData(playerFactory, "fanduel", "nba-player"),
+		nfl: (playerFactory: PlayerFactory) => this.getData(playerFactory, "fanduel", "nfl-qb", "nfl-flex", "nfl-defense", "nfl-kicker"),
+		nhl: (playerFactory: PlayerFactory) => this.getData(playerFactory, "fanduel", "nhl-skater", "nhl-goalie")
 	};
 
 	yahoo = {
-		mlb: () => this.getData("yahoo", "mlb-pitcher", "mlb-hitter"),
-		nba: () => this.getData("yahoo", "nba-player"),
-		nfl: () => this.getData("yahoo", "nfl-qb", "nfl-flex", "nfl-defense"),
-		nhl: () => this.getData("yahoo", "nhl-skater", "nhl-goalie")
+		mlb: (playerFactory: PlayerFactory) => this.getData(playerFactory, "yahoo", "mlb-pitcher", "mlb-hitter"),
+		nba: (playerFactory: PlayerFactory) => this.getData(playerFactory, "yahoo", "nba-player"),
+		nfl: (playerFactory: PlayerFactory) => this.getData(playerFactory, "yahoo", "nfl-qb", "nfl-flex", "nfl-defense"),
+		nhl: (playerFactory: PlayerFactory) => this.getData(playerFactory, "yahoo", "nhl-skater", "nhl-goalie")
 	};
 
-	getData(contest: string, ...pages: string[]): Promise.IThenable<IPlayer[]> {
+	getData(playerFactory: PlayerFactory, contest: string, ...pages: string[]): Promise.IThenable<IPlayer[]> {
 		const promises = pages.map((page) => {
 			return utils.sendHttpsRequest({
 				hostname: "rotogrinders.com",
 				path: `/projected-stats/${page}?site=${contest}`,
 				method: "GET"
 			}).then((dataResp) => {
-				return this.parsePlayers(dataResp.body);
+				return this.parsePlayers(playerFactory, dataResp.body);
 			});
 		});
 		return Promise.all(promises).then((playersArrays) => {
@@ -45,7 +46,7 @@ export default class RGProjections implements IDataRetriever {
 		});
 	}
 
-	parsePlayers(data: string): IPlayer[] {
+	parsePlayers(playerFactory: PlayerFactory, data: string): IPlayer[] {
 		const players: IPlayer[] = [];
 		if (data) {
 			const dataMatch = data.match(RGProjections.dataRegex);
@@ -68,7 +69,7 @@ export default class RGProjections implements IDataRetriever {
 							if (!projectedPoints) {
 								projectedPoints = parseFloat(playerJson["points"]);
 							}
-							const p = utils.createPlayer(name, team, salary);
+							const p = playerFactory.createPlayer(name, team, salary);
 							const s: IPlayerStats = {
 								source: "RotoGrinders",
 								projectedCeiling: parseFloat(playerJson.ceil),
