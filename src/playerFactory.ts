@@ -41,6 +41,8 @@ export default class PlayerFactory {
 			"SDC": "SD",
 			"SFO": "SF",
 			"TBB": "TB"
+		},
+		nhl: {
 		}
 	};
 
