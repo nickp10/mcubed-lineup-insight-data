@@ -43,6 +43,7 @@ export default class PlayerFactory {
 			"TBB": "TB"
 		},
 		nhl: {
+			"MTL": "MON"
 		}
 	};
 
