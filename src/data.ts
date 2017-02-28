@@ -9,11 +9,11 @@ import * as utils from "./utils";
 
 class Data {
 	retrievers: IDataRetriever[] = [
-		//new DFSR(),
-		new NumberFire()//,
-		//new RGProjections(),
-		//new RGRecent(),
-		//new RGStarting()
+		new DFSR(),
+		new NumberFire(),
+		new RGProjections(),
+		new RGRecent(),
+		new RGStarting()
 	];
 
 	getData(contestType: string, sport: string): PromiseLike<IPlayer[]> {
