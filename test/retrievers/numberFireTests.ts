@@ -60,8 +60,8 @@ describe("NumberFire", () => {
 			const players = target.parsePlayers(playerFactory, data);
 
 			// Assert
-			testUtils.assertContainsPlayer(players, { name: "Russell Westbrook", team: "OKC", salary: 11500, stats: [ { source: "NumberFire", projectedPoints: 60.3 }] });
-			testUtils.assertContainsPlayer(players, { name: "James Harden", team: "HOU", salary: 10900, stats: [ { source: "NumberFire", projectedPoints: 56.6 }] });
+			testUtils.assertContainsPlayer(players, { name: "Russell Westbrook", team: "OKC", salary: 12100, stats: [ { source: "NumberFire", projectedPoints: 59.6 }] });
+			testUtils.assertContainsPlayer(players, { name: "Kevin Durant", team: "GS", salary: 9700, stats: [ { source: "NumberFire", projectedPoints: 49.5 }] });
 		});
 
 		it("should parse the projection stats for an NBA FanDuel contest", () => {
@@ -74,8 +74,8 @@ describe("NumberFire", () => {
 			const players = target.parsePlayers(playerFactory, data);
 
 			// Assert
-			testUtils.assertContainsPlayer(players, { name: "Russell Westbrook", team: "OKC", salary: 12000, stats: [ { source: "NumberFire", projectedPoints: 55.3 }] });
-			testUtils.assertContainsPlayer(players, { name: "James Harden", team: "HOU", salary: 11200, stats: [ { source: "NumberFire", projectedPoints: 52.4 }] });
+			testUtils.assertContainsPlayer(players, { name: "Russell Westbrook", team: "OKC", salary: 12000, stats: [ { source: "NumberFire", projectedPoints: 54.1 }] });
+			testUtils.assertContainsPlayer(players, { name: "Kevin Durant", team: "GS", salary: 10400, stats: [ { source: "NumberFire", projectedPoints: 46.8 }] });
 		});
 
 		it("should parse the projection stats for an NBA Yahoo contest", () => {
@@ -88,8 +88,8 @@ describe("NumberFire", () => {
 			const players = target.parsePlayers(playerFactory, data);
 
 			// Assert
-			testUtils.assertContainsPlayer(players, { name: "Russell Westbrook", team: "OKC", salary: 54, stats: [ { source: "NumberFire", projectedPoints: 56.0 }] });
-			testUtils.assertContainsPlayer(players, { name: "James Harden", team: "HOU", salary: 53, stats: [ { source: "NumberFire", projectedPoints: 54.0 }] });
+			testUtils.assertContainsPlayer(players, { name: "Russell Westbrook", team: "OKC", salary: 63, stats: [ { source: "NumberFire", projectedPoints: 55.1 }] });
+			testUtils.assertContainsPlayer(players, { name: "Kevin Durant", team: "GS", salary: 52, stats: [ { source: "NumberFire", projectedPoints: 47.7 }] });
 		});
 
 		it("should parse the projection stats for an NFL DraftKings contest", () => {

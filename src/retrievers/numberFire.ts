@@ -87,7 +87,7 @@ export default class NumberFire implements IDataRetriever {
 
 	parsePlayers(playerFactory: PlayerFactory, $: CheerioStatic): IPlayer[] {
 		const players: {[key:string]: IPlayer} = { };
-		$(".projection-table__body tr").each((index, item) => {
+		$(".stat-table__body tr").each((index, item) => {
 			const playerId = $(item).data("player-id");
 			let player = players[playerId];
 			if (!player) {
