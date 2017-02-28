@@ -1,7 +1,6 @@
 import { IIncomingMessage } from "./interfaces";
 import * as http from "http";
 import * as https from "https";
-import * as Promise from "promise";
 
 class Utils {
 	validContestTypes = ["fanDuel", "draftKings", "yahoo"];
@@ -38,7 +37,7 @@ class Utils {
 	 * @param arr The array to flatten.
 	 * @returns The one-dimensional array containing all the items.
 	 */
-	flattenArray<T>(arr: T|T[]): T[] {
+	flattenArray<T>(arr: T|T[]|T[][]): T[] {
 		const flat: T[] = [];
 		if (Array.isArray(arr)) {
 			for (let i = 0; i < arr.length; i++) {
@@ -73,7 +72,7 @@ class Utils {
 		return coerceSport;
 	}
 
-	sendHttpsRequest(request: https.RequestOptions, data?: string): Promise.IThenable<IIncomingMessage> {
+	sendHttpsRequest(request: https.RequestOptions, data?: string): PromiseLike<IIncomingMessage> {
 		return new Promise<IIncomingMessage>((resolve, reject) => {
 			const headers = request.headers || { };
 			request.headers = headers;

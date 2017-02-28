@@ -2,7 +2,6 @@
 
 import { IDataRetriever, ISiteDataRetriever, IPlayer, IPlayerStats } from "../../interfaces";
 import PlayerFactory from "../../playerFactory";
-import * as Promise from "promise";
 import * as utils from "../../utils";
 
 export default class RGProjections implements IDataRetriever {
@@ -31,7 +30,7 @@ export default class RGProjections implements IDataRetriever {
 		nhl: (playerFactory: PlayerFactory) => this.getData(playerFactory, "yahoo", "nhl-skater", "nhl-goalie")
 	};
 
-	getData(playerFactory: PlayerFactory, contest: string, ...pages: string[]): Promise.IThenable<IPlayer[]> {
+	getData(playerFactory: PlayerFactory, contest: string, ...pages: string[]): PromiseLike<IPlayer[]> {
 		const promises = pages.map((page) => {
 			return utils.sendHttpsRequest({
 				hostname: "rotogrinders.com",

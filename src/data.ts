@@ -9,21 +9,21 @@ import * as utils from "./utils";
 
 class Data {
 	retrievers: IDataRetriever[] = [
-		new DFSR(),
-		new NumberFire(),
-		new RGProjections(),
-		new RGRecent(),
-		new RGStarting()
+		//new DFSR(),
+		new NumberFire()//,
+		//new RGProjections(),
+		//new RGRecent(),
+		//new RGStarting()
 	];
 
-	getData(contestType: string, sport: string): Promise.IThenable<IPlayer[]> {
+	getData(contestType: string, sport: string): PromiseLike<IPlayer[]> {
 		contestType = utils.coerceContestType(contestType);
 		sport = utils.coerceSport(sport);
-		const promises: Promise.IThenable<IPlayer[]>[] = [];
+		const promises: PromiseLike<IPlayer[]>[] = [];
 		this.retrievers.forEach((retriever) => {
 			const siteRetriever: ISiteDataRetriever = retriever[contestType];
 			if (siteRetriever) {
-				const sportRetriever: (playerFactory: PlayerFactory) => Promise.IThenable<IPlayer[]> = siteRetriever[sport];
+				const sportRetriever: (playerFactory: PlayerFactory) => PromiseLike<IPlayer[]> = siteRetriever[sport];
 				if (sportRetriever) {
 					const playerFactory = new PlayerFactory(sport);
 					const retrieverPromise = sportRetriever(playerFactory);
@@ -33,7 +33,7 @@ class Data {
 				}
 			}
 		});
-		return Promise.all(promises).then((dataArray: IPlayer[][]) => {
+		return Promise.all(promises).then((dataArray) => {
 			let data: IPlayer[] = [];
 			dataArray.forEach((dataItem) => {
 				if (dataItem) {

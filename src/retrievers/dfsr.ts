@@ -2,7 +2,6 @@
 
 import { IDataRetriever, ISiteDataRetriever, IPlayer, IPlayerStats } from "../interfaces";
 import PlayerFactory from "../playerFactory";
-import * as Promise from "promise";
 import * as utils from "../utils";
 
 interface IIndexMapping {
@@ -78,7 +77,7 @@ export default class DFSR implements IDataRetriever {
 		nhl: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.yahooNHLSiteURL, DFSR.nhlIndices)
 	};
 
-	getData(playerFactory: PlayerFactory, siteURL: string, indices: IIndexMapping): Promise.IThenable<IPlayer[]> {
+	getData(playerFactory: PlayerFactory, siteURL: string, indices: IIndexMapping): PromiseLike<IPlayer[]> {
 		return utils.sendHttpsRequest({
 			hostname: "www.dailyfantasysportsrankings.com",
 			path: siteURL,

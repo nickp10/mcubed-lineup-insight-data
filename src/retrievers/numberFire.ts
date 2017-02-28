@@ -3,7 +3,6 @@
 import { IDataRetriever, ISiteDataRetriever, IPlayer, IPlayerStats } from "../interfaces";
 import * as cheerio from "cheerio";
 import PlayerFactory from "../playerFactory";
-import * as Promise from "promise";
 import * as setCookieParser from "set-cookie-parser";
 import * as utils from "../utils";
 
@@ -58,7 +57,7 @@ export default class NumberFire implements IDataRetriever {
 		nhl: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.nhlSetSiteURL, NumberFire.yahooID, NumberFire.nhlDataSiteURLs)
 	};
 
-	getData(playerFactory: PlayerFactory, setSiteURL: string, siteID: string, dataSiteURLs: string[]): Promise.IThenable<IPlayer[]> {
+	getData(playerFactory: PlayerFactory, setSiteURL: string, siteID: string, dataSiteURLs: string[]): PromiseLike<IPlayer[]> {
 		return utils.sendHttpsRequest({
 			hostname: "www.numberfire.com",
 			path: setSiteURL,
@@ -73,7 +72,7 @@ export default class NumberFire implements IDataRetriever {
 		});
 	}
 
-	getDataForURL(playerFactory: PlayerFactory, dataSiteURL: string, cookieHeaders: string[]): Promise.IThenable<IPlayer[]> {
+	getDataForURL(playerFactory: PlayerFactory, dataSiteURL: string, cookieHeaders: string[]): PromiseLike<IPlayer[]> {
 		return utils.sendHttpsRequest({
 			hostname: "www.numberfire.com",
 			path: dataSiteURL,

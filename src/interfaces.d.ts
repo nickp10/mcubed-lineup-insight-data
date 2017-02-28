@@ -2,7 +2,6 @@
 
 import * as http from "http";
 import PlayerFactory from "./playerFactory";
-import * as Promise from "promise";
 
 export interface IIncomingMessage extends http.IncomingMessage {
 	body?: string;
@@ -15,10 +14,10 @@ export interface IDataRetriever {
 }
 
 export interface ISiteDataRetriever {
-	mlb: (playerFactory: PlayerFactory) => Promise.IThenable<IPlayer[]>;
-	nba: (playerFactory: PlayerFactory) => Promise.IThenable<IPlayer[]>;
-	nfl: (playerFactory: PlayerFactory) => Promise.IThenable<IPlayer[]>;
-	nhl: (playerFactory: PlayerFactory) => Promise.IThenable<IPlayer[]>;
+	mlb: (playerFactory: PlayerFactory) => PromiseLike<IPlayer[]>;
+	nba: (playerFactory: PlayerFactory) => PromiseLike<IPlayer[]>;
+	nfl: (playerFactory: PlayerFactory) => PromiseLike<IPlayer[]>;
+	nhl: (playerFactory: PlayerFactory) => PromiseLike<IPlayer[]>;
 }
 
 export interface IPlayer {

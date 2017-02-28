@@ -3,7 +3,6 @@
 import { IDataRetriever, ISiteDataRetriever, IPlayer, IPlayerStats } from "../../interfaces";
 import PlayerFactory from "../../playerFactory";
 import * as cheerio from "cheerio";
-import * as Promise from "promise";
 import * as utils from "../../utils";
 
 export default class RGStarting implements IDataRetriever {
@@ -28,7 +27,7 @@ export default class RGStarting implements IDataRetriever {
 		nhl: (playerFactory: PlayerFactory) => this.getData(playerFactory, "yahoo", "nhl")
 	};
 
-	getData(playerFactory: PlayerFactory, contest: string, sport: string): Promise.IThenable<IPlayer[]> {
+	getData(playerFactory: PlayerFactory, contest: string, sport: string): PromiseLike<IPlayer[]> {
 		return utils.sendHttpsRequest({
 			hostname: "rotogrinders.com",
 			path: `/lineups/${sport}?site=${contest}`,
