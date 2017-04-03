@@ -19,9 +19,13 @@ export default class PlayerFactory {
 	static alternateTeamsBySport = {
 		mlb: {
 			"CHW": "CWS",
+			"KC": "KAN",
 			"KCR": "KAN",
+			"LAD": "LOS",
+			"SD": "SDP",
 			"SF": "SFG",
-			"TBR": "TAM"
+			"TBR": "TAM",
+			"WSH": "WAS"
 		},
 		nba: {
 			"GSW": "GS",
