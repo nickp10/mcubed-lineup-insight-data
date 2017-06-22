@@ -1,5 +1,3 @@
-/// <reference path="../../typings/index.d.ts" />
-
 import * as cheerio from "cheerio";
 import * as fs from "fs";
 import NumberFire from "../../src/retrievers/numberFire";

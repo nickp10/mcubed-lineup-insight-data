@@ -1,5 +1,3 @@
-/// <reference path="../../typings/index.d.ts" />
-
 import * as fs from "fs";
 import DFSR from "../../src/retrievers/dfsr";
 import PlayerFactory from "../../src/playerFactory";

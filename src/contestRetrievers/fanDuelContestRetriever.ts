@@ -1,5 +1,3 @@
-/// <reference path="../../typings/index.d.ts" />
-
 import { IContestRetriever, IContest } from "../interfaces";
 import * as utils from "../utils";
 

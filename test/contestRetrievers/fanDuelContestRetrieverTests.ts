@@ -1,5 +1,3 @@
-/// <reference path="../../typings/index.d.ts" />
-
 import * as fs from "fs";
 import FanDuelContestRetriever from "../../src/contestRetrievers/fanDuelContestRetriever";
 import * as testUtils from "../testUtils";

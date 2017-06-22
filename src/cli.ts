@@ -1,5 +1,4 @@
 #! /usr/bin/env node
-/// <reference path="../typings/index.d.ts" />
 
 import * as args from "./args";
 import * as insightData from "./data";

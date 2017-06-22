@@ -1,5 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
-
 import { IContest, IPlayer } from "../src/interfaces";
 import * as assert from "assert";
 

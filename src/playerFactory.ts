@@ -1,5 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
-
 import { IPlayer } from "./interfaces";
 import * as S from "string";
 

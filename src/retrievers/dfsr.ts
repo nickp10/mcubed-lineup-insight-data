@@ -1,5 +1,3 @@
-/// <reference path="../../typings/index.d.ts" />
-
 import { IDataRetriever, ISiteDataRetriever, IPlayer, IPlayerStats } from "../interfaces";
 import PlayerFactory from "../playerFactory";
 import * as utils from "../utils";

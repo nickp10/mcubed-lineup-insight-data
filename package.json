@@ -21,20 +21,24 @@
     "compile": "gulp compile",
     "compile-test": "gulp compile-test",
     "gulp": "gulp",
-    "prepare": "typings install && gulp compile",
-    "test": "gulp test",
-    "typings": "typings"
+    "prepare": "gulp compile",
+    "test": "gulp test"
   },
   "devDependencies": {
+    "@types/argv": "0.0.4",
+    "@types/cheerio": "^0.22.1",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^8.0.1",
+    "@types/set-cookie-parser": "0.0.2",
+    "@types/string": "0.0.28",
     "gulp": "^3.9.1",
-    "gulp-mocha": "^4.3.0",
-    "gulp-typescript": "^3.1.6",
-    "typescript": "^2.2.2",
-    "typings": "^2.1.0"
+    "gulp-mocha": "^4.3.1",
+    "gulp-typescript": "^3.1.7",
+    "typescript": "^2.3.4"
   },
   "dependencies": {
     "argv": "0.0.2",
-    "cheerio": "^0.22.0",
+    "cheerio": "^1.0.0-rc.1",
     "set-cookie-parser": "^2.0.0",
     "string": "^3.3.3"
   }

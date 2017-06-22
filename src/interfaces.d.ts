@@ -1,5 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
-
 import * as http from "http";
 import PlayerFactory from "./playerFactory";
 
