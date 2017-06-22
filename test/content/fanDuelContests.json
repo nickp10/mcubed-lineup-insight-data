@@ -1,0 +1,392 @@
+{
+	"contest_types": [{
+			"label": "3-100 Player",
+			"id": "LEAGUE",
+			"description": "Multiple opponents and prize structures"
+		}, {
+			"label": "Tournament",
+			"id": "TOURNAMENT",
+			"description": "Large contests with guaranteed prize pools"
+		}, {
+			"label": "50/50",
+			"id": "FIFTY_FIFTY",
+			"description": "Finish in the top half to win"
+		}, {
+			"label": "Multiplier",
+			"id": "MULTIPLIER",
+			"description": "Double your money or play for more"
+		}, {
+			"label": "Head to Head",
+			"id": "H2H",
+			"description": "Challenge one opponent of your choice"
+		}
+	],
+	"fixture_lists": [{
+			"status": {
+				"final": false,
+				"started": false
+			},
+			"_url": "https://api.fanduel.com/fixture-lists/19784",
+			"contests": {
+				"open": {
+					"count": 391,
+					"contest_types": [{
+							"_members": ["LEAGUE"],
+							"count": 159,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["TOURNAMENT"],
+							"count": 16,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["FIFTY_FIFTY"],
+							"count": 109,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["MULTIPLIER"],
+							"count": 25,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["H2H"],
+							"count": 82,
+							"_ref": "contest_types.id"
+						}
+					],
+					"_url": "https://api.fanduel.com/contests?fixture_list=19784&status=open",
+					"pinned_count": 12
+				}
+			},
+			"sport": "PGA",
+			"game_description_name": "PGA",
+			"salary_cap": 60000,
+			"start_date": "2017-06-22T11:00:00Z",
+			"label": "Main",
+			"players": {
+				"_url": "https://api.fanduel.com/fixture-lists/19784/players"
+			},
+			"id": "19784",
+			"late_swap": false
+		}, {
+			"status": {
+				"final": false,
+				"started": false
+			},
+			"_url": "https://api.fanduel.com/fixture-lists/19809",
+			"contests": {
+				"open": {
+					"count": 487,
+					"contest_types": [{
+							"_members": ["LEAGUE"],
+							"count": 162,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["TOURNAMENT"],
+							"count": 63,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["FIFTY_FIFTY"],
+							"count": 118,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["MULTIPLIER"],
+							"count": 31,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["H2H"],
+							"count": 113,
+							"_ref": "contest_types.id"
+						}
+					],
+					"_url": "https://api.fanduel.com/contests?fixture_list=19809&status=open",
+					"pinned_count": 61
+				}
+			},
+			"sport": "MLB",
+			"game_description_name": "MLB",
+			"salary_cap": 35000,
+			"start_date": "2017-06-22T17:05:00Z",
+			"label": "Early Only",
+			"players": {
+				"_url": "https://api.fanduel.com/fixture-lists/19809/players"
+			},
+			"id": "19809",
+			"late_swap": true
+		}, {
+			"status": {
+				"final": false,
+				"started": false
+			},
+			"_url": "https://api.fanduel.com/fixture-lists/19810",
+			"contests": {
+				"open": {
+					"count": 157,
+					"contest_types": [{
+							"_members": ["LEAGUE"],
+							"count": 62,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["TOURNAMENT"],
+							"count": 17,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["FIFTY_FIFTY"],
+							"count": 58,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["MULTIPLIER"],
+							"count": 6,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["H2H"],
+							"count": 14,
+							"_ref": "contest_types.id"
+						}
+					],
+					"_url": "https://api.fanduel.com/contests?fixture_list=19810&status=open",
+					"pinned_count": 13
+				}
+			},
+			"sport": "MLB",
+			"game_description_name": "MLB",
+			"salary_cap": 35000,
+			"start_date": "2017-06-22T17:05:00Z",
+			"label": "All Day",
+			"players": {
+				"_url": "https://api.fanduel.com/fixture-lists/19810/players"
+			},
+			"id": "19810",
+			"late_swap": true
+		}, {
+			"status": {
+				"final": false,
+				"started": false
+			},
+			"_url": "https://api.fanduel.com/fixture-lists/19815",
+			"contests": {
+				"open": {
+					"count": 68,
+					"contest_types": [{
+							"_members": ["LEAGUE"],
+							"count": 40,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["TOURNAMENT"],
+							"count": 3,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["FIFTY_FIFTY"],
+							"count": 25,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["MULTIPLIER"],
+							"count": 0,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["H2H"],
+							"count": 0,
+							"_ref": "contest_types.id"
+						}
+					],
+					"_url": "https://api.fanduel.com/contests?fixture_list=19815&status=open",
+					"pinned_count": 6
+				}
+			},
+			"sport": "MLB",
+			"game_description_name": "MLB Mixup",
+			"salary_cap": 35000,
+			"start_date": "2017-06-22T17:05:00Z",
+			"label": "Mixup Early Only",
+			"players": {
+				"_url": "https://api.fanduel.com/fixture-lists/19815/players"
+			},
+			"id": "19815",
+			"late_swap": true
+		}, {
+			"status": {
+				"final": false,
+				"started": false
+			},
+			"_url": "https://api.fanduel.com/fixture-lists/19811",
+			"contests": {
+				"open": {
+					"count": 536,
+					"contest_types": [{
+							"_members": ["LEAGUE"],
+							"count": 194,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["TOURNAMENT"],
+							"count": 82,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["FIFTY_FIFTY"],
+							"count": 115,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["MULTIPLIER"],
+							"count": 53,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["H2H"],
+							"count": 92,
+							"_ref": "contest_types.id"
+						}
+					],
+					"_url": "https://api.fanduel.com/contests?fixture_list=19811&status=open",
+					"pinned_count": 86
+				}
+			},
+			"sport": "MLB",
+			"game_description_name": "MLB",
+			"salary_cap": 35000,
+			"start_date": "2017-06-22T23:05:00Z",
+			"label": "Main",
+			"players": {
+				"_url": "https://api.fanduel.com/fixture-lists/19811/players"
+			},
+			"id": "19811",
+			"late_swap": true
+		}, {
+			"status": {
+				"final": false,
+				"started": false
+			},
+			"_url": "https://api.fanduel.com/fixture-lists/19812",
+			"contests": {
+				"open": {
+					"count": 157,
+					"contest_types": [{
+							"_members": ["LEAGUE"],
+							"count": 96,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["TOURNAMENT"],
+							"count": 5,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["FIFTY_FIFTY"],
+							"count": 37,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["MULTIPLIER"],
+							"count": 5,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["H2H"],
+							"count": 14,
+							"_ref": "contest_types.id"
+						}
+					],
+					"_url": "https://api.fanduel.com/contests?fixture_list=19812&status=open",
+					"pinned_count": 5
+				}
+			},
+			"sport": "MLB",
+			"game_description_name": "MLB",
+			"salary_cap": 35000,
+			"start_date": "2017-06-22T23:05:00Z",
+			"label": "Non-Late Swap",
+			"players": {
+				"_url": "https://api.fanduel.com/fixture-lists/19812/players"
+			},
+			"id": "19812",
+			"late_swap": false
+		}, {
+			"status": {
+				"final": false,
+				"started": false
+			},
+			"_url": "https://api.fanduel.com/fixture-lists/19816",
+			"contests": {
+				"open": {
+					"count": 70,
+					"contest_types": [{
+							"_members": ["LEAGUE"],
+							"count": 37,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["TOURNAMENT"],
+							"count": 5,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["FIFTY_FIFTY"],
+							"count": 27,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["MULTIPLIER"],
+							"count": 0,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["H2H"],
+							"count": 1,
+							"_ref": "contest_types.id"
+						}
+					],
+					"_url": "https://api.fanduel.com/contests?fixture_list=19816&status=open",
+					"pinned_count": 9
+				}
+			},
+			"sport": "MLB",
+			"game_description_name": "MLB Mixup",
+			"salary_cap": 35000,
+			"start_date": "2017-06-22T23:05:00Z",
+			"label": "Mixup",
+			"players": {
+				"_url": "https://api.fanduel.com/fixture-lists/19816/players"
+			},
+			"id": "19816",
+			"late_swap": true
+		}, {
+			"status": {
+				"final": false,
+				"started": false
+			},
+			"_url": "https://api.fanduel.com/fixture-lists/19776",
+			"contests": {
+				"open": {
+					"count": 172,
+					"contest_types": [{
+							"_members": ["LEAGUE"],
+							"count": 75,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["TOURNAMENT"],
+							"count": 11,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["FIFTY_FIFTY"],
+							"count": 54,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["MULTIPLIER"],
+							"count": 11,
+							"_ref": "contest_types.id"
+						}, {
+							"_members": ["H2H"],
+							"count": 21,
+							"_ref": "contest_types.id"
+						}
+					],
+					"_url": "https://api.fanduel.com/contests?fixture_list=19776&status=open",
+					"pinned_count": 11
+				}
+			},
+			"sport": "WNBA",
+			"game_description_name": "WNBA",
+			"salary_cap": 40000,
+			"start_date": "2017-06-23T23:30:00Z",
+			"label": "Main",
+			"players": {
+				"_url": "https://api.fanduel.com/fixture-lists/19776/players"
+			},
+			"id": "19776",
+			"late_swap": false
+		}
+	],
+	"_meta": {
+		"fixture_lists": {
+			"count": 8
+		},
+		"_primary_document": "fixture_lists"
+	}
+}

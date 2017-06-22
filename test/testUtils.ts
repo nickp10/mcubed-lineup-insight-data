@@ -1,6 +1,6 @@
 /// <reference path="../typings/index.d.ts" />
 
-import { IPlayer } from "../src/interfaces";
+import { IContest, IPlayer } from "../src/interfaces";
 import * as assert from "assert";
 
 class TestUtils {
@@ -34,6 +34,28 @@ class TestUtils {
 		} else {
 			assert.equal(actualPlayer.stats, undefined);
 		}
+	}
+
+	/**
+	 * Asserts that a contest is contained in an array of contests. It will also verify each of the
+	 * properties on the contest to ensure they match with the contest in the array.
+	 * 
+	 * @param actualContests The array of contests to search through.
+	 * @param expectedContest The contest that is expected to be found in the array of contests.
+	 */
+	assertContainsContest(actualContests: IContest[], expectedContest: IContest): void {
+		const matchingContests = actualContests.filter(c => c.ID === expectedContest.ID);
+		assert.equal(matchingContests.length, 1, `No contests match with ID: ${expectedContest.ID}`);
+		const actualContest = matchingContests[0];
+		assert.equal(actualContest.contestType, expectedContest.contestType);
+		assert.equal(actualContest.contestURL, expectedContest.contestURL);
+		assert.equal(actualContest.label, expectedContest.label);
+		assert.equal(actualContest.maxSalary, expectedContest.maxSalary);
+		assert.equal(actualContest.playersURL, expectedContest.playersURL);
+		assert.equal(actualContest.sport, expectedContest.sport);
+		assert.deepStrictEqual(actualContest.startTime, expectedContest.startTime);
+		//assert.equal(actualContest.positions, expectedContest.positions);
+		//assert.equal(actualContest.games, expectedContest.games);
 	}
 }
 

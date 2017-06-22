@@ -37,3 +37,35 @@ export interface IPlayerStats {
 	recentAveragePoints?: number;
 	seasonAveragePoints?: number;
 }
+
+export interface IContestRetriever {
+	contests: () => PromiseLike<IContest[]>;
+}
+
+export interface IContest {
+	contestType: string;
+	contestURL?: string;
+	games?: IGame[];
+	ID: string;
+	label: string;
+	maxPlayersPerTeam?: number;
+	maxSalary?: number;
+	playerDataLastUpdateTime?: Date;
+	playerDataNextUpdateTime?: Date;
+	playersURL?: string;
+	positions?: string[];
+	sport: string;
+	startTime?: Date;
+}
+
+export interface IGame {
+	awayTeam: ITeam;
+	homeTeam: ITeam;
+	startTime: Date;
+}
+
+export interface ITeam {
+	code: string;
+	fullName: string;
+	players: IPlayer[];
+}

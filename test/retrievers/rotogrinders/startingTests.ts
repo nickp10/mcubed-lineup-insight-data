@@ -20,9 +20,9 @@ describe("RGStarting", () => {
 
 			// Assert
 			assert.equal(players.length, 2);
-			testUtils.assertContainsPlayer(players, { name: "Clayton Kershaw", team: "LAD", salary: -1, isStarter: true, battingOrder: "NA" });
+			testUtils.assertContainsPlayer(players, { name: "Clayton Kershaw", team: "LOS", salary: -1, isStarter: true, battingOrder: "NA" });
 			testUtils.assertContainsPlayer(players, { name: "Jon Lester", team: "CHC", salary: -1, isStarter: true, battingOrder: "NA" });
-			//testUtils.assertContainsPlayer(players, { name: "Chase Utley", team: "LAD", salary: 0, isStarter: true, battingOrder: "1st" });
+			//testUtils.assertContainsPlayer(players, { name: "Chase Utley", team: "LOS", salary: 0, isStarter: true, battingOrder: "1st" });
 			//testUtils.assertContainsPlayer(players, { name: "Anthony Rizzo", team: "CHC", salary: 0, isStarter: true, battingOrder: "3rd" });
 		});
 
@@ -37,9 +37,9 @@ describe("RGStarting", () => {
 
 			// Assert
 			assert.equal(players.length, 2);
-			testUtils.assertContainsPlayer(players, { name: "Clayton Kershaw", team: "LAD", salary: -1, isStarter: true, battingOrder: "NA" });
+			testUtils.assertContainsPlayer(players, { name: "Clayton Kershaw", team: "LOS", salary: -1, isStarter: true, battingOrder: "NA" });
 			testUtils.assertContainsPlayer(players, { name: "Jon Lester", team: "CHC", salary: -1, isStarter: true, battingOrder: "NA" });
-			//testUtils.assertContainsPlayer(players, { name: "Chase Utley", team: "LAD", salary: 0, isStarter: true, battingOrder: "1st" });
+			//testUtils.assertContainsPlayer(players, { name: "Chase Utley", team: "LOS", salary: 0, isStarter: true, battingOrder: "1st" });
 			//testUtils.assertContainsPlayer(players, { name: "Anthony Rizzo", team: "CHC", salary: 0, isStarter: true, battingOrder: "3rd" });
 		});
 
@@ -54,9 +54,9 @@ describe("RGStarting", () => {
 
 			// Assert
 			assert.equal(players.length, 2);
-			testUtils.assertContainsPlayer(players, { name: "Clayton Kershaw", team: "LAD", salary: -1, isStarter: true, battingOrder: "NA" });
+			testUtils.assertContainsPlayer(players, { name: "Clayton Kershaw", team: "LOS", salary: -1, isStarter: true, battingOrder: "NA" });
 			testUtils.assertContainsPlayer(players, { name: "Jon Lester", team: "CHC", salary: -1, isStarter: true, battingOrder: "NA" });
-			//testUtils.assertContainsPlayer(players, { name: "Chase Utley", team: "LAD", salary: 0, isStarter: true, battingOrder: "1st" });
+			//testUtils.assertContainsPlayer(players, { name: "Chase Utley", team: "LOS", salary: 0, isStarter: true, battingOrder: "1st" });
 			//testUtils.assertContainsPlayer(players, { name: "Anthony Rizzo", team: "CHC", salary: 0, isStarter: true, battingOrder: "3rd" });
 		});
 
