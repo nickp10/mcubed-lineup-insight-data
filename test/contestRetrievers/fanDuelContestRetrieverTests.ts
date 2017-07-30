@@ -30,7 +30,7 @@ describe("FanDuelContestRetriever", () => {
 			target.parseContestSpecificData(contest, contestData);
 
 			// Assert
-			testUtils.assertContainsContest([ contest ], { ID: "FD19809", contestType: "FanDuel", label: "Early Only", maxPlayersPerTeam: 4, positions: ["P", "C", "1B", "2B", "3B", "SS", "OF", "OF", "OF"], sport: "MLB" });
+			testUtils.assertContestEquals(contest, { ID: "FD19809", contestType: "FanDuel", label: "Early Only", maxPlayersPerTeam: 4, positions: ["P", "C", "1B", "2B", "3B", "SS", "OF", "OF", "OF"], sport: "MLB" });
 		});
 	});
 });
