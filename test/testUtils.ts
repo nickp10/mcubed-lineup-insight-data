@@ -48,11 +48,19 @@ class TestUtils {
 		assert.equal(actualContest.contestType, expectedContest.contestType);
 		assert.equal(actualContest.contestURL, expectedContest.contestURL);
 		assert.equal(actualContest.label, expectedContest.label);
+		assert.equal(actualContest.maxPlayersPerTeam, expectedContest.maxPlayersPerTeam);
 		assert.equal(actualContest.maxSalary, expectedContest.maxSalary);
 		assert.equal(actualContest.playersURL, expectedContest.playersURL);
 		assert.equal(actualContest.sport, expectedContest.sport);
 		assert.deepStrictEqual(actualContest.startTime, expectedContest.startTime);
-		//assert.equal(actualContest.positions, expectedContest.positions);
+		if (expectedContest.positions) {
+			assert.equal(actualContest.positions.length, expectedContest.positions.length);
+			for (let i = 0; i < actualContest.positions.length; i++) {
+				assert.equal(actualContest.positions[i], expectedContest.positions[i]);
+			}
+		} else {
+			assert.equal(actualContest.positions, undefined);
+		}
 		//assert.equal(actualContest.games, expectedContest.games);
 	}
 }
