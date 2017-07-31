@@ -1,4 +1,4 @@
-import { IContestRetriever, IContest } from "../interfaces";
+import { IContestRetriever, IContest, IGame, ITeam } from "../interfaces";
 import * as utils from "../utils";
 
 export default class FanDuelContestRetriever implements IContestRetriever {
@@ -76,8 +76,29 @@ export default class FanDuelContestRetriever implements IContestRetriever {
 					if (Array.isArray(positions)) {
 						fdContest.positions = positions.map(p => p["abbr"]);
 					}
+					const fixtures = jsonData["fixtures"];
+					if (Array.isArray(fixtures)) {
+						fdContest.games = fixtures.map(f => this.parseGame(jsonData, f));
+					}
 				}
 			}
 		}
+	}
+
+	parseGame(contestData: any, gameData: any): IGame {
+		return {
+			awayTeam: this.parseTeam(contestData, gameData["away_team"]),
+			homeTeam: this.parseTeam(contestData, gameData["home_team"]),
+			startTime: new Date(gameData["start_date"])
+		};
+	}
+
+	parseTeam(contestData: any, teamData: any): ITeam {
+		const teamID = teamData["team"]["_members"][0];
+		const team = contestData["teams"].find(t => t["id"] === teamID);
+		return {
+			code: (<string>team["code"]).toUpperCase(),
+			fullName: team["full_name"]
+		};
 	}
 }

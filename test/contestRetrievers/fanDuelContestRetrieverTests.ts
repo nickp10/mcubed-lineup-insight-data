@@ -1,6 +1,7 @@
+import * as assert from "assert";
 import * as fs from "fs";
 import FanDuelContestRetriever from "../../src/contestRetrievers/fanDuelContestRetriever";
-import { IContest } from "../../src/interfaces";
+import { IContest, IGame, ITeam } from "../../src/interfaces";
 import * as testUtils from "../testUtils";
 
 describe("FanDuelContestRetriever", () => {
@@ -25,12 +26,27 @@ describe("FanDuelContestRetriever", () => {
 			const target = new FanDuelContestRetriever();
 			const contest: IContest = { ID: "FD19809", contestType: "FanDuel", label: "Early Only", sport: "MLB" };
 			const contestData = fs.readFileSync("test/content/fanDuelContest.json", "utf-8");
+			const expectedGame: IGame = {
+				awayTeam: {
+					code: "TOR",
+					fullName: "Toronto Blue Jays"
+				},
+				homeTeam: {
+					code: "TEX",
+					fullName: "Texas Rangers"
+				},
+				startTime: new Date(Date.UTC(2017, 5, 22, 18, 5))
+			};
 
 			// Act
 			target.parseContestSpecificData(contest, contestData);
 
 			// Assert
+			const games = contest.games;
+			contest.games = undefined;
 			testUtils.assertContestEquals(contest, { ID: "FD19809", contestType: "FanDuel", label: "Early Only", maxPlayersPerTeam: 4, positions: ["P", "C", "1B", "2B", "3B", "SS", "OF", "OF", "OF"], sport: "MLB" });
+			assert.equal(6, games.length);
+			testUtils.assertGameEquals(games[0], expectedGame);
 		});
 	});
 });

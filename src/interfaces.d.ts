@@ -65,5 +65,5 @@ export interface IGame {
 export interface ITeam {
 	code: string;
 	fullName: string;
-	players: IPlayer[];
+	players?: IPlayer[];
 }
