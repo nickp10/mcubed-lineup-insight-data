@@ -38,11 +38,9 @@ class TestUtils {
 	 */
 	assertContestEquals(actualContest: IContest, expectedContest: IContest): void {
 		assert.equal(actualContest.contestType, expectedContest.contestType);
-		assert.equal(actualContest.contestURL, expectedContest.contestURL);
 		assert.equal(actualContest.label, expectedContest.label);
 		assert.equal(actualContest.maxPlayersPerTeam, expectedContest.maxPlayersPerTeam);
 		assert.equal(actualContest.maxSalary, expectedContest.maxSalary);
-		assert.equal(actualContest.playersURL, expectedContest.playersURL);
 		assert.equal(actualContest.sport, expectedContest.sport);
 		assert.deepStrictEqual(actualContest.startTime, expectedContest.startTime);
 		if (expectedContest.positions) {

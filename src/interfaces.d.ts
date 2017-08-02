@@ -23,6 +23,7 @@ export interface IPlayer {
 	isStarter?: boolean;
 	name: string;
 	team: string;
+	position?: string;
 	salary: number;
 	stats?: IPlayerStats[];
 }
@@ -42,7 +43,6 @@ export interface IContestRetriever {
 
 export interface IContest {
 	contestType: string;
-	contestURL?: string;
 	games?: IGame[];
 	ID: string;
 	label: string;
@@ -50,10 +50,14 @@ export interface IContest {
 	maxSalary?: number;
 	playerDataLastUpdateTime?: Date;
 	playerDataNextUpdateTime?: Date;
-	playersURL?: string;
 	positions?: string[];
 	sport: string;
 	startTime?: Date;
+}
+
+export interface IFanDuelContest extends IContest {
+	contestURL?: string;
+	playersURL?: string;
 }
 
 export interface IGame {
