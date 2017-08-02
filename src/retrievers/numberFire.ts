@@ -1,4 +1,4 @@
-import { IDataRetriever, ISiteDataRetriever, IPlayer, IPlayerStats } from "../interfaces";
+import { IDataRetriever, IIncomingMessage, ISiteDataRetriever, IPlayer, IPlayerStats } from "../interfaces";
 import * as cheerio from "cheerio";
 import PlayerFactory from "../playerFactory";
 import * as setCookieParser from "set-cookie-parser";
@@ -61,12 +61,7 @@ export default class NumberFire implements IDataRetriever {
 			path: setSiteURL,
 			method: "POST"
 		}, `site=${siteID}`).then((setSiteResp) => {
-			const setCookies = setCookieParser(setSiteResp);
-			const cookieHeaders = setCookies.map(c => `${c.name}=${c.value}`);
-			const dataPromises = dataSiteURLs.map(dataSiteURL => this.getDataForURL(playerFactory, dataSiteURL, cookieHeaders));
-			return Promise.all(dataPromises).then((playersArrays) => {
-				return utils.flattenArray<IPlayer>(playersArrays);
-			});
+			return this.parseData(playerFactory, dataSiteURLs, setSiteResp);
 		});
 	}
 
@@ -80,6 +75,15 @@ export default class NumberFire implements IDataRetriever {
 			}
 		}).then((dataResp) => {
 			return this.parsePlayers(playerFactory, cheerio.load(dataResp.body));
+		});
+	}
+
+	parseData(playerFactory: PlayerFactory, dataSiteURLs: string[], setSiteResp: IIncomingMessage): PromiseLike<IPlayer[]> {
+		const setCookies = setCookieParser(setSiteResp);
+		const cookieHeaders = setCookies.map(c => `${c.name}=${c.value}`);
+		const dataPromises = dataSiteURLs.map(dataSiteURL => this.getDataForURL(playerFactory, dataSiteURL, cookieHeaders));
+		return Promise.all(dataPromises).then((playersArrays) => {
+			return utils.flattenArray<IPlayer>(playersArrays);
 		});
 	}
 
