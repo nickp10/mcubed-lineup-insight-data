@@ -6,12 +6,15 @@ This node module will retrieve fantasy sports data. In particular, this will agg
 
 Command Line
 ----
-This node module can be run from the command line using `mcubed-lineup-insight-data -c DraftKings -s NFL`. The arguments for the command line interface are:
+This node module can be run from the command line using `mcubed-lineup-insight-data -d insight -c DraftKings -s NFL`. The arguments for the command line interface are:
 
+* *-d / --data* - **Optional.** Specifies the type of data to retrieve. To get the list of contests, specify this value as `c` or `contests`. To get insight data (starting players, projected points, recent performances, etc.), specify this value as `i` or `insight`. If this argument is omitted, then `i` is used as the default value.
 * *-c / --contestType* - **Required.** Specifies the contest type to retrieve the data for. This option is case-insensitive and should be one of the following: DraftKings, FanDuel, or Yahoo.
-* *-s / --sport* - **Required.** Specifies the sport to retrieve the data for. This option is case-insensitive and should be one of the following: MLB, NBA, NFL, or NHL.
+* *-s / --sport* - **Required for insight data.** Specifies the sport to retrieve the data for. This option is case-insensitive and should be one of the following: MLB, NBA, NFL, or NHL.
 
-When run from the command line, an array of [Players](#Player) will be written as a JSON formatted string to the standard output.
+When run from the command line:
+* The contest list request will produce an array of [Contests](#Contest) written as a JSON formatted string to the standard output.
+* The insight data request will produce an array of [Players](#Player) written as a JSON formatted string to the standard output.
 
 Node Module Dependency
 ----
@@ -20,7 +23,7 @@ This node module can be used as a dependency of another node module. Run `npm in
 ```
 var insightData = require("mcubed-lineup-insight-data");
 
-insightData.getData("DraftKings", "NFL").then((players) => {
+insightData.getInsight("DraftKings", "NFL").then((players) => {
     players.forEach((player) => {
         console.log(player.name);
     });
@@ -32,15 +35,18 @@ API
 #### <a name="InsightData"></a>InsightData
 An instance of this class is returned when requiring `mcubed-lineup-insight-data` from within a node module.
 
-* `getData(contestType: string, sport: string): IThenable<Player[]>` - Returns the data for a specified contest type and sport combination. The `contestType` should be DraftKings, FanDuel, or Yahoo and is case-insensitive. The `sport` should be MLB, NBA, NFL, or NHL and is case-insensitive. The return value is a promise that yields an array of [Players](#Player).
+* `getContests(contestType: string): PromiseLike<Contest[]>` - Returns a list of contests that are currently active for the DFS site. The `contestType` should be DraftKings, FanDuel, or Yahoo and is case-insensitive. The return value is a promise that yields an array of [Contests](#Contest).
+* `getInsight(contestType: string, sport: string): PromiseLike<Player[]>` - Returns the data for a specified contest type and sport combination. The `contestType` should be DraftKings, FanDuel, or Yahoo and is case-insensitive. The `sport` should be MLB, NBA, NFL, or NHL and is case-insensitive. The return value is a promise that yields an array of [Players](#Player).
 
 #### <a name="Player"></a>Player
-Instances of this class are returned from calling the `getData` function from the [InsightData](#InsightData) object or de-serialized to JSON when using the command line interface.
+Instances of this class are returned from calling the `getInsight` function from the [InsightData](#InsightData) object or serialized to JSON when using the command line interface.
 
 * `battingOrder?: string` - Optionally specifies the batting order of the player for MLB contests.
 * `isStarter?: boolean` - Optionally specifies if the player is in the starting lineup.
 * `name: string` - Specifies the name of the player (formatted as "First Last Suffix").
 * `team: string` - Specifies the team abbreviation the player plays for.
+* `position?: string` - Optionally specifies the position the player plays.
+* `salary: number` - Specifies how much the player costs for the contest.
 * `stats?: PlayerStats[]` - Optionally specifies an array of [PlayerStats](#PlayerStats) associated with the player.
 
 #### <a name="PlayerStats"></a>PlayerStats
@@ -52,6 +58,33 @@ Instances of this class are associated with a [Player](#Player).
 * `projectedPoints?: number` - Optionally specifies the projected points for the player.
 * `recentAveragePoints?: number` - Optionally specifies the average number of points the player has scored recently.
 * `seasonAveragePoints?: number` - Optionally specifies the average number of points the player has scored on the season.
+
+#### <a name="Contest"></a>Contest
+Instances of this class are returned from calling the `getContests` function from the [InsightData](#InsightData) object or serialized to JSON when using the command line interface.
+
+* `contestType: string` - Specifies the contest type. This will be one of the following values: DraftKings, FanDuel, or Yahoo.
+* `games?: Game[]` - Optionally specifies an array of [Games](#Game) associated with the contest.
+* `ID: string` - Specifies a unique ID for the contest.
+* `label: string` - Specifies a label describing the contest.
+* `maxPlayersPerTeam?: number` - Optionally specifies the maximum number of players allowed from a single team when building a lineup.
+* `maxSalary?: number` - Optionally specifies the maximum total salary allowed when building a lineup.
+* `positions?: string[]` - Optionally specifies an array of strings representing the positions needed to fill a lineup.
+* `sport: string` - Specifies the sport. This will be one of the following values: MLB, NBA, NFL, or NHL.
+* `startTime?: Date` - Optionally specifies the start time for the contest.
+
+#### <a name="Game"></a>Game
+Instances of this class are associated with a [Contest](#Contest).
+
+* `awayTeam: Team` - Specifies the away [Team](#Team).
+* `homeTeam: Team` - Specifies the home [Team](#Team).
+* `startTime: Date` - Specifies the start time for the game.
+
+#### <a name="Team"></a>Team
+Instances of this class are associated with a [Game](#Game).
+
+* `code: string` - Specifies the team abbreviation (e.g., "BOS").
+* `fullName: Team` - Specifies the full team name (e.g., "Boston Red Sox").
+* `players?: Player[]` - Optionally specifies an array of [Players](#Player) that are on the team.
 
 Developer Setup
 ----

@@ -3,6 +3,11 @@ import * as http from "http";
 import * as https from "https";
 
 class Utils {
+	DATA_CONTESTS = "c";
+	DATA_INSIGHT = "i";
+	DATA_PLAYER = "p";
+	DATA_TEAMS = "t";
+	validData = [this.DATA_CONTESTS, "contests", this.DATA_INSIGHT, "insight", this.DATA_PLAYER, "player", this.DATA_TEAMS, "teams"];
 	validContestTypes = ["fanDuel", "draftKings", "yahoo"];
 	validSports = ["mlb", "nba", "nfl", "nhl"];
 
@@ -48,6 +53,17 @@ class Utils {
 			flat.push(arr);
 		}
 		return flat;
+	}
+
+	coerceData(data: string): string {
+		let coerceData: string = undefined;
+		data = data.toLowerCase();
+		this.validData.forEach((validValue) => {
+			if (validValue.toLowerCase() === data) {
+				coerceData = validValue.charAt(0);
+			}
+		});
+		return coerceData;
 	}
 
 	coerceContestType(contestType: string): string {
