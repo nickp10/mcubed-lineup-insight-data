@@ -88,6 +88,22 @@ class Utils {
 		return coerceSport;
 	}
 
+	coerceInt(value: string): number {
+		const parsed = parseInt(value);
+		if (isNaN(parsed) || typeof parsed !== "number") {
+			return undefined;
+		}
+		return parsed;
+	}
+
+	coerceFloat(value: string): number {
+		const parsed = parseFloat(value);
+		if (isNaN(parsed) || typeof parsed !== "number") {
+			return undefined;
+		}
+		return parsed;
+	}
+
 	sendHttpsRequest(request: https.RequestOptions, data?: string): PromiseLike<IIncomingMessage> {
 		return new Promise<IIncomingMessage>((resolve, reject) => {
 			const headers = request.headers || { };

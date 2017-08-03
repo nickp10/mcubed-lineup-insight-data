@@ -54,9 +54,9 @@ export default class RGRecent implements IDataRetriever {
 					playersJson.forEach((playerJson) => {
 						const name = playerJson.player;
 						const team = playerJson.team;
-						const salary = parseInt(playerJson.salary);
-						const fpts = parseFloat(playerJson.fpts);
-						const gp = parseInt(playerJson.gp);
+						const salary = utils.coerceInt(playerJson.salary);
+						const fpts = utils.coerceFloat(playerJson.fpts);
+						const gp = utils.coerceInt(playerJson.gp);
 						if (name && team && fpts && gp > 0) {
 							const p = playerFactory.createPlayer(name, team, salary);
 							const s: IPlayerStats = {

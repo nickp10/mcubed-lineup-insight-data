@@ -93,12 +93,12 @@ export default class DFSR implements IDataRetriever {
 					if (parts && indices.nameIndex < parts.length && indices.teamIndex < parts.length && indices.pointsIndex < parts.length && indices.salaryIndex < parts.length) {
 						const name = parts[indices.nameIndex];
 						const team = parts[indices.teamIndex];
-						const salary = parseInt(parts[indices.salaryIndex]);
+						const salary = utils.coerceInt(parts[indices.salaryIndex]);
 						const player = playerFactory.createPlayer(name, team, salary);
 						player.stats = [
 							{
 								source: "DailyFantasySportsRankings",
-								projectedPoints: parseFloat(parts[indices.pointsIndex])
+								projectedPoints: utils.coerceFloat(parts[indices.pointsIndex])
 							}
 						];
 						return player;

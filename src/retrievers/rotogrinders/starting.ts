@@ -94,10 +94,10 @@ export default class RGStarting implements IDataRetriever {
 		salary = salary.replace("$", "").toLowerCase();
 		const thousand = salary.indexOf("k");
 		if (thousand >= 0) {
-			const value = parseFloat(salary.substr(0, thousand));
+			const value = utils.coerceFloat(salary.substr(0, thousand));
 			return value * 1000;
 		} else {
-			return parseInt(salary);
+			return utils.coerceInt(salary);
 		}
 	}
 
@@ -120,7 +120,7 @@ export default class RGStarting implements IDataRetriever {
 
 	parseBattingOrder(startingOrder: string): string {
 		try {
-			const order = parseInt(startingOrder);
+			const order = utils.coerceInt(startingOrder);
 			if (order === 1) {
 				return "1st";
 			} else if (order === 2) {

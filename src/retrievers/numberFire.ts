@@ -104,7 +104,7 @@ export default class NumberFire implements IDataRetriever {
 			if (points) {
 				const stats: IPlayerStats = {
 					source: "NumberFire",
-					projectedPoints: parseFloat(points.trim())
+					projectedPoints: utils.coerceFloat(points.trim())
 				};
 				let playerStats = player.stats;
 				if (!playerStats) {
@@ -128,7 +128,7 @@ export default class NumberFire implements IDataRetriever {
 		if (salary) {
 			salary = salary.trim().replace("$", "").replace(",", "");
 			if (salary !== "N/A") {
-				return parseInt(salary);
+				return utils.coerceInt(salary);
 			}
 		}
 		return 0;

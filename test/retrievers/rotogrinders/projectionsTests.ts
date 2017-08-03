@@ -6,6 +6,36 @@ import * as testUtils from "../../testUtils";
 
 describe("RGProjections", () => {
 	describe("#parsePlayers()", () => {
+		it("should parse the projections for an MLB DraftKings contest", () => {
+			// Arrange
+			const target = new RGProjections();
+			const data = fs.readFileSync("test/content/rgProjectionsMLBDraftKings.html", "utf-8");
+			const playerFactory = new PlayerFactory("mlb");
+
+			// Act
+			const players = target.parsePlayers(playerFactory, data);
+
+			// Assert
+			testUtils.assertContainsPlayer(players, { name: "Kole Calhoun", team: "LAA", salary: 2700, stats: [{ source: "RotoGrinders", projectedPoints: 7.19 }] });
+			testUtils.assertContainsPlayer(players, { name: "Lorenzo Cain", team: "KAN", salary: 4600, stats: [{ source: "RotoGrinders", projectedPoints: 7.46 }] });
+			testUtils.assertContainsPlayer(players, { name: "Aaron Judge", team: "NYY", salary: 5200, stats: [{ source: "RotoGrinders", projectedPoints: 6.88 }] });
+		});
+
+		it("should parse the projections for an MLB FanDuel contest", () => {
+			// Arrange
+			const target = new RGProjections();
+			const data = fs.readFileSync("test/content/rgProjectionsMLBFanDuel.html", "utf-8");
+			const playerFactory = new PlayerFactory("mlb");
+
+			// Act
+			const players = target.parsePlayers(playerFactory, data);
+
+			// Assert
+			testUtils.assertContainsPlayer(players, { name: "Kole Calhoun", team: "LAA", salary: 2800, stats: [{ source: "RotoGrinders", projectedPoints: 9.39 }] });
+			testUtils.assertContainsPlayer(players, { name: "Lorenzo Cain", team: "KAN", salary: 3600, stats: [{ source: "RotoGrinders", projectedPoints: 9.9 }] });
+			testUtils.assertContainsPlayer(players, { name: "Aaron Judge", team: "NYY", salary: 4300, stats: [{ source: "RotoGrinders", projectedPoints: 8.93 }] });
+		});
+
 		it("should parse the projections for an NBA DraftKings contest", () => {
 			// Arrange
 			const target = new RGProjections();

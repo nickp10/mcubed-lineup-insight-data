@@ -60,17 +60,17 @@ export default class RGProjections implements IDataRetriever {
 							name = playerElement;
 						}
 						const team = playerJson.team;
-						const salary = parseInt(playerJson.salary);
+						const salary = utils.coerceInt(playerJson.salary);
 						if (name && team) {
-							let projectedPoints = parseFloat(playerJson["projected points"]);
+							let projectedPoints = utils.coerceFloat(playerJson["projected points"]);
 							if (!projectedPoints) {
-								projectedPoints = parseFloat(playerJson["points"]);
+								projectedPoints = utils.coerceFloat(playerJson["points"]);
 							}
 							const p = playerFactory.createPlayer(name, team, salary);
 							const s: IPlayerStats = {
 								source: "RotoGrinders",
-								projectedCeiling: parseFloat(playerJson.ceil),
-								projectedFloor: parseFloat(playerJson.floor),
+								projectedCeiling: utils.coerceFloat(playerJson.ceil),
+								projectedFloor: utils.coerceFloat(playerJson.floor),
 								projectedPoints: projectedPoints
 							};
 							p.stats = [s];
