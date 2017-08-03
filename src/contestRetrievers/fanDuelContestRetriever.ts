@@ -80,7 +80,9 @@ export default class FanDuelContestRetriever implements IContestRetriever {
 						playersURL: contest["players"]["_url"],
 						startTime: new Date(contest["start_date"])
 					};
-					returnContests.push(fdContest);
+					if (fdContest.sport) {
+						returnContests.push(fdContest);
+					}
 				}
 			}
 		}

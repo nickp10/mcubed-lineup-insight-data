@@ -105,6 +105,7 @@ class Utils {
 	}
 
 	sendHttpsRequest(request: https.RequestOptions, data?: string): PromiseLike<IIncomingMessage> {
+		//console.log(`Sending request to https://${request.hostname}${request.path}`);
 		return new Promise<IIncomingMessage>((resolve, reject) => {
 			const headers = request.headers || { };
 			request.headers = headers;
