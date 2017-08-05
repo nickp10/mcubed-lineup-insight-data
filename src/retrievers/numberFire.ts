@@ -1,10 +1,10 @@
-import { IDataRetriever, IIncomingMessage, ISiteDataRetriever, IPlayer, IPlayerStats } from "../interfaces";
+import { IIncomingMessage, IPlayer, IPlayerInsightRetriever, IPlayerStats, ContestType, Sport } from "../interfaces";
 import * as cheerio from "cheerio";
 import PlayerFactory from "../playerFactory";
 import * as setCookieParser from "set-cookie-parser";
 import * as utils from "../utils";
 
-export default class NumberFire implements IDataRetriever {
+export default class NumberFire implements IPlayerInsightRetriever {
 	// IDs for setting the DFS site to retrieve projection stats for
 	static fanDuelID = "3";
 	static draftKingsID = "4";
@@ -34,26 +34,48 @@ export default class NumberFire implements IDataRetriever {
 		"/nhl/daily-fantasy/daily-hockey-projections/goalies"
 	];
 
-	fanDuel = {
-		mlb: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.mlbSetSiteURL, NumberFire.fanDuelID, NumberFire.mlbDataSiteURLs),
-		nba: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.nbaSetSiteURL, NumberFire.fanDuelID, NumberFire.nbaDataSiteURLs),
-		nfl: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.nflSetSiteURL, NumberFire.fanDuelID, NumberFire.nflDataSiteURLs),
-		nhl: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.nhlSetSiteURL, NumberFire.fanDuelID, NumberFire.nhlDataSiteURLs)
-	};
-
-	draftKings = {
-		mlb: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.mlbSetSiteURL, NumberFire.draftKingsID, NumberFire.mlbDataSiteURLs),
-		nba: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.nbaSetSiteURL, NumberFire.draftKingsID, NumberFire.nbaDataSiteURLs),
-		nfl: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.nflSetSiteURL, NumberFire.draftKingsID, NumberFire.nflDataSiteURLs),
-		nhl: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.nhlSetSiteURL, NumberFire.draftKingsID, NumberFire.nhlDataSiteURLs)
-	};
-
-	yahoo = {
-		mlb: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.mlbSetSiteURL, NumberFire.yahooID, NumberFire.mlbDataSiteURLs),
-		nba: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.nbaSetSiteURL, NumberFire.yahooID, NumberFire.nbaDataSiteURLs),
-		nfl: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.nflSetSiteURL, NumberFire.yahooID, NumberFire.nflDataSiteURLs),
-		nhl: (playerFactory: PlayerFactory) => this.getData(playerFactory, NumberFire.nhlSetSiteURL, NumberFire.yahooID, NumberFire.nhlDataSiteURLs)
-	};
+	playerInsight(contestType: ContestType, sport: Sport): PromiseLike<IPlayer[]> {
+		const playerFactory = new PlayerFactory(sport);
+		switch (contestType) {
+			case ContestType.DraftKings:
+				switch (sport) {
+					case Sport.MLB:
+						return this.getData(playerFactory, NumberFire.mlbSetSiteURL, NumberFire.draftKingsID, NumberFire.mlbDataSiteURLs);
+					case Sport.NBA:
+						return this.getData(playerFactory, NumberFire.nbaSetSiteURL, NumberFire.draftKingsID, NumberFire.nbaDataSiteURLs);
+					case Sport.NFL:
+						return this.getData(playerFactory, NumberFire.nflSetSiteURL, NumberFire.draftKingsID, NumberFire.nflDataSiteURLs);
+					case Sport.NHL:
+						return this.getData(playerFactory, NumberFire.nhlSetSiteURL, NumberFire.draftKingsID, NumberFire.nhlDataSiteURLs);
+				}
+				break;
+			case ContestType.FanDuel:
+				switch (sport) {
+					case Sport.MLB:
+						return this.getData(playerFactory, NumberFire.mlbSetSiteURL, NumberFire.fanDuelID, NumberFire.mlbDataSiteURLs);
+					case Sport.NBA:
+						return this.getData(playerFactory, NumberFire.nbaSetSiteURL, NumberFire.fanDuelID, NumberFire.nbaDataSiteURLs);
+					case Sport.NFL:
+						return this.getData(playerFactory, NumberFire.nflSetSiteURL, NumberFire.fanDuelID, NumberFire.nflDataSiteURLs);
+					case Sport.NHL:
+						return this.getData(playerFactory, NumberFire.nhlSetSiteURL, NumberFire.fanDuelID, NumberFire.nhlDataSiteURLs);
+				}
+				break;
+			case ContestType.Yahoo:
+				switch (sport) {
+					case Sport.MLB:
+						return this.getData(playerFactory, NumberFire.mlbSetSiteURL, NumberFire.yahooID, NumberFire.mlbDataSiteURLs);
+					case Sport.NBA:
+						return this.getData(playerFactory, NumberFire.nbaSetSiteURL, NumberFire.yahooID, NumberFire.nbaDataSiteURLs);
+					case Sport.NFL:
+						return this.getData(playerFactory, NumberFire.nflSetSiteURL, NumberFire.yahooID, NumberFire.nflDataSiteURLs);
+					case Sport.NHL:
+						return this.getData(playerFactory, NumberFire.nhlSetSiteURL, NumberFire.yahooID, NumberFire.nhlDataSiteURLs);
+				}
+				break;
+		}
+		return Promise.reject<IPlayer[]>("An unknown contest type or sport was specified");
+	}
 
 	getData(playerFactory: PlayerFactory, setSiteURL: string, siteID: string, dataSiteURLs: string[]): PromiseLike<IPlayer[]> {
 		return utils.sendHttpsRequest({

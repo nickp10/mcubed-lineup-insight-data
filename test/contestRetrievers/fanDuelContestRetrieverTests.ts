@@ -1,7 +1,7 @@
 import * as assert from "assert";
 import * as fs from "fs";
 import FanDuelContestRetriever from "../../src/contestRetrievers/fanDuelContestRetriever";
-import { IContest, IGame, ITeam } from "../../src/interfaces";
+import { IContest, IGame, ITeam, ContestType, Sport } from "../../src/interfaces";
 import * as testUtils from "../testUtils";
 
 describe("FanDuelContestRetriever", () => {
@@ -12,11 +12,11 @@ describe("FanDuelContestRetriever", () => {
 			const contestsData = fs.readFileSync("test/content/fanDuelContestList.json", "utf-8");
 
 			// Act
-			const contests = target.parseContests(contestsData);
+			const contests = target.parseContests(contestsData, undefined);
 
 			// Assert
-			testUtils.assertContainsContest(contests, { ID: "FD19809", contestType: "fanDuel", label: "Early Only", maxSalary: 35000, sport: "mlb", startTime: new Date(Date.UTC(2017, 5, 22, 17, 5)) });
-			testUtils.assertContainsContest(contests, { ID: "FD19811", contestType: "fanDuel", label: "Main", maxSalary: 35000, sport: "mlb", startTime: new Date(Date.UTC(2017, 5, 22, 23, 5)) });
+			testUtils.assertContainsContest(contests, { ID: "FD19809", contestType: ContestType.FanDuel, label: "Early Only", maxSalary: 35000, sport: Sport.MLB, startTime: new Date(Date.UTC(2017, 5, 22, 17, 5)) });
+			testUtils.assertContainsContest(contests, { ID: "FD19811", contestType: ContestType.FanDuel, label: "Main", maxSalary: 35000, sport: Sport.MLB, startTime: new Date(Date.UTC(2017, 5, 22, 23, 5)) });
 		});
 	});
 
@@ -24,7 +24,7 @@ describe("FanDuelContestRetriever", () => {
 		it("should parse the specific contest data retreived from FanDuel", () => {
 			// Arrange
 			const target = new FanDuelContestRetriever();
-			const contest: IContest = { ID: "FD19809", contestType: "fanDuel", label: "Early Only", sport: "mlb" };
+			const contest: IContest = { ID: "FD19809", contestType: ContestType.FanDuel, label: "Early Only", sport: Sport.MLB };
 			const contestData = fs.readFileSync("test/content/fanDuelContest.json", "utf-8");
 			const expectedGames: IGame[] = [{
 				awayTeam: {
@@ -92,7 +92,7 @@ describe("FanDuelContestRetriever", () => {
 			target.parseContestSpecificData(contest, contestData);
 
 			// Assert
-			testUtils.assertContestEquals(contest, { ID: "FD19809", contestType: "fanDuel", label: "Early Only", maxPlayersPerTeam: 4, positions: ["P", "C", "1B", "2B", "3B", "SS", "OF", "OF", "OF"], sport: "mlb", games: expectedGames });
+			testUtils.assertContestEquals(contest, { ID: "FD19809", contestType: ContestType.FanDuel, label: "Early Only", maxPlayersPerTeam: 4, positions: ["P", "C", "1B", "2B", "3B", "SS", "OF", "OF", "OF"], sport: Sport.MLB, games: expectedGames });
 		});
 	});
 
@@ -100,7 +100,7 @@ describe("FanDuelContestRetriever", () => {
 		it("should parse the contest player list retreived from FanDuel", () => {
 			// Arrange
 			const target = new FanDuelContestRetriever();
-			const contest: IContest = { ID: "FD19809", contestType: "fanDuel", label: "Early Only", sport: "mlb" };
+			const contest: IContest = { ID: "FD19809", contestType: ContestType.FanDuel, label: "Early Only", sport: Sport.MLB };
 			const contestData = fs.readFileSync("test/content/fanDuelContest.json", "utf-8");
 			const playerListData = fs.readFileSync("test/content/fanDuelPlayerList.json", "utf-8");
 			target.parseContestSpecificData(contest, contestData);
@@ -109,9 +109,9 @@ describe("FanDuelContestRetriever", () => {
 			target.parseContestPlayerList(contest, playerListData);
 
 			// Assert
-			testUtils.assertContainsPlayer(contest.games[0].awayTeam.players, { name: "Josh Donaldson", team: "TOR", position: "3B", salary: 3900 });
-			testUtils.assertContainsPlayer(contest.games[0].homeTeam.players, { name: "Adrian Beltre", team: "TEX", position: "3B", salary: 3800 });
-			testUtils.assertContainsPlayer(contest.games[5].awayTeam.players, { name: "Jose Altuve", team: "HOU", position: "2B", salary: 4000 });
+			testUtils.assertContainsPlayer(contest.games[0].awayTeam.players, { name: "Josh Donaldson", team: "TOR", position: "3B", salary: 3900, isProbablePitcher: false, isStarter: false, battingOrder: "NA", stats: [{ source: "FanDuel", seasonAveragePoints: 10.434374809265137 }] });
+			testUtils.assertContainsPlayer(contest.games[0].homeTeam.players, { name: "Adrian Beltre", team: "TEX", position: "3B", salary: 3800, isProbablePitcher: false, isStarter: false, battingOrder: "4th", stats: [{ source: "FanDuel", seasonAveragePoints: 11.54339599609375 }] });
+			testUtils.assertContainsPlayer(contest.games[5].awayTeam.players, { name: "Jose Altuve", team: "HOU", position: "2B", salary: 4000, isProbablePitcher: false, isStarter: false, battingOrder: "NA", stats: [{ source: "FanDuel", seasonAveragePoints: 13.75048591095267 }] });
 		});
 	});
 });

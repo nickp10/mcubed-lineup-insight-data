@@ -1,4 +1,4 @@
-import { IPlayer } from "./interfaces";
+import { IPlayer, Sport } from "./interfaces";
 import * as S from "string";
 
 export default class PlayerFactory {
@@ -14,40 +14,40 @@ export default class PlayerFactory {
 	 * The key represents the team name from external sites.
 	 * The value represents the corresponding team name from the contest site.
 	 */
-	static alternateTeamsBySport = {
-		mlb: {
-			"CHW": "CWS",
-			"KC": "KAN",
-			"KCR": "KAN",
-			"LAD": "LOS",
-			"SD": "SDP",
-			"SF": "SFG",
-			"TBR": "TAM",
-			"WSH": "WAS"
-		},
-		nba: {
-			"GSW": "GS",
-			"NOP": "NO",
-			"NYK": "NY",
-			"PHX": "PHO",
-			"UTAH": "UTA",
-			"SAS": "SA",
-			"WSH": "WAS"
-		},
-		nfl: {
-			"GBP": "GB",
-			"KCC": "KC",
-			"LAR": "LA",
-			"NEP": "NE",
-			"NOS": "NO",
-			"SDC": "SD",
-			"SFO": "SF",
-			"TBB": "TB"
-		},
-		nhl: {
-			"MTL": "MON"
-		}
-	};
+	static alternateTeamsBySport = new Map([
+		[Sport.MLB, new Map([
+			["CHW", "CWS"],
+			["KC", "KAN"],
+			["KCR", "KAN"],
+			["LAD", "LOS"],
+			["SD", "SDP"],
+			["SF", "SFG"],
+			["TBR", "TAM"],
+			["WSH", "WAS"]
+		])],
+		[Sport.NBA, new Map([
+			["GSW", "GS"],
+			["NOP", "NO"],
+			["NYK", "NY"],
+			["PHX", "PHO"],
+			["UTAH", "UTA"],
+			["SAS", "SA"],
+			["WSH", "WAS"]
+		])],
+		[Sport.NFL, new Map([
+			["GBP", "GB"],
+			["KCC", "KC"],
+			["LAR", "LA"],
+			["NEP", "NE"],
+			["NOS", "NO"],
+			["SDC", "SD"],
+			["SFO", "SF"],
+			["TBB", "TB"]
+		])],
+		[Sport.NHL, new Map([
+			["MTL", "MON"]
+		])]
+	]);
 
 	/**
 	 * Defines a mapping between NFL cities and the corresponding mascot.
@@ -87,10 +87,10 @@ export default class PlayerFactory {
 		"Washington": "Redskins"
 	};
 
-	alternateTeams: { [key: string]: string };
+	alternateTeams: Map<string, string>;
 
-	constructor(sport: string) {
-		this.alternateTeams = PlayerFactory.alternateTeamsBySport[sport];
+	constructor(sport: Sport) {
+		this.alternateTeams = PlayerFactory.alternateTeamsBySport.get(sport);
 	}
 
 	/**
@@ -184,7 +184,7 @@ export default class PlayerFactory {
 				team = team.substr(0, index);
 			}
 			team = team.toUpperCase();
-			team = this.alternateTeams[team] || team;
+			team = this.alternateTeams.get(team) || team;
 			player.team = team;
 		}
 		if (salary || salary === 0) {

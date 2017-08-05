@@ -1,6 +1,7 @@
 import * as fs from "fs";
 import DFSR from "../../src/retrievers/dfsr";
 import PlayerFactory from "../../src/playerFactory";
+import { Sport } from "../../src/interfaces";
 import * as testUtils from "../testUtils";
 
 describe("DFSR", () => {
@@ -9,7 +10,7 @@ describe("DFSR", () => {
 			// Arrange
 			const target = new DFSR();
 			const data = fs.readFileSync("test/content/dfsrMLBDraftKings.csv", "utf-8");
-			const playerFactory = new PlayerFactory("mlb");
+			const playerFactory = new PlayerFactory(Sport.MLB);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data, DFSR.mlbIndices);
@@ -23,7 +24,7 @@ describe("DFSR", () => {
 			// Arrange
 			const target = new DFSR();
 			const data = fs.readFileSync("test/content/dfsrMLBFanDuel.csv", "utf-8");
-			const playerFactory = new PlayerFactory("mlb");
+			const playerFactory = new PlayerFactory(Sport.MLB);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data, DFSR.mlbIndices);
@@ -37,7 +38,7 @@ describe("DFSR", () => {
 			// Arrange
 			const target = new DFSR();
 			const data = fs.readFileSync("test/content/dfsrNFLDraftKings.csv", "utf-8");
-			const playerFactory = new PlayerFactory("nfl");
+			const playerFactory = new PlayerFactory(Sport.NFL);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data, DFSR.nflIndices);
@@ -51,7 +52,7 @@ describe("DFSR", () => {
 			// Arrange
 			const target = new DFSR();
 			const data = fs.readFileSync("test/content/dfsrNFLFanDuel.csv", "utf-8");
-			const playerFactory = new PlayerFactory("nfl");
+			const playerFactory = new PlayerFactory(Sport.NFL);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data, DFSR.nflIndices);

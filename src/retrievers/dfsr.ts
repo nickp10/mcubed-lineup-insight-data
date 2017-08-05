@@ -1,4 +1,4 @@
-import { IDataRetriever, ISiteDataRetriever, IPlayer, IPlayerStats } from "../interfaces";
+import { IPlayer, IPlayerInsightRetriever, IPlayerStats, ContestType, Sport } from "../interfaces";
 import PlayerFactory from "../playerFactory";
 import * as utils from "../utils";
 
@@ -9,7 +9,7 @@ interface IIndexMapping {
 	salaryIndex: number;
 }
 
-export default class DFSR implements IDataRetriever {
+export default class DFSR implements IPlayerInsightRetriever {
 	// URLs for DraftKings data
 	static draftKingsMLBSiteURL = "/data/baseball.draft_kings.csv";
 	static draftKingsNBASiteURL = "/data/basketball.draft_kings.csv";
@@ -54,26 +54,48 @@ export default class DFSR implements IDataRetriever {
 		salaryIndex: 4
 	};
 
-	draftKings = {
-		mlb: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.draftKingsMLBSiteURL, DFSR.mlbIndices),
-		nba: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.draftKingsNBASiteURL, DFSR.nbaIndices),
-		nfl: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.draftKingsNFLSiteURL, DFSR.nflIndices),
-		nhl: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.draftKingsNHLSiteURL, DFSR.nhlIndices)
-	};
-
-	fanDuel = {
-		mlb: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.fanDuelMLBSiteURL, DFSR.mlbIndices),
-		nba: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.fanDuelNBASiteURL, DFSR.nbaIndices),
-		nfl: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.fanDuelNFLSiteURL, DFSR.nflIndices),
-		nhl: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.fanDuelNHLSiteURL, DFSR.nhlIndices)
-	};
-
-	yahoo = {
-		mlb: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.yahooMLBSiteURL, DFSR.mlbIndices),
-		nba: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.yahooNBASiteURL, DFSR.nbaIndices),
-		nfl: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.yahooNFLSiteURL, DFSR.nflIndices),
-		nhl: (playerFactory: PlayerFactory) => this.getData(playerFactory, DFSR.yahooNHLSiteURL, DFSR.nhlIndices)
-	};
+	playerInsight(contestType: ContestType, sport: Sport): PromiseLike<IPlayer[]> {
+		const playerFactory = new PlayerFactory(sport);
+		switch (contestType) {
+			case ContestType.DraftKings:
+				switch (sport) {
+					case Sport.MLB:
+						return this.getData(playerFactory, DFSR.draftKingsMLBSiteURL, DFSR.mlbIndices);
+					case Sport.NBA:
+						return this.getData(playerFactory, DFSR.draftKingsNBASiteURL, DFSR.nbaIndices);
+					case Sport.NFL:
+						return this.getData(playerFactory, DFSR.draftKingsNFLSiteURL, DFSR.nflIndices);
+					case Sport.NHL:
+						return this.getData(playerFactory, DFSR.draftKingsNHLSiteURL, DFSR.nhlIndices);
+				}
+				break;
+			case ContestType.FanDuel:
+				switch (sport) {
+					case Sport.MLB:
+						return this.getData(playerFactory, DFSR.fanDuelMLBSiteURL, DFSR.mlbIndices);
+					case Sport.NBA:
+						return this.getData(playerFactory, DFSR.fanDuelNBASiteURL, DFSR.nbaIndices);
+					case Sport.NFL:
+						return this.getData(playerFactory, DFSR.fanDuelNFLSiteURL, DFSR.nflIndices);
+					case Sport.NHL:
+						return this.getData(playerFactory, DFSR.fanDuelNHLSiteURL, DFSR.nhlIndices);
+				}
+				break;
+			case ContestType.Yahoo:
+				switch (sport) {
+					case Sport.MLB:
+						return this.getData(playerFactory, DFSR.yahooMLBSiteURL, DFSR.mlbIndices);
+					case Sport.NBA:
+						return this.getData(playerFactory, DFSR.yahooNBASiteURL, DFSR.nbaIndices);
+					case Sport.NFL:
+						return this.getData(playerFactory, DFSR.yahooNFLSiteURL, DFSR.nflIndices);
+					case Sport.NHL:
+						return this.getData(playerFactory, DFSR.yahooNHLSiteURL, DFSR.nhlIndices);
+				}
+				break;
+		}
+		return Promise.reject<IPlayer[]>("An unknown contest type or sport was specified");
+	}
 
 	getData(playerFactory: PlayerFactory, siteURL: string, indices: IIndexMapping): PromiseLike<IPlayer[]> {
 		return utils.sendHttpsRequest({

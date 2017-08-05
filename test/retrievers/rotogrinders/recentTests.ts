@@ -2,6 +2,7 @@ import * as assert from "assert";
 import * as fs from "fs";
 import PlayerFactory from "../../../src/playerFactory";
 import RGRecent from "../../../src/retrievers/rotogrinders/recent";
+import { Sport } from "../../../src/interfaces";
 import * as testUtils from "../../testUtils";
 
 describe("RGRecent", () => {
@@ -10,7 +11,7 @@ describe("RGRecent", () => {
 			// Arrange
 			const target = new RGRecent();
 			const data = fs.readFileSync("test/content/rgRecentNBADraftKings.html", "utf-8");
-			const playerFactory = new PlayerFactory("nba");
+			const playerFactory = new PlayerFactory(Sport.NBA);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data);
@@ -25,7 +26,7 @@ describe("RGRecent", () => {
 			// Arrange
 			const target = new RGRecent();
 			const data = fs.readFileSync("test/content/rgRecentNBAFanDuel.html", "utf-8");
-			const playerFactory = new PlayerFactory("nba");
+			const playerFactory = new PlayerFactory(Sport.NBA);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data);
@@ -40,7 +41,7 @@ describe("RGRecent", () => {
 			// Arrange
 			const target = new RGRecent();
 			const data = fs.readFileSync("test/content/rgRecentNBAYahoo.html", "utf-8");
-			const playerFactory = new PlayerFactory("nba");
+			const playerFactory = new PlayerFactory(Sport.NBA);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data);

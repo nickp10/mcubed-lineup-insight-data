@@ -2,6 +2,7 @@ import * as cheerio from "cheerio";
 import * as fs from "fs";
 import NumberFire from "../../src/retrievers/numberFire";
 import PlayerFactory from "../../src/playerFactory";
+import { Sport } from "../../src/interfaces";
 import * as testUtils from "../testUtils";
 
 describe("NumberFire", () => {
@@ -10,7 +11,7 @@ describe("NumberFire", () => {
 			// Arrange
 			const target = new NumberFire();
 			const data = cheerio.load(fs.readFileSync("test/content/numberFireMLBDraftKings.html", "utf-8"));
-			const playerFactory = new PlayerFactory("mlb");
+			const playerFactory = new PlayerFactory(Sport.MLB);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data);
@@ -24,7 +25,7 @@ describe("NumberFire", () => {
 			// Arrange
 			const target = new NumberFire();
 			const data = cheerio.load(fs.readFileSync("test/content/numberFireMLBFanDuel.html", "utf-8"));
-			const playerFactory = new PlayerFactory("mlb");
+			const playerFactory = new PlayerFactory(Sport.MLB);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data);
@@ -38,7 +39,7 @@ describe("NumberFire", () => {
 			// Arrange
 			const target = new NumberFire();
 			const data = cheerio.load(fs.readFileSync("test/content/numberFireMLBYahoo.html", "utf-8"));
-			const playerFactory = new PlayerFactory("mlb");
+			const playerFactory = new PlayerFactory(Sport.MLB);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data);
@@ -52,7 +53,7 @@ describe("NumberFire", () => {
 			// Arrange
 			const target = new NumberFire();
 			const data = cheerio.load(fs.readFileSync("test/content/numberFireNBADraftKings.html", "utf-8"));
-			const playerFactory = new PlayerFactory("nba");
+			const playerFactory = new PlayerFactory(Sport.NBA);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data);
@@ -66,7 +67,7 @@ describe("NumberFire", () => {
 			// Arrange
 			const target = new NumberFire();
 			const data = cheerio.load(fs.readFileSync("test/content/numberFireNBAFanDuel.html", "utf-8"));
-			const playerFactory = new PlayerFactory("nba");
+			const playerFactory = new PlayerFactory(Sport.NBA);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data);
@@ -80,7 +81,7 @@ describe("NumberFire", () => {
 			// Arrange
 			const target = new NumberFire();
 			const data = cheerio.load(fs.readFileSync("test/content/numberFireNBAYahoo.html", "utf-8"));
-			const playerFactory = new PlayerFactory("nba");
+			const playerFactory = new PlayerFactory(Sport.NBA);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data);
@@ -94,7 +95,7 @@ describe("NumberFire", () => {
 			// Arrange
 			const target = new NumberFire();
 			const data = cheerio.load(fs.readFileSync("test/content/numberFireNFLDraftKings.html", "utf-8"));
-			const playerFactory = new PlayerFactory("nfl");
+			const playerFactory = new PlayerFactory(Sport.NFL);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data);
@@ -108,7 +109,7 @@ describe("NumberFire", () => {
 			// Arrange
 			const target = new NumberFire();
 			const data = cheerio.load(fs.readFileSync("test/content/numberFireNFLFanDuel.html", "utf-8"));
-			const playerFactory = new PlayerFactory("nfl");
+			const playerFactory = new PlayerFactory(Sport.NFL);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data);
@@ -122,7 +123,7 @@ describe("NumberFire", () => {
 			// Arrange
 			const target = new NumberFire();
 			const data = cheerio.load(fs.readFileSync("test/content/numberFireNFLYahoo.html", "utf-8"));
-			const playerFactory = new PlayerFactory("nfl");
+			const playerFactory = new PlayerFactory(Sport.NFL);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data);

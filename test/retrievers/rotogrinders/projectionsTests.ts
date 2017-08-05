@@ -2,6 +2,7 @@ import * as assert from "assert";
 import * as fs from "fs";
 import PlayerFactory from "../../../src/playerFactory";
 import RGProjections from "../../../src/retrievers/rotogrinders/projections";
+import { Sport } from "../../../src/interfaces";
 import * as testUtils from "../../testUtils";
 
 describe("RGProjections", () => {
@@ -10,7 +11,7 @@ describe("RGProjections", () => {
 			// Arrange
 			const target = new RGProjections();
 			const data = fs.readFileSync("test/content/rgProjectionsMLBDraftKings.html", "utf-8");
-			const playerFactory = new PlayerFactory("mlb");
+			const playerFactory = new PlayerFactory(Sport.MLB);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data);
@@ -25,7 +26,7 @@ describe("RGProjections", () => {
 			// Arrange
 			const target = new RGProjections();
 			const data = fs.readFileSync("test/content/rgProjectionsMLBFanDuel.html", "utf-8");
-			const playerFactory = new PlayerFactory("mlb");
+			const playerFactory = new PlayerFactory(Sport.MLB);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data);
@@ -40,7 +41,7 @@ describe("RGProjections", () => {
 			// Arrange
 			const target = new RGProjections();
 			const data = fs.readFileSync("test/content/rgProjectionsNBADraftKings.html", "utf-8");
-			const playerFactory = new PlayerFactory("nba");
+			const playerFactory = new PlayerFactory(Sport.NBA);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data);
@@ -55,7 +56,7 @@ describe("RGProjections", () => {
 			// Arrange
 			const target = new RGProjections();
 			const data = fs.readFileSync("test/content/rgProjectionsNBAFanDuel.html", "utf-8");
-			const playerFactory = new PlayerFactory("nba");
+			const playerFactory = new PlayerFactory(Sport.NBA);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data);
@@ -70,7 +71,7 @@ describe("RGProjections", () => {
 			// Arrange
 			const target = new RGProjections();
 			const data = fs.readFileSync("test/content/rgProjectionsNFLDraftKings.html", "utf-8");
-			const playerFactory = new PlayerFactory("nfl");
+			const playerFactory = new PlayerFactory(Sport.NFL);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data);
@@ -84,7 +85,7 @@ describe("RGProjections", () => {
 			// Arrange
 			const target = new RGProjections();
 			const data = fs.readFileSync("test/content/rgProjectionsNFLFanDuel.html", "utf-8");
-			const playerFactory = new PlayerFactory("nfl");
+			const playerFactory = new PlayerFactory(Sport.NFL);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data);

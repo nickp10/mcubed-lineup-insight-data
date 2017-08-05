@@ -1,20 +1,20 @@
 #! /usr/bin/env node
 
+import { DataType } from "./interfaces";
 import * as args from "./args";
 import * as insightData from "./data";
 import * as utils from "./utils";
 
-switch (args.data) {
-	case utils.DATA_CONTESTS:
-		insightData.getContests(args.contestType).then((contests) => {
+switch (args.dataType) {
+	case DataType.ContestList:
+		insightData.getContestList(args.contestType, args.sport).then((contests) => {
 			console.log(JSON.stringify(contests));
 		});
 		break;
-	case utils.DATA_INSIGHT:
+	case DataType.PlayerInsight:
 	default:
-		insightData.getInsight(args.contestType, args.sport).then((players) => {
+		insightData.getPlayerInsight(args.contestType, args.sport).then((players) => {
 			console.log(JSON.stringify(players));
 		});
 		break;
 }
-

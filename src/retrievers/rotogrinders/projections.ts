@@ -1,32 +1,54 @@
-import { IDataRetriever, ISiteDataRetriever, IPlayer, IPlayerStats } from "../../interfaces";
+import { IPlayer, IPlayerInsightRetriever, IPlayerStats, ContestType, Sport } from "../../interfaces";
 import PlayerFactory from "../../playerFactory";
 import * as utils from "../../utils";
 
-export default class RGProjections implements IDataRetriever {
+export default class RGProjections implements IPlayerInsightRetriever {
 	// Regex for matching the data JSON object in the HTML document
 	static dataRegex = /data\s*=\s*(.*?}]);/;
 	static dataRegexGroup = 1;
 
-	draftKings = {
-		mlb: (playerFactory: PlayerFactory) => this.getData(playerFactory, "draftkings", "mlb-pitcher", "mlb-hitter"),
-		nba: (playerFactory: PlayerFactory) => this.getData(playerFactory, "draftkings", "nba-player"),
-		nfl: (playerFactory: PlayerFactory) => this.getData(playerFactory, "draftkings", "nfl-qb", "nfl-flex", "nfl-defense"),
-		nhl: (playerFactory: PlayerFactory) => this.getData(playerFactory, "draftkings", "nhl-skater", "nhl-goalie")
-	};
-
-	fanDuel = {
-		mlb: (playerFactory: PlayerFactory) => this.getData(playerFactory, "fanduel", "mlb-pitcher", "mlb-hitter"),
-		nba: (playerFactory: PlayerFactory) => this.getData(playerFactory, "fanduel", "nba-player"),
-		nfl: (playerFactory: PlayerFactory) => this.getData(playerFactory, "fanduel", "nfl-qb", "nfl-flex", "nfl-defense", "nfl-kicker"),
-		nhl: (playerFactory: PlayerFactory) => this.getData(playerFactory, "fanduel", "nhl-skater", "nhl-goalie")
-	};
-
-	yahoo = {
-		mlb: (playerFactory: PlayerFactory) => this.getData(playerFactory, "yahoo", "mlb-pitcher", "mlb-hitter"),
-		nba: (playerFactory: PlayerFactory) => this.getData(playerFactory, "yahoo", "nba-player"),
-		nfl: (playerFactory: PlayerFactory) => this.getData(playerFactory, "yahoo", "nfl-qb", "nfl-flex", "nfl-defense"),
-		nhl: (playerFactory: PlayerFactory) => this.getData(playerFactory, "yahoo", "nhl-skater", "nhl-goalie")
-	};
+	playerInsight(contestType: ContestType, sport: Sport): PromiseLike<IPlayer[]> {
+		const playerFactory = new PlayerFactory(sport);
+		switch (contestType) {
+			case ContestType.DraftKings:
+				switch (sport) {
+					case Sport.MLB:
+						return this.getData(playerFactory, "draftkings", "mlb-pitcher", "mlb-hitter");
+					case Sport.NBA:
+						return this.getData(playerFactory, "draftkings", "nba-player");
+					case Sport.NFL:
+						return this.getData(playerFactory, "draftkings", "nfl-qb", "nfl-flex", "nfl-defense");
+					case Sport.NHL:
+						return this.getData(playerFactory, "draftkings", "nhl-skater", "nhl-goalie");
+				}
+				break;
+			case ContestType.FanDuel:
+				switch (sport) {
+					case Sport.MLB:
+						return this.getData(playerFactory, "fanduel", "mlb-pitcher", "mlb-hitter");
+					case Sport.NBA:
+						return this.getData(playerFactory, "fanduel", "nba-player");
+					case Sport.NFL:
+						return this.getData(playerFactory, "fanduel", "nfl-qb", "nfl-flex", "nfl-defense", "nfl-kicker");
+					case Sport.NHL:
+						return this.getData(playerFactory, "fanduel", "nhl-skater", "nhl-goalie");
+				}
+				break;
+			case ContestType.Yahoo:
+				switch (sport) {
+					case Sport.MLB:
+						return this.getData(playerFactory, "yahoo", "mlb-pitcher", "mlb-hitter");
+					case Sport.NBA:
+						return this.getData(playerFactory, "yahoo", "nba-player");
+					case Sport.NFL:
+						return this.getData(playerFactory, "yahoo", "nfl-qb", "nfl-flex", "nfl-defense");
+					case Sport.NHL:
+						return this.getData(playerFactory, "yahoo", "nhl-skater", "nhl-goalie");
+				}
+				break;
+		}
+		return Promise.reject<IPlayer[]>("An unknown contest type or sport was specified");
+	}
 
 	getData(playerFactory: PlayerFactory, contest: string, ...pages: string[]): PromiseLike<IPlayer[]> {
 		const promises = pages.map((page) => {

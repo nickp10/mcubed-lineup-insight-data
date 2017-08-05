@@ -1,10 +1,11 @@
+import { ContestType, DataType, Sport } from "./interfaces";
 import * as argv from "argv";
 import * as utils from "./utils";
 
 class Args {
-	data: string;
-	contestType: string;
-	sport: string;
+	dataType: DataType;
+	contestType: ContestType;
+	sport: Sport;
 
 	constructor() {
 		const args = argv
@@ -12,44 +13,40 @@ class Args {
 			.option({ name: "contestType", short: "c", type: "string" })
 			.option({ name: "sport", short: "s", type: "string" })
 			.run();
-		this.data = args.options["data"] || utils.DATA_INSIGHT;
-		this.contestType = args.options["contestType"];
-		this.sport = args.options["sport"];
-		this.validate();
+		const argData = args.options["data"];
+		const argContestType = args.options["contestType"];
+		const argSport = args.options["sport"];
+		this.validate(argData, argContestType, argSport);
 	}
 
-	validate(): void {
+	validate(argDataType: string, argContestType: string, argSport: string): void {
 		// Validate data
-		if (!this.data) {
-			console.error("The -d or --data argument must be supplied.");
-			process.exit();
-		}
-		this.data = utils.coerceData(this.data);
-		if (!this.data) {
-			console.error("The -d or --data argument must be one of: " + utils.validData.join(", "));
+		this.dataType = utils.coerceDataType(argDataType) || DataType.PlayerInsight;
+		if (!this.dataType) {
+			console.error("The -d or --data argument must be one of: " + utils.validDataTypes().join(", "));
 			process.exit();
 		}
 
 		// Validate contest type
-		if (!this.contestType) {
+		if (!argContestType) {
 			console.error("The -c or --contestType argument must be supplied.");
 			process.exit();
 		}
-		this.contestType = utils.coerceContestType(this.contestType);
+		this.contestType = utils.coerceContestType(argContestType);
 		if (!this.contestType) {
-			console.error("The -c or --contestType argument must be one of: " + utils.validContestTypes.join(", "));
+			console.error("The -c or --contestType argument must be one of: " + utils.validContestTypes().join(", "));
 			process.exit();
 		}
 
 		// Validate sport
-		if (this.data === utils.DATA_INSIGHT) {
-			if (!this.sport) {
+		if (this.dataType === DataType.PlayerInsight) {
+			if (!argSport) {
 				console.error("The -s or --sport argument must be supplied.");
 				process.exit();
 			}
-			this.sport = utils.coerceSport(this.sport);
+			this.sport = utils.coerceSport(argSport);
 			if (!this.sport) {
-				console.error("The -s or --sport argument must be one of: " + utils.validSports.join(", "));
+				console.error("The -s or --sport argument must be one of: " + utils.validSports().join(", "));
 				process.exit();
 			}
 		}

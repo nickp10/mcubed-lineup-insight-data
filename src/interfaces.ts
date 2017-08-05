@@ -5,27 +5,27 @@ export interface IIncomingMessage extends http.IncomingMessage {
 	body?: string;
 }
 
-export interface IDataRetriever {
-	draftKings?: ISiteDataRetriever;
-	fanDuel?: ISiteDataRetriever;
-	yahoo?: ISiteDataRetriever;
-}
-
-export interface ISiteDataRetriever {
-	mlb: (playerFactory: PlayerFactory) => PromiseLike<IPlayer[]>;
-	nba: (playerFactory: PlayerFactory) => PromiseLike<IPlayer[]>;
-	nfl: (playerFactory: PlayerFactory) => PromiseLike<IPlayer[]>;
-	nhl: (playerFactory: PlayerFactory) => PromiseLike<IPlayer[]>;
+export interface IPlayerInsightRetriever {
+	playerInsight: (contest: ContestType, sport: Sport) => PromiseLike<IPlayer[]>;
 }
 
 export interface IPlayer {
 	battingOrder?: string;
+	ID?: string;
+	injury?: IPlayerInjury;
+	isProbablePitcher?: boolean;
 	isStarter?: boolean;
 	name: string;
-	team: string;
+	newsStatus?: NewsStatus;
 	position?: string;
 	salary: number;
 	stats?: IPlayerStats[];
+	team: string;
+}
+
+export interface IPlayerInjury {
+	display: string;
+	injuryType: InjuryType;
 }
 
 export interface IPlayerStats {
@@ -37,12 +37,13 @@ export interface IPlayerStats {
 	seasonAveragePoints?: number;
 }
 
-export interface IContestRetriever {
-	contests: () => PromiseLike<IContest[]>;
+export interface IContestListRetriever {
+	contestList: (sport: Sport) => PromiseLike<IContest[]>;
+	contestType: ContestType;
 }
 
 export interface IContest {
-	contestType: string;
+	contestType: ContestType;
 	games?: IGame[];
 	ID: string;
 	label: string;
@@ -51,7 +52,7 @@ export interface IContest {
 	playerDataLastUpdateTime?: Date;
 	playerDataNextUpdateTime?: Date;
 	positions?: string[];
-	sport: string;
+	sport: Sport;
 	startTime?: Date;
 }
 
@@ -70,4 +71,36 @@ export interface ITeam {
 	code: string;
 	fullName: string;
 	players?: IPlayer[];
+}
+
+export enum ContestType {
+	DraftKings = 1,
+	FanDuel,
+	Yahoo
+}
+
+export enum DataType {
+	ContestList = 1,
+	PlayerCard,
+	PlayerInsight,
+	TeamInsight
+}
+
+export enum InjuryType {
+	Out = 1,
+	Possible,
+	Probable
+}
+
+export enum NewsStatus {
+	Breaking = 1,
+	Recent,
+	None
+}
+
+export enum Sport {
+	MLB = 1,
+	NBA,
+	NFL,
+	NHL
 }

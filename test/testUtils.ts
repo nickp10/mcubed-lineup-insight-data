@@ -101,6 +101,7 @@ class TestUtils {
 	assertPlayerEquals(actualPlayer: IPlayer, expectedPlayer: IPlayer): void {
 		assert.equal(actualPlayer.team, expectedPlayer.team);
 		assert.equal(actualPlayer.salary, expectedPlayer.salary);
+		assert.equal(actualPlayer.isProbablePitcher, expectedPlayer.isProbablePitcher);
 		assert.equal(actualPlayer.isStarter, expectedPlayer.isStarter);
 		assert.equal(actualPlayer.battingOrder, expectedPlayer.battingOrder);
 		if (expectedPlayer.stats) {

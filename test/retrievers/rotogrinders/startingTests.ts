@@ -3,6 +3,7 @@ import * as cheerio from "cheerio";
 import * as fs from "fs";
 import PlayerFactory from "../../../src/playerFactory";
 import RGStarting from "../../../src/retrievers/rotogrinders/starting";
+import { Sport } from "../../../src/interfaces";
 import * as testUtils from "../../testUtils";
 
 describe("RGStarting", () => {
@@ -11,7 +12,7 @@ describe("RGStarting", () => {
 			// Arrange
 			const target = new RGStarting();
 			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingMLBDraftKings.html", "utf-8"));
-			const playerFactory = new PlayerFactory("mlb");
+			const playerFactory = new PlayerFactory(Sport.MLB);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data, "mlb");
@@ -28,7 +29,7 @@ describe("RGStarting", () => {
 			// Arrange
 			const target = new RGStarting();
 			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingMLBFanDuel.html", "utf-8"));
-			const playerFactory = new PlayerFactory("mlb");
+			const playerFactory = new PlayerFactory(Sport.MLB);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data, "mlb");
@@ -45,7 +46,7 @@ describe("RGStarting", () => {
 			// Arrange
 			const target = new RGStarting();
 			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingMLBYahoo.html", "utf-8"));
-			const playerFactory = new PlayerFactory("mlb");
+			const playerFactory = new PlayerFactory(Sport.MLB);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data, "mlb");
@@ -62,7 +63,7 @@ describe("RGStarting", () => {
 			// Arrange
 			const target = new RGStarting();
 			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNBADraftKings.html", "utf-8"));
-			const playerFactory = new PlayerFactory("nba");
+			const playerFactory = new PlayerFactory(Sport.NBA);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data, "nba");
@@ -78,7 +79,7 @@ describe("RGStarting", () => {
 			// Arrange
 			const target = new RGStarting();
 			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNBAFanDuel.html", "utf-8"));
-			const playerFactory = new PlayerFactory("nba");
+			const playerFactory = new PlayerFactory(Sport.NBA);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data, "nba");
@@ -94,7 +95,7 @@ describe("RGStarting", () => {
 			// Arrange
 			const target = new RGStarting();
 			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNBAYahoo.html", "utf-8"));
-			const playerFactory = new PlayerFactory("nba");
+			const playerFactory = new PlayerFactory(Sport.NBA);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data, "nba");
@@ -110,7 +111,7 @@ describe("RGStarting", () => {
 			// Arrange
 			const target = new RGStarting();
 			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNFLDraftKings.html", "utf-8"));
-			const playerFactory = new PlayerFactory("nfl");
+			const playerFactory = new PlayerFactory(Sport.NFL);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data, "nfl");
@@ -125,7 +126,7 @@ describe("RGStarting", () => {
 			// Arrange
 			const target = new RGStarting();
 			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNFLFanDuel.html", "utf-8"));
-			const playerFactory = new PlayerFactory("nfl");
+			const playerFactory = new PlayerFactory(Sport.NFL);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data, "nfl");
@@ -140,7 +141,7 @@ describe("RGStarting", () => {
 			// Arrange
 			const target = new RGStarting();
 			const data =  cheerio.load(fs.readFileSync("test/content/rgStartingNFLYahoo.html", "utf-8"));
-			const playerFactory = new PlayerFactory("nfl");
+			const playerFactory = new PlayerFactory(Sport.NFL);
 
 			// Act
 			const players = target.parsePlayers(playerFactory, data, "nfl");

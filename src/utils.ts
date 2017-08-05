@@ -1,16 +1,8 @@
-import { IIncomingMessage } from "./interfaces";
+import { IIncomingMessage, ContestType, DataType, Sport } from "./interfaces";
 import * as http from "http";
 import * as https from "https";
 
 class Utils {
-	DATA_CONTESTS = "c";
-	DATA_INSIGHT = "i";
-	DATA_PLAYER = "p";
-	DATA_TEAMS = "t";
-	validData = [this.DATA_CONTESTS, "contests", this.DATA_INSIGHT, "insight", this.DATA_PLAYER, "player", this.DATA_TEAMS, "teams"];
-	validContestTypes = ["fanDuel", "draftKings", "yahoo"];
-	validSports = ["mlb", "nba", "nfl", "nhl"];
-
 	/**
 	 * Flattens the specified items such that all items from any sub-arrays recursive
 	 * will be returned in a one-dimensional linear array. For example:
@@ -55,37 +47,61 @@ class Utils {
 		return flat;
 	}
 
-	coerceData(data: string): string {
-		let coerceData: string = undefined;
-		data = data.toLowerCase();
-		this.validData.forEach((validValue) => {
-			if (validValue.toLowerCase() === data) {
-				coerceData = validValue.charAt(0);
+	validContestTypes(): string[] {
+		const values: string[] = [];
+		for (let x in ContestType) {
+			if (!Number(x)) {
+				values.push(x);
 			}
-		});
-		return coerceData;
+		}
+		return values;
 	}
 
-	coerceContestType(contestType: string): string {
-		let coerceContestType: string = undefined;
-		contestType = contestType.toUpperCase();
-		this.validContestTypes.forEach((validContestType) => {
-			if (validContestType.toUpperCase() === contestType) {
-				coerceContestType = validContestType;
+	validDataTypes(): string[] {
+		const values: string[] = [];
+		for (let x in DataType) {
+			if (!Number(x)) {
+				values.push(x);
 			}
-		});
-		return coerceContestType;
+		}
+		return values;
 	}
 
-	coerceSport(sport: string): string {
-		let coerceSport: string = undefined;
-		sport = sport.toUpperCase();
-		this.validSports.forEach((validSport) => {
-			if (validSport.toUpperCase() === sport) {
-				coerceSport = validSport;
+	validSports(): string[] {
+		const values: string[] = [];
+		for (let x in Sport) {
+			if (!Number(x)) {
+				values.push(x);
 			}
-		});
-		return coerceSport;
+		}
+		return values;
+	}
+
+	coerceContestType(contestType: string): ContestType {
+		for (let x in ContestType) {
+			if (utils.equalsIgnoreCase(x, contestType) && !Number(x)) {
+				return <any>ContestType[x];
+			}
+		}
+		return undefined;
+	}
+
+	coerceDataType(data: string): DataType {
+		for (let x in DataType) {
+			if (utils.equalsIgnoreCase(x, data) && !Number(x)) {
+				return <any>DataType[x];
+			}
+		}
+		return undefined;
+	}
+
+	coerceSport(sport: string): Sport {
+		for (let x in Sport) {
+			if (utils.equalsIgnoreCase(x, sport) && !Number(x)) {
+				return <any>Sport[x];
+			}
+		}
+		return undefined;
 	}
 
 	coerceInt(value: string): number {
@@ -102,6 +118,13 @@ class Utils {
 			return undefined;
 		}
 		return parsed;
+	}
+
+	equalsIgnoreCase(strA: string, strB: string): boolean {
+		if (strA) {
+			return new RegExp(`^${strA}$`, "i").test(strB);
+		}
+		return !!strB;
 	}
 
 	sendHttpsRequest(request: https.RequestOptions, data?: string): PromiseLike<IIncomingMessage> {

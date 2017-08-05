@@ -1,4 +1,4 @@
-import { IContest, IContestRetriever, IDataRetriever, IPlayer, ISiteDataRetriever } from "./interfaces";
+import { IContest, IContestListRetriever, IPlayer, IPlayerInsightRetriever, ContestType, Sport } from "./interfaces";
 import DFSR from "./retrievers/dfsr";
 import FanDuelContestRetriever from "./contestRetrievers/fanDuelContestRetriever";
 import NumberFire from "./retrievers/numberFire";
@@ -9,10 +9,10 @@ import RGStarting from "./retrievers/rotogrinders/starting";
 import * as utils from "./utils";
 
 class Data {
-	contestRetrievers: { [key: string]: IContestRetriever } = {
-		"fanDuel": new FanDuelContestRetriever()
-	};
-	insightRetrievers: IDataRetriever[] = [
+	contestListRetrievers: IContestListRetriever[] = [
+		new FanDuelContestRetriever()
+	];
+	playerInsightRetrievers: IPlayerInsightRetriever[] = [
 		new DFSR(),
 		new NumberFire(),
 		new RGProjections(),
@@ -20,32 +20,19 @@ class Data {
 		new RGStarting()
 	];
 
-	getContests(contestType: string): PromiseLike<IContest[]> {
-		contestType = utils.coerceContestType(contestType);
-		const contestRetriever = this.contestRetrievers[contestType];
-		if (contestRetriever) {
-			return contestRetriever.contests();
+	getContestList(contestType: ContestType, sport: Sport): PromiseLike<IContest[]> {
+		let retrievers = this.contestListRetrievers;
+		if (contestType) {
+			retrievers = retrievers.filter(r => r.contestType === contestType);
 		}
-		return Promise.resolve([]);
+		const promises = retrievers.map(r => r.contestList(sport));
+		return Promise.all(promises).then((contests) => {
+			return utils.flattenArray<IContest>(contests);
+		});
 	}
 
-	getInsight(contestType: string, sport: string): PromiseLike<IPlayer[]> {
-		contestType = utils.coerceContestType(contestType);
-		sport = utils.coerceSport(sport);
-		const promises: PromiseLike<IPlayer[]>[] = [];
-		this.insightRetrievers.forEach((retriever) => {
-			const siteRetriever: ISiteDataRetriever = retriever[contestType];
-			if (siteRetriever) {
-				const sportRetriever: (playerFactory: PlayerFactory) => PromiseLike<IPlayer[]> = siteRetriever[sport];
-				if (sportRetriever) {
-					const playerFactory = new PlayerFactory(sport);
-					const retrieverPromise = sportRetriever(playerFactory);
-					if (retrieverPromise) {
-						promises.push(retrieverPromise);
-					}
-				}
-			}
-		});
+	getPlayerInsight(contestType: ContestType, sport: Sport): PromiseLike<IPlayer[]> {
+		const promises = this.playerInsightRetrievers.map(r => r.playerInsight(contestType, sport));
 		return Promise.all(promises).then((dataArray) => {
 			let data: IPlayer[] = [];
 			dataArray.forEach((dataItem) => {
