@@ -189,17 +189,17 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
 	parseInjuryStatus(injuryStatus: string): IPlayerInjury {
 		if (utils.equalsIgnoreCase(injuryStatus, "DL") || utils.equalsIgnoreCase(injuryStatus, "IR") || utils.equalsIgnoreCase(injuryStatus, "NA") || utils.equalsIgnoreCase(injuryStatus, "O")) {
 			return {
-				display: injuryStatus,
+				display: injuryStatus.toUpperCase(),
 				injuryType: InjuryType.Out
 			};
 		} else if (utils.equalsIgnoreCase(injuryStatus, "D") || utils.equalsIgnoreCase(injuryStatus, "DTD") || utils.equalsIgnoreCase(injuryStatus, "GTD") || utils.equalsIgnoreCase(injuryStatus, "Q")) {
 			return {
-				display: injuryStatus,
+				display: injuryStatus.toUpperCase(),
 				injuryType: InjuryType.Possible
 			};
 		} else if (utils.equalsIgnoreCase(injuryStatus, "P")) {
 			return {
-				display: injuryStatus,
+				display: injuryStatus.toUpperCase(),
 				injuryType: InjuryType.Probable
 			};
 		}

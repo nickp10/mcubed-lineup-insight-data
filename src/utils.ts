@@ -124,7 +124,7 @@ class Utils {
 		if (strA) {
 			return new RegExp(`^${strA}$`, "i").test(strB);
 		}
-		return !!strB;
+		return !strB;
 	}
 
 	sendHttpsRequest(request: https.RequestOptions, data?: string): PromiseLike<IIncomingMessage> {
