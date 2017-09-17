@@ -1,4 +1,4 @@
-import { IContest, IGame, IPlayer, ITeam } from "../src/interfaces";
+import { IContest, IGame, IPlayer, IPlayerCard, ITeam } from "../src/interfaces";
 import * as assert from "assert";
 
 class TestUtils {
@@ -118,6 +118,39 @@ class TestUtils {
 			}
 		} else {
 			assert.equal(actualPlayer.stats, undefined);
+		}
+	}
+	
+	/**
+	 * Asserts that the actual player card matches the expected player card.
+	 * 
+	 * @param actualPlayerCard The actual player card to assert.
+	 * @param expectedPlayerCard The expected player card to assert.
+	 */
+	assertPlayerCardEquals(actualPlayerCard: IPlayerCard, expectedPlayerCard: IPlayerCard): void {
+		if (expectedPlayerCard.gameLog) {
+			assert.equal(actualPlayerCard.gameLog.length, expectedPlayerCard.gameLog.length);
+			for (let i = 0; i < actualPlayerCard.gameLog.length; i++) {
+				const actualGameLog = actualPlayerCard.gameLog[i];
+				const expectedGameLog = expectedPlayerCard.gameLog[i];
+				assert.deepStrictEqual(actualGameLog.date, expectedGameLog.date);
+				assert.equal(actualGameLog.opponent, expectedGameLog.opponent);
+				assert.equal(actualGameLog.points, expectedGameLog.points);
+			}
+		} else {
+			assert.equal(actualPlayerCard.gameLog, undefined);
+		}
+		if (expectedPlayerCard.news) {
+			assert.equal(actualPlayerCard.news.length, expectedPlayerCard.news.length);
+			for (let i = 0; i < actualPlayerCard.news.length; i++) {
+				const actualNews = actualPlayerCard.news[i];
+				const expectedNews = expectedPlayerCard.news[i];
+				assert.deepStrictEqual(actualNews.date, expectedNews.date);
+				assert.equal(actualNews.details, expectedNews.details);
+				assert.equal(actualNews.summary, expectedNews.summary);
+			}
+		} else {
+			assert.equal(actualPlayerCard.news, undefined);
 		}
 	}
 }

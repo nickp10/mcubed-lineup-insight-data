@@ -5,6 +5,27 @@ export interface IIncomingMessage extends http.IncomingMessage {
 	body?: string;
 }
 
+export interface IPlayerCardRetriever {
+	playerCard: (contestID: string, playerID: string) => PromiseLike<IPlayerCard>;
+}
+
+export interface IPlayerCard {
+	gameLog: IPlayerCardGameStats[];
+	news: IPlayerCardArticle[];
+}
+
+export interface IPlayerCardArticle {
+	date: Date;
+	details: string;
+	summary: string;
+}
+
+export interface IPlayerCardGameStats {
+	date: Date;
+	opponent: string;
+	points?: number;
+}
+
 export interface IPlayerInsightRetriever {
 	playerInsight: (contest: ContestType, sport: Sport) => PromiseLike<IPlayer[]>;
 }

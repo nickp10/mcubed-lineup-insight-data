@@ -1,0 +1,3044 @@
+{
+	"_meta":
+	{
+		"players":
+		{
+			"count": 1
+		},
+		"_primary_document": "players"
+	},
+	"fixture_stats": [
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "9.0",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "5",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "0",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "8",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "0",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "1",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "1",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-117924",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["117924"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 61.0
+				}
+			],
+			"score": 61.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "7.0",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "3",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "1",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "13",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "2",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "1",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "1",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-117820",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["117820"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 64.0
+				}
+			],
+			"score": 64.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "8.0",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "8",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "0",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "7",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "1",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "1",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "1",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-119608",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["119608"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 52.0
+				}
+			],
+			"score": 52.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "8.0",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "3",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "1",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "7",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "2",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "1",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "1",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-117637",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["117637"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 49.0
+				}
+			],
+			"score": 49.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "7.2",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "4",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "1",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "12",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "2",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "0",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "1",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-118900",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["118900"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 57.0
+				}
+			],
+			"score": 57.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "5.1",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "6",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "1",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "4",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "1",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "1",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "0",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-119050",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["119050"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 31.0
+				}
+			],
+			"score": 31.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "7.0",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "4",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "2",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "9",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "3",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "1",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "1",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-119150",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["119150"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 49.0
+				}
+			],
+			"score": 49.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "9.0",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "3",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "0",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "11",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "1",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "1",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "1",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-117973",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["117973"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 67.0
+				}
+			],
+			"score": 67.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "9.0",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "3",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "1",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "11",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "1",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "1",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "1",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-119614",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["119614"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 67.0
+				}
+			],
+			"score": 67.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "6.1",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "9",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "1",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "12",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "4",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "0",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "0",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-119215",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["119215"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 43.0
+				}
+			],
+			"score": 43.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "7.2",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "5",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "2",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "14",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "1",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "1",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "1",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-119346",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["119346"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 72.0
+				}
+			],
+			"score": 72.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "7.1",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "5",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "0",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "12",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "3",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "0",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "1",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-118369",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["118369"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 53.0
+				}
+			],
+			"score": 53.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "5.0",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "3",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "3",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "8",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "1",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "0",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "0",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-118798",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["118798"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 36.0
+				}
+			],
+			"score": 36.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "8.0",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "5",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "1",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "10",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "1",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "0",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "1",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-117489",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["117489"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 55.0
+				}
+			],
+			"score": 55.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "8.0",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "3",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "1",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "12",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "1",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "1",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "1",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-117795",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["117795"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 67.0
+				}
+			],
+			"score": 67.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "7.0",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "3",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "2",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "13",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "0",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "0",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "1",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-119726",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["119726"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 64.0
+				}
+			],
+			"score": 64.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "9.0",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "3",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "0",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "11",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "0",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "1",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "1",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-118985",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["118985"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 70.0
+				}
+			],
+			"score": 70.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "7.0",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "4",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "1",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "10",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "2",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "0",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "1",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-118130",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["118130"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 49.0
+				}
+			],
+			"score": 49.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "6.0",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "7",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "2",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "8",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "3",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "1",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "1",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-119287",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["119287"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 43.0
+				}
+			],
+			"score": 43.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "6.0",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "2",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "1",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "10",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "0",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "1",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "1",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-118316",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["118316"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 58.0
+				}
+			],
+			"score": 58.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "3.0",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "7",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "1",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "4",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "5",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "0",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "0",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-118510",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["118510"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 6.0
+				}
+			],
+			"score": 6.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "7.0",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "8",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "4",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "10",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "3",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "1",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "1",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-117756",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["117756"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 52.0
+				}
+			],
+			"score": 52.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "9.0",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "3",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "2",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "9",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "0",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "1",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "1",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-117769",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["117769"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 64.0
+				}
+			],
+			"score": 64.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "6.1",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "8",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "2",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "8",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "6",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "1",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "0",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-118234",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["118234"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 31.0
+				}
+			],
+			"score": 31.0
+		},
+		{
+			"stats": [
+				{
+					"abbr": "IP",
+					"quantity": "6.0",
+					"label": "Innings Pitched"
+				},
+				{
+					"abbr": "H",
+					"quantity": "6",
+					"label": "Hits"
+				},
+				{
+					"abbr": "BB",
+					"quantity": "1",
+					"label": "Walks"
+				},
+				{
+					"abbr": "SO",
+					"quantity": "4",
+					"label": "Strikeouts"
+				},
+				{
+					"abbr": "ER",
+					"quantity": "2",
+					"label": "Earned Runs"
+				},
+				{
+					"abbr": "W",
+					"quantity": "0",
+					"label": "Wins"
+				},
+				{
+					"abbr": "QSTART",
+					"quantity": "1",
+					"label": "Quality Start"
+				}
+			],
+			"id": "13627-119729",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			},
+			"fixture":
+			{
+				"_members": ["119729"],
+				"_ref": "fixtures.id"
+			},
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"score": 28.0
+				}
+			],
+			"score": 28.0
+		}
+	],
+	"news": [
+		{
+			"details": "The Indians' ace pushed the team's winning streak to 20 games while facing just three batters over the minimum Tuesday. Over his last nine starts, Kluber is 8-1 with 74 strikeouts -- the most punch outs for any MLB pitcher since Aug. 1 -- and has arguably taken control of the AL Cy Young race. He'll carry a sparkling 2.44 ERA into Sunday's contest at home against the Royals.",
+			"summary": "Kluber (16-4) tossed a complete-game shutout Tuesday, allowing five hits and no walks while striking out eight Tigers.",
+			"id": "670230",
+			"headline": "Tames Tigers with shutout Tuesday",
+			"date": "2017-09-13T02:13:06Z",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			}
+		},
+		{
+			"details": "Kluber was staked to a 4-0 lead in top of the first inning, which was more than enough for the ace to cruise to another victory and improve to 8-1 in his past 10 starts despite allowing a pair of homers in the bottom of the frame. This result also extended Cleveland's winning streak to a franchise-best 15 consecutive games. His team's climb to within 2.5 games of Houston for the best record in the AL has strengthened Kluber's case for a second Cy Young award, with his 2.56 ERA and 12.0 K/9 reminiscent of the 2.44 and 10.3 marks he posted when he captured that honor in 2014. The 31-year-old righty will look to add to his resume in Tuesday's home matchup with a depleted Tigers offense.",
+			"summary": "Kluber (15-4) beat the White Sox on Thursday after allowing two runs on three hits with one walk and 13 strikeouts in seven innings.",
+			"id": "667350",
+			"headline": "Strikes out 13 in 15th win",
+			"date": "2017-09-08T03:31:02Z",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			}
+		},
+		{
+			"details": "This marked the second consecutive outing in which the Klubot went eight innings and the seventh start in a row with three or fewer runs allowed. The only blemish on the evening was an RBI single in the seventh inning, but everything else about his evening was fairly low stress. Kluber's ERA now sits at a stellar 2.56 mark, a figure he'll look to improve further in his next start Thursday against the White Sox.",
+			"summary": "Kluber (14-4) shined Saturday against the Tigers, allowing just one run on eight hits while striking out seven in eight innings of work en route to the victory.",
+			"id": "665094",
+			"headline": "Continues dominance in Saturday win",
+			"date": "2017-09-03T09:40:54Z",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			}
+		},
+		{
+			"details": "Kluber still hasn't lost two consecutive starts all season long, as he was able to follow up a tough-luck defeat last time out against Boston with another dominant outing against another AL East opponent. Kluber is now 5-1 over his last six starts and hasn't given up more than three runs in any of the six. His ERA is down to a pristine 2.63, buoyed by an absurd 215 strikeouts over 160.2 innings.",
+			"summary": "Kluber (13-4) allowed two runs on three hits and a walk and struck out seven over eight innings to pick up the win Monday against the Yankees.",
+			"id": "662381",
+			"headline": "Beats Yankees behind eight strong innings",
+			"date": "2017-08-29T03:42:24Z",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			}
+		},
+		{
+			"details": "He was locked in a scoreless pitcher's duel with Drew Pomeranz until the fifth inning, when Mitch Moreland smacked a solo homer and gave Boston a lead they wouldn't surrender. Kluber has now struck out double-digit batters in 13 of 22 outings this season while delivering quality starts in an incredible 17 of them, but he'll face another tough task Monday on the road against the Yankees.",
+			"summary": "Kluber (12-4) suffered defeat at the hands of the Red Sox on Wednesday, allowing two runs on four hits and a walk over 7.2 innings while striking out 12.",
+			"id": "659886",
+			"headline": "Fans 12 in Wednesday's loss",
+			"date": "2017-08-24T02:55:15Z",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			}
+		},
+		{
+			"details": "After a successful bullpen session Sunday, the Tribe's ace is full-go for his showdown against the powerful Red Sox lineup. That's good news, considering that Kluber leads the AL with 14 complete games and five shutouts over the past four seasons. The last time he faced off against the Sox was in last year's ALDS, when Kluber allowed just three hits over seven shutout innings.",
+			"summary": "Manager Terry Francona said Kluber (ankle) will have \"no restrictions\" for his start Wednesday against Boston, the Associated Press reports.",
+			"id": "658773",
+			"headline": "Ready for Wednesday's showdown",
+			"date": "2017-08-21T18:34:12Z",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			}
+		},
+		{
+			"details": "Kluber felt great following Sunday's bullpen session and is ready to take the mound when Cleveland faces Boston on Wednesday. Kluber has been terrific this season, and the month of August has been no exception. Since the start of the month he's made four starts, during which he's picked up four wins and posted a 1.78 ERA and 0.66 WHIP.",
+			"summary": "Kluber (ankle) will make his scheduled start Wednesday against the Red Sox, Jordan Bastian of MLB.com reports.",
+			"id": "658404",
+			"headline": "Ready for Wednesday start",
+			"date": "2017-08-20T21:41:15Z",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			}
+		},
+		{
+			"details": "This is an encouraging development, as Kluber, who exited his last start after just 74 pitches with a sprained ankle, didn't appear to have any issues during Sunday's session. The Indians will wait and see how Kluber feels Monday before determining his status for Wednesday's start against the Red Sox.",
+			"summary": "Kluber (ankle) threw a side bullpen session Sunday, Jordan Bastian of MLB.com reports.",
+			"id": "658340",
+			"headline": "Tosses side session Sunday",
+			"date": "2017-08-20T18:09:06Z",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			}
+		},
+		{
+			"details": "Kluber was on a roll and probably could have completed at least the sixth inning if not for the injury. He came off the mound awkwardly covering first base on a ground ball and was favoring the leg. Kluber stayed in for one more batter but was removed after giving up a single. Seeing as he didn't need to leave the game immediately, the injury may not be a major one. Consider Kluber day-to-day until the Cleveland training staff can evaluate him further.",
+			"summary": "Kluber (12-3) tossed 5.1 innings and allowed one run on six hits and a walk to earn the win Friday night but was forced to leave after just 74 pitches with a sprained ankle, MLB.com reports.",
+			"id": "657449",
+			"headline": "Leaves with ankle injury in win",
+			"date": "2017-08-19T04:15:03Z",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			}
+		},
+		{
+			"details": "Kluber wasn't as dominant Sunday as he's been in recent outings, but the 31-year-old still managed to toss a quality start and earn his third straight win. He also managed to rack up more than eight strikeouts for a ridiculous 14th consecutive start. Cleveland's ace has dazzled since coming off the disabled list at the beginning of June, compiling an 8-1 record with a shiny 1.85 ERA and 151:17 K:BB across 14 starts (102.1 innings). He'll look to keep things rolling against the Royals on Friday.",
+			"summary": "Kluber (11-3) allowed three runs on four hits and two walks while striking out nine over seven innings to earn the win over Tampa Bay on Sunday.",
+			"id": "655153",
+			"headline": "Tosses another quality outing Sunday",
+			"date": "2017-08-13T22:47:26Z",
+			"player":
+			{
+				"_url": "https://api.fanduel.com/fixture-lists/21011/players/21011-13627"
+			}
+		}
+	],
+	"fixtures": [
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "117637",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["593"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-08-28T23:08:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "117769",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["596"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-04-22T00:10:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "119050",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["599"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-08-19T00:15:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "118798",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["598"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-07-10T00:08:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "117795",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["604"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-06-29T16:10:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "117924",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["598"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-09-12T23:10:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "118316",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["602"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-06-01T16:10:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "119726",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["600"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-06-24T20:10:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "119215",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["596"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-07-29T23:10:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": false,
+				"final": false,
+				"weather": "CLEAR_DAY",
+				"stadium_type": "OPEN",
+				"label": "PENDING"
+			},
+			"id": "118319",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["599"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather":
+			{
+				"temperature": 77,
+				"condition": "CLEAR_DAY",
+				"precipitation": [
+					{
+						"time": "2017-09-17T16:00:00Z",
+						"probability": 1,
+						"intensity": "VERY_LIGHT"
+					},
+					{
+						"time": "2017-09-17T17:00:00Z",
+						"probability": 1,
+						"intensity": "VERY_LIGHT"
+					},
+					{
+						"time": "2017-09-17T18:00:00Z",
+						"probability": 1,
+						"intensity": "VERY_LIGHT"
+					},
+					{
+						"time": "2017-09-17T19:00:00Z",
+						"probability": 2,
+						"intensity": "VERY_LIGHT"
+					},
+					{
+						"time": "2017-09-17T20:00:00Z",
+						"probability": 1,
+						"intensity": "VERY_LIGHT"
+					},
+					{
+						"time": "2017-09-17T21:00:00Z",
+						"probability": 1,
+						"intensity": "VERY_LIGHT"
+					}
+				],
+				"wind":
+				{
+					"bearing": 231,
+					"speed": 4
+				},
+				"time": "2017-09-17T17:10:00Z"
+			},
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-09-17T17:10:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "RETRACTABLE",
+				"label": "COMPLETE"
+			},
+			"id": "119729",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["616"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-04-09T20:10:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "119346",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["595"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-07-23T17:10:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "119608",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["598"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-09-02T22:10:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "117820",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["596"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-09-08T00:10:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "119614",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["593"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-08-03T23:10:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "118985",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["591"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-06-19T23:05:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "117973",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["617"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-08-08T23:10:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "118234",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["598"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-04-15T20:10:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "118369",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["602"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-07-16T01:05:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "118510",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["598"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-05-02T23:10:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "FIXED",
+				"label": "COMPLETE"
+			},
+			"id": "119150",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["594"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-08-13T17:10:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "117489",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["619"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-07-04T23:10:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "118130",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["618"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-06-14T23:10:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "118900",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["592"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-08-23T23:10:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "119287",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["596"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-06-09T23:10:00Z",
+			"sport": "MLB"
+		},
+		{
+			"status":
+			{
+				"started": true,
+				"final": true,
+				"weather": null,
+				"stadium_type": "OPEN",
+				"label": "COMPLETE"
+			},
+			"id": "117756",
+			"away_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["612"],
+					"_ref": "teams.id"
+				}
+			},
+			"name": null,
+			"weather": null,
+			"home_team":
+			{
+				"sport_specific":
+				{
+					"at_bat": null
+				},
+				"score": null,
+				"team":
+				{
+					"_members": ["597"],
+					"_ref": "teams.id"
+				}
+			},
+			"start_date": "2017-04-27T22:10:00Z",
+			"sport": "MLB"
+		}
+	],
+	"opponents": [
+		{
+			"season_stats":
+			{
+				"stats": [
+					{
+						"abbr": "Games",
+						"quantity": "21",
+						"rank_per_season": null,
+						"rank_per_season_fixture": null,
+						"label": "Games"
+					},
+					{
+						"abbr": "W",
+						"quantity": "8",
+						"rank_per_season": 74,
+						"rank_per_season_fixture": 72,
+						"label": "Wins"
+					},
+					{
+						"abbr": "QSTART",
+						"quantity": "12",
+						"rank_per_season": 63,
+						"rank_per_season_fixture": 44,
+						"label": "Quality Start"
+					},
+					{
+						"abbr": "L",
+						"quantity": "8",
+						"rank_per_season": 69,
+						"rank_per_season_fixture": 88,
+						"label": "Losses"
+					},
+					{
+						"abbr": "ERA",
+						"quantity": "3.78",
+						"rank_per_season": 204,
+						"rank_per_season_fixture": 204,
+						"label": "ERA"
+					},
+					{
+						"abbr": "SO",
+						"quantity": "116",
+						"rank_per_season": 79,
+						"rank_per_season_fixture": 51,
+						"label": "Strikeouts"
+					},
+					{
+						"abbr": "WHIP",
+						"quantity": "1.25",
+						"rank_per_season": 384,
+						"rank_per_season_fixture": 384,
+						"label": "WHIP"
+					},
+					{
+						"abbr": "IP",
+						"quantity": "131.0",
+						"rank_per_season": 87,
+						"rank_per_season_fixture": 15,
+						"label": "Innings Pitched"
+					},
+					{
+						"abbr": "H",
+						"quantity": "128",
+						"rank_per_season": 84,
+						"rank_per_season_fixture": 37,
+						"label": "Hits"
+					},
+					{
+						"abbr": "BB",
+						"quantity": "36",
+						"rank_per_season": 130,
+						"rank_per_season_fixture": 159,
+						"label": "Walks"
+					},
+					{
+						"abbr": "ER",
+						"quantity": "55",
+						"rank_per_season": 110,
+						"rank_per_season_fixture": 138,
+						"label": "Earned Runs"
+					}
+				],
+				"score": 672.0,
+				"season": "2017"
+			},
+			"_object_type": "player_opponent",
+			"handedness": "Left",
+			"id": "21011-13268",
+			"team":
+			{
+				"_members": ["599"],
+				"_ref": "teams.id"
+			},
+			"first_name": "Danny",
+			"position": "P",
+			"last_name": "Duffy",
+			"bat_handedness": "Left"
+		}
+	],
+	"teams": [
+		{
+			"name": "Orioles",
+			"city": "Baltimore",
+			"full_name": "Baltimore Orioles",
+			"colors": ["#1F1F1F", "#DF4601"],
+			"id": "591",
+			"code": "BAL",
+			"sport_specific": {}
+		},
+		{
+			"name": "Red Sox",
+			"city": "Boston",
+			"full_name": "Boston Red Sox",
+			"colors": ["#193454", "#CB172F"],
+			"id": "592",
+			"code": "BOS",
+			"sport_specific": {}
+		},
+		{
+			"name": "Yankees",
+			"city": "New York",
+			"full_name": "New York Yankees",
+			"colors": ["#0F1C43", "#FFFFFF"],
+			"id": "593",
+			"code": "NYY",
+			"sport_specific": {}
+		},
+		{
+			"name": "Rays",
+			"city": "Tampa Bay",
+			"full_name": "Tampa Bay Rays",
+			"colors": ["#092C5C", "#8FBCE6"],
+			"id": "594",
+			"code": "TAM",
+			"sport_specific": {}
+		},
+		{
+			"name": "Blue Jays",
+			"city": "Toronto",
+			"full_name": "Toronto Blue Jays",
+			"colors": ["#134A8E", "#E8291C"],
+			"id": "595",
+			"code": "TOR",
+			"sport_specific": {}
+		},
+		{
+			"name": "White Sox",
+			"city": "Chicago",
+			"full_name": "Chicago White Sox",
+			"colors": ["#1F1F1F", "#C4CED4"],
+			"id": "596",
+			"code": "CWS",
+			"sport_specific": {}
+		},
+		{
+			"name": "Indians",
+			"city": "Cleveland",
+			"full_name": "Cleveland Indians",
+			"colors": ["#0A2953", "#E40A1B"],
+			"id": "597",
+			"code": "CLE",
+			"sport_specific": {}
+		},
+		{
+			"name": "Tigers",
+			"city": "Detroit",
+			"full_name": "Detroit Tigers",
+			"colors": ["#0C2C56", "#FF3D00"],
+			"id": "598",
+			"code": "DET",
+			"sport_specific": {}
+		},
+		{
+			"name": "Royals",
+			"city": "Kansas City",
+			"full_name": "Kansas City Royals",
+			"colors": ["#004687", "#FFFFFF"],
+			"id": "599",
+			"code": "KAN",
+			"sport_specific": {}
+		},
+		{
+			"name": "Twins",
+			"city": "Minnesota",
+			"full_name": "Minnesota Twins",
+			"colors": ["#0A2953", "#D31145"],
+			"id": "600",
+			"code": "MIN",
+			"sport_specific": {}
+		},
+		{
+			"name": "Athletics",
+			"city": "Oakland",
+			"full_name": "Oakland Athletics",
+			"colors": ["#00483A", "#F9B31D"],
+			"id": "602",
+			"code": "OAK",
+			"sport_specific": {}
+		},
+		{
+			"name": "Rangers",
+			"city": "Texas",
+			"full_name": "Texas Rangers",
+			"colors": ["#00307B", "#C0111F"],
+			"id": "604",
+			"code": "TEX",
+			"sport_specific": {}
+		},
+		{
+			"name": "Astros",
+			"city": "Houston",
+			"full_name": "Houston Astros",
+			"colors": ["#002B63", "#E66C07"],
+			"id": "612",
+			"code": "HOU",
+			"sport_specific": {}
+		},
+		{
+			"name": "Diamondbacks",
+			"city": "Arizona",
+			"full_name": "Arizona Diamondbacks",
+			"colors": ["#A71930", "#E3D4AD"],
+			"id": "616",
+			"code": "ARI",
+			"sport_specific": {}
+		},
+		{
+			"name": "Rockies",
+			"city": "Colorado",
+			"full_name": "Colorado Rockies",
+			"colors": ["#333366", "#C4CED4"],
+			"id": "617",
+			"code": "COL",
+			"sport_specific": {}
+		},
+		{
+			"name": "Dodgers",
+			"city": "Los Angeles",
+			"full_name": "Los Angeles Dodgers",
+			"colors": ["#004587", "#C09A5B"],
+			"id": "618",
+			"code": "LOS",
+			"sport_specific": {}
+		},
+		{
+			"name": "Padres",
+			"city": "San Diego",
+			"full_name": "San Diego Padres",
+			"colors": ["#022F5C", "#AFA26D"],
+			"id": "619",
+			"code": "SDP",
+			"sport_specific": {}
+		}
+	],
+	"players": [
+		{
+			"news":
+			{
+				"articles":
+				{
+					"_members": ["670230", "667350", "665094"],
+					"_ref": "news.id"
+				},
+				"latest": "2017-09-13T02:13:06Z"
+			},
+			"swappable": true,
+			"first_name": "Corey",
+			"roster_position_stats": [
+				{
+					"roster_position": "P",
+					"player_position": "P",
+					"fppg": 50.34615384615385
+				}
+			],
+			"fppg": 50.34615384615385,
+			"id": "21011-13627",
+			"last_name": "Kluber",
+			"probable_pitcher": true,
+			"fixture_stats":
+			{
+				"_members": ["13627-117924", "13627-117820", "13627-119608"],
+				"_ref": "fixture_stats.id"
+			},
+			"images":
+			{
+				"default":
+				{
+					"url": "https://d17odppiik753x.cloudfront.net/playerimages/mlb/13627.png",
+					"width": 200,
+					"height": 200
+				}
+			},
+			"season_stats":
+			{
+				"stats": [
+					{
+						"abbr": "Games",
+						"quantity": "26",
+						"rank_per_season": null,
+						"rank_per_season_fixture": null,
+						"label": "Games"
+					},
+					{
+						"abbr": "W",
+						"quantity": "16",
+						"rank_per_season": 4,
+						"rank_per_season_fixture": 7,
+						"label": "Wins"
+					},
+					{
+						"abbr": "QSTART",
+						"quantity": "20",
+						"rank_per_season": 3,
+						"rank_per_season_fixture": 3,
+						"label": "Quality Start"
+					},
+					{
+						"abbr": "L",
+						"quantity": "4",
+						"rank_per_season": 196,
+						"rank_per_season_fixture": 263,
+						"label": "Losses"
+					},
+					{
+						"abbr": "ERA",
+						"quantity": "2.44",
+						"rank_per_season": 48,
+						"rank_per_season_fixture": 48,
+						"label": "ERA"
+					},
+					{
+						"abbr": "SO",
+						"quantity": "243",
+						"rank_per_season": 3,
+						"rank_per_season_fixture": 2,
+						"label": "Strikeouts"
+					},
+					{
+						"abbr": "WHIP",
+						"quantity": "0.87",
+						"rank_per_season": 379,
+						"rank_per_season_fixture": 379,
+						"label": "WHIP"
+					},
+					{
+						"abbr": "IP",
+						"quantity": "184.2",
+						"rank_per_season": 13,
+						"rank_per_season_fixture": 1,
+						"label": "Innings Pitched"
+					},
+					{
+						"abbr": "H",
+						"quantity": "126",
+						"rank_per_season": 85,
+						"rank_per_season_fixture": 177,
+						"label": "Hits"
+					},
+					{
+						"abbr": "BB",
+						"quantity": "34",
+						"rank_per_season": 141,
+						"rank_per_season_fixture": 238,
+						"label": "Walks"
+					},
+					{
+						"abbr": "ER",
+						"quantity": "50",
+						"rank_per_season": 121,
+						"rank_per_season_fixture": 252,
+						"label": "Earned Runs"
+					}
+				],
+				"score": 1309.0,
+				"season": "2017"
+			},
+			"position": "P",
+			"fixture":
+			{
+				"_members": ["118319"],
+				"_ref": "fixtures.id"
+			},
+			"removed": false,
+			"injury_status": null,
+			"known_name": null,
+			"injury_details": null,
+			"sport_specific":
+			{
+				"handedness": "Right",
+				"bat_handedness": "Right",
+				"opposing_pitcher":
+				{
+					"_members": ["21011-13268"],
+					"_ref": "opponents.id"
+				}
+			},
+			"jersey_number": 28,
+			"injured": false,
+			"team":
+			{
+				"_members": ["597"],
+				"_ref": "teams.id"
+			},
+			"player_card_url": "https://www.fanduel.com/mobile/games/21011/players/21011-13627/",
+			"starting_order": null,
+			"salary": 12000,
+			"played": 26
+		}
+	]
+}

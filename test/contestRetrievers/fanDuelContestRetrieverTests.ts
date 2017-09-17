@@ -1,7 +1,6 @@
-import * as assert from "assert";
 import * as fs from "fs";
 import FanDuelContestRetriever from "../../src/contestRetrievers/fanDuelContestRetriever";
-import { IContest, IGame, ITeam, ContestType, Sport } from "../../src/interfaces";
+import { IContest, IGame, ContestType, Sport } from "../../src/interfaces";
 import * as testUtils from "../testUtils";
 
 describe("FanDuelContestRetriever", () => {
