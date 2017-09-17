@@ -6,6 +6,7 @@ export interface IIncomingMessage extends http.IncomingMessage {
 }
 
 export interface IPlayerCardRetriever {
+	contestType: ContestType;
 	playerCard: (contestID: string, playerID: string) => PromiseLike<IPlayerCard>;
 }
 

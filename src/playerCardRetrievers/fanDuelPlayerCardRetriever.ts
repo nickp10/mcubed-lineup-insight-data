@@ -1,23 +1,26 @@
-import { IPlayerCard, IPlayerCardRetriever } from "../interfaces";
+import { IPlayerCard, IPlayerCardRetriever, ContestType } from "../interfaces";
 import * as utils from "../utils";
 
 export default class FanDuelPlayerCardRetriever implements IPlayerCardRetriever {
 	static FAN_DUEL_ID_PREFIX = "FD";
+
+	contestType = ContestType.FanDuel;
 
 	playerCard(contestID: string, playerID: string): PromiseLike<IPlayerCard> {
 		return this.getPlayerCard(contestID, playerID);
 	}
 
 	getPlayerCard(contestID: string, playerID: string): PromiseLike<IPlayerCard> {
+		const rawContestID = this.getRawContestID(contestID);
 		return utils.sendHttpsRequest({
 			hostname: "api.fanduel.com",
-			path: `/fixture-lists/${this.getRawContestID(contestID)}/players/${this.getRawContestID(contestID)}-${playerID}`,
+			path: `/fixture-lists/${rawContestID}/players/${rawContestID}-${playerID}`,
 			method: "GET",
 			headers: {
 				"Authorization": "Basic N2U3ODNmMTE4OTIzYzE2NzVjNWZhYWFmZTYwYTc5ZmM6"
 			}
 		}).then((dataResp) => {
-			return this.parsePlayerCard(dataResp.body, contestID, playerID);
+			return this.parsePlayerCard(dataResp.body, rawContestID, playerID);
 		});
 	}
 

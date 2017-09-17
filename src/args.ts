@@ -6,20 +6,26 @@ class Args {
 	dataType: DataType;
 	contestType: ContestType;
 	sport: Sport;
+	contestID: string;
+	playerID: string;
 
 	constructor() {
 		const args = argv
 			.option({ name: "data", short: "d", type: "string" })
 			.option({ name: "contestType", short: "c", type: "string" })
 			.option({ name: "sport", short: "s", type: "string" })
+			.option({ name: "contestID", type: "string" })
+			.option({ name: "playerID", type: "string" })
 			.run();
 		const argData = args.options["data"];
 		const argContestType = args.options["contestType"];
 		const argSport = args.options["sport"];
-		this.validate(argData, argContestType, argSport);
+		const argContestID = args.options["contestID"];
+		const argPlayerID = args.options["playerID"];
+		this.validate(argData, argContestType, argSport, argContestID, argPlayerID);
 	}
 
-	validate(argDataType: string, argContestType: string, argSport: string): void {
+	validate(argDataType: string, argContestType: string, argSport: string, argContestID: string, argPlayerID: string): void {
 		// Validate data
 		this.dataType = utils.coerceDataType(argDataType) || DataType.PlayerInsight;
 		if (!this.dataType) {
@@ -49,6 +55,20 @@ class Args {
 				console.error("The -s or --sport argument must be one of: " + utils.validSports().join(", "));
 				process.exit();
 			}
+		}
+
+		// Validate contest and player IDs
+		if (this.dataType === DataType.PlayerCard) {
+			if (!argContestID) {
+				console.error("The --contestID argument must be supplied.");
+				process.exit();
+			}
+			this.contestID = argContestID;
+			if (!argPlayerID) {
+				console.error("The --playerID argument must be supplied.");
+				process.exit();
+			}
+			this.playerID = argPlayerID;
 		}
 	}
 }

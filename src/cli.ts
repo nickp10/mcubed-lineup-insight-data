@@ -11,6 +11,11 @@ switch (args.dataType) {
 			console.log(JSON.stringify(contests));
 		});
 		break;
+	case DataType.PlayerCard:
+		insightData.getPlayerCard(args.contestType, args.contestID, args.playerID).then((playerCard) => {
+			console.log(JSON.stringify(playerCard));
+		});
+		break;
 	case DataType.PlayerInsight:
 	default:
 		insightData.getPlayerInsight(args.contestType, args.sport).then((players) => {
