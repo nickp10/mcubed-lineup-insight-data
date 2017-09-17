@@ -28,13 +28,13 @@
     "@types/argv": "0.0.4",
     "@types/cheerio": "^0.22.2",
     "@types/mocha": "^2.2.43",
-    "@types/node": "^8.0.19",
+    "@types/node": "^8.0.28",
     "@types/set-cookie-parser": "0.0.2",
     "@types/string": "0.0.29",
     "gulp": "^3.9.1",
     "gulp-mocha": "^4.3.1",
-    "gulp-typescript": "^3.2.1",
-    "typescript": "^2.4.2"
+    "gulp-typescript": "^3.2.2",
+    "typescript": "^2.5.2"
   },
   "dependencies": {
     "argv": "0.0.2",
