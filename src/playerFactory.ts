@@ -37,7 +37,7 @@ export default class PlayerFactory {
 		[Sport.NFL, new Map([
 			["GBP", "GB"],
 			["KCC", "KC"],
-			["LAR", "LA"],
+			["LA", "LAR"],
 			["NEP", "NE"],
 			["NOS", "NO"],
 			["SDC", "SD"],

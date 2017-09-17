@@ -127,7 +127,7 @@ Defines an enumerated list of valid news statuses. A news status represents the 
 * `None`
 
 #### <a name="Sport"></a>Sport
-Defines an enumerated list of valid sports suppored by this module.
+Defines an enumerated list of valid sports supported by this module.
 
 * `MLB`
 * `NBA`

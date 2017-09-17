@@ -5,14 +5,14 @@ import { IContest, IGame, ITeam, ContestType, Sport } from "../../src/interfaces
 import * as testUtils from "../testUtils";
 
 describe("FanDuelContestRetriever", () => {
-	describe("#parseContests()", () => {
+	describe("#parseContestList()", () => {
 		it("should parse the contests retreived from FanDuel", () => {
 			// Arrange
 			const target = new FanDuelContestRetriever();
 			const contestsData = fs.readFileSync("test/content/fanDuelContestList.json", "utf-8");
 
 			// Act
-			const contests = target.parseContests(contestsData, undefined);
+			const contests = target.parseContestList(contestsData, undefined);
 
 			// Assert
 			testUtils.assertContainsContest(contests, { ID: "FD19809", contestType: ContestType.FanDuel, label: "Early Only", maxSalary: 35000, sport: Sport.MLB, startTime: new Date(Date.UTC(2017, 5, 22, 17, 5)) });

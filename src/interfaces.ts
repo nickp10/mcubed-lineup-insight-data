@@ -56,11 +56,6 @@ export interface IContest {
 	startTime?: Date;
 }
 
-export interface IFanDuelContest extends IContest {
-	contestURL?: string;
-	playersURL?: string;
-}
-
 export interface IGame {
 	awayTeam: ITeam;
 	homeTeam: ITeam;
