@@ -11,10 +11,13 @@ This node module can be run from the command line using `mcubed-lineup-insight-d
 * *-d / --data* - **Optional.** Specifies the type of data to retrieve. This option is case-insensitive and should be on of the [DataTypes](#DataType). If this argument is omitted, then `PlayerInsight` is used as the default value.
 * *-c / --contestType* - **Required.** Specifies the contest type to retrieve the data for. This option is case-insensitive and should be one of the [ContestTypes](#ContestType).
 * *-s / --sport* - **Required for PlayerInsight.** Specifies the sport to retrieve the data for. This option is case-insensitive and should be one of the supported [Sports](#Sport).
+* *--contestID* - **Required for PlayerCard.** Specifies the contest ID to get the player card for.
+* *--playerID* - **Required for PlayerCard.** Specifies the player ID to get the player card for.
 
 When run from the command line:
 * The contest list request will produce an array of [Contests](#Contest) written as a JSON formatted string to the standard output.
-* The insight data request will produce an array of [Players](#Player) written as a JSON formatted string to the standard output.
+* The player card request will produce a [PlayerCard](#PlayerCard) object written as a JSON formatted string to the standard output.
+* The player insight request will produce an array of [Players](#Player) written as a JSON formatted string to the standard output.
 
 Node Module Dependency
 ----
@@ -37,6 +40,7 @@ API
 An instance of this class is returned when requiring `mcubed-lineup-insight-data` from within a node module.
 
 * `getContestList(contestType: ContestType, sport: Sport): PromiseLike<Contest[]>` - Returns a list of contests that are currently active for the DFS site. The `contestType` parameter is optional and should be a valid [ContestType](#ContestType) value. If no `contestType` is specified, then all contest types are returned. The `sport` parameter is optional and should be a valid [Sport](#Sport) value. If no `sport` is specified, then all sports are returned. The return value is a promise that yields an array of [Contests](#Contest).
+* `getPlayerCard(contestType: ContestType, contestID: string, playerID: string): PromiseLike<IPlayerCard>` - Returns an object containing specific information about a single player for a contest. The `contestType` parameter is required and should be a valid [ContestType](#ContestType) value. The `contestID` parameter is required and should be an ID from a contest object from the `getContestList` function. The `playerID` parameter is required and should be an ID from a player object nested within a contest object from the `getContestList` function. The return value is a promise that yields a [PlayerCard](#PlayerCard).
 * `getPlayerInsight(contestType: ContestType, sport: Sport): PromiseLike<Player[]>` - Returns the data for a specified contest type and sport combination. The `contestType` parameter is required and should be a valid [ContestType](#ContestType) value. The `sport` parameter is required and should be a valid [Sport](#Sport) value. The return value is a promise that yields an array of [Players](#Player).
 
 #### <a name="Player"></a>Player
@@ -69,6 +73,26 @@ Instances of this class are associated with a [Player](#Player).
 * `projectedPoints?: number` - Optionally specifies the projected points for the player.
 * `recentAveragePoints?: number` - Optionally specifies the average number of points the player has scored recently.
 * `seasonAveragePoints?: number` - Optionally specifies the average number of points the player has scored on the season.
+
+#### <a name="PlayerCard"></a>PlayerCard
+Instances of this class are returned from calling the `getPlayerCard` function from the [InsightData](#InsightData) object or serialized to JSON when using the command line interface.
+
+* `gameLog: PlayerCardGameStats[]` - Specifies an array of [PlayerCardGameStats](#PlayerCardGameStats) containing statistics for recent performances by the player.
+* `news: PlayerCardArticle[]` - Specifies an array of [PlayerCardArticle](#PlayerCardArticle) containing news for the player.
+
+#### <a name="PlayerCardArticle"></a>PlayerCardArticle
+Instances of this class are associated with a [PlayerCard](#PlayerCard).
+
+* `date: Date` - Specifies the date the news was published for the player.
+* `details: string` - Specifies the full details of the news article for the player.
+* `summary: string` - Specifies a summary for the news article for the player.
+
+#### <a name="PlayerCardGameStats"></a>PlayerCardGameStats
+Instances of this class are associated with a [PlayerCard](#PlayerCard).
+
+* `date: Date` - Specifies the date of the performance by the player.
+* `opponent: string` - Specifies the opponent that the performance was against. For home performances, this will be returned as "vs. OPP". For away performances, this will be returned as "@ OPP".
+* `points?: number` - Optionally specifies the number of fantasy points the player received for the performance.
 
 #### <a name="Contest"></a>Contest
 Instances of this class are returned from calling the `getContestList` function from the [InsightData](#InsightData) object or serialized to JSON when using the command line interface.
