@@ -1,19 +1,19 @@
 import * as fs from "fs";
-import FanDuelPlayerCardRetriever from "../../src/playerCardRetrievers/fanDuelPlayerCardRetriever";
-import * as testUtils from "../testUtils";
+import FanDuelPlayerCardRetriever from "./fanDuelPlayerCardRetriever";
+import * as specUtils from "../specUtils.spec";
 
 describe("FanDuelPlayerCardRetriever", () => {
 	describe("#parsePlayerCard()", () => {
 		it("should parse the player card retreived from FanDuel", () => {
 			// Arrange
 			const target = new FanDuelPlayerCardRetriever();
-			const playerCardData = fs.readFileSync("test/content/fanDuelPlayerCard.json", "utf-8");
+			const playerCardData = fs.readFileSync("spec-content/fanDuelPlayerCard.json", "utf-8");
 
 			// Act
 			const card = target.parsePlayerCard(playerCardData, "21011", "13627");
 
 			// Assert
-			testUtils.assertPlayerCardEquals(card, {
+			specUtils.assertPlayerCardEquals(card, {
 				gameLog: [
 					{
 						date: new Date(Date.UTC(2017, 8, 12, 23, 10)),

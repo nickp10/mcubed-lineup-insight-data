@@ -2,10 +2,10 @@
   "name": "mcubed-lineup-insight-data",
   "version": "2.0.0",
   "description": "Retrieves fantasy sports data",
-  "bin": "build/src/cli.js",
-  "main": "build/src/data.js",
+  "bin": "build/cli.js",
+  "main": "build/data.js",
   "files": [
-    "build/src/"
+    "build/"
   ],
   "repository": {
     "type": "git",
@@ -18,28 +18,35 @@
   },
   "homepage": "https://github.com/nickp10/mcubed-lineup-insight-data#readme",
   "scripts": {
+    "build": "gulp build",
+    "build-debug": "gulp build -e debug",
     "compile": "gulp compile",
-    "compile-test": "gulp compile-test",
-    "gulp": "gulp",
-    "prepare": "gulp compile",
-    "test": "gulp test"
+    "compile-debug": "gulp compile -e debug",
+    "compile-test": "gulp compile-test -e debug",
+    "prepare": "npm run build",
+    "test": "gulp test -e debug"
   },
   "devDependencies": {
     "@types/argv": "0.0.4",
-    "@types/cheerio": "^0.22.2",
-    "@types/mocha": "^2.2.43",
-    "@types/node": "^8.0.28",
+    "@types/cheerio": "^0.22.7",
+    "@types/mocha": "^2.2.48",
+    "@types/node": "^9.4.6",
     "@types/set-cookie-parser": "0.0.2",
     "@types/string": "0.0.29",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "gulp": "^3.9.1",
-    "gulp-mocha": "^4.3.1",
-    "gulp-typescript": "^3.2.2",
-    "typescript": "^2.5.2"
+    "gulp-babel": "^7.0.1",
+    "gulp-mocha": "^5.0.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-typescript": "^4.0.1",
+    "gulp-uglify": "^3.0.0",
+    "typescript": "^2.7.2"
   },
   "dependencies": {
     "argv": "0.0.2",
     "cheerio": "^1.0.0-rc.2",
-    "set-cookie-parser": "^2.0.0",
+    "set-cookie-parser": "^2.1.1",
     "string": "^3.3.3"
   }
 }

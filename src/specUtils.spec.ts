@@ -1,7 +1,7 @@
-import { IContest, IGame, IPlayer, IPlayerCard, ITeam } from "../src/interfaces";
+import { IContest, IGame, IPlayer, IPlayerCard, ITeam } from "./interfaces";
 import * as assert from "assert";
 
-class TestUtils {
+class SpecUtils {
 	/**
 	 * Asserts that a player is contained in an array of players. It will also verify each of the
 	 * properties on the player to ensure they match with the player in the array.
@@ -13,7 +13,7 @@ class TestUtils {
 		const matchingPlayers = actualPlayers.filter(p => p.name === expectedPlayer.name);
 		assert.equal(matchingPlayers.length, 1, `No players match with name: ${expectedPlayer.name}`);
 		const actualPlayer = matchingPlayers[0];
-		testUtils.assertPlayerEquals(actualPlayer, expectedPlayer);
+		specUtils.assertPlayerEquals(actualPlayer, expectedPlayer);
 	}
 
 	/**
@@ -27,7 +27,7 @@ class TestUtils {
 		const matchingContests = actualContests.filter(c => c.ID === expectedContest.ID);
 		assert.equal(matchingContests.length, 1, `No contests match with ID: ${expectedContest.ID}`);
 		const actualContest = matchingContests[0];
-		testUtils.assertContestEquals(actualContest, expectedContest);
+		specUtils.assertContestEquals(actualContest, expectedContest);
 	}
 
 	/**
@@ -54,7 +54,7 @@ class TestUtils {
 		if (expectedContest.games) {
 			assert.equal(actualContest.games.length, expectedContest.games.length);
 			for (let i = 0; i < actualContest.games.length; i++) {
-				testUtils.assertGameEquals(actualContest.games[i], expectedContest.games[i]);
+				specUtils.assertGameEquals(actualContest.games[i], expectedContest.games[i]);
 			}
 		} else {
 			assert.equal(actualContest.games, undefined);
@@ -68,8 +68,8 @@ class TestUtils {
 	 * @param expectedGame The expected game to assert.
 	 */
 	assertGameEquals(actualGame: IGame, expectedGame: IGame): void {
-		testUtils.assertTeamEquals(actualGame.awayTeam, expectedGame.awayTeam);
-		testUtils.assertTeamEquals(actualGame.homeTeam, expectedGame.homeTeam);
+		specUtils.assertTeamEquals(actualGame.awayTeam, expectedGame.awayTeam);
+		specUtils.assertTeamEquals(actualGame.homeTeam, expectedGame.homeTeam);
 		assert.deepStrictEqual(actualGame.startTime, expectedGame.startTime);
 	}
 
@@ -85,7 +85,7 @@ class TestUtils {
 		if (expectedTeam.players) {
 			assert.equal(actualTeam.players.length, expectedTeam.players.length);
 			for (let i = 0; i < actualTeam.players.length; i++) {
-				testUtils.assertPlayerEquals(actualTeam.players[i], expectedTeam.players[i]);
+				specUtils.assertPlayerEquals(actualTeam.players[i], expectedTeam.players[i]);
 			}
 		} else {
 			assert.equal(actualTeam.players, undefined);
@@ -155,5 +155,5 @@ class TestUtils {
 	}
 }
 
-const testUtils: TestUtils = new TestUtils();
-export = testUtils;
+const specUtils: SpecUtils = new SpecUtils();
+export = specUtils;
