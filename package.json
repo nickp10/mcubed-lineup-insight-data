@@ -4,8 +4,10 @@
   "description": "Retrieves fantasy sports data",
   "bin": "build/cli.js",
   "main": "build/data.js",
+  "types": "index.d.ts",
   "files": [
-    "build/"
+    "build/",
+    "index.d.ts"
   ],
   "repository": {
     "type": "git",
@@ -21,13 +23,14 @@
     "build": "gulp build",
     "build-debug": "gulp build -e debug",
     "compile": "gulp compile",
-    "compile-declarations": "dts-generator --name mcubed-lineup-insight-data --project ./ --out index.d.ts",
     "compile-debug": "gulp compile -e debug",
     "compile-test": "gulp compile-test -e debug",
+    "generate-dts": "gulp generate-dts",
     "prepare": "npm run build",
     "test": "gulp test -e debug"
   },
   "dependencies": {
+    "@types/cheerio": "^0.22.7",
     "argv": "0.0.2",
     "cheerio": "^1.0.0-rc.2",
     "set-cookie-parser": "^2.1.1",
@@ -35,7 +38,6 @@
   },
   "devDependencies": {
     "@types/argv": "0.0.4",
-    "@types/cheerio": "^0.22.7",
     "@types/mocha": "^2.2.48",
     "@types/node": "^9.4.6",
     "@types/set-cookie-parser": "0.0.2",
@@ -46,6 +48,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.1",
     "gulp-mocha": "^5.0.0",
+    "gulp-replace": "^0.6.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-typescript": "^4.0.1",
     "gulp-uglify": "^3.0.0",

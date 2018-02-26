@@ -1,8 +1,10 @@
 const argv = require("argv");
 const babel = require("gulp-babel");
+const dtsGenerator = require("dts-generator");
 const gulp = require("gulp");
 const mocha = require("gulp-mocha");
 const path = require("path");
+const replace = require("gulp-replace");
 const sourcemaps = require("gulp-sourcemaps");
 const typescript = require("gulp-typescript");
 const uglify = require("gulp-uglify");
@@ -38,23 +40,35 @@ gulp.task("compile", () => {
 });
 
 gulp.task("compile-test", () => {
-	return gulp.src(["src/**/*.spec.ts"], { base: "./src" })
-		.pipe(sourcemaps.init())
-		.pipe(tsconfig())
-		.pipe(sourcemaps.mapSources((sourcePath, file) => {
-			const to = path.dirname(file.path);
-			const buildToRoot = path.relative(to, __dirname);
-			const rootToSource = path.relative(__dirname, to);
-			const fileName = path.basename(sourcePath);
-			return path.join(buildToRoot, rootToSource, fileName);
-		}))
-		.pipe(sourcemaps.write(""))
-		.pipe(gulp.dest(dest));
+    return gulp.src(["src/**/*.spec.ts"], { base: "./src" })
+        .pipe(sourcemaps.init())
+        .pipe(tsconfig())
+        .pipe(sourcemaps.mapSources((sourcePath, file) => {
+            const to = path.dirname(file.path);
+            const buildToRoot = path.relative(to, __dirname);
+            const rootToSource = path.relative(__dirname, to);
+            const fileName = path.basename(sourcePath);
+            return path.join(buildToRoot, rootToSource, fileName);
+        }))
+        .pipe(sourcemaps.write(""))
+        .pipe(gulp.dest(dest));
+});
+
+gulp.task("generate-dts", async () => {
+    await dtsGenerator.default({
+        main: "mcubed-lineup-insight-data/src/data",
+        name: "mcubed-lineup-insight-data",
+        project: "./",
+        out: "index.d.ts"
+    });
+    return gulp.src("index.d.ts")
+        .pipe(replace("/src/", `/${destDirname}/`))
+        .pipe(gulp.dest("./"));
 });
 
 gulp.task("test", ["compile", "compile-test"], () => {
-	return gulp.src([`${destDirname}/**/*.spec.js`])
-		.pipe(mocha());
+    return gulp.src([`${destDirname}/**/*.spec.js`])
+        .pipe(mocha());
 });
 
 gulp.task("build", ["compile"]);
