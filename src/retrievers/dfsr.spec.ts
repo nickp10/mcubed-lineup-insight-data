@@ -2,7 +2,7 @@ import * as fs from "fs";
 import DFSR from "./dfsr";
 import PlayerFactory from "../playerFactory";
 import { Sport } from "../interfaces";
-import * as specUtils from "../specUtils.spec";
+import specUtils from "../specUtils.spec";
 
 describe("DFSR", () => {
 	describe("#parsePlayers()", () => {
@@ -13,7 +13,7 @@ describe("DFSR", () => {
 			const playerFactory = new PlayerFactory(Sport.MLB);
 
 			// Act
-			const players = target.parsePlayers(playerFactory, data, DFSR.mlbIndices);
+			const players = target.parsePlayers(playerFactory, data, 1, 10, 2, 3);
 
 			// Assert
 			specUtils.assertContainsPlayer(players, { name: "Josh Donaldson", team: "TOR", salary: 5400, stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 9.811496235 }] });
@@ -27,7 +27,7 @@ describe("DFSR", () => {
 			const playerFactory = new PlayerFactory(Sport.MLB);
 
 			// Act
-			const players = target.parsePlayers(playerFactory, data, DFSR.mlbIndices);
+			const players = target.parsePlayers(playerFactory, data, 1, 10, 2, 3);
 
 			// Assert
 			specUtils.assertContainsPlayer(players, { name: "Josh Donaldson", team: "TOR", salary: 3900, stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 12.91184611 }] });
@@ -41,7 +41,7 @@ describe("DFSR", () => {
 			const playerFactory = new PlayerFactory(Sport.NFL);
 
 			// Act
-			const players = target.parsePlayers(playerFactory, data, DFSR.nflIndices);
+			const players = target.parsePlayers(playerFactory, data, 1, 2, 4, 6);
 
 			// Assert
 			specUtils.assertContainsPlayer(players, { name: "Julio Jones", team: "ATL", salary: 9600, stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 20.82037324 }] });
@@ -55,7 +55,7 @@ describe("DFSR", () => {
 			const playerFactory = new PlayerFactory(Sport.NFL);
 
 			// Act
-			const players = target.parsePlayers(playerFactory, data, DFSR.nflIndices);
+			const players = target.parsePlayers(playerFactory, data, 1, 2, 4, 6);
 
 			// Assert
 			specUtils.assertContainsPlayer(players, { name: "Julio Jones", team: "ATL", salary: 8900, stats: [ { source: "DailyFantasySportsRankings", projectedPoints: 17.25377929 }] });

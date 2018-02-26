@@ -4,5 +4,12 @@
     "newLine": "LF",
     "removeComments": true,
     "target": "es6"
-  }
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "src/**/*.d.ts",
+    "src/**/*.spec.ts"
+  ]
 }

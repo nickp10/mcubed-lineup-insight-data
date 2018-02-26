@@ -1,8 +1,8 @@
 import { ContestType, DataType, Sport } from "./interfaces";
 import * as argv from "argv";
-import * as utils from "./utils";
+import utils from "./utils";
 
-class Args {
+export class Args {
 	dataType: DataType;
 	contestType: ContestType;
 	sport: Sport;
@@ -74,4 +74,4 @@ class Args {
 }
 
 const args: Args = new Args();
-export = args;
+export default args;

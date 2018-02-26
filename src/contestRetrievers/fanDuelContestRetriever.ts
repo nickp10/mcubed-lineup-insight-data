@@ -1,6 +1,6 @@
 import { IContestListRetriever, IContest, IGame, IPlayer, IPlayerInjury, ITeam, ContestType, InjuryType, NewsStatus, Sport } from "../interfaces";
 import PlayerFactory from "../playerFactory";
-import * as utils from "../utils";
+import utils from "../utils";
 
 export default class FanDuelContestRetriever implements IContestListRetriever {
 	static FAN_DUEL_ID_PREFIX = "FD";

@@ -2,7 +2,7 @@ import { IIncomingMessage, ContestType, DataType, Sport } from "./interfaces";
 import * as http from "http";
 import * as https from "https";
 
-class Utils {
+export class Utils {
 	/**
 	 * Flattens the specified items such that all items from any sub-arrays recursive
 	 * will be returned in a one-dimensional linear array. For example:
@@ -157,4 +157,4 @@ class Utils {
 }
 
 const utils: Utils = new Utils();
-export = utils;
+export default utils;

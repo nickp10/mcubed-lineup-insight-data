@@ -1,7 +1,7 @@
 import { IPlayer, IPlayerInsightRetriever, IPlayerStats, ContestType, Sport } from "../../interfaces";
 import PlayerFactory from "../../playerFactory";
 import * as cheerio from "cheerio";
-import * as utils from "../../utils";
+import utils from "../../utils";
 
 export default class RGStarting implements IPlayerInsightRetriever {
 	playerInsight(contestType: ContestType, sport: Sport): PromiseLike<IPlayer[]> {

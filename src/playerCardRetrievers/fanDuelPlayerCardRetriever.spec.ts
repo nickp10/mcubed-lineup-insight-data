@@ -1,6 +1,6 @@
 import * as fs from "fs";
 import FanDuelPlayerCardRetriever from "./fanDuelPlayerCardRetriever";
-import * as specUtils from "../specUtils.spec";
+import specUtils from "../specUtils.spec";
 
 describe("FanDuelPlayerCardRetriever", () => {
 	describe("#parsePlayerCard()", () => {

@@ -4,7 +4,7 @@ import * as fs from "fs";
 import PlayerFactory from "../../playerFactory";
 import RGStarting from "./starting";
 import { Sport } from "../../interfaces";
-import * as specUtils from "../../specUtils.spec";
+import specUtils from "../../specUtils.spec";
 
 describe("RGStarting", () => {
 	describe("#parsePlayers()", () => {

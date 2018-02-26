@@ -1,9 +1,9 @@
 #! /usr/bin/env node
 
 import { DataType } from "./interfaces";
-import * as args from "./args";
-import * as insightData from "./data";
-import * as utils from "./utils";
+import args from "./args";
+import insightData from "./data";
+import utils from "./utils";
 
 switch (args.dataType) {
 	case DataType.ContestList:

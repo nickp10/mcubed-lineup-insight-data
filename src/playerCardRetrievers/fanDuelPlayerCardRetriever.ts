@@ -1,5 +1,5 @@
 import { IPlayerCard, IPlayerCardRetriever, ContestType } from "../interfaces";
-import * as utils from "../utils";
+import utils from "../utils";
 
 export default class FanDuelPlayerCardRetriever implements IPlayerCardRetriever {
 	static FAN_DUEL_ID_PREFIX = "FD";

@@ -3,7 +3,7 @@ import * as fs from "fs";
 import PlayerFactory from "../../playerFactory";
 import RGProjections from "./projections";
 import { Sport } from "../../interfaces";
-import * as specUtils from "../../specUtils.spec";
+import specUtils from "../../specUtils.spec";
 
 describe("RGProjections", () => {
 	describe("#parsePlayers()", () => {

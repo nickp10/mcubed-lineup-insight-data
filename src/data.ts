@@ -7,9 +7,9 @@ import PlayerFactory from "./playerFactory";
 import RGProjections from "./retrievers/rotogrinders/projections";
 import RGRecent from "./retrievers/rotogrinders/recent";
 import RGStarting from "./retrievers/rotogrinders/starting";
-import * as utils from "./utils";
+import utils from "./utils";
 
-class Data {
+export class Data {
 	contestListRetrievers: IContestListRetriever[] = [
 		new FanDuelContestRetriever()
 	];
@@ -63,5 +63,5 @@ class Data {
 	}
 }
 
-const data = new Data();
-export = data;
+const insightData = new Data();
+export default insightData;

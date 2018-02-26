@@ -2,7 +2,7 @@ import { IIncomingMessage, IPlayer, IPlayerInsightRetriever, IPlayerStats, Conte
 import * as cheerio from "cheerio";
 import PlayerFactory from "../playerFactory";
 import * as setCookieParser from "set-cookie-parser";
-import * as utils from "../utils";
+import utils from "../utils";
 
 export default class NumberFire implements IPlayerInsightRetriever {
 	// IDs for setting the DFS site to retrieve projection stats for

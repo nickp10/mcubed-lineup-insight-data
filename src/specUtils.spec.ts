@@ -1,7 +1,7 @@
 import { IContest, IGame, IPlayer, IPlayerCard, ITeam } from "./interfaces";
 import * as assert from "assert";
 
-class SpecUtils {
+export class SpecUtils {
 	/**
 	 * Asserts that a player is contained in an array of players. It will also verify each of the
 	 * properties on the player to ensure they match with the player in the array.
@@ -156,4 +156,4 @@ class SpecUtils {
 }
 
 const specUtils: SpecUtils = new SpecUtils();
-export = specUtils;
+export default specUtils;

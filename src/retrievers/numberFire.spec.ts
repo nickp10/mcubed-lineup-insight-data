@@ -3,7 +3,7 @@ import * as fs from "fs";
 import NumberFire from "./numberFire";
 import PlayerFactory from "../playerFactory";
 import { Sport } from "../interfaces";
-import * as specUtils from "../specUtils.spec";
+import specUtils from "../specUtils.spec";
 
 describe("NumberFire", () => {
 	describe("#parsePlayers()", () => {

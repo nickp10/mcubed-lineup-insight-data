@@ -1,6 +1,6 @@
 import { IPlayer, IPlayerInsightRetriever, IPlayerStats, ContestType, Sport } from "../../interfaces";
 import PlayerFactory from "../../playerFactory";
-import * as utils from "../../utils";
+import utils from "../../utils";
 
 export default class RGRecent implements IPlayerInsightRetriever {
 	// Regex for matching the data JSON object in the HTML document

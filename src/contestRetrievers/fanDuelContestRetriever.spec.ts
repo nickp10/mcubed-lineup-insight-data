@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import FanDuelContestRetriever from "./fanDuelContestRetriever";
 import { IContest, IGame, ContestType, Sport } from "../interfaces";
-import * as specUtils from "../specUtils.spec";
+import specUtils from "../specUtils.spec";
 
 describe("FanDuelContestRetriever", () => {
 	describe("#parseContestList()", () => {

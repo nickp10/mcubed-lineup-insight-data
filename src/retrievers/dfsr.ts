@@ -1,6 +1,6 @@
 import { IPlayer, IPlayerInsightRetriever, IPlayerStats, ContestType, Sport } from "../interfaces";
 import PlayerFactory from "../playerFactory";
-import * as utils from "../utils";
+import utils from "../utils";
 
 interface IIndexMapping {
 	nameIndex: number;
@@ -29,25 +29,25 @@ export default class DFSR implements IPlayerInsightRetriever {
 	static yahooNHLSiteURL = "/data/hockey.yahoo.csv";
 
 	// Indices for the sports
-	static mlbIndices: IIndexMapping = {
+	private static mlbIndices: IIndexMapping = {
 		nameIndex: 1,
 		teamIndex: 10,
 		pointsIndex: 2,
 		salaryIndex: 3
 	};
-	static nbaIndices: IIndexMapping = {
+	private static nbaIndices: IIndexMapping = {
 		nameIndex: 1,
 		teamIndex: 7,
 		pointsIndex: 2,
 		salaryIndex: 3
 	};
-	static nflIndices: IIndexMapping = {
+	private static nflIndices: IIndexMapping = {
 		nameIndex: 1,
 		teamIndex: 2,
 		pointsIndex: 4,
 		salaryIndex: 6
 	};
-	static nhlIndices: IIndexMapping = {
+	private static nhlIndices: IIndexMapping = {
 		nameIndex: 1,
 		teamIndex: 6,
 		pointsIndex: 2,
@@ -97,30 +97,37 @@ export default class DFSR implements IPlayerInsightRetriever {
 		return Promise.reject<IPlayer[]>("An unknown contest type or sport was specified");
 	}
 
-	getData(playerFactory: PlayerFactory, siteURL: string, indices: IIndexMapping): PromiseLike<IPlayer[]> {
+	private getData(playerFactory: PlayerFactory, siteURL: string, indices: IIndexMapping): PromiseLike<IPlayer[]> {
 		return utils.sendHttpsRequest({
 			hostname: "www.dailyfantasysportsrankings.com",
 			path: siteURL,
 			method: "GET"
 		}).then((dataResp) => {
-			return this.parsePlayers(playerFactory, dataResp.body, indices);
+			return this.parsePlayersIndices(playerFactory, dataResp.body, indices);
 		});
 	}
 
-	parsePlayers(playerFactory: PlayerFactory, data: string, indices: IIndexMapping): IPlayer[] {
-		if (data && indices) {
+	private parsePlayersIndices(playerFactory: PlayerFactory, data: string, indices: IIndexMapping): IPlayer[] {
+		if (!indices) {
+			return undefined;
+		}
+		return this.parsePlayers(playerFactory, data, indices.nameIndex, indices.teamIndex, indices.pointsIndex, indices.salaryIndex);
+	}
+
+	parsePlayers(playerFactory: PlayerFactory, data: string, nameIndex: number, teamIndex: number, pointsIndex: number, salaryIndex: number): IPlayer[] {
+		if (data) {
 			return data.split(/\r?\n/).map(line => {
 				if (line) {
 					const parts = line.split(/,/);
-					if (parts && indices.nameIndex < parts.length && indices.teamIndex < parts.length && indices.pointsIndex < parts.length && indices.salaryIndex < parts.length) {
-						const name = parts[indices.nameIndex];
-						const team = parts[indices.teamIndex];
-						const salary = utils.coerceInt(parts[indices.salaryIndex]);
+					if (parts && nameIndex < parts.length && teamIndex < parts.length && pointsIndex < parts.length && salaryIndex < parts.length) {
+						const name = parts[nameIndex];
+						const team = parts[teamIndex];
+						const salary = utils.coerceInt(parts[salaryIndex]);
 						const player = playerFactory.createPlayer(name, team, salary);
 						player.stats = [
 							{
 								source: "DailyFantasySportsRankings",
-								projectedPoints: utils.coerceFloat(parts[indices.pointsIndex])
+								projectedPoints: utils.coerceFloat(parts[pointsIndex])
 							}
 						];
 						return player;
