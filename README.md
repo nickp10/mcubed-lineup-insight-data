@@ -24,8 +24,10 @@ Node Module Dependency
 This node module can be used as a dependency of another node module. Run `npm install mcubed-lineup-insight-data --save` to add it as a dependency to your node module. An example usage of the module:
 
 ```
-var insightData = require("mcubed-lineup-insight-data");
-var interfaces = require("mcubed-lineup-insight-data/build/src/interfaces");
+/// <reference path="./node_modules/mcubed-lineup-insight-data/index.d.ts" />
+
+import insightData from "mcubed-lineup-insight-data";
+import * as interfaces from "mcubed-lineup-insight-data/build/interfaces";
 
 insightData.getPlayerInsight(interfaces.ContestType.DraftKings, interfaces.Sport.NFL).then((players) => {
     players.forEach((player) => {
