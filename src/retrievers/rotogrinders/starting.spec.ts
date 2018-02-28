@@ -1,5 +1,4 @@
 import * as assert from "assert";
-import * as cheerio from "cheerio";
 import * as fs from "fs";
 import PlayerFactory from "../../playerFactory";
 import RGStarting from "./starting";
@@ -11,7 +10,7 @@ describe("RGStarting", () => {
 		it("should parse the starting player information for an MLB DraftKings contest", () => {
 			// Arrange
 			const target = new RGStarting();
-			const data =  cheerio.load(fs.readFileSync("spec-content/rgStartingMLBDraftKings.html", "utf-8"));
+			const data = fs.readFileSync("spec-content/rgStartingMLBDraftKings.html", "utf-8");
 			const playerFactory = new PlayerFactory(Sport.MLB);
 
 			// Act
@@ -28,7 +27,7 @@ describe("RGStarting", () => {
 		it("should parse the starting player information for an MLB FanDuel contest", () => {
 			// Arrange
 			const target = new RGStarting();
-			const data =  cheerio.load(fs.readFileSync("spec-content/rgStartingMLBFanDuel.html", "utf-8"));
+			const data = fs.readFileSync("spec-content/rgStartingMLBFanDuel.html", "utf-8");
 			const playerFactory = new PlayerFactory(Sport.MLB);
 
 			// Act
@@ -45,7 +44,7 @@ describe("RGStarting", () => {
 		it("should parse the starting player information for an MLB Yahoo contest", () => {
 			// Arrange
 			const target = new RGStarting();
-			const data =  cheerio.load(fs.readFileSync("spec-content/rgStartingMLBYahoo.html", "utf-8"));
+			const data = fs.readFileSync("spec-content/rgStartingMLBYahoo.html", "utf-8");
 			const playerFactory = new PlayerFactory(Sport.MLB);
 
 			// Act
@@ -62,7 +61,7 @@ describe("RGStarting", () => {
 		it("should parse the starting player information for an NBA DraftKings contest", () => {
 			// Arrange
 			const target = new RGStarting();
-			const data =  cheerio.load(fs.readFileSync("spec-content/rgStartingNBADraftKings.html", "utf-8"));
+			const data = fs.readFileSync("spec-content/rgStartingNBADraftKings.html", "utf-8");
 			const playerFactory = new PlayerFactory(Sport.NBA);
 
 			// Act
@@ -78,7 +77,7 @@ describe("RGStarting", () => {
 		it("should parse the starting player information for an NBA FanDuel contest", () => {
 			// Arrange
 			const target = new RGStarting();
-			const data =  cheerio.load(fs.readFileSync("spec-content/rgStartingNBAFanDuel.html", "utf-8"));
+			const data = fs.readFileSync("spec-content/rgStartingNBAFanDuel.html", "utf-8");
 			const playerFactory = new PlayerFactory(Sport.NBA);
 
 			// Act
@@ -94,7 +93,7 @@ describe("RGStarting", () => {
 		it("should parse the starting player information for an NBA Yahoo contest", () => {
 			// Arrange
 			const target = new RGStarting();
-			const data =  cheerio.load(fs.readFileSync("spec-content/rgStartingNBAYahoo.html", "utf-8"));
+			const data = fs.readFileSync("spec-content/rgStartingNBAYahoo.html", "utf-8");
 			const playerFactory = new PlayerFactory(Sport.NBA);
 
 			// Act
@@ -110,7 +109,7 @@ describe("RGStarting", () => {
 		it("should parse the starting player information for an NFL DraftKings contest", () => {
 			// Arrange
 			const target = new RGStarting();
-			const data =  cheerio.load(fs.readFileSync("spec-content/rgStartingNFLDraftKings.html", "utf-8"));
+			const data = fs.readFileSync("spec-content/rgStartingNFLDraftKings.html", "utf-8");
 			const playerFactory = new PlayerFactory(Sport.NFL);
 
 			// Act
@@ -125,7 +124,7 @@ describe("RGStarting", () => {
 		it("should parse the starting player information for an NFL FanDuel contest", () => {
 			// Arrange
 			const target = new RGStarting();
-			const data =  cheerio.load(fs.readFileSync("spec-content/rgStartingNFLFanDuel.html", "utf-8"));
+			const data = fs.readFileSync("spec-content/rgStartingNFLFanDuel.html", "utf-8");
 			const playerFactory = new PlayerFactory(Sport.NFL);
 
 			// Act
@@ -140,7 +139,7 @@ describe("RGStarting", () => {
 		it("should parse the starting player information for an NFL Yahoo contest", () => {
 			// Arrange
 			const target = new RGStarting();
-			const data =  cheerio.load(fs.readFileSync("spec-content/rgStartingNFLYahoo.html", "utf-8"));
+			const data = fs.readFileSync("spec-content/rgStartingNFLYahoo.html", "utf-8");
 			const playerFactory = new PlayerFactory(Sport.NFL);
 
 			// Act

@@ -25,7 +25,7 @@ export class Args {
 		this.validate(argData, argContestType, argSport, argContestID, argPlayerID);
 	}
 
-	validate(argDataType: string, argContestType: string, argSport: string, argContestID: string, argPlayerID: string): void {
+	private validate(argDataType: string, argContestType: string, argSport: string, argContestID: string, argPlayerID: string): void {
 		// Validate data
 		this.dataType = utils.coerceDataType(argDataType) || DataType.PlayerInsight;
 		if (!this.dataType) {
@@ -73,5 +73,4 @@ export class Args {
 	}
 }
 
-const args: Args = new Args();
-export default args;
+export default new Args();

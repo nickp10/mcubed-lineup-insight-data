@@ -10,13 +10,13 @@ import RGStarting from "./retrievers/rotogrinders/starting";
 import utils from "./utils";
 
 export class Data {
-	contestListRetrievers: IContestListRetriever[] = [
+	private contestListRetrievers: IContestListRetriever[] = [
 		new FanDuelContestRetriever()
 	];
-	playerCardRetrievers: IPlayerCardRetriever[] = [
+	private playerCardRetrievers: IPlayerCardRetriever[] = [
 		new FanDuelPlayerCardRetriever()
 	];
-	playerInsightRetrievers: IPlayerInsightRetriever[] = [
+	private playerInsightRetrievers: IPlayerInsightRetriever[] = [
 		new DFSR(),
 		new NumberFire(),
 		new RGProjections(),
@@ -24,7 +24,7 @@ export class Data {
 		new RGStarting()
 	];
 
-	getContestList(contestType: ContestType, sport: Sport): PromiseLike<IContest[]> {
+	getContestList(contestType?: ContestType, sport?: Sport): PromiseLike<IContest[]> {
 		let retrievers = this.contestListRetrievers;
 		if (contestType) {
 			retrievers = retrievers.filter(r => r.contestType === contestType);
@@ -63,5 +63,4 @@ export class Data {
 	}
 }
 
-const insightData = new Data();
-export default insightData;
+export default new Data();

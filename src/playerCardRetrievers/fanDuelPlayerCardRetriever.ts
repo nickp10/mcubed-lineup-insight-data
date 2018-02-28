@@ -2,7 +2,7 @@ import { IPlayerCard, IPlayerCardRetriever, ContestType } from "../interfaces";
 import utils from "../utils";
 
 export default class FanDuelPlayerCardRetriever implements IPlayerCardRetriever {
-	static FAN_DUEL_ID_PREFIX = "FD";
+	private static FAN_DUEL_ID_PREFIX = "FD";
 
 	contestType = ContestType.FanDuel;
 
@@ -10,7 +10,7 @@ export default class FanDuelPlayerCardRetriever implements IPlayerCardRetriever 
 		return this.getPlayerCard(contestID, playerID);
 	}
 
-	getPlayerCard(contestID: string, playerID: string): PromiseLike<IPlayerCard> {
+	private getPlayerCard(contestID: string, playerID: string): PromiseLike<IPlayerCard> {
 		const rawContestID = this.getRawContestID(contestID);
 		return utils.sendHttpsRequest({
 			hostname: "api.fanduel.com",
@@ -50,7 +50,7 @@ export default class FanDuelPlayerCardRetriever implements IPlayerCardRetriever 
 		return card;
 	}
 
-	parseGameLog(card: IPlayerCard, jsonData: any, player: any, gameLogIDs: any[]): void {
+	private parseGameLog(card: IPlayerCard, jsonData: any, player: any, gameLogIDs: any[]): void {
 		const gameLogs = jsonData["fixture_stats"];
 		if (Array.isArray(gameLogs)) {
 			for (let i = 0; i < gameLogIDs.length; i++) {
@@ -79,7 +79,7 @@ export default class FanDuelPlayerCardRetriever implements IPlayerCardRetriever 
 		}
 	}
 
-	parseNews(card: IPlayerCard, jsonData: any, newsItemIDs: any[]): void {
+	private parseNews(card: IPlayerCard, jsonData: any, newsItemIDs: any[]): void {
 		const newsItems = jsonData["news"];
 		if (Array.isArray(newsItems)) {
 			for (let i = 0; i < newsItemIDs.length; i++) {
@@ -96,7 +96,7 @@ export default class FanDuelPlayerCardRetriever implements IPlayerCardRetriever 
 		}
 	}
 
-	findGame(jsonData: any, gameID: string): any {
+	private findGame(jsonData: any, gameID: string): any {
 		const games = jsonData["fixtures"];
 		if (Array.isArray(games)) {
 			return games.find(g => g["id"] === gameID);
@@ -104,7 +104,7 @@ export default class FanDuelPlayerCardRetriever implements IPlayerCardRetriever 
 		return undefined;
 	}
 
-	findTeam(jsonData: any, teamID: string): any {
+	private findTeam(jsonData: any, teamID: string): any {
 		const teams = jsonData["teams"];
 		if (Array.isArray(teams)) {
 			return teams.find(t => t["id"] === teamID);
@@ -112,7 +112,7 @@ export default class FanDuelPlayerCardRetriever implements IPlayerCardRetriever 
 		return undefined;
 	}
 
-	getRawContestID(id: string): string {
+	private getRawContestID(id: string): string {
 		return id.replace(new RegExp(`^${FanDuelPlayerCardRetriever.FAN_DUEL_ID_PREFIX}`), "");
 	}
 }

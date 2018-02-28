@@ -5,16 +5,16 @@ export default class PlayerFactory {
 	/**
 	 * Defines the regex for parsing the name and team from a string like: Mike Trout (OF, LAA).
 	 */
-	static nameTeamRegex = /(.*?)\s\((.*?,\s)?(.*?)\)/;
-	static nameTeamRegexNameGroup = 1;
-	static nameTeamRegexTeamGroup = 3;
+	private static nameTeamRegex = /(.*?)\s\((.*?,\s)?(.*?)\)/;
+	private static nameTeamRegexNameGroup = 1;
+	private static nameTeamRegexTeamGroup = 3;
 
 	/**
 	 * Defines a mapping of alternate teams.
 	 * The key represents the team name from external sites.
 	 * The value represents the corresponding team name from the contest site.
 	 */
-	static alternateTeamsBySport = new Map([
+	private static alternateTeamsBySport = new Map([
 		[Sport.MLB, new Map([
 			["CHW", "CWS"],
 			["KC", "KAN"],
@@ -52,7 +52,7 @@ export default class PlayerFactory {
 	/**
 	 * Defines a mapping between NFL cities and the corresponding mascot.
 	 */
-	static nflCityToMascot = {
+	private static nflCityToMascot = {
 		"Arizona": "Cardinals",
 		"Atlanta": "Falcons",
 		"Baltimore": "Ravens",
@@ -87,7 +87,7 @@ export default class PlayerFactory {
 		"Washington": "Redskins"
 	};
 
-	alternateTeams: Map<string, string>;
+	private alternateTeams: Map<string, string>;
 
 	constructor(sport: Sport) {
 		this.alternateTeams = PlayerFactory.alternateTeamsBySport.get(sport);

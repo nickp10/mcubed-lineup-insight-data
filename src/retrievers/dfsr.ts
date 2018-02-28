@@ -11,22 +11,22 @@ interface IIndexMapping {
 
 export default class DFSR implements IPlayerInsightRetriever {
 	// URLs for DraftKings data
-	static draftKingsMLBSiteURL = "/data/baseball.draft_kings.csv";
-	static draftKingsNBASiteURL = "/data/basketball.draft_kings.csv";
-	static draftKingsNFLSiteURL = "/data/football.draft_kings.csv";
-	static draftKingsNHLSiteURL = "/data/hockey.draft_kings.csv";
+	private static draftKingsMLBSiteURL = "/data/baseball.draft_kings.csv";
+	private static draftKingsNBASiteURL = "/data/basketball.draft_kings.csv";
+	private static draftKingsNFLSiteURL = "/data/football.draft_kings.csv";
+	private static draftKingsNHLSiteURL = "/data/hockey.draft_kings.csv";
 
 	// URLs for FanDuel data
-	static fanDuelMLBSiteURL = "/data/baseball.fan_duel.csv";
-	static fanDuelNBASiteURL = "/data/basketball.fan_duel.csv";
-	static fanDuelNFLSiteURL = "/data/football.fan_duel.csv";
-	static fanDuelNHLSiteURL = "/data/hockey.fan_duel.csv";
+	private static fanDuelMLBSiteURL = "/data/baseball.fan_duel.csv";
+	private static fanDuelNBASiteURL = "/data/basketball.fan_duel.csv";
+	private static fanDuelNFLSiteURL = "/data/football.fan_duel.csv";
+	private static fanDuelNHLSiteURL = "/data/hockey.fan_duel.csv";
 
 	// URLs for Yahoo data
-	static yahooMLBSiteURL = "/data/baseball.yahoo.csv";
-	static yahooNBASiteURL = "/data/basketball.yahoo.csv";
-	static yahooNFLSiteURL = "/data/football.yahoo.csv";
-	static yahooNHLSiteURL = "/data/hockey.yahoo.csv";
+	private static yahooMLBSiteURL = "/data/baseball.yahoo.csv";
+	private static yahooNBASiteURL = "/data/basketball.yahoo.csv";
+	private static yahooNFLSiteURL = "/data/football.yahoo.csv";
+	private static yahooNHLSiteURL = "/data/hockey.yahoo.csv";
 
 	// Indices for the sports
 	private static mlbIndices: IIndexMapping = {

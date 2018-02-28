@@ -6,30 +6,30 @@ import utils from "../utils";
 
 export default class NumberFire implements IPlayerInsightRetriever {
 	// IDs for setting the DFS site to retrieve projection stats for
-	static fanDuelID = "3";
-	static draftKingsID = "4";
-	static yahooID = "13";
+	private static fanDuelID = "3";
+	private static draftKingsID = "4";
+	private static yahooID = "13";
 
 	// URL to post the DFS site ID to for each sport
-	static mlbSetSiteURL = "/mlb/daily-fantasy/set-dfs-site";
-	static nbaSetSiteURL = "/nba/daily-fantasy/set-dfs-site";
-	static nflSetSiteURL = "/nfl/daily-fantasy/set-dfs-site";
-	static nhlSetSiteURL = "/nhl/daily-fantasy/set-dfs-site";
+	private static mlbSetSiteURL = "/mlb/daily-fantasy/set-dfs-site";
+	private static nbaSetSiteURL = "/nba/daily-fantasy/set-dfs-site";
+	private static nflSetSiteURL = "/nfl/daily-fantasy/set-dfs-site";
+	private static nhlSetSiteURL = "/nhl/daily-fantasy/set-dfs-site";
 
 	// URLs for retrieving projections for each sport
-	static mlbDataSiteURLs = [
+	private static mlbDataSiteURLs = [
 		"/mlb/daily-fantasy/daily-baseball-projections/pitchers",
 		"/mlb/daily-fantasy/daily-baseball-projections/batters"
 	];
-	static nbaDataSiteURLs = [
+	private static nbaDataSiteURLs = [
 		"/nba/daily-fantasy/daily-basketball-projections"
 	];
-	static nflDataSiteURLs = [
+	private static nflDataSiteURLs = [
 		"/nfl/daily-fantasy/daily-football-projections",
 		"/nfl/daily-fantasy/daily-football-projections/K",
 		"/nfl/daily-fantasy/daily-football-projections/D"
 	];
-	static nhlDataSiteURLs = [
+	private static nhlDataSiteURLs = [
 		"/nhl/daily-fantasy/daily-hockey-projections/skaters",
 		"/nhl/daily-fantasy/daily-hockey-projections/goalies"
 	];
@@ -77,7 +77,7 @@ export default class NumberFire implements IPlayerInsightRetriever {
 		return Promise.reject<IPlayer[]>("An unknown contest type or sport was specified");
 	}
 
-	getData(playerFactory: PlayerFactory, setSiteURL: string, siteID: string, dataSiteURLs: string[]): PromiseLike<IPlayer[]> {
+	private getData(playerFactory: PlayerFactory, setSiteURL: string, siteID: string, dataSiteURLs: string[]): PromiseLike<IPlayer[]> {
 		return utils.sendHttpsRequest({
 			hostname: "www.numberfire.com",
 			path: setSiteURL,
@@ -87,7 +87,7 @@ export default class NumberFire implements IPlayerInsightRetriever {
 		});
 	}
 
-	getDataForURL(playerFactory: PlayerFactory, dataSiteURL: string, cookieHeaders: string[]): PromiseLike<IPlayer[]> {
+	private getDataForURL(playerFactory: PlayerFactory, dataSiteURL: string, cookieHeaders: string[]): PromiseLike<IPlayer[]> {
 		return utils.sendHttpsRequest({
 			hostname: "www.numberfire.com",
 			path: dataSiteURL,
@@ -96,7 +96,7 @@ export default class NumberFire implements IPlayerInsightRetriever {
 				Cookie: cookieHeaders
 			}
 		}).then((dataResp) => {
-			return this.parsePlayers(playerFactory, cheerio.load(dataResp.body));
+			return this.parsePlayers(playerFactory, dataResp.body);
 		});
 	}
 
@@ -109,7 +109,11 @@ export default class NumberFire implements IPlayerInsightRetriever {
 		});
 	}
 
-	parsePlayers(playerFactory: PlayerFactory, $: CheerioStatic): IPlayer[] {
+	parsePlayers(playerFactory: PlayerFactory, data: string): IPlayer[] {
+		return this.parsePlayersCheerio(playerFactory, cheerio.load(data));
+	}
+
+	private parsePlayersCheerio(playerFactory: PlayerFactory, $: CheerioStatic): IPlayer[] {
 		const players: {[key:string]: IPlayer} = { };
 		$(".stat-table__body tr").each((index, item) => {
 			const playerId = $(item).data("player-id");
@@ -146,7 +150,7 @@ export default class NumberFire implements IPlayerInsightRetriever {
 		return playersArray;
 	}
 
-	parseSalary(salary: string): number {
+	private parseSalary(salary: string): number {
 		if (salary) {
 			salary = salary.trim().replace("$", "").replace(",", "");
 			if (salary !== "N/A") {

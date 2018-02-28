@@ -79,7 +79,7 @@ export class Utils {
 
 	coerceContestType(contestType: string): ContestType {
 		for (let x in ContestType) {
-			if (utils.equalsIgnoreCase(x, contestType) && !Number(x)) {
+			if (this.equalsIgnoreCase(x, contestType) && !Number(x)) {
 				return <any>ContestType[x];
 			}
 		}
@@ -88,7 +88,7 @@ export class Utils {
 
 	coerceDataType(data: string): DataType {
 		for (let x in DataType) {
-			if (utils.equalsIgnoreCase(x, data) && !Number(x)) {
+			if (this.equalsIgnoreCase(x, data) && !Number(x)) {
 				return <any>DataType[x];
 			}
 		}
@@ -97,7 +97,7 @@ export class Utils {
 
 	coerceSport(sport: string): Sport {
 		for (let x in Sport) {
-			if (utils.equalsIgnoreCase(x, sport) && !Number(x)) {
+			if (this.equalsIgnoreCase(x, sport) && !Number(x)) {
 				return <any>Sport[x];
 			}
 		}
@@ -156,5 +156,4 @@ export class Utils {
 	}
 }
 
-const utils: Utils = new Utils();
-export default utils;
+export default new Utils();

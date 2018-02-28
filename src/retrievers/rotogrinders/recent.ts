@@ -4,8 +4,8 @@ import utils from "../../utils";
 
 export default class RGRecent implements IPlayerInsightRetriever {
 	// Regex for matching the data JSON object in the HTML document
-	static dataRegex = /data\s*=\s*(.*?}]);/;
-	static dataRegexGroup = 1;
+	private static dataRegex = /data\s*=\s*(.*?}]);/;
+	private static dataRegexGroup = 1;
 
 	playerInsight(contestType: ContestType, sport: Sport): PromiseLike<IPlayer[]> {
 		const playerFactory = new PlayerFactory(sport);
@@ -50,7 +50,7 @@ export default class RGRecent implements IPlayerInsightRetriever {
 		return Promise.reject<IPlayer[]>("An unknown contest type or sport was specified");
 	}
 
-	getData(playerFactory: PlayerFactory, ...pages: string[]): PromiseLike<IPlayer[]> {
+	private getData(playerFactory: PlayerFactory, ...pages: string[]): PromiseLike<IPlayer[]> {
 		const promises = pages.map((page) => {
 			return utils.sendHttpsRequest({
 				hostname: "rotogrinders.com",

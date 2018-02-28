@@ -3,8 +3,8 @@ import PlayerFactory from "../playerFactory";
 import utils from "../utils";
 
 export default class FanDuelContestRetriever implements IContestListRetriever {
-	static FAN_DUEL_ID_PREFIX = "FD";
-	static MILLIS_IN_DAY = 86400000;
+	private static FAN_DUEL_ID_PREFIX = "FD";
+	private static MILLIS_IN_DAY = 86400000;
 
 	contestType = ContestType.FanDuel;
 
@@ -12,7 +12,7 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
 		return this.getContestList(sport);
 	}
 
-	getContestList(sport: Sport): PromiseLike<IContest[]> {
+	private getContestList(sport: Sport): PromiseLike<IContest[]> {
 		return utils.sendHttpsRequest({
 			hostname: "api.fanduel.com",
 			path: "/fixture-lists",
@@ -26,7 +26,7 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
 		});
 	}
 
-	getContestSpecificData(contest: IContest): PromiseLike<IContest> {
+	private getContestSpecificData(contest: IContest): PromiseLike<IContest> {
 		return utils.sendHttpsRequest({
 			hostname: "api.fanduel.com",
 			path: `/fixture-lists/${this.getRawContestID(contest)}`,
@@ -40,7 +40,7 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
 		});
 	}
 
-	getContestPlayerList(contest: IContest): PromiseLike<IContest> {
+	private getContestPlayerList(contest: IContest): PromiseLike<IContest> {
 		return utils.sendHttpsRequest({
 			hostname: "api.fanduel.com",
 			path: `/fixture-lists/${this.getRawContestID(contest)}/players`,
@@ -54,7 +54,7 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
 		});
 	}
 
-	queryContestSpecificData(contests: IContest[]): PromiseLike<IContest[]> {
+	private queryContestSpecificData(contests: IContest[]): PromiseLike<IContest[]> {
 		const promises: PromiseLike<IContest>[] = [];
 		for (let i = 0; i < contests.length; i++) {
 			const contest = contests[i];
@@ -63,7 +63,7 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
 		return Promise.all(promises);
 	}
 
-	queryContestPlayerList(contest: IContest): PromiseLike<IContest> {
+	private queryContestPlayerList(contest: IContest): PromiseLike<IContest> {
 		return this.getContestPlayerList(contest);
 	}
 
@@ -114,7 +114,7 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
 		}
 	}
 
-	parseGame(contestData: any, gameData: any): IGame {
+	private parseGame(contestData: any, gameData: any): IGame {
 		return {
 			awayTeam: this.parseTeam(contestData, gameData["away_team"]),
 			homeTeam: this.parseTeam(contestData, gameData["home_team"]),
@@ -122,7 +122,7 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
 		};
 	}
 
-	parseTeam(contestData: any, teamData: any): ITeam {
+	private parseTeam(contestData: any, teamData: any): ITeam {
 		const teamID = teamData["team"]["_members"][0];
 		const team = contestData["teams"].find(t => t["id"] === teamID);
 		return {
@@ -164,7 +164,7 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
 		this.attachPlayersToTeams(fdContest, players);
 	}
 
-	parseBattingOrder(battingOrder: string): string {
+	private parseBattingOrder(battingOrder: string): string {
 		const order = utils.coerceInt(battingOrder);
 		if (order === 1) {
 			return "1st";
@@ -178,7 +178,7 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
 		return "NA";
 	}
 
-	parsePlayerID(id: string): string {
+	private parsePlayerID(id: string): string {
 		const idParts = id ? id.split("-") : undefined;
 		if (Array.isArray(idParts) && idParts.length === 2) {
 			return idParts[1];
@@ -186,7 +186,7 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
 		return id;
 	}
 
-	parseInjuryStatus(injuryStatus: string): IPlayerInjury {
+	private parseInjuryStatus(injuryStatus: string): IPlayerInjury {
 		if (utils.equalsIgnoreCase(injuryStatus, "DL") || utils.equalsIgnoreCase(injuryStatus, "IR") || utils.equalsIgnoreCase(injuryStatus, "NA") || utils.equalsIgnoreCase(injuryStatus, "O")) {
 			return {
 				display: injuryStatus.toUpperCase(),
@@ -206,7 +206,7 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
 		return undefined;
 	}
 
-	parseNewsStatus(jsonPlayer: any): NewsStatus {
+	private parseNewsStatus(jsonPlayer: any): NewsStatus {
 		const news = jsonPlayer["news"];
 		if (news) {
 			const latestNews = new Date(news["latest"]);
@@ -224,7 +224,7 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
 		return NewsStatus.None;
 	}
 
-	attachPlayersToTeams(fdContest: IContest, players: IPlayer[]): void {
+	private attachPlayersToTeams(fdContest: IContest, players: IPlayer[]): void {
 		const teamMap = new Map<string, ITeam>();
 		for (let i = 0; i < fdContest.games.length; i++) {
 			const game = fdContest.games[i];
@@ -243,7 +243,7 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
 		}
 	}
 
-	getRawContestID(contest: IContest): string {
+	private getRawContestID(contest: IContest): string {
 		return contest.ID.replace(new RegExp(`^${FanDuelContestRetriever.FAN_DUEL_ID_PREFIX}`), "");
 	}
 }

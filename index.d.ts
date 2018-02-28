@@ -1,43 +1,12 @@
 declare module 'mcubed-lineup-insight-data/build/playerFactory' {
 	import { IPlayer, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
 export default class PlayerFactory {
-    static nameTeamRegex: RegExp;
-    static nameTeamRegexNameGroup: number;
-    static nameTeamRegexTeamGroup: number;
-    static alternateTeamsBySport: Map<Sport, Map<string, string>>;
-    static nflCityToMascot: {
-        "Arizona": string;
-        "Atlanta": string;
-        "Baltimore": string;
-        "Buffalo": string;
-        "Carolina": string;
-        "Chicago": string;
-        "Cincinnati": string;
-        "Cleveland": string;
-        "Dallas": string;
-        "Denver": string;
-        "Detroit": string;
-        "Green Bay": string;
-        "Houston": string;
-        "Indianapolis": string;
-        "Jacksonville": string;
-        "Kansas City": string;
-        "Los Angeles": string;
-        "Miami": string;
-        "Minnesota": string;
-        "New England": string;
-        "New Orleans": string;
-        "Oakland": string;
-        "Philadelphia": string;
-        "Pittsburgh": string;
-        "San Diego": string;
-        "San Francisco": string;
-        "Seattle": string;
-        "Tampa Bay": string;
-        "Tennessee": string;
-        "Washington": string;
-    };
-    alternateTeams: Map<string, string>;
+    private static nameTeamRegex;
+    private static nameTeamRegexNameGroup;
+    private static nameTeamRegexTeamGroup;
+    private static alternateTeamsBySport;
+    private static nflCityToMascot;
+    private alternateTeams;
     constructor(sport: Sport);
     createPlayerCombinedNameTeam(nameTeam: string, salary: number): IPlayer;
     updatePlayerCombinedNameTeam(player: IPlayer, nameTeam: string, salary: number): void;
@@ -171,8 +140,8 @@ export class Utils {
     coerceFloat(value: string): number;
     equalsIgnoreCase(strA: string, strB: string): boolean;
     sendHttpsRequest(request: https.RequestOptions, data?: string): PromiseLike<IIncomingMessage>;
-} const utils: Utils;
-export default utils;
+} const _default: Utils;
+export default _default;
 
 }
 declare module 'mcubed-lineup-insight-data/build/args' {
@@ -184,27 +153,27 @@ export class Args {
     contestID: string;
     playerID: string;
     constructor();
-    validate(argDataType: string, argContestType: string, argSport: string, argContestID: string, argPlayerID: string): void;
-} const args: Args;
-export default args;
+    private validate(argDataType, argContestType, argSport, argContestID, argPlayerID);
+} const _default: Args;
+export default _default;
 
 }
 declare module 'mcubed-lineup-insight-data/build/retrievers/dfsr' {
 	import { IPlayer, IPlayerInsightRetriever, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
 import PlayerFactory from 'mcubed-lineup-insight-data/build/playerFactory';
 export default class DFSR implements IPlayerInsightRetriever {
-    static draftKingsMLBSiteURL: string;
-    static draftKingsNBASiteURL: string;
-    static draftKingsNFLSiteURL: string;
-    static draftKingsNHLSiteURL: string;
-    static fanDuelMLBSiteURL: string;
-    static fanDuelNBASiteURL: string;
-    static fanDuelNFLSiteURL: string;
-    static fanDuelNHLSiteURL: string;
-    static yahooMLBSiteURL: string;
-    static yahooNBASiteURL: string;
-    static yahooNFLSiteURL: string;
-    static yahooNHLSiteURL: string;
+    private static draftKingsMLBSiteURL;
+    private static draftKingsNBASiteURL;
+    private static draftKingsNFLSiteURL;
+    private static draftKingsNHLSiteURL;
+    private static fanDuelMLBSiteURL;
+    private static fanDuelNBASiteURL;
+    private static fanDuelNFLSiteURL;
+    private static fanDuelNHLSiteURL;
+    private static yahooMLBSiteURL;
+    private static yahooNBASiteURL;
+    private static yahooNFLSiteURL;
+    private static yahooNHLSiteURL;
     private static mlbIndices;
     private static nbaIndices;
     private static nflIndices;
@@ -217,69 +186,69 @@ export default class DFSR implements IPlayerInsightRetriever {
 
 }
 declare module 'mcubed-lineup-insight-data/build/contestRetrievers/fanDuelContestRetriever' {
-	import { IContestListRetriever, IContest, IGame, IPlayer, IPlayerInjury, ITeam, ContestType, NewsStatus, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
+	import { IContestListRetriever, IContest, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
 export default class FanDuelContestRetriever implements IContestListRetriever {
-    static FAN_DUEL_ID_PREFIX: string;
-    static MILLIS_IN_DAY: number;
+    private static FAN_DUEL_ID_PREFIX;
+    private static MILLIS_IN_DAY;
     contestType: ContestType;
     contestList(sport: Sport): PromiseLike<IContest[]>;
-    getContestList(sport: Sport): PromiseLike<IContest[]>;
-    getContestSpecificData(contest: IContest): PromiseLike<IContest>;
-    getContestPlayerList(contest: IContest): PromiseLike<IContest>;
-    queryContestSpecificData(contests: IContest[]): PromiseLike<IContest[]>;
-    queryContestPlayerList(contest: IContest): PromiseLike<IContest>;
+    private getContestList(sport);
+    private getContestSpecificData(contest);
+    private getContestPlayerList(contest);
+    private queryContestSpecificData(contests);
+    private queryContestPlayerList(contest);
     parseContestList(data: string, sport: Sport): IContest[];
     parseContestSpecificData(fdContest: IContest, contestData: string): void;
-    parseGame(contestData: any, gameData: any): IGame;
-    parseTeam(contestData: any, teamData: any): ITeam;
+    private parseGame(contestData, gameData);
+    private parseTeam(contestData, teamData);
     parseContestPlayerList(fdContest: IContest, playerListData: string): void;
-    parseBattingOrder(battingOrder: string): string;
-    parsePlayerID(id: string): string;
-    parseInjuryStatus(injuryStatus: string): IPlayerInjury;
-    parseNewsStatus(jsonPlayer: any): NewsStatus;
-    attachPlayersToTeams(fdContest: IContest, players: IPlayer[]): void;
-    getRawContestID(contest: IContest): string;
+    private parseBattingOrder(battingOrder);
+    private parsePlayerID(id);
+    private parseInjuryStatus(injuryStatus);
+    private parseNewsStatus(jsonPlayer);
+    private attachPlayersToTeams(fdContest, players);
+    private getRawContestID(contest);
 }
 
 }
 declare module 'mcubed-lineup-insight-data/build/playerCardRetrievers/fanDuelPlayerCardRetriever' {
 	import { IPlayerCard, IPlayerCardRetriever, ContestType } from 'mcubed-lineup-insight-data/build/interfaces';
 export default class FanDuelPlayerCardRetriever implements IPlayerCardRetriever {
-    static FAN_DUEL_ID_PREFIX: string;
+    private static FAN_DUEL_ID_PREFIX;
     contestType: ContestType;
     playerCard(contestID: string, playerID: string): PromiseLike<IPlayerCard>;
-    getPlayerCard(contestID: string, playerID: string): PromiseLike<IPlayerCard>;
+    private getPlayerCard(contestID, playerID);
     parsePlayerCard(data: string, contestID: string, playerID: string): IPlayerCard;
-    parseGameLog(card: IPlayerCard, jsonData: any, player: any, gameLogIDs: any[]): void;
-    parseNews(card: IPlayerCard, jsonData: any, newsItemIDs: any[]): void;
-    findGame(jsonData: any, gameID: string): any;
-    findTeam(jsonData: any, teamID: string): any;
-    getRawContestID(id: string): string;
+    private parseGameLog(card, jsonData, player, gameLogIDs);
+    private parseNews(card, jsonData, newsItemIDs);
+    private findGame(jsonData, gameID);
+    private findTeam(jsonData, teamID);
+    private getRawContestID(id);
 }
 
 }
 declare module 'mcubed-lineup-insight-data/build/retrievers/numberFire' {
-	/// <reference types="cheerio" />
-import { IIncomingMessage, IPlayer, IPlayerInsightRetriever, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
+	import { IIncomingMessage, IPlayer, IPlayerInsightRetriever, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
 import PlayerFactory from 'mcubed-lineup-insight-data/build/playerFactory';
 export default class NumberFire implements IPlayerInsightRetriever {
-    static fanDuelID: string;
-    static draftKingsID: string;
-    static yahooID: string;
-    static mlbSetSiteURL: string;
-    static nbaSetSiteURL: string;
-    static nflSetSiteURL: string;
-    static nhlSetSiteURL: string;
-    static mlbDataSiteURLs: string[];
-    static nbaDataSiteURLs: string[];
-    static nflDataSiteURLs: string[];
-    static nhlDataSiteURLs: string[];
+    private static fanDuelID;
+    private static draftKingsID;
+    private static yahooID;
+    private static mlbSetSiteURL;
+    private static nbaSetSiteURL;
+    private static nflSetSiteURL;
+    private static nhlSetSiteURL;
+    private static mlbDataSiteURLs;
+    private static nbaDataSiteURLs;
+    private static nflDataSiteURLs;
+    private static nhlDataSiteURLs;
     playerInsight(contestType: ContestType, sport: Sport): PromiseLike<IPlayer[]>;
-    getData(playerFactory: PlayerFactory, setSiteURL: string, siteID: string, dataSiteURLs: string[]): PromiseLike<IPlayer[]>;
-    getDataForURL(playerFactory: PlayerFactory, dataSiteURL: string, cookieHeaders: string[]): PromiseLike<IPlayer[]>;
+    private getData(playerFactory, setSiteURL, siteID, dataSiteURLs);
+    private getDataForURL(playerFactory, dataSiteURL, cookieHeaders);
     parseData(playerFactory: PlayerFactory, dataSiteURLs: string[], setSiteResp: IIncomingMessage): PromiseLike<IPlayer[]>;
-    parsePlayers(playerFactory: PlayerFactory, $: CheerioStatic): IPlayer[];
-    parseSalary(salary: string): number;
+    parsePlayers(playerFactory: PlayerFactory, data: string): IPlayer[];
+    private parsePlayersCheerio(playerFactory, $);
+    private parseSalary(salary);
 }
 
 }
@@ -287,10 +256,10 @@ declare module 'mcubed-lineup-insight-data/build/retrievers/rotogrinders/project
 	import { IPlayer, IPlayerInsightRetriever, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
 import PlayerFactory from 'mcubed-lineup-insight-data/build/playerFactory';
 export default class RGProjections implements IPlayerInsightRetriever {
-    static dataRegex: RegExp;
-    static dataRegexGroup: number;
+    private static dataRegex;
+    private static dataRegexGroup;
     playerInsight(contestType: ContestType, sport: Sport): PromiseLike<IPlayer[]>;
-    getData(playerFactory: PlayerFactory, contest: string, ...pages: string[]): PromiseLike<IPlayer[]>;
+    private getData(playerFactory, contest, ...pages);
     parsePlayers(playerFactory: PlayerFactory, data: string): IPlayer[];
 }
 
@@ -299,40 +268,40 @@ declare module 'mcubed-lineup-insight-data/build/retrievers/rotogrinders/recent'
 	import { IPlayer, IPlayerInsightRetriever, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
 import PlayerFactory from 'mcubed-lineup-insight-data/build/playerFactory';
 export default class RGRecent implements IPlayerInsightRetriever {
-    static dataRegex: RegExp;
-    static dataRegexGroup: number;
+    private static dataRegex;
+    private static dataRegexGroup;
     playerInsight(contestType: ContestType, sport: Sport): PromiseLike<IPlayer[]>;
-    getData(playerFactory: PlayerFactory, ...pages: string[]): PromiseLike<IPlayer[]>;
+    private getData(playerFactory, ...pages);
     parsePlayers(playerFactory: PlayerFactory, data: string): IPlayer[];
 }
 
 }
 declare module 'mcubed-lineup-insight-data/build/retrievers/rotogrinders/starting' {
-	/// <reference types="cheerio" />
-import { IPlayer, IPlayerInsightRetriever, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
+	import { IPlayer, IPlayerInsightRetriever, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
 import PlayerFactory from 'mcubed-lineup-insight-data/build/playerFactory';
 export default class RGStarting implements IPlayerInsightRetriever {
     playerInsight(contestType: ContestType, sport: Sport): PromiseLike<IPlayer[]>;
-    getData(playerFactory: PlayerFactory, contest: string, sport: string): PromiseLike<IPlayer[]>;
-    parsePlayers(playerFactory: PlayerFactory, $: CheerioStatic, sport: string): IPlayer[];
-    parsePlayersForLineup(playerFactory: PlayerFactory, players: IPlayer[], lineup: Cheerio, team: string, sport: string): void;
-    parseSalary(salary: string): number;
-    createPlayer(playerFactory: PlayerFactory, playerItem: Cheerio, playerName: Cheerio, sport: string, team: string, salary: number): IPlayer;
-    parseBattingOrder(startingOrder: string): string;
+    private getData(playerFactory, contest, sport);
+    parsePlayers(playerFactory: PlayerFactory, data: string, sport: string): IPlayer[];
+    private parsePlayersCheerio(playerFactory, $, sport);
+    private parsePlayersForLineup(playerFactory, players, lineup, team, sport);
+    private parseSalary(salary);
+    private createPlayer(playerFactory, playerItem, playerName, sport, team, salary);
+    private parseBattingOrder(startingOrder);
 }
 
 }
 declare module 'mcubed-lineup-insight-data/build/data' {
-	import { IContest, IContestListRetriever, IPlayer, IPlayerCard, IPlayerCardRetriever, IPlayerInsightRetriever, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
+	import { IContest, IPlayer, IPlayerCard, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
 export class Data {
-    contestListRetrievers: IContestListRetriever[];
-    playerCardRetrievers: IPlayerCardRetriever[];
-    playerInsightRetrievers: IPlayerInsightRetriever[];
-    getContestList(contestType: ContestType, sport: Sport): PromiseLike<IContest[]>;
+    private contestListRetrievers;
+    private playerCardRetrievers;
+    private playerInsightRetrievers;
+    getContestList(contestType?: ContestType, sport?: Sport): PromiseLike<IContest[]>;
     getPlayerCard(contestType: ContestType, contestID: string, playerID: string): PromiseLike<IPlayerCard>;
     getPlayerInsight(contestType: ContestType, sport: Sport): PromiseLike<IPlayer[]>;
-} const insightData: Data;
-export default insightData;
+} const _default: Data;
+export default _default;
 
 }
 declare module 'mcubed-lineup-insight-data/build/cli' {

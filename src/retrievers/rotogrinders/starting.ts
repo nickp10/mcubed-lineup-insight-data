@@ -47,17 +47,21 @@ export default class RGStarting implements IPlayerInsightRetriever {
 		return Promise.reject<IPlayer[]>("An unknown contest type or sport was specified");
 	}
 
-	getData(playerFactory: PlayerFactory, contest: string, sport: string): PromiseLike<IPlayer[]> {
+	private getData(playerFactory: PlayerFactory, contest: string, sport: string): PromiseLike<IPlayer[]> {
 		return utils.sendHttpsRequest({
 			hostname: "rotogrinders.com",
 			path: `/lineups/${sport}?site=${contest}`,
 			method: "GET"
 		}).then((dataResp) => {
-			return this.parsePlayers(playerFactory, cheerio.load(dataResp.body), sport);
+			return this.parsePlayers(playerFactory, dataResp.body, sport);
 		});
 	}
 
-	parsePlayers(playerFactory: PlayerFactory, $: CheerioStatic, sport: string): IPlayer[] {
+	parsePlayers(playerFactory: PlayerFactory, data: string, sport: string): IPlayer[] {
+		return this.parsePlayersCheerio(playerFactory, cheerio.load(data), sport);
+	}
+
+	private parsePlayersCheerio(playerFactory: PlayerFactory, $: CheerioStatic, sport: string): IPlayer[] {
 		const players: IPlayer[] = [];
 		$("li[data-role=lineup-card]").each((index, element) => {
 			const game = $(element);
@@ -69,7 +73,7 @@ export default class RGStarting implements IPlayerInsightRetriever {
 		return players;
 	}
 
-	parsePlayersForLineup(playerFactory: PlayerFactory, players: IPlayer[], lineup: Cheerio, team: string, sport: string): void {
+	private parsePlayersForLineup(playerFactory: PlayerFactory, players: IPlayer[], lineup: Cheerio, team: string, sport: string): void {
 		if (team) {
 			if (sport === "nhl" || sport === "mlb") {
 				const pitcher = cheerio("div[class*=pitcher] a", lineup).first();
@@ -112,7 +116,7 @@ export default class RGStarting implements IPlayerInsightRetriever {
 		return undefined;
 	}
 
-	parseSalary(salary: string): number {
+	private parseSalary(salary: string): number {
 		salary = salary.replace("$", "").toLowerCase();
 		const thousand = salary.indexOf("k");
 		if (thousand >= 0) {
@@ -123,7 +127,7 @@ export default class RGStarting implements IPlayerInsightRetriever {
 		}
 	}
 
-	createPlayer(playerFactory: PlayerFactory, playerItem: Cheerio, playerName: Cheerio, sport: string, team: string, salary: number): IPlayer {
+	private createPlayer(playerFactory: PlayerFactory, playerItem: Cheerio, playerName: Cheerio, sport: string, team: string, salary: number): IPlayer {
 		let name = playerName.attr("title");
 		if (!name) {
 			name = playerName.html();
@@ -140,7 +144,7 @@ export default class RGStarting implements IPlayerInsightRetriever {
 		return undefined;
 	}
 
-	parseBattingOrder(startingOrder: string): string {
+	private parseBattingOrder(startingOrder: string): string {
 		try {
 			const order = utils.coerceInt(startingOrder);
 			if (order === 1) {
