@@ -56,6 +56,7 @@ gulp.task("compile-test", () => {
 
 gulp.task("generate-dts", async () => {
     await dtsGenerator.default({
+        indent: "    ",
         main: "mcubed-lineup-insight-data/src/data",
         name: "mcubed-lineup-insight-data",
         project: "./",

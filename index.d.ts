@@ -1,5 +1,5 @@
 declare module 'mcubed-lineup-insight-data/build/playerFactory' {
-	import { IPlayer, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
+    import { IPlayer, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
 export default class PlayerFactory {
     private static nameTeamRegex;
     private static nameTeamRegexNameGroup;
@@ -17,7 +17,7 @@ export default class PlayerFactory {
 
 }
 declare module 'mcubed-lineup-insight-data/build/interfaces' {
-	/// <reference types="node" />
+    /// <reference types="node" />
 import * as http from "http";
 export interface IIncomingMessage extends http.IncomingMessage {
     body?: string;
@@ -125,7 +125,7 @@ export enum Sport {
 
 }
 declare module 'mcubed-lineup-insight-data/build/utils' {
-	/// <reference types="node" />
+    /// <reference types="node" />
 import { IIncomingMessage, ContestType, DataType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
 import * as https from "https";
 export class Utils {
@@ -145,7 +145,7 @@ export default _default;
 
 }
 declare module 'mcubed-lineup-insight-data/build/args' {
-	import { ContestType, DataType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
+    import { ContestType, DataType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
 export class Args {
     dataType: DataType;
     contestType: ContestType;
@@ -159,7 +159,7 @@ export default _default;
 
 }
 declare module 'mcubed-lineup-insight-data/build/retrievers/dfsr' {
-	import { IPlayer, IPlayerInsightRetriever, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
+    import { IPlayer, IPlayerInsightRetriever, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
 import PlayerFactory from 'mcubed-lineup-insight-data/build/playerFactory';
 export default class DFSR implements IPlayerInsightRetriever {
     private static draftKingsMLBSiteURL;
@@ -186,7 +186,7 @@ export default class DFSR implements IPlayerInsightRetriever {
 
 }
 declare module 'mcubed-lineup-insight-data/build/contestRetrievers/fanDuelContestRetriever' {
-	import { IContestListRetriever, IContest, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
+    import { IContestListRetriever, IContest, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
 export default class FanDuelContestRetriever implements IContestListRetriever {
     private static FAN_DUEL_ID_PREFIX;
     private static MILLIS_IN_DAY;
@@ -212,7 +212,7 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
 
 }
 declare module 'mcubed-lineup-insight-data/build/playerCardRetrievers/fanDuelPlayerCardRetriever' {
-	import { IPlayerCard, IPlayerCardRetriever, ContestType } from 'mcubed-lineup-insight-data/build/interfaces';
+    import { IPlayerCard, IPlayerCardRetriever, ContestType } from 'mcubed-lineup-insight-data/build/interfaces';
 export default class FanDuelPlayerCardRetriever implements IPlayerCardRetriever {
     private static FAN_DUEL_ID_PREFIX;
     contestType: ContestType;
@@ -228,7 +228,7 @@ export default class FanDuelPlayerCardRetriever implements IPlayerCardRetriever 
 
 }
 declare module 'mcubed-lineup-insight-data/build/retrievers/numberFire' {
-	import { IIncomingMessage, IPlayer, IPlayerInsightRetriever, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
+    import { IIncomingMessage, IPlayer, IPlayerInsightRetriever, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
 import PlayerFactory from 'mcubed-lineup-insight-data/build/playerFactory';
 export default class NumberFire implements IPlayerInsightRetriever {
     private static fanDuelID;
@@ -253,7 +253,7 @@ export default class NumberFire implements IPlayerInsightRetriever {
 
 }
 declare module 'mcubed-lineup-insight-data/build/retrievers/rotogrinders/projections' {
-	import { IPlayer, IPlayerInsightRetriever, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
+    import { IPlayer, IPlayerInsightRetriever, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
 import PlayerFactory from 'mcubed-lineup-insight-data/build/playerFactory';
 export default class RGProjections implements IPlayerInsightRetriever {
     private static dataRegex;
@@ -265,7 +265,7 @@ export default class RGProjections implements IPlayerInsightRetriever {
 
 }
 declare module 'mcubed-lineup-insight-data/build/retrievers/rotogrinders/recent' {
-	import { IPlayer, IPlayerInsightRetriever, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
+    import { IPlayer, IPlayerInsightRetriever, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
 import PlayerFactory from 'mcubed-lineup-insight-data/build/playerFactory';
 export default class RGRecent implements IPlayerInsightRetriever {
     private static dataRegex;
@@ -277,7 +277,7 @@ export default class RGRecent implements IPlayerInsightRetriever {
 
 }
 declare module 'mcubed-lineup-insight-data/build/retrievers/rotogrinders/starting' {
-	import { IPlayer, IPlayerInsightRetriever, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
+    import { IPlayer, IPlayerInsightRetriever, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
 import PlayerFactory from 'mcubed-lineup-insight-data/build/playerFactory';
 export default class RGStarting implements IPlayerInsightRetriever {
     playerInsight(contestType: ContestType, sport: Sport): PromiseLike<IPlayer[]>;
@@ -292,7 +292,7 @@ export default class RGStarting implements IPlayerInsightRetriever {
 
 }
 declare module 'mcubed-lineup-insight-data/build/data' {
-	import { IContest, IPlayer, IPlayerCard, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
+    import { IContest, IPlayer, IPlayerCard, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
 export class Data {
     private contestListRetrievers;
     private playerCardRetrievers;
@@ -305,9 +305,9 @@ export default _default;
 
 }
 declare module 'mcubed-lineup-insight-data/build/cli' {
-	export {};
+    export {};
 
 }
 declare module 'mcubed-lineup-insight-data' {
-	export {default} from 'mcubed-lineup-insight-data/build/data';
-	}
+    export {default} from 'mcubed-lineup-insight-data/build/data';
+    }
