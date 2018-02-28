@@ -13,7 +13,7 @@ export class SpecUtils {
         const matchingPlayers = actualPlayers.filter(p => p.name === expectedPlayer.name);
         assert.equal(matchingPlayers.length, 1, `No players match with name: ${expectedPlayer.name}`);
         const actualPlayer = matchingPlayers[0];
-        specUtils.assertPlayerEquals(actualPlayer, expectedPlayer);
+        this.assertPlayerEquals(actualPlayer, expectedPlayer);
     }
 
     /**
@@ -27,7 +27,7 @@ export class SpecUtils {
         const matchingContests = actualContests.filter(c => c.ID === expectedContest.ID);
         assert.equal(matchingContests.length, 1, `No contests match with ID: ${expectedContest.ID}`);
         const actualContest = matchingContests[0];
-        specUtils.assertContestEquals(actualContest, expectedContest);
+        this.assertContestEquals(actualContest, expectedContest);
     }
 
     /**
@@ -54,7 +54,7 @@ export class SpecUtils {
         if (expectedContest.games) {
             assert.equal(actualContest.games.length, expectedContest.games.length);
             for (let i = 0; i < actualContest.games.length; i++) {
-                specUtils.assertGameEquals(actualContest.games[i], expectedContest.games[i]);
+                this.assertGameEquals(actualContest.games[i], expectedContest.games[i]);
             }
         } else {
             assert.equal(actualContest.games, undefined);
@@ -68,8 +68,8 @@ export class SpecUtils {
      * @param expectedGame The expected game to assert.
      */
     assertGameEquals(actualGame: IGame, expectedGame: IGame): void {
-        specUtils.assertTeamEquals(actualGame.awayTeam, expectedGame.awayTeam);
-        specUtils.assertTeamEquals(actualGame.homeTeam, expectedGame.homeTeam);
+        this.assertTeamEquals(actualGame.awayTeam, expectedGame.awayTeam);
+        this.assertTeamEquals(actualGame.homeTeam, expectedGame.homeTeam);
         assert.deepStrictEqual(actualGame.startTime, expectedGame.startTime);
     }
 
@@ -85,7 +85,7 @@ export class SpecUtils {
         if (expectedTeam.players) {
             assert.equal(actualTeam.players.length, expectedTeam.players.length);
             for (let i = 0; i < actualTeam.players.length; i++) {
-                specUtils.assertPlayerEquals(actualTeam.players[i], expectedTeam.players[i]);
+                this.assertPlayerEquals(actualTeam.players[i], expectedTeam.players[i]);
             }
         } else {
             assert.equal(actualTeam.players, undefined);
