@@ -4,6 +4,10 @@ Description
 ----
 This node module will retrieve fantasy sports data. In particular, this will aggregate data such as starting players, projected points, and recent performances for daily fantasy sports sites like DraftKings, FanDuel, and Yahoo.
 
+[mcubed-lineup-insight-data](https://github.com/nickp10/mcubed-lineup-insight-data) vs. [mcubed-lineup-insight-server](https://github.com/nickp10/mcubed-lineup-insight-server)
+----
+mcubed-lineup-insight-server is a node module that relies on mcubed-lineup-insight-data for all of its data. The data module is used for retrieving the fantasy sports data from third-parties. The server module is used for aggregating the data for all the current contests and merging the data from the different third-parties into the contests.
+
 Command Line
 ----
 This node module can be run from the command line using `mcubed-lineup-insight-data -d PlayerInsight -c DraftKings -s NFL`. The arguments for the command line interface are:
