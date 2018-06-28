@@ -8,11 +8,11 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
 
     contestType = ContestType.FanDuel;
 
-    contestList(sport: Sport): PromiseLike<IContest[]> {
-        return this.getContestList(sport);
+    async contestList(sport: Sport): Promise<IContest[]> {
+        return await this.getContestList(sport);
     }
 
-    private getContestList(sport: Sport): PromiseLike<IContest[]> {
+    private async getContestList(sport: Sport): Promise<IContest[]> {
         return utils.sendHttpsRequest({
             hostname: "api.fanduel.com",
             path: "/fixture-lists",
@@ -20,13 +20,13 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
             headers: {
                 "Authorization": "Basic N2U3ODNmMTE4OTIzYzE2NzVjNWZhYWFmZTYwYTc5ZmM6"
             }
-        }).then((dataResp) => {
+        }).then(async (dataResp) => {
             const contests = this.parseContestList(dataResp.body, sport);
-            return this.queryContestSpecificData(contests);
+            return await this.queryContestSpecificData(contests);
         });
     }
 
-    private getContestSpecificData(contest: IContest): PromiseLike<IContest> {
+    private async getContestSpecificData(contest: IContest): Promise<IContest> {
         return utils.sendHttpsRequest({
             hostname: "api.fanduel.com",
             path: `/fixture-lists/${this.getRawContestID(contest)}`,
@@ -34,13 +34,13 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
             headers: {
                 "Authorization": "Basic N2U3ODNmMTE4OTIzYzE2NzVjNWZhYWFmZTYwYTc5ZmM6"
             }
-        }).then((dataResp) => {
+        }).then(async (dataResp) => {
             this.parseContestSpecificData(contest, dataResp.body);
-            return this.queryContestPlayerList(contest);
+            return await this.queryContestPlayerList(contest);
         });
     }
 
-    private getContestPlayerList(contest: IContest): PromiseLike<IContest> {
+    private async getContestPlayerList(contest: IContest): Promise<IContest> {
         return utils.sendHttpsRequest({
             hostname: "api.fanduel.com",
             path: `/fixture-lists/${this.getRawContestID(contest)}/players`,
@@ -54,17 +54,17 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
         });
     }
 
-    private queryContestSpecificData(contests: IContest[]): PromiseLike<IContest[]> {
-        const promises: PromiseLike<IContest>[] = [];
+    private async queryContestSpecificData(contests: IContest[]): Promise<IContest[]> {
+        const returnContests: IContest[] = [];
         for (let i = 0; i < contests.length; i++) {
             const contest = contests[i];
-            promises.push(this.getContestSpecificData(contest));
+            returnContests.push(await this.getContestSpecificData(contest));
         }
-        return Promise.all(promises);
+        return returnContests;
     }
 
-    private queryContestPlayerList(contest: IContest): PromiseLike<IContest> {
-        return this.getContestPlayerList(contest);
+    private async queryContestPlayerList(contest: IContest): Promise<IContest> {
+        return await this.getContestPlayerList(contest);
     }
 
     parseContestList(data: string, sport: Sport): IContest[] {

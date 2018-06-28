@@ -34,60 +34,60 @@ export default class NumberFire implements IPlayerInsightRetriever {
         "/nhl/daily-fantasy/daily-hockey-projections/goalies"
     ];
 
-    playerInsight(contestType: ContestType, sport: Sport): PromiseLike<IPlayer[]> {
+    async playerInsight(contestType: ContestType, sport: Sport): Promise<IPlayer[]> {
         const playerFactory = new PlayerFactory(sport);
         switch (contestType) {
             case ContestType.DraftKings:
                 switch (sport) {
                     case Sport.MLB:
-                        return this.getData(playerFactory, NumberFire.mlbSetSiteURL, NumberFire.draftKingsID, NumberFire.mlbDataSiteURLs);
+                        return await this.getData(playerFactory, NumberFire.mlbSetSiteURL, NumberFire.draftKingsID, NumberFire.mlbDataSiteURLs);
                     case Sport.NBA:
-                        return this.getData(playerFactory, NumberFire.nbaSetSiteURL, NumberFire.draftKingsID, NumberFire.nbaDataSiteURLs);
+                        return await this.getData(playerFactory, NumberFire.nbaSetSiteURL, NumberFire.draftKingsID, NumberFire.nbaDataSiteURLs);
                     case Sport.NFL:
-                        return this.getData(playerFactory, NumberFire.nflSetSiteURL, NumberFire.draftKingsID, NumberFire.nflDataSiteURLs);
+                        return await this.getData(playerFactory, NumberFire.nflSetSiteURL, NumberFire.draftKingsID, NumberFire.nflDataSiteURLs);
                     case Sport.NHL:
-                        return this.getData(playerFactory, NumberFire.nhlSetSiteURL, NumberFire.draftKingsID, NumberFire.nhlDataSiteURLs);
+                        return await this.getData(playerFactory, NumberFire.nhlSetSiteURL, NumberFire.draftKingsID, NumberFire.nhlDataSiteURLs);
                 }
                 break;
             case ContestType.FanDuel:
                 switch (sport) {
                     case Sport.MLB:
-                        return this.getData(playerFactory, NumberFire.mlbSetSiteURL, NumberFire.fanDuelID, NumberFire.mlbDataSiteURLs);
+                        return await this.getData(playerFactory, NumberFire.mlbSetSiteURL, NumberFire.fanDuelID, NumberFire.mlbDataSiteURLs);
                     case Sport.NBA:
-                        return this.getData(playerFactory, NumberFire.nbaSetSiteURL, NumberFire.fanDuelID, NumberFire.nbaDataSiteURLs);
+                        return await this.getData(playerFactory, NumberFire.nbaSetSiteURL, NumberFire.fanDuelID, NumberFire.nbaDataSiteURLs);
                     case Sport.NFL:
-                        return this.getData(playerFactory, NumberFire.nflSetSiteURL, NumberFire.fanDuelID, NumberFire.nflDataSiteURLs);
+                        return await this.getData(playerFactory, NumberFire.nflSetSiteURL, NumberFire.fanDuelID, NumberFire.nflDataSiteURLs);
                     case Sport.NHL:
-                        return this.getData(playerFactory, NumberFire.nhlSetSiteURL, NumberFire.fanDuelID, NumberFire.nhlDataSiteURLs);
+                        return await this.getData(playerFactory, NumberFire.nhlSetSiteURL, NumberFire.fanDuelID, NumberFire.nhlDataSiteURLs);
                 }
                 break;
             case ContestType.Yahoo:
                 switch (sport) {
                     case Sport.MLB:
-                        return this.getData(playerFactory, NumberFire.mlbSetSiteURL, NumberFire.yahooID, NumberFire.mlbDataSiteURLs);
+                        return await this.getData(playerFactory, NumberFire.mlbSetSiteURL, NumberFire.yahooID, NumberFire.mlbDataSiteURLs);
                     case Sport.NBA:
-                        return this.getData(playerFactory, NumberFire.nbaSetSiteURL, NumberFire.yahooID, NumberFire.nbaDataSiteURLs);
+                        return await this.getData(playerFactory, NumberFire.nbaSetSiteURL, NumberFire.yahooID, NumberFire.nbaDataSiteURLs);
                     case Sport.NFL:
-                        return this.getData(playerFactory, NumberFire.nflSetSiteURL, NumberFire.yahooID, NumberFire.nflDataSiteURLs);
+                        return await this.getData(playerFactory, NumberFire.nflSetSiteURL, NumberFire.yahooID, NumberFire.nflDataSiteURLs);
                     case Sport.NHL:
-                        return this.getData(playerFactory, NumberFire.nhlSetSiteURL, NumberFire.yahooID, NumberFire.nhlDataSiteURLs);
+                        return await this.getData(playerFactory, NumberFire.nhlSetSiteURL, NumberFire.yahooID, NumberFire.nhlDataSiteURLs);
                 }
                 break;
         }
-        return Promise.reject<IPlayer[]>("An unknown contest type or sport was specified");
+        throw new Error("An unknown contest type or sport was specified");
     }
 
-    private getData(playerFactory: PlayerFactory, setSiteURL: string, siteID: string, dataSiteURLs: string[]): PromiseLike<IPlayer[]> {
+    private async getData(playerFactory: PlayerFactory, setSiteURL: string, siteID: string, dataSiteURLs: string[]): Promise<IPlayer[]> {
         return utils.sendHttpsRequest({
             hostname: "www.numberfire.com",
             path: setSiteURL,
             method: "POST"
-        }, `site=${siteID}`).then((setSiteResp) => {
-            return this.parseData(playerFactory, dataSiteURLs, setSiteResp);
+        }, `site=${siteID}`).then(async (setSiteResp) => {
+            return await this.parseData(playerFactory, dataSiteURLs, setSiteResp);
         });
     }
 
-    private getDataForURL(playerFactory: PlayerFactory, dataSiteURL: string, cookieHeaders: string[]): PromiseLike<IPlayer[]> {
+    private async getDataForURL(playerFactory: PlayerFactory, dataSiteURL: string, cookieHeaders: string[]): Promise<IPlayer[]> {
         return utils.sendHttpsRequest({
             hostname: "www.numberfire.com",
             path: dataSiteURL,
@@ -100,7 +100,7 @@ export default class NumberFire implements IPlayerInsightRetriever {
         });
     }
 
-    parseData(playerFactory: PlayerFactory, dataSiteURLs: string[], setSiteResp: IIncomingMessage): PromiseLike<IPlayer[]> {
+    async parseData(playerFactory: PlayerFactory, dataSiteURLs: string[], setSiteResp: IIncomingMessage): Promise<IPlayer[]> {
         const setCookies = setCookieParser(setSiteResp);
         const cookieHeaders = setCookies.map(c => `${c.name}=${c.value}`);
         const dataPromises = dataSiteURLs.map(dataSiteURL => this.getDataForURL(playerFactory, dataSiteURL, cookieHeaders));

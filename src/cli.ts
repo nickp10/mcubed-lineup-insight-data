@@ -1,25 +1,30 @@
 #! /usr/bin/env node
 
+import "babel-polyfill";
 import { DataType } from "./interfaces";
 import args from "./args";
 import insightData from "./data";
-import utils from "./utils";
 
-switch (args.dataType) {
-    case DataType.ContestList:
-        insightData.getContestList(args.contestType, args.sport).then((contests) => {
-            console.log(JSON.stringify(contests));
-        });
-        break;
-    case DataType.PlayerCard:
-        insightData.getPlayerCard(args.contestType, args.contestID, args.playerID).then((playerCard) => {
-            console.log(JSON.stringify(playerCard));
-        });
-        break;
-    case DataType.PlayerInsight:
-    default:
-        insightData.getPlayerInsight(args.contestType, args.sport).then((players) => {
-            console.log(JSON.stringify(players));
-        });
-        break;
+async function main(): Promise<void> {
+    try {
+        switch (args.dataType) {
+            case DataType.ContestList:
+                const contests = await insightData.getContestList(args.contestType, args.sport);
+                console.log(JSON.stringify(contests));
+                break;
+            case DataType.PlayerCard:
+                const playerCard = await insightData.getPlayerCard(args.contestType, args.contestID, args.playerID);
+                console.log(JSON.stringify(playerCard));
+                break;
+            case DataType.PlayerInsight:
+            default:
+                const players = await insightData.getPlayerInsight(args.contestType, args.sport);
+                console.log(JSON.stringify(players));
+                break;
+        }
+    } catch (error) {
+        console.error(JSON.stringify({ message: error.message }));
+    }
 }
+
+main();

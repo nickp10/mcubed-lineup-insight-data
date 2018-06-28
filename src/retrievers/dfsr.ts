@@ -54,50 +54,50 @@ export default class DFSR implements IPlayerInsightRetriever {
         salaryIndex: 4
     };
 
-    playerInsight(contestType: ContestType, sport: Sport): PromiseLike<IPlayer[]> {
+    async playerInsight(contestType: ContestType, sport: Sport): Promise<IPlayer[]> {
         const playerFactory = new PlayerFactory(sport);
         switch (contestType) {
             case ContestType.DraftKings:
                 switch (sport) {
                     case Sport.MLB:
-                        return this.getData(playerFactory, DFSR.draftKingsMLBSiteURL, DFSR.mlbIndices);
+                        return await this.getData(playerFactory, DFSR.draftKingsMLBSiteURL, DFSR.mlbIndices);
                     case Sport.NBA:
-                        return this.getData(playerFactory, DFSR.draftKingsNBASiteURL, DFSR.nbaIndices);
+                        return await this.getData(playerFactory, DFSR.draftKingsNBASiteURL, DFSR.nbaIndices);
                     case Sport.NFL:
-                        return this.getData(playerFactory, DFSR.draftKingsNFLSiteURL, DFSR.nflIndices);
+                        return await this.getData(playerFactory, DFSR.draftKingsNFLSiteURL, DFSR.nflIndices);
                     case Sport.NHL:
-                        return this.getData(playerFactory, DFSR.draftKingsNHLSiteURL, DFSR.nhlIndices);
+                        return await this.getData(playerFactory, DFSR.draftKingsNHLSiteURL, DFSR.nhlIndices);
                 }
                 break;
             case ContestType.FanDuel:
                 switch (sport) {
                     case Sport.MLB:
-                        return this.getData(playerFactory, DFSR.fanDuelMLBSiteURL, DFSR.mlbIndices);
+                        return await this.getData(playerFactory, DFSR.fanDuelMLBSiteURL, DFSR.mlbIndices);
                     case Sport.NBA:
-                        return this.getData(playerFactory, DFSR.fanDuelNBASiteURL, DFSR.nbaIndices);
+                        return await this.getData(playerFactory, DFSR.fanDuelNBASiteURL, DFSR.nbaIndices);
                     case Sport.NFL:
-                        return this.getData(playerFactory, DFSR.fanDuelNFLSiteURL, DFSR.nflIndices);
+                        return await this.getData(playerFactory, DFSR.fanDuelNFLSiteURL, DFSR.nflIndices);
                     case Sport.NHL:
-                        return this.getData(playerFactory, DFSR.fanDuelNHLSiteURL, DFSR.nhlIndices);
+                        return await this.getData(playerFactory, DFSR.fanDuelNHLSiteURL, DFSR.nhlIndices);
                 }
                 break;
             case ContestType.Yahoo:
                 switch (sport) {
                     case Sport.MLB:
-                        return this.getData(playerFactory, DFSR.yahooMLBSiteURL, DFSR.mlbIndices);
+                        return await this.getData(playerFactory, DFSR.yahooMLBSiteURL, DFSR.mlbIndices);
                     case Sport.NBA:
-                        return this.getData(playerFactory, DFSR.yahooNBASiteURL, DFSR.nbaIndices);
+                        return await this.getData(playerFactory, DFSR.yahooNBASiteURL, DFSR.nbaIndices);
                     case Sport.NFL:
-                        return this.getData(playerFactory, DFSR.yahooNFLSiteURL, DFSR.nflIndices);
+                        return await this.getData(playerFactory, DFSR.yahooNFLSiteURL, DFSR.nflIndices);
                     case Sport.NHL:
-                        return this.getData(playerFactory, DFSR.yahooNHLSiteURL, DFSR.nhlIndices);
+                        return await this.getData(playerFactory, DFSR.yahooNHLSiteURL, DFSR.nhlIndices);
                 }
                 break;
         }
-        return Promise.reject<IPlayer[]>("An unknown contest type or sport was specified");
+        throw new Error("An unknown contest type or sport was specified");
     }
 
-    private getData(playerFactory: PlayerFactory, siteURL: string, indices: IIndexMapping): PromiseLike<IPlayer[]> {
+    private async getData(playerFactory: PlayerFactory, siteURL: string, indices: IIndexMapping): Promise<IPlayer[]> {
         return utils.sendHttpsRequest({
             hostname: "www.dailyfantasysportsrankings.com",
             path: siteURL,

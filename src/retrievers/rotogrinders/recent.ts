@@ -7,50 +7,50 @@ export default class RGRecent implements IPlayerInsightRetriever {
     private static dataRegex = /data\s*=\s*(.*?}]);/;
     private static dataRegexGroup = 1;
 
-    playerInsight(contestType: ContestType, sport: Sport): PromiseLike<IPlayer[]> {
+    async playerInsight(contestType: ContestType, sport: Sport): Promise<IPlayer[]> {
         const playerFactory = new PlayerFactory(sport);
         switch (contestType) {
             case ContestType.DraftKings:
                 switch (sport) {
                     case Sport.MLB:
-                        return this.getData(playerFactory, "mlb-pitcher?site=draftkings&range=4weeks", "mlb-hitter?site=draftkings&range=1week");
+                        return await this.getData(playerFactory, "mlb-pitcher?site=draftkings&range=4weeks", "mlb-hitter?site=draftkings&range=1week");
                     case Sport.NBA:
-                        return this.getData(playerFactory, "nba-player?site=draftkings&range=1week");
+                        return await this.getData(playerFactory, "nba-player?site=draftkings&range=1week");
                     case Sport.NFL:
-                        return this.getData(playerFactory, "nfl-offense?site=draftkings&range=4weeks", "nfl-defense?site=draftkings&range=4weeks", "nfl-kicker?site=draftkings&range=4weeks");
+                        return await this.getData(playerFactory, "nfl-offense?site=draftkings&range=4weeks", "nfl-defense?site=draftkings&range=4weeks", "nfl-kicker?site=draftkings&range=4weeks");
                     case Sport.NHL:
-                        return this.getData(playerFactory, "nhl-skater?site=draftkings&range=1week", "nhl-goalie?site=draftkings&range=1week");
+                        return await this.getData(playerFactory, "nhl-skater?site=draftkings&range=1week", "nhl-goalie?site=draftkings&range=1week");
                 }
                 break;
             case ContestType.FanDuel:
                 switch (sport) {
                     case Sport.MLB:
-                        return this.getData(playerFactory, "mlb-pitcher?site=fanduel&range=4weeks", "mlb-hitter?site=fanduel&range=1week");
+                        return await this.getData(playerFactory, "mlb-pitcher?site=fanduel&range=4weeks", "mlb-hitter?site=fanduel&range=1week");
                     case Sport.NBA:
-                        return this.getData(playerFactory, "nba-player?site=fanduel&range=1week");
+                        return await this.getData(playerFactory, "nba-player?site=fanduel&range=1week");
                     case Sport.NFL:
-                        return this.getData(playerFactory, "nfl-offense?site=fanduel&range=4weeks", "nfl-defense?site=fanduel&range=4weeks", "nfl-kicker?site=fanduel&range=4weeks");
+                        return await this.getData(playerFactory, "nfl-offense?site=fanduel&range=4weeks", "nfl-defense?site=fanduel&range=4weeks", "nfl-kicker?site=fanduel&range=4weeks");
                     case Sport.NHL:
-                        return this.getData(playerFactory, "nhl-skater?site=fanduel&range=1week", "nhl-goalie?site=fanduel&range=1week");
+                        return await this.getData(playerFactory, "nhl-skater?site=fanduel&range=1week", "nhl-goalie?site=fanduel&range=1week");
                 }
                 break;
             case ContestType.Yahoo:
                 switch (sport) {
                     case Sport.MLB:
-                        return this.getData(playerFactory, "mlb-pitcher?site=yahoo&range=4weeks", "mlb-hitter?site=yahoo&range=1week");
+                        return await this.getData(playerFactory, "mlb-pitcher?site=yahoo&range=4weeks", "mlb-hitter?site=yahoo&range=1week");
                     case Sport.NBA:
-                        return this.getData(playerFactory, "nba-player?site=yahoo&range=1week");
+                        return await this.getData(playerFactory, "nba-player?site=yahoo&range=1week");
                     case Sport.NFL:
-                        return this.getData(playerFactory, "nfl-offense?site=yahoo&range=4weeks", "nfl-defense?site=yahoo&range=4weeks", "nfl-kicker?site=yahoo&range=4weeks");
+                        return await this.getData(playerFactory, "nfl-offense?site=yahoo&range=4weeks", "nfl-defense?site=yahoo&range=4weeks", "nfl-kicker?site=yahoo&range=4weeks");
                     case Sport.NHL:
-                        return this.getData(playerFactory, "nhl-skater?site=yahoo&range=1week", "nhl-goalie?site=yahoo&range=1week");
+                        return await this.getData(playerFactory, "nhl-skater?site=yahoo&range=1week", "nhl-goalie?site=yahoo&range=1week");
                 }
                 break;
         }
-        return Promise.reject<IPlayer[]>("An unknown contest type or sport was specified");
+        throw new Error("An unknown contest type or sport was specified");
     }
 
-    private getData(playerFactory: PlayerFactory, ...pages: string[]): PromiseLike<IPlayer[]> {
+    private async getData(playerFactory: PlayerFactory, ...pages: string[]): Promise<IPlayer[]> {
         const promises = pages.map((page) => {
             return utils.sendHttpsRequest({
                 hostname: "rotogrinders.com",

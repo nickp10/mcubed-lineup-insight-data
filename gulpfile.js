@@ -60,7 +60,11 @@ gulp.task("generate-dts", async () => {
         main: "mcubed-lineup-insight-data/src/data",
         name: "mcubed-lineup-insight-data",
         project: "./",
-        out: "index.d.ts"
+        out: "index.d.ts",
+        exclude: [
+            "node_modules/**/*.d.ts",
+            "**/cli.ts"
+        ]
     });
     return gulp.src("index.d.ts")
         .pipe(replace("/src/", `/${destDirname}/`))

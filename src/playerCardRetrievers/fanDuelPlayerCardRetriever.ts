@@ -6,11 +6,11 @@ export default class FanDuelPlayerCardRetriever implements IPlayerCardRetriever 
 
     contestType = ContestType.FanDuel;
 
-    playerCard(contestID: string, playerID: string): PromiseLike<IPlayerCard> {
-        return this.getPlayerCard(contestID, playerID);
+    async playerCard(contestID: string, playerID: string): Promise<IPlayerCard> {
+        return await this.getPlayerCard(contestID, playerID);
     }
 
-    private getPlayerCard(contestID: string, playerID: string): PromiseLike<IPlayerCard> {
+    private async getPlayerCard(contestID: string, playerID: string): Promise<IPlayerCard> {
         const rawContestID = this.getRawContestID(contestID);
         return utils.sendHttpsRequest({
             hostname: "api.fanduel.com",

@@ -4,50 +4,50 @@ import * as cheerio from "cheerio";
 import utils from "../../utils";
 
 export default class RGStarting implements IPlayerInsightRetriever {
-    playerInsight(contestType: ContestType, sport: Sport): PromiseLike<IPlayer[]> {
+    async playerInsight(contestType: ContestType, sport: Sport): Promise<IPlayer[]> {
         const playerFactory = new PlayerFactory(sport);
         switch (contestType) {
             case ContestType.DraftKings:
                 switch (sport) {
                     case Sport.MLB:
-                        return this.getData(playerFactory, "draftkings", "mlb");
+                        return await this.getData(playerFactory, "draftkings", "mlb");
                     case Sport.NBA:
-                        return this.getData(playerFactory, "draftkings", "nba");
+                        return await this.getData(playerFactory, "draftkings", "nba");
                     case Sport.NFL:
-                        return this.getData(playerFactory, "draftkings", "nfl");
+                        return await this.getData(playerFactory, "draftkings", "nfl");
                     case Sport.NHL:
-                        return this.getData(playerFactory, "draftkings", "nhl");
+                        return await this.getData(playerFactory, "draftkings", "nhl");
                 }
                 break;
             case ContestType.FanDuel:
                 switch (sport) {
                     case Sport.MLB:
-                        return this.getData(playerFactory, "fanduel", "mlb");
+                        return await this.getData(playerFactory, "fanduel", "mlb");
                     case Sport.NBA:
-                        return this.getData(playerFactory, "fanduel", "nba");
+                        return await this.getData(playerFactory, "fanduel", "nba");
                     case Sport.NFL:
-                        return this.getData(playerFactory, "fanduel", "nfl");
+                        return await this.getData(playerFactory, "fanduel", "nfl");
                     case Sport.NHL:
-                        return this.getData(playerFactory, "fanduel", "nhl");
+                        return await this.getData(playerFactory, "fanduel", "nhl");
                 }
                 break;
             case ContestType.Yahoo:
                 switch (sport) {
                     case Sport.MLB:
-                        return this.getData(playerFactory, "yahoo", "mlb");
+                        return await this.getData(playerFactory, "yahoo", "mlb");
                     case Sport.NBA:
-                        return this.getData(playerFactory, "yahoo", "nba");
+                        return await this.getData(playerFactory, "yahoo", "nba");
                     case Sport.NFL:
-                        return this.getData(playerFactory, "yahoo", "nfl");
+                        return await this.getData(playerFactory, "yahoo", "nfl");
                     case Sport.NHL:
-                        return this.getData(playerFactory, "yahoo", "nhl");
+                        return await this.getData(playerFactory, "yahoo", "nhl");
                 }
                 break;
         }
-        return Promise.reject<IPlayer[]>("An unknown contest type or sport was specified");
+        throw new Error("An unknown contest type or sport was specified");
     }
 
-    private getData(playerFactory: PlayerFactory, contest: string, sport: string): PromiseLike<IPlayer[]> {
+    private async getData(playerFactory: PlayerFactory, contest: string, sport: string): Promise<IPlayer[]> {
         return utils.sendHttpsRequest({
             hostname: "rotogrinders.com",
             path: `/lineups/${sport}?site=${contest}`,

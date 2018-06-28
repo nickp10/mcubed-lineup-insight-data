@@ -1,5 +1,4 @@
 import * as http from "http";
-import PlayerFactory from "./playerFactory";
 
 export interface IIncomingMessage extends http.IncomingMessage {
     body?: string;
@@ -7,7 +6,7 @@ export interface IIncomingMessage extends http.IncomingMessage {
 
 export interface IPlayerCardRetriever {
     contestType: ContestType;
-    playerCard: (contestID: string, playerID: string) => PromiseLike<IPlayerCard>;
+    playerCard: (contestID: string, playerID: string) => Promise<IPlayerCard>;
 }
 
 export interface IPlayerCard {
@@ -28,7 +27,7 @@ export interface IPlayerCardGameStats {
 }
 
 export interface IPlayerInsightRetriever {
-    playerInsight: (contest: ContestType, sport: Sport) => PromiseLike<IPlayer[]>;
+    playerInsight: (contest: ContestType, sport: Sport) => Promise<IPlayer[]>;
 }
 
 export interface IPlayer {
@@ -60,7 +59,7 @@ export interface IPlayerStats {
 }
 
 export interface IContestListRetriever {
-    contestList: (sport: Sport) => PromiseLike<IContest[]>;
+    contestList: (sport: Sport) => Promise<IContest[]>;
     contestType: ContestType;
 }
 

@@ -8,7 +8,7 @@ This node module will retrieve fantasy sports data. In particular, this will agg
 ----
 mcubed-lineup-insight-server is a node module that relies on mcubed-lineup-insight-data for all of its data. The data module is used for retrieving the fantasy sports data from third-parties. The server module is used for aggregating the data for all the current contests and merging the data from the different third-parties into the contests.
 
-Command Line
+Command Line Interface
 ----
 This node module can be run from the command line using `mcubed-lineup-insight-data -d PlayerInsight -c DraftKings -s NFL`. The arguments for the command line interface are:
 
@@ -28,8 +28,6 @@ Node Module Dependency
 This node module can be used as a dependency of another node module. Run `npm install mcubed-lineup-insight-data --save` to add it as a dependency to your node module. An example usage of the module:
 
 ```
-/// <reference path="./node_modules/mcubed-lineup-insight-data/index.d.ts" />
-
 import insightData from "mcubed-lineup-insight-data";
 import * as interfaces from "mcubed-lineup-insight-data/build/interfaces";
 
@@ -40,14 +38,18 @@ insightData.getPlayerInsight(interfaces.ContestType.DraftKings, interfaces.Sport
 });
 ```
 
+Error Handling
+----
+Whether using this module via the Command Line Interface or as a Node Module Dependency, the error handling will be the same. All errors thrown from this module will reject the promise that is returned from the [InsightData](#InsightData) class. The errors will always be of type [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error). When running from the Command Line Interface, only the `message` property from the `Error` object will be written as a JSON formatted string to the standard error output.
+
 API
 ----
 #### <a name="InsightData"></a>InsightData
 An instance of this class is returned when requiring `mcubed-lineup-insight-data` from within a node module.
 
-* `getContestList(contestType: ContestType, sport: Sport): PromiseLike<Contest[]>` - Returns a list of contests that are currently active for the DFS site. The `contestType` parameter is optional and should be a valid [ContestType](#ContestType) value. If no `contestType` is specified, then all contest types are returned. The `sport` parameter is optional and should be a valid [Sport](#Sport) value. If no `sport` is specified, then all sports are returned. The return value is a promise that yields an array of [Contests](#Contest).
-* `getPlayerCard(contestType: ContestType, contestID: string, playerID: string): PromiseLike<IPlayerCard>` - Returns an object containing specific information about a single player for a contest. The `contestType` parameter is required and should be a valid [ContestType](#ContestType) value. The `contestID` parameter is required and should be an ID from a contest object from the `getContestList` function. The `playerID` parameter is required and should be an ID from a player object nested within a contest object from the `getContestList` function. The return value is a promise that yields a [PlayerCard](#PlayerCard).
-* `getPlayerInsight(contestType: ContestType, sport: Sport): PromiseLike<Player[]>` - Returns the data for a specified contest type and sport combination. The `contestType` parameter is required and should be a valid [ContestType](#ContestType) value. The `sport` parameter is required and should be a valid [Sport](#Sport) value. The return value is a promise that yields an array of [Players](#Player).
+* `getContestList(contestType: ContestType, sport: Sport): Promise<Contest[]>` - Returns a list of contests that are currently active for the DFS site. The `contestType` parameter is optional and should be a valid [ContestType](#ContestType) value. If no `contestType` is specified, then all contest types are returned. The `sport` parameter is optional and should be a valid [Sport](#Sport) value. If no `sport` is specified, then all sports are returned. The return value is a promise that yields an array of [Contests](#Contest).
+* `getPlayerCard(contestType: ContestType, contestID: string, playerID: string): Promise<IPlayerCard>` - Returns an object containing specific information about a single player for a contest. The `contestType` parameter is required and should be a valid [ContestType](#ContestType) value. The `contestID` parameter is required and should be an ID from a contest object from the `getContestList` function. The `playerID` parameter is required and should be an ID from a player object nested within a contest object from the `getContestList` function. The return value is a promise that yields a [PlayerCard](#PlayerCard).
+* `getPlayerInsight(contestType: ContestType, sport: Sport): Promise<Player[]>` - Returns the data for a specified contest type and sport combination. The `contestType` parameter is required and should be a valid [ContestType](#ContestType) value. The `sport` parameter is required and should be a valid [Sport](#Sport) value. The return value is a promise that yields an array of [Players](#Player).
 
 #### <a name="Player"></a>Player
 Instances of this class are returned from calling the `getPlayerInsight` function from the [InsightData](#InsightData) object or serialized to JSON when using the command line interface.

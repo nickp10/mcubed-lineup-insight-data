@@ -7,50 +7,50 @@ export default class RGProjections implements IPlayerInsightRetriever {
     private static dataRegex = /data\s*=\s*(.*?}]);/;
     private static dataRegexGroup = 1;
 
-    playerInsight(contestType: ContestType, sport: Sport): PromiseLike<IPlayer[]> {
+    async playerInsight(contestType: ContestType, sport: Sport): Promise<IPlayer[]> {
         const playerFactory = new PlayerFactory(sport);
         switch (contestType) {
             case ContestType.DraftKings:
                 switch (sport) {
                     case Sport.MLB:
-                        return this.getData(playerFactory, "draftkings", "mlb-pitcher", "mlb-hitter");
+                        return await this.getData(playerFactory, "draftkings", "mlb-pitcher", "mlb-hitter");
                     case Sport.NBA:
-                        return this.getData(playerFactory, "draftkings", "nba-player");
+                        return await this.getData(playerFactory, "draftkings", "nba-player");
                     case Sport.NFL:
-                        return this.getData(playerFactory, "draftkings", "nfl-qb", "nfl-flex", "nfl-defense");
+                        return await this.getData(playerFactory, "draftkings", "nfl-qb", "nfl-flex", "nfl-defense");
                     case Sport.NHL:
-                        return this.getData(playerFactory, "draftkings", "nhl-skater", "nhl-goalie");
+                        return await this.getData(playerFactory, "draftkings", "nhl-skater", "nhl-goalie");
                 }
                 break;
             case ContestType.FanDuel:
                 switch (sport) {
                     case Sport.MLB:
-                        return this.getData(playerFactory, "fanduel", "mlb-pitcher", "mlb-hitter");
+                        return await this.getData(playerFactory, "fanduel", "mlb-pitcher", "mlb-hitter");
                     case Sport.NBA:
-                        return this.getData(playerFactory, "fanduel", "nba-player");
+                        return await this.getData(playerFactory, "fanduel", "nba-player");
                     case Sport.NFL:
-                        return this.getData(playerFactory, "fanduel", "nfl-qb", "nfl-flex", "nfl-defense", "nfl-kicker");
+                        return await this.getData(playerFactory, "fanduel", "nfl-qb", "nfl-flex", "nfl-defense", "nfl-kicker");
                     case Sport.NHL:
-                        return this.getData(playerFactory, "fanduel", "nhl-skater", "nhl-goalie");
+                        return await this.getData(playerFactory, "fanduel", "nhl-skater", "nhl-goalie");
                 }
                 break;
             case ContestType.Yahoo:
                 switch (sport) {
                     case Sport.MLB:
-                        return this.getData(playerFactory, "yahoo", "mlb-pitcher", "mlb-hitter");
+                        return await this.getData(playerFactory, "yahoo", "mlb-pitcher", "mlb-hitter");
                     case Sport.NBA:
-                        return this.getData(playerFactory, "yahoo", "nba-player");
+                        return await this.getData(playerFactory, "yahoo", "nba-player");
                     case Sport.NFL:
-                        return this.getData(playerFactory, "yahoo", "nfl-qb", "nfl-flex", "nfl-defense");
+                        return await this.getData(playerFactory, "yahoo", "nfl-qb", "nfl-flex", "nfl-defense");
                     case Sport.NHL:
-                        return this.getData(playerFactory, "yahoo", "nhl-skater", "nhl-goalie");
+                        return await this.getData(playerFactory, "yahoo", "nhl-skater", "nhl-goalie");
                 }
                 break;
         }
-        return Promise.reject<IPlayer[]>("An unknown contest type or sport was specified");
+        throw new Error("An unknown contest type or sport was specified");
     }
 
-    private getData(playerFactory: PlayerFactory, contest: string, ...pages: string[]): PromiseLike<IPlayer[]> {
+    private async getData(playerFactory: PlayerFactory, contest: string, ...pages: string[]): Promise<IPlayer[]> {
         const promises = pages.map((page) => {
             return utils.sendHttpsRequest({
                 hostname: "rotogrinders.com",

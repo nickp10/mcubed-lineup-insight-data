@@ -1,5 +1,4 @@
 import { IIncomingMessage, ContestType, DataType, Sport } from "./interfaces";
-import * as http from "http";
 import * as https from "https";
 
 export class Utils {
@@ -120,6 +119,21 @@ export class Utils {
         return parsed;
     }
 
+    coerceError(error: any): Error {
+        if (error) {
+            if (error instanceof Error) {
+                return error;
+            } else if (typeof error.message === "string") {
+                return new Error(error.message);
+            } else if (typeof error.error === "string") {
+                return new Error(error.error);
+            } else if (typeof error === "string") {
+                return new Error(error);
+            }
+        }
+        return new Error("An unknown error occurred.");
+    }
+
     equalsIgnoreCase(strA: string, strB: string): boolean {
         if (strA) {
             return new RegExp(`^${strA}$`, "i").test(strB);
@@ -127,7 +141,7 @@ export class Utils {
         return !strB;
     }
 
-    sendHttpsRequest(request: https.RequestOptions, data?: string): PromiseLike<IIncomingMessage> {
+    async sendHttpsRequest(request: https.RequestOptions, data?: string): Promise<IIncomingMessage> {
         //console.log(`Sending request to https://${request.hostname}${request.path}`);
         return new Promise<IIncomingMessage>((resolve, reject) => {
             const headers = request.headers || { };
@@ -145,8 +159,8 @@ export class Utils {
                     resp.body = body;
                     resolve(resp);
                 });
-            }).on("error", (error: Error) => {
-                reject(error.message);
+            }).on("error", (error) => {
+                reject(error);
             });
             if (data) {
                 req.write(data);
