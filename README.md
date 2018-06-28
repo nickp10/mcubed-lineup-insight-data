@@ -40,7 +40,11 @@ insightData.getPlayerInsight(interfaces.ContestType.DraftKings, interfaces.Sport
 
 Error Handling
 ----
-Whether using this module via the Command Line Interface or as a Node Module Dependency, the error handling will be the same. All errors thrown from this module will reject the promise that is returned from the [InsightData](#InsightData) class. The errors will always be of type [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error). When running from the Command Line Interface, only the `message` property from the `Error` object will be written as a JSON formatted string to the standard error output.
+Whether using this module via the Command Line Interface or as a Node Module Dependency, the error handling will be the same. All errors thrown from this module will reject the promise that is returned from the [InsightData](#InsightData) class. The errors will always be of type [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error). When running from the Command Line Interface, only the `message` property from the `Error` object will be written as a JSON formatted string to the standard error output. An example output of an error on the command line would look like:
+
+```
+{"message":"Could not retrieve data"}
+```
 
 API
 ----
