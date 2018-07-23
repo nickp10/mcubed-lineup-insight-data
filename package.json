@@ -1,6 +1,6 @@
 {
   "name": "mcubed-lineup-insight-data",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Retrieves fantasy sports data",
   "bin": "build/cli.js",
   "main": "build/data.js",
@@ -33,14 +33,14 @@
     "argv": "0.0.2",
     "babel-polyfill": "^6.26.0",
     "cheerio": "^1.0.0-rc.2",
-    "set-cookie-parser": "^2.2.0",
+    "set-cookie-parser": "^2.2.1",
     "string": "^3.3.3"
   },
   "devDependencies": {
     "@types/argv": "0.0.4",
     "@types/cheerio": "^0.22.8",
-    "@types/mocha": "^5.2.3",
-    "@types/node": "^10.5.0",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.5.2",
     "@types/set-cookie-parser": "0.0.2",
     "@types/string": "0.0.29",
     "babel-core": "^6.26.3",
@@ -51,7 +51,7 @@
     "gulp-mocha": "^6.0.0",
     "gulp-replace": "^1.0.0",
     "gulp-sourcemaps": "^2.6.4",
-    "gulp-typescript": "^5.0.0-alpha.2",
+    "gulp-typescript": "^5.0.0-alpha.3",
     "gulp-uglify": "^3.0.0",
     "typescript": "^2.9.2"
   }
