@@ -166,6 +166,15 @@ export default class PlayerFactory {
 declare module 'mcubed-lineup-insight-data/build/retrievers/dfsr' {
     import { IPlayer, IPlayerInsightRetriever, ContestType, Sport } from 'mcubed-lineup-insight-data/build/interfaces';
 import PlayerFactory from 'mcubed-lineup-insight-data/build/playerFactory';
+export interface ICSVOptions {
+    isFirstLineHeader: boolean;
+    nameIndex: number;
+    teamIndex: number;
+    pointsIndex: number;
+    salaryIndex: number;
+    floorIndex?: number;
+    ceilingIndex?: number;
+}
 export default class DFSR implements IPlayerInsightRetriever {
     private static draftKingsMLBSiteURL;
     private static draftKingsNBASiteURL;
@@ -179,14 +188,22 @@ export default class DFSR implements IPlayerInsightRetriever {
     private static yahooNBASiteURL;
     private static yahooNFLSiteURL;
     private static yahooNHLSiteURL;
-    private static mlbIndices;
-    private static nbaIndices;
-    private static nflIndices;
-    private static nhlIndices;
+    static draftKingsMLBCSVOptions: ICSVOptions;
+    static draftKingsNBACSVOptions: ICSVOptions;
+    static draftKingsNFLCSVOptions: ICSVOptions;
+    static draftKingsNHLCSVOptions: ICSVOptions;
+    static fanDuelMLBCSVOptions: ICSVOptions;
+    static fanDuelNBACSVOptions: ICSVOptions;
+    static fanDuelNFLCSVOptions: ICSVOptions;
+    static fanDuelNHLCSVOptions: ICSVOptions;
+    static yahooMLBCSVOptions: ICSVOptions;
+    static yahooNBACSVOptions: ICSVOptions;
+    static yahooNFLCSVOptions: ICSVOptions;
+    static yahooNHLCSVOptions: ICSVOptions;
     playerInsight(contestType: ContestType, sport: Sport): Promise<IPlayer[]>;
     private getData;
     private parsePlayersIndices;
-    parsePlayers(playerFactory: PlayerFactory, data: string, nameIndex: number, teamIndex: number, pointsIndex: number, salaryIndex: number): IPlayer[];
+    parsePlayers(playerFactory: PlayerFactory, data: string, csvOptions: ICSVOptions): IPlayer[];
 }
 
 }

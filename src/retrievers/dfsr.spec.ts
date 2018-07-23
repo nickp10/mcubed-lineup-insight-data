@@ -8,7 +8,7 @@ describe("DFSR", () => {
     describe("#parsePlayers()", () => {
         it("should parse the projection stats for an MLB DraftKings contest", () => {
             // Arrange
-            const csvOptions = (<any>DFSR).draftKingsMLBCSVOptions;
+            const csvOptions = DFSR.draftKingsMLBCSVOptions;
             const target = new DFSR();
             const data = fs.readFileSync("spec-content/dfsrMLB.csv", "utf-8");
             const playerFactory = new PlayerFactory(Sport.MLB);
@@ -23,7 +23,7 @@ describe("DFSR", () => {
 
         it("should parse the projection stats for an MLB FanDuel contest", () => {
             // Arrange
-            const csvOptions = (<any>DFSR).fanDuelMLBCSVOptions;
+            const csvOptions = DFSR.fanDuelMLBCSVOptions;
             const target = new DFSR();
             const data = fs.readFileSync("spec-content/dfsrMLB.csv", "utf-8");
             const playerFactory = new PlayerFactory(Sport.MLB);
@@ -38,7 +38,7 @@ describe("DFSR", () => {
 
         it("should parse the projection stats for an MLB Yahoo contest", () => {
             // Arrange
-            const csvOptions = (<any>DFSR).yahooMLBCSVOptions;
+            const csvOptions = DFSR.yahooMLBCSVOptions;
             const target = new DFSR();
             const data = fs.readFileSync("spec-content/dfsrMLB.csv", "utf-8");
             const playerFactory = new PlayerFactory(Sport.MLB);
@@ -53,7 +53,7 @@ describe("DFSR", () => {
 
         it("should parse the projection stats for an NBA DraftKings contest", () => {
             // Arrange
-            const csvOptions = (<any>DFSR).draftKingsNBACSVOptions;
+            const csvOptions = DFSR.draftKingsNBACSVOptions;
             const target = new DFSR();
             const data = fs.readFileSync("spec-content/dfsrNBA.csv", "utf-8");
             const playerFactory = new PlayerFactory(Sport.NBA);
@@ -68,7 +68,7 @@ describe("DFSR", () => {
 
         it("should parse the projection stats for an NBA FanDuel contest", () => {
             // Arrange
-            const csvOptions = (<any>DFSR).fanDuelNBACSVOptions;
+            const csvOptions = DFSR.fanDuelNBACSVOptions;
             const target = new DFSR();
             const data = fs.readFileSync("spec-content/dfsrNBA.csv", "utf-8");
             const playerFactory = new PlayerFactory(Sport.NBA);
@@ -83,7 +83,7 @@ describe("DFSR", () => {
 
         it("should parse the projection stats for an NFL DraftKings contest", () => {
             // Arrange
-            const csvOptions = (<any>DFSR).draftKingsNFLCSVOptions;
+            const csvOptions = DFSR.draftKingsNFLCSVOptions;
             const target = new DFSR();
             const data = fs.readFileSync("spec-content/dfsrNFLDraftKings.csv", "utf-8");
             const playerFactory = new PlayerFactory(Sport.NFL);
@@ -98,7 +98,7 @@ describe("DFSR", () => {
 
         it("should parse the projection stats for an NFL FanDuel contest", () => {
             // Arrange
-            const csvOptions = (<any>DFSR).fanDuelNFLCSVOptions;
+            const csvOptions = DFSR.fanDuelNFLCSVOptions;
             const target = new DFSR();
             const data = fs.readFileSync("spec-content/dfsrNFLFanDuel.csv", "utf-8");
             const playerFactory = new PlayerFactory(Sport.NFL);
@@ -113,7 +113,7 @@ describe("DFSR", () => {
 
         it("should parse the projection stats for an NHL DraftKings contest", () => {
             // Arrange
-            const csvOptions = (<any>DFSR).draftKingsNHLCSVOptions;
+            const csvOptions = DFSR.draftKingsNHLCSVOptions;
             const target = new DFSR();
             const data = fs.readFileSync("spec-content/dfsrNHL.csv", "utf-8");
             const playerFactory = new PlayerFactory(Sport.NHL);
@@ -128,7 +128,7 @@ describe("DFSR", () => {
 
         it("should parse the projection stats for an NHL FanDuel contest", () => {
             // Arrange
-            const csvOptions = (<any>DFSR).fanDuelNHLCSVOptions;
+            const csvOptions = DFSR.fanDuelNHLCSVOptions;
             const target = new DFSR();
             const data = fs.readFileSync("spec-content/dfsrNHL.csv", "utf-8");
             const playerFactory = new PlayerFactory(Sport.NHL);

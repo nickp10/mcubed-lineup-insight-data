@@ -2,7 +2,7 @@ import { IPlayer, IPlayerInsightRetriever, IPlayerStats, ContestType, Sport } fr
 import PlayerFactory from "../playerFactory";
 import utils from "../utils";
 
-interface ICSVOptions {
+export interface ICSVOptions {
     isFirstLineHeader: boolean;
     nameIndex: number;
     teamIndex: number;
@@ -31,8 +31,8 @@ export default class DFSR implements IPlayerInsightRetriever {
     private static yahooNFLSiteURL = "/data/football.yahoo.csv";
     private static yahooNHLSiteURL = "/data/hockey.DFSR.csv";
 
-    // CSV options for MLB
-    private static draftKingsMLBCSVOptions: ICSVOptions = {
+    // CSV options for DraftKings
+    static draftKingsMLBCSVOptions: ICSVOptions = {
         isFirstLineHeader: true,
         nameIndex: 1,
         teamIndex: 7,
@@ -41,7 +41,30 @@ export default class DFSR implements IPlayerInsightRetriever {
         floorIndex: 40,
         ceilingIndex: 41
     };
-    private static fanDuelMLBCSVOptions: ICSVOptions = {
+    static draftKingsNBACSVOptions: ICSVOptions = {
+        isFirstLineHeader: true,
+        nameIndex: 1,
+        teamIndex: 7,
+        pointsIndex: 28,
+        salaryIndex: 27
+    };
+    static draftKingsNFLCSVOptions: ICSVOptions = {
+        isFirstLineHeader: false,
+        nameIndex: 1,
+        teamIndex: 2,
+        pointsIndex: 4,
+        salaryIndex: 6
+    };
+    static draftKingsNHLCSVOptions: ICSVOptions = {
+        isFirstLineHeader: true,
+        nameIndex: 1,
+        teamIndex: 5,
+        pointsIndex: 9,
+        salaryIndex: 8
+    };
+
+    // CSV options for FanDuel
+    static fanDuelMLBCSVOptions: ICSVOptions = {
         isFirstLineHeader: true,
         nameIndex: 1,
         teamIndex: 7,
@@ -50,64 +73,39 @@ export default class DFSR implements IPlayerInsightRetriever {
         floorIndex: 38,
         ceilingIndex: 39
     };
-    private static yahooMLBCSVOptions: ICSVOptions = {
-        isFirstLineHeader: true,
-        nameIndex: 1,
-        teamIndex: 7,
-        pointsIndex: 14,
-        salaryIndex: 13
-    };
-
-    // CSV options for NBA
-    private static draftKingsNBACSVOptions: ICSVOptions = {
-        isFirstLineHeader: true,
-        nameIndex: 1,
-        teamIndex: 7,
-        pointsIndex: 28,
-        salaryIndex: 27
-    };
-    private static fanDuelNBACSVOptions: ICSVOptions = {
+    static fanDuelNBACSVOptions: ICSVOptions = {
         isFirstLineHeader: true,
         nameIndex: 1,
         teamIndex: 7,
         pointsIndex: 2,
         salaryIndex: 3
     };
-    private static yahooNBACSVOptions: ICSVOptions = undefined;
-
-    // CSV options for NFL
-    private static draftKingsNFLCSVOptions: ICSVOptions = {
+    static fanDuelNFLCSVOptions: ICSVOptions = {
         isFirstLineHeader: false,
         nameIndex: 1,
         teamIndex: 2,
         pointsIndex: 4,
         salaryIndex: 6
     };
-    private static fanDuelNFLCSVOptions: ICSVOptions = {
-        isFirstLineHeader: false,
-        nameIndex: 1,
-        teamIndex: 2,
-        pointsIndex: 4,
-        salaryIndex: 6
-    };
-    private static yahooNFLCSVOptions: ICSVOptions = undefined;
-
-    // CSV options for NHL
-    private static draftKingsNHLCSVOptions: ICSVOptions = {
-        isFirstLineHeader: true,
-        nameIndex: 1,
-        teamIndex: 5,
-        pointsIndex: 9,
-        salaryIndex: 8
-    };
-    private static fanDuelNHLCSVOptions: ICSVOptions = {
+    static fanDuelNHLCSVOptions: ICSVOptions = {
         isFirstLineHeader: true,
         nameIndex: 1,
         teamIndex: 5,
         pointsIndex: 2,
         salaryIndex: 4
     };
-    private static yahooNHLCSVOptions: ICSVOptions = undefined;
+
+    // CSV options for Yahoo
+    static yahooMLBCSVOptions: ICSVOptions = {
+        isFirstLineHeader: true,
+        nameIndex: 1,
+        teamIndex: 7,
+        pointsIndex: 14,
+        salaryIndex: 13
+    };
+    static yahooNBACSVOptions: ICSVOptions = undefined;
+    static yahooNFLCSVOptions: ICSVOptions = undefined;
+    static yahooNHLCSVOptions: ICSVOptions = undefined;
 
     async playerInsight(contestType: ContestType, sport: Sport): Promise<IPlayer[]> {
         const playerFactory = new PlayerFactory(sport);
