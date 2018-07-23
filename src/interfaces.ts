@@ -72,9 +72,14 @@ export interface IContest {
     maxSalary?: number;
     playerDataLastUpdateTime?: Date;
     playerDataNextUpdateTime?: Date;
-    positions?: string[];
+    positions?: IContestPosition[];
     sport: Sport;
     startTime?: Date;
+}
+
+export interface IContestPosition {
+    eligiblePlayerPositions: string[];
+    label: string;
 }
 
 export interface IGame {

@@ -115,19 +115,25 @@ Instances of this class are returned from calling the `getContestList` function 
 * `label: string` - Specifies a label describing the contest.
 * `maxPlayersPerTeam?: number` - Optionally specifies the maximum number of players allowed from a single team when building a lineup.
 * `maxSalary?: number` - Optionally specifies the maximum total salary allowed when building a lineup.
-* `positions?: string[]` - Optionally specifies an array of strings representing the positions needed to fill a lineup.
+* `positions?: ContestPosition[]` - Optionally specifies an array of [ContestPositions](#ContestPosition) representing the positions needed to fill a lineup.
 * `sport: Sport` - Specifies the [Sport](#Sport).
 * `startTime?: Date` - Optionally specifies the start time for the contest.
 
+#### <a name="ContestPosition"></a>ContestPosition
+Instances of this classes are associated with a [Contest](#Contest) and represent a position needed to fulfill the contest requirements. A player may be listed for a single position, but that player may be used to fulfill any number of available positions in the contest lineup. For instance, a player listed as a RB may be eligble to fulfill a RB slot, a RB/WR/TE slot, a Util slot, an MVP slot, etc.
+
+* `eligiblePlayerPosition: string[]` - Specifies the array of positions that may be used to fulfill the player slot. For a RB/WR/TE slot, this would be an array containing "RB", "WR", and "TE".
+* `label: string` - Specifies the label that is listed on the contest for the player slot. For a RB/WR/TE slot, this would return "RB/WR/TE".
+
 #### <a name="Game"></a>Game
-Instances of this class are associated with a [Contest](#Contest).
+Instances of this class are associated with a [Contest](#Contest) and represent a game that will be played as part of the contest.
 
 * `awayTeam: Team` - Specifies the away [Team](#Team).
 * `homeTeam: Team` - Specifies the home [Team](#Team).
 * `startTime: Date` - Specifies the start time for the game.
 
 #### <a name="Team"></a>Team
-Instances of this class are associated with a [Game](#Game).
+Instances of this class are associated with a [Game](#Game) and represent a team that will play as part of the contest.
 
 * `code: string` - Specifies the team abbreviation (e.g., "BOS").
 * `fullName: Team` - Specifies the full team name (e.g., "Boston Red Sox").

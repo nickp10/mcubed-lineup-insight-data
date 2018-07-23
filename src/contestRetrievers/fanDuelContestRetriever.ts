@@ -1,4 +1,4 @@
-import { IContestListRetriever, IContest, IGame, IPlayer, IPlayerInjury, ITeam, ContestType, InjuryType, NewsStatus, Sport } from "../interfaces";
+import { IContestListRetriever, IContest, IContestPosition, IGame, IPlayer, IPlayerInjury, ITeam, ContestType, InjuryType, NewsStatus, Sport } from "../interfaces";
 import PlayerFactory from "../playerFactory";
 import utils from "../utils";
 
@@ -101,9 +101,14 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
                 const contest = contests.find(c => c["id"] === rawContestID);
                 if (contest) {
                     fdContest.maxPlayersPerTeam = contest["roster_restrictions"]["max_players_from_team"];
-                    const positions = contest["roster_positions"];
-                    if (Array.isArray(positions)) {
-                        fdContest.positions = positions.map(p => p["abbr"]);
+                    const rosterPositions = contest["roster_positions"];
+                    if (Array.isArray(rosterPositions)) {
+                        fdContest.positions = rosterPositions.map<IContestPosition>(p => {
+                            return {
+                                eligiblePlayerPositions: p["valid_player_positions"],
+                                label: p["full"]
+                            };
+                        });
                     }
                     const fixtures = jsonData["fixtures"];
                     if (Array.isArray(fixtures)) {

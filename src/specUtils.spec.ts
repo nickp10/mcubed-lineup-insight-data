@@ -46,7 +46,17 @@ export class SpecUtils {
         if (expectedContest.positions) {
             assert.equal(actualContest.positions.length, expectedContest.positions.length);
             for (let i = 0; i < actualContest.positions.length; i++) {
-                assert.equal(actualContest.positions[i], expectedContest.positions[i]);
+                const actualPosition = actualContest.positions[i];
+                const expectedPosition = expectedContest.positions[i];
+                assert.equal(actualPosition.label, expectedPosition.label);
+                if (expectedPosition.eligiblePlayerPositions) {
+                    assert.equal(actualPosition.eligiblePlayerPositions.length, expectedPosition.eligiblePlayerPositions.length);
+                    for (let j = 0; j < actualPosition.eligiblePlayerPositions.length; j++) {
+                        assert.equal(actualPosition.eligiblePlayerPositions[i], expectedPosition.eligiblePlayerPositions[i]);
+                    }
+                } else {
+                    assert.equal(actualPosition.eligiblePlayerPositions, undefined);
+                }
             }
         } else {
             assert.equal(actualContest.positions, undefined);
