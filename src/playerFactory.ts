@@ -1,5 +1,5 @@
 import { IPlayer, Sport } from "./interfaces";
-import * as S from "string";
+import * as latinize from "latinize";
 
 export default class PlayerFactory {
     /**
@@ -171,7 +171,7 @@ export default class PlayerFactory {
             }
 
             // Replace accented characters with the unaccented equivalent
-            name = S(name).latinise().s;
+            name = latinize(name);
 
             // Normalize NFL team names (for defense projections)
             name = this.normalizeNFLName(name);
