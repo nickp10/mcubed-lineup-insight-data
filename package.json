@@ -1,9 +1,9 @@
 {
   "name": "mcubed-lineup-insight-data",
-  "version": "4.1.0",
+  "version": "5.0.0",
   "description": "Retrieves fantasy sports data",
   "bin": "build/cli.js",
-  "main": "build/data.js",
+  "main": "build/exports.js",
   "types": "index.d.ts",
   "files": [
     "build/",
@@ -20,39 +20,36 @@
   },
   "homepage": "https://github.com/nickp10/mcubed-lineup-insight-data#readme",
   "scripts": {
-    "build": "gulp build",
-    "build-debug": "gulp build -e debug",
-    "compile": "gulp compile",
-    "compile-debug": "gulp compile -e debug",
-    "compile-test": "gulp compile-test -e debug",
-    "generate-dts": "gulp generate-dts",
+    "build": "webpack --config webpack.prod.js",
+    "build-debug": "webpack --config webpack.dev.js",
     "prepare": "npm run build",
-    "test": "gulp test -e debug"
+    "test": "mocha -r ts-node/register -r source-map-support/register src/**/*.spec.ts"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.2.5",
     "argv": "0.0.2",
-    "babel-polyfill": "^6.26.0",
     "cheerio": "^1.0.0-rc.2",
     "latinize": "^0.4.0",
-    "set-cookie-parser": "^2.2.1"
+    "set-cookie-parser": "^2.3.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
     "@types/argv": "0.0.4",
-    "@types/cheerio": "^0.22.8",
+    "@types/cheerio": "^0.22.10",
     "@types/latinize": "^0.2.15",
-    "@types/mocha": "^5.2.5",
-    "@types/node": "^10.5.3",
-    "@types/set-cookie-parser": "0.0.2",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "dts-generator": "^2.1.0",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.1",
-    "gulp-mocha": "^6.0.0",
-    "gulp-replace": "^1.0.0",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-typescript": "^5.0.0-alpha.3",
-    "gulp-uglify": "^3.0.1",
-    "typescript": "^2.9.2"
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^11.9.5",
+    "@types/set-cookie-parser": "0.0.3",
+    "babel-loader": "^8.0.5",
+    "dts-bundle-webpack": "^1.0.2",
+    "mocha": "^6.0.1",
+    "source-map-support": "^0.5.10",
+    "ts-loader": "^5.3.3",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3333",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-merge": "^4.2.1"
   }
 }

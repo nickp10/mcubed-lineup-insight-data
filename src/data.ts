@@ -1,4 +1,3 @@
-import "babel-polyfill";
 import { IContest, IContestListRetriever, IPlayer, IPlayerCard, IPlayerCardRetriever, IPlayerInsightRetriever, ContestType, Sport } from "./interfaces";
 import DFSR from "./retrievers/dfsr";
 import FanDuelContestRetriever from "./contestRetrievers/fanDuelContestRetriever";

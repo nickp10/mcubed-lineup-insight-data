@@ -1,4 +1,5 @@
 .vscode/
 build/
+build-dts/
 debug/
 node_modules/

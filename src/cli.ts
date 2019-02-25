@@ -1,6 +1,3 @@
-#! /usr/bin/env node
-
-import "babel-polyfill";
 import { DataType } from "./interfaces";
 import args from "./args";
 import insightData from "./data";
