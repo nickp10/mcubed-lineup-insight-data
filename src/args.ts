@@ -45,7 +45,7 @@ export class Args {
         }
 
         // Validate sport
-        if (this.dataType === DataType.PlayerInsight) {
+        if (this.dataType === DataType.PlayerInsight || this.dataType === DataType.TeamInsight) {
             if (!argSport) {
                 console.error("The -s or --sport argument must be supplied.");
                 process.exit();

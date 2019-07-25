@@ -178,18 +178,29 @@ export default class PlayerFactory {
             player.name = name;
         }
         if (team) {
-            team = team.trim();
-            const index = team.indexOf(" ");
-            if (index >= 0) {
-                team = team.substr(0, index);
-            }
-            team = team.toUpperCase();
-            team = this.alternateTeams.get(team) || team;
-            player.team = team;
+            player.team = this.normalizeTeam(team);
         }
         if (salary || salary === 0) {
             player.salary = salary;
         }
+    }
+
+    /**
+     * Normalizes the team code and translates it to any corresponding contest-defined team code.
+     * For instance, a team code of "KC" may need to translate to "KCR" for the contest.
+     * 
+     * @param team The team to normalize and translate.
+     * @returns The normalized and translated team naem.
+     */
+    normalizeTeam(team: string): string {
+        team = team.trim();
+        const index = team.indexOf(" ");
+        if (index >= 0) {
+            team = team.substr(0, index);
+        }
+        team = team.toUpperCase();
+        team = this.alternateTeams.get(team) || team;
+        return team;
     }
 
     /**

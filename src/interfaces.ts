@@ -94,6 +94,16 @@ export interface ITeam {
     players?: IPlayer[];
 }
 
+export interface ITeamInsightRetriever {
+    teamInsight: (contestType: ContestType, sport: Sport) => Promise<ITeamInsight[]>;
+}
+
+export interface ITeamInsight {
+    code: string;
+    fullName: string;
+    oppositionRank?: Map<string, number>;
+}
+
 export enum ContestType {
     DraftKings = 1,
     FanDuel,

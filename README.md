@@ -22,6 +22,7 @@ When run from the command line:
 * The contest list request will produce an array of [Contests](#Contest) written as a JSON formatted string to the standard output.
 * The player card request will produce a [PlayerCard](#PlayerCard) object written as a JSON formatted string to the standard output.
 * The player insight request will produce an array of [Players](#Player) written as a JSON formatted string to the standard output.
+* The team insight request will produce an array of [TeamInsights](#TeamInsight) written as a JSON formatted string to the standard output.
 
 Node Module Dependency
 ----
@@ -51,8 +52,9 @@ API
 An instance of this class is returned when requiring `mcubed-lineup-insight-data` from within a node module.
 
 * `getContestList(contestType: ContestType, sport: Sport): Promise<Contest[]>` - Returns a list of contests that are currently active for the DFS site. The `contestType` parameter is optional and should be a valid [ContestType](#ContestType) value. If no `contestType` is specified, then all contest types are returned. The `sport` parameter is optional and should be a valid [Sport](#Sport) value. If no `sport` is specified, then all sports are returned. The return value is a promise that yields an array of [Contests](#Contest).
-* `getPlayerCard(contestType: ContestType, contestID: string, playerID: string): Promise<IPlayerCard>` - Returns an object containing specific information about a single player for a contest. The `contestType` parameter is required and should be a valid [ContestType](#ContestType) value. The `contestID` parameter is required and should be an ID from a contest object from the `getContestList` function. The `playerID` parameter is required and should be an ID from a player object nested within a contest object from the `getContestList` function. The return value is a promise that yields a [PlayerCard](#PlayerCard).
+* `getPlayerCard(contestType: ContestType, contestID: string, playerID: string): Promise<PlayerCard>` - Returns an object containing specific information about a single player for a contest. The `contestType` parameter is required and should be a valid [ContestType](#ContestType) value. The `contestID` parameter is required and should be an ID from a contest object from the `getContestList` function. The `playerID` parameter is required and should be an ID from a player object nested within a contest object from the `getContestList` function. The return value is a promise that yields a [PlayerCard](#PlayerCard).
 * `getPlayerInsight(contestType: ContestType, sport: Sport): Promise<Player[]>` - Returns the data for a specified contest type and sport combination. The `contestType` parameter is required and should be a valid [ContestType](#ContestType) value. The `sport` parameter is required and should be a valid [Sport](#Sport) value. The return value is a promise that yields an array of [Players](#Player).
+* `getTeamInsight(contestType: ContestType, sport: Sport): Promise<TeamInsight[]>` - Returns the team-specific data for a specified contest type and sport combination. The `contestType` parameter is required and should be a valid [ContestType](#ContestType) value. The `sport` parameter is required and should be a valid [Sport](#Sport) value. The return value is a promise that yields an array of [TeamInsights](#TeamInsight).
 
 #### <a name="Player"></a>Player
 Instances of this class are returned from calling the `getPlayerInsight` function from the [InsightData](#InsightData) object or serialized to JSON when using the command line interface.
@@ -137,6 +139,13 @@ Instances of this class are associated with a [Game](#Game) and represent a team
 * `code: string` - Specifies the team abbreviation (e.g., "BOS").
 * `fullName: Team` - Specifies the full team name (e.g., "Boston Red Sox").
 * `players?: Player[]` - Optionally specifies an array of [Players](#Player) that are on the team.
+
+#### <a name="TeamInsight"></a>TeamInsight
+Instances of this class are returned from calling the `getTeamInsight` function from the [InsightData](#InsightData) object or serialized to JSON when using the command line interface.
+
+* `code: string` - Specifies the team abbreviation (e.g., "BOS").
+* `fullName: Team` - Specifies the full team name (e.g., "Boston Red Sox").
+* `oppositionRank?: Map<string, number>` - Optionally specifices a map of opposition ranks. For NBA, NFL, and NHL, this would be a map of defense versus position. The key represents the offensive position to index the map by. The value represents the rank the opposing team allows. A rank of 1 would indicate the team allows the fewest fantasy points to the opposition at that position. A rank of 30 (or 32 for NFL) would indicate the team allows the most fantasy points to the opposition at that position. For MLB, instead of basing it on offensive position, it is based on offensive handedness. Therefore, the defensive rank would be based on fantasy points allowed to right handers, left handers, and switch hitters. The key would be one of `R`, `L`, or `S`, and the value would be the corresponding rank 1-30.
 
 #### <a name="ContestType"></a>ContestType
 Defines an enumerated list of valid contest types. A contest type represents a DFS site.

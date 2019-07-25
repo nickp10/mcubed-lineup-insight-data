@@ -13,6 +13,10 @@ async function main(): Promise<void> {
                 const playerCard = await insightData.getPlayerCard(args.contestType, args.contestID, args.playerID);
                 console.log(JSON.stringify(playerCard));
                 break;
+            case DataType.TeamInsight:
+                const teamInsight = await insightData.getTeamInsight(args.contestType, args.sport);
+                console.log(JSON.stringify(teamInsight));
+                break;
             case DataType.PlayerInsight:
             default:
                 const players = await insightData.getPlayerInsight(args.contestType, args.sport);

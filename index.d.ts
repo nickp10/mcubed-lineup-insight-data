@@ -8,11 +8,12 @@ declare module 'mcubed-lineup-insight-data' {
 }
 
 declare module 'mcubed-lineup-insight-data/data' {
-    import { IContest, IPlayer, IPlayerCard, ContestType, Sport } from "mcubed-lineup-insight-data/interfaces";
+    import { IContest, IPlayer, IPlayerCard, ContestType, Sport, ITeamInsight } from "mcubed-lineup-insight-data/interfaces";
     export class Data {
         getContestList(contestType?: ContestType, sport?: Sport): Promise<IContest[]>;
         getPlayerCard(contestType: ContestType, contestID: string, playerID: string): Promise<IPlayerCard>;
         getPlayerInsight(contestType: ContestType, sport: Sport): Promise<IPlayer[]>;
+        getTeamInsight(contestType: ContestType, sport: Sport): Promise<ITeamInsight[]>;
     }
     const _default: Data;
     export default _default;
@@ -99,6 +100,14 @@ declare module 'mcubed-lineup-insight-data/interfaces' {
         code: string;
         fullName: string;
         players?: IPlayer[];
+    }
+    export interface ITeamInsightRetriever {
+        teamInsight: (contestType: ContestType, sport: Sport) => Promise<ITeamInsight[]>;
+    }
+    export interface ITeamInsight {
+        code: string;
+        fullName: string;
+        oppositionRank?: Map<string, number>;
     }
     export enum ContestType {
         DraftKings = 1,
