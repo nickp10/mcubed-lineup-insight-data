@@ -26,30 +26,31 @@
     "test": "mocha -r ts-node/register -r source-map-support/register src/**/*.spec.ts"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.2.5",
     "argv": "0.0.2",
-    "cheerio": "^1.0.0-rc.2",
+    "cheerio": "^1.0.0-rc.3",
+    "core-js": "^3.1.4",
     "latinize": "^0.4.0",
-    "set-cookie-parser": "^2.3.5"
+    "regenerator-runtime": "^0.13.3",
+    "set-cookie-parser": "^2.3.8"
   },
   "devDependencies": {
-    "@babel/core": "^7.3.3",
-    "@babel/preset-env": "^7.3.1",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "@types/argv": "0.0.4",
-    "@types/cheerio": "^0.22.10",
+    "@types/cheerio": "^0.22.12",
     "@types/latinize": "^0.2.15",
-    "@types/mocha": "^5.2.6",
-    "@types/node": "^11.9.5",
-    "@types/set-cookie-parser": "0.0.3",
-    "babel-loader": "^8.0.5",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.6.8",
+    "@types/set-cookie-parser": "0.0.5",
+    "babel-loader": "^8.0.6",
     "dts-bundle-webpack": "^1.0.2",
-    "mocha": "^6.0.1",
-    "source-map-support": "^0.5.10",
-    "ts-loader": "^5.3.3",
-    "ts-node": "^8.0.2",
-    "typescript": "^3.3.3333",
-    "webpack": "^4.29.5",
-    "webpack-cli": "^3.2.3",
+    "mocha": "^6.2.0",
+    "source-map-support": "^0.5.12",
+    "ts-loader": "^6.0.4",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3",
+    "webpack": "^4.37.0",
+    "webpack-cli": "^3.3.6",
     "webpack-merge": "^4.2.1"
   }
 }
