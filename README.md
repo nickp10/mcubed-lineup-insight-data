@@ -14,7 +14,7 @@ This node module can be run from the command line using `mcubed-lineup-insight-d
 
 * *-d / --data* - **Optional.** Specifies the type of data to retrieve. This option is case-insensitive and should be on of the [DataTypes](#DataType). If this argument is omitted, then `PlayerInsight` is used as the default value.
 * *-c / --contestType* - **Required.** Specifies the contest type to retrieve the data for. This option is case-insensitive and should be one of the [ContestTypes](#ContestType).
-* *-s / --sport* - **Required for PlayerInsight.** Specifies the sport to retrieve the data for. This option is case-insensitive and should be one of the supported [Sports](#Sport).
+* *-s / --sport* - **Required for PlayerInsight and TeamInsight.** Specifies the sport to retrieve the data for. This option is case-insensitive and should be one of the supported [Sports](#Sport).
 * *--contestID* - **Required for PlayerCard.** Specifies the contest ID to get the player card for.
 * *--playerID* - **Required for PlayerCard.** Specifies the player ID to get the player card for.
 
@@ -145,7 +145,13 @@ Instances of this class are returned from calling the `getTeamInsight` function 
 
 * `code: string` - Specifies the team abbreviation (e.g., "BOS").
 * `fullName: Team` - Specifies the full team name (e.g., "Boston Red Sox").
-* `oppositionRank?: Map<string, number>` - Optionally specifies a map of opposition ranks. For NBA, NFL, and NHL, this would be a map of defense versus position. The key represents the offensive position to index the map by. The value represents the rank the opposing team allows. A rank of 1 would indicate the team allows the fewest fantasy points to the opposition at that position. A rank of 30 (or 32 for NFL) would indicate the team allows the most fantasy points to the opposition at that position. For MLB, instead of basing it on offensive position, it is based on offensive handedness. Therefore, the defensive rank would be based on fantasy points allowed to right handers, left handers, and switch hitters. The key would be one of `R`, `L`, or `S`, and the value would be the corresponding rank 1-30.
+* `pointsAllowedPerPosition?: PositionPoints[]` - Optionally specifies an array of [PositionPoints](#PositionPoints) representing the fantasy points allowed to a particular position.
+
+#### <a name="PositionPoints></a>PositionPoints
+Instances of this class are associated with a [TeamInsight](#TeamInsight) and represents the number of fantasy points allowed to the opposing position. For MLB, instead of basing it on the opposing position, it is based on the opposing hitters' handedness. Therefore, the position would be one of `R` (right handers), `L` (left handers), or `S` (switch hitters).
+
+* `position: string` - Specifies the position the points were allowed to (e.g., "QB", "RB", "PG", "SF"). For MLB, specifies the handedness of the hitters the points were allowed to (e.g., "R", "L", "S").
+* `points: number` - Specifies the number of fantasy points allowed to the position.
 
 #### <a name="ContestType"></a>ContestType
 Defines an enumerated list of valid contest types. A contest type represents a DFS site.

@@ -107,7 +107,11 @@ declare module 'mcubed-lineup-insight-data/interfaces' {
     export interface ITeamInsight {
         code: string;
         fullName: string;
-        oppositionRank?: Map<string, number>;
+        pointsAllowedPerPosition?: PositionPoints[];
+    }
+    export interface PositionPoints {
+        position: string;
+        points: number;
     }
     export enum ContestType {
         DraftKings = 1,

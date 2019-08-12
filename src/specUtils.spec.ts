@@ -1,4 +1,4 @@
-import { IContest, IGame, IPlayer, IPlayerCard, ITeam } from "./interfaces";
+import { IContest, IGame, IPlayer, IPlayerCard, ITeam, ITeamInsight } from "./interfaces";
 import * as assert from "assert";
 
 export class SpecUtils {
@@ -11,7 +11,7 @@ export class SpecUtils {
      */
     assertContainsPlayer(actualPlayers: IPlayer[], expectedPlayer: IPlayer): void {
         const matchingPlayers = actualPlayers.filter(p => p.name === expectedPlayer.name);
-        assert.equal(matchingPlayers.length, 1, `No players match with name: ${expectedPlayer.name}`);
+        assert.strictEqual(matchingPlayers.length, 1, `No players match with name: ${expectedPlayer.name}`);
         const actualPlayer = matchingPlayers[0];
         this.assertPlayerEquals(actualPlayer, expectedPlayer);
     }
@@ -25,7 +25,7 @@ export class SpecUtils {
      */
     assertContainsContest(actualContests: IContest[], expectedContest: IContest): void {
         const matchingContests = actualContests.filter(c => c.ID === expectedContest.ID);
-        assert.equal(matchingContests.length, 1, `No contests match with ID: ${expectedContest.ID}`);
+        assert.strictEqual(matchingContests.length, 1, `No contests match with ID: ${expectedContest.ID}`);
         const actualContest = matchingContests[0];
         this.assertContestEquals(actualContest, expectedContest);
     }
@@ -37,37 +37,37 @@ export class SpecUtils {
      * @param expectedContest The expected contest to assert.
      */
     assertContestEquals(actualContest: IContest, expectedContest: IContest): void {
-        assert.equal(actualContest.contestType, expectedContest.contestType);
-        assert.equal(actualContest.label, expectedContest.label);
-        assert.equal(actualContest.maxPlayersPerTeam, expectedContest.maxPlayersPerTeam);
-        assert.equal(actualContest.maxSalary, expectedContest.maxSalary);
-        assert.equal(actualContest.sport, expectedContest.sport);
+        assert.strictEqual(actualContest.contestType, expectedContest.contestType);
+        assert.strictEqual(actualContest.label, expectedContest.label);
+        assert.strictEqual(actualContest.maxPlayersPerTeam, expectedContest.maxPlayersPerTeam);
+        assert.strictEqual(actualContest.maxSalary, expectedContest.maxSalary);
+        assert.strictEqual(actualContest.sport, expectedContest.sport);
         assert.deepStrictEqual(actualContest.startTime, expectedContest.startTime);
         if (expectedContest.positions) {
-            assert.equal(actualContest.positions.length, expectedContest.positions.length);
+            assert.strictEqual(actualContest.positions.length, expectedContest.positions.length);
             for (let i = 0; i < actualContest.positions.length; i++) {
                 const actualPosition = actualContest.positions[i];
                 const expectedPosition = expectedContest.positions[i];
-                assert.equal(actualPosition.label, expectedPosition.label);
+                assert.strictEqual(actualPosition.label, expectedPosition.label);
                 if (expectedPosition.eligiblePlayerPositions) {
-                    assert.equal(actualPosition.eligiblePlayerPositions.length, expectedPosition.eligiblePlayerPositions.length);
+                    assert.strictEqual(actualPosition.eligiblePlayerPositions.length, expectedPosition.eligiblePlayerPositions.length);
                     for (let j = 0; j < actualPosition.eligiblePlayerPositions.length; j++) {
-                        assert.equal(actualPosition.eligiblePlayerPositions[i], expectedPosition.eligiblePlayerPositions[i]);
+                        assert.strictEqual(actualPosition.eligiblePlayerPositions[i], expectedPosition.eligiblePlayerPositions[i]);
                     }
                 } else {
-                    assert.equal(actualPosition.eligiblePlayerPositions, undefined);
+                    assert.strictEqual(actualPosition.eligiblePlayerPositions, undefined);
                 }
             }
         } else {
-            assert.equal(actualContest.positions, undefined);
+            assert.strictEqual(actualContest.positions, undefined);
         }
         if (expectedContest.games) {
-            assert.equal(actualContest.games.length, expectedContest.games.length);
+            assert.strictEqual(actualContest.games.length, expectedContest.games.length);
             for (let i = 0; i < actualContest.games.length; i++) {
                 this.assertGameEquals(actualContest.games[i], expectedContest.games[i]);
             }
         } else {
-            assert.equal(actualContest.games, undefined);
+            assert.strictEqual(actualContest.games, undefined);
         }
     }
 
@@ -90,15 +90,15 @@ export class SpecUtils {
      * @param expectedTeam The expected team to assert.
      */
     assertTeamEquals(actualTeam: ITeam, expectedTeam: ITeam): void {
-        assert.equal(actualTeam.code, expectedTeam.code);
-        assert.equal(actualTeam.fullName, expectedTeam.fullName);
+        assert.strictEqual(actualTeam.code, expectedTeam.code);
+        assert.strictEqual(actualTeam.fullName, expectedTeam.fullName);
         if (expectedTeam.players) {
-            assert.equal(actualTeam.players.length, expectedTeam.players.length);
+            assert.strictEqual(actualTeam.players.length, expectedTeam.players.length);
             for (let i = 0; i < actualTeam.players.length; i++) {
                 this.assertPlayerEquals(actualTeam.players[i], expectedTeam.players[i]);
             }
         } else {
-            assert.equal(actualTeam.players, undefined);
+            assert.strictEqual(actualTeam.players, undefined);
         }
     }
 
@@ -109,25 +109,25 @@ export class SpecUtils {
      * @param expectedPlayer The expected player to assert.
      */
     assertPlayerEquals(actualPlayer: IPlayer, expectedPlayer: IPlayer): void {
-        assert.equal(actualPlayer.team, expectedPlayer.team);
-        assert.equal(actualPlayer.salary, expectedPlayer.salary);
-        assert.equal(actualPlayer.isProbablePitcher, expectedPlayer.isProbablePitcher);
-        assert.equal(actualPlayer.isStarter, expectedPlayer.isStarter);
-        assert.equal(actualPlayer.battingOrder, expectedPlayer.battingOrder);
+        assert.strictEqual(actualPlayer.team, expectedPlayer.team);
+        assert.strictEqual(actualPlayer.salary, expectedPlayer.salary);
+        assert.strictEqual(actualPlayer.isProbablePitcher, expectedPlayer.isProbablePitcher);
+        assert.strictEqual(actualPlayer.isStarter, expectedPlayer.isStarter);
+        assert.strictEqual(actualPlayer.battingOrder, expectedPlayer.battingOrder);
         if (expectedPlayer.stats) {
-            assert.equal(actualPlayer.stats.length, expectedPlayer.stats.length);
+            assert.strictEqual(actualPlayer.stats.length, expectedPlayer.stats.length);
             for (let i = 0; i < actualPlayer.stats.length; i++) {
                 const actualStats = actualPlayer.stats[i];
                 const expectedStats = expectedPlayer.stats[i];
-                assert.equal(actualStats.source, expectedStats.source);
-                assert.equal(actualStats.projectedCeiling, expectedStats.projectedCeiling);
-                assert.equal(actualStats.projectedFloor, expectedStats.projectedFloor);
-                assert.equal(actualStats.projectedPoints, expectedStats.projectedPoints);
-                assert.equal(actualStats.recentAveragePoints, expectedStats.recentAveragePoints);
-                assert.equal(actualStats.seasonAveragePoints, expectedStats.seasonAveragePoints);
+                assert.strictEqual(actualStats.source, expectedStats.source);
+                assert.strictEqual(actualStats.projectedCeiling, expectedStats.projectedCeiling);
+                assert.strictEqual(actualStats.projectedFloor, expectedStats.projectedFloor);
+                assert.strictEqual(actualStats.projectedPoints, expectedStats.projectedPoints);
+                assert.strictEqual(actualStats.recentAveragePoints, expectedStats.recentAveragePoints);
+                assert.strictEqual(actualStats.seasonAveragePoints, expectedStats.seasonAveragePoints);
             }
         } else {
-            assert.equal(actualPlayer.stats, undefined);
+            assert.strictEqual(actualPlayer.stats, undefined);
         }
     }
     
@@ -139,28 +139,64 @@ export class SpecUtils {
      */
     assertPlayerCardEquals(actualPlayerCard: IPlayerCard, expectedPlayerCard: IPlayerCard): void {
         if (expectedPlayerCard.gameLog) {
-            assert.equal(actualPlayerCard.gameLog.length, expectedPlayerCard.gameLog.length);
+            assert.strictEqual(actualPlayerCard.gameLog.length, expectedPlayerCard.gameLog.length);
             for (let i = 0; i < actualPlayerCard.gameLog.length; i++) {
                 const actualGameLog = actualPlayerCard.gameLog[i];
                 const expectedGameLog = expectedPlayerCard.gameLog[i];
                 assert.deepStrictEqual(actualGameLog.date, expectedGameLog.date);
-                assert.equal(actualGameLog.opponent, expectedGameLog.opponent);
-                assert.equal(actualGameLog.points, expectedGameLog.points);
+                assert.strictEqual(actualGameLog.opponent, expectedGameLog.opponent);
+                assert.strictEqual(actualGameLog.points, expectedGameLog.points);
             }
         } else {
-            assert.equal(actualPlayerCard.gameLog, undefined);
+            assert.strictEqual(actualPlayerCard.gameLog, undefined);
         }
         if (expectedPlayerCard.news) {
-            assert.equal(actualPlayerCard.news.length, expectedPlayerCard.news.length);
+            assert.strictEqual(actualPlayerCard.news.length, expectedPlayerCard.news.length);
             for (let i = 0; i < actualPlayerCard.news.length; i++) {
                 const actualNews = actualPlayerCard.news[i];
                 const expectedNews = expectedPlayerCard.news[i];
                 assert.deepStrictEqual(actualNews.date, expectedNews.date);
-                assert.equal(actualNews.details, expectedNews.details);
-                assert.equal(actualNews.summary, expectedNews.summary);
+                assert.strictEqual(actualNews.details, expectedNews.details);
+                assert.strictEqual(actualNews.summary, expectedNews.summary);
             }
         } else {
-            assert.equal(actualPlayerCard.news, undefined);
+            assert.strictEqual(actualPlayerCard.news, undefined);
+        }
+    }
+
+    /**
+     * Asserts that a team insight is contained in an array of team insights. It will also verify each of the
+     * properties on the team insight to ensure they match with the team insight in the array.
+     * 
+     * @param actualTeamInsights The array of team insights to search through.
+     * @param expectedTeamInsight The team isnight that is expected to be found in the array of team insights.
+     */
+    assertContainsTeamInsight(actualTeamInsights: ITeamInsight[], expectedTeamInsight: ITeamInsight): void {
+        const matchingTeamInsights = actualTeamInsights.filter(c => c.code === expectedTeamInsight.code);
+        assert.strictEqual(matchingTeamInsights.length, 1, `No team insights match with team code: ${expectedTeamInsight.code}`);
+        const actualTeamInsight = matchingTeamInsights[0];
+        this.assertTeamInsightEquals(actualTeamInsight, expectedTeamInsight);
+    }
+
+    /**
+     * Asserts that the actual team insight matches the expected team insight.
+     * 
+     * @param actualTeamInsight The actual team insight to assert.
+     * @param expectedTeamInsight The expected team insight to assert.
+     */
+    assertTeamInsightEquals(actualTeamInsight: ITeamInsight, expectedTeamInsight: ITeamInsight): void {
+        assert.strictEqual(actualTeamInsight.code, expectedTeamInsight.code);
+        assert.strictEqual(actualTeamInsight.fullName, expectedTeamInsight.fullName);
+        if (expectedTeamInsight.pointsAllowedPerPosition) {
+            assert.strictEqual(actualTeamInsight.pointsAllowedPerPosition.length, expectedTeamInsight.pointsAllowedPerPosition.length);
+            for (let i = 0; i < actualTeamInsight.pointsAllowedPerPosition.length; i++) {
+                const actualPositionPoints = actualTeamInsight.pointsAllowedPerPosition[i];
+                const expectedPositionPoints = expectedTeamInsight.pointsAllowedPerPosition[i];
+                assert.strictEqual(actualPositionPoints.position, expectedPositionPoints.position);
+                assert.strictEqual(actualPositionPoints.points, expectedPositionPoints.points);
+            }
+        } else {
+            assert.strictEqual(actualTeamInsight.pointsAllowedPerPosition, undefined);
         }
     }
 }

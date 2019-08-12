@@ -101,7 +101,12 @@ export interface ITeamInsightRetriever {
 export interface ITeamInsight {
     code: string;
     fullName: string;
-    oppositionRank?: Map<string, number>;
+    pointsAllowedPerPosition?: PositionPoints[];
+}
+
+export interface PositionPoints {
+    position: string;
+    points: number;
 }
 
 export enum ContestType {

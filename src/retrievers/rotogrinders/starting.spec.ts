@@ -17,7 +17,7 @@ describe("RGStarting", () => {
             const players = target.parsePlayers(playerFactory, data, "mlb");
 
             // Assert
-            assert.equal(players.length, 2);
+            assert.strictEqual(players.length, 2);
             specUtils.assertContainsPlayer(players, { name: "Clayton Kershaw", team: "LOS", salary: -1, isStarter: true, battingOrder: "NA" });
             specUtils.assertContainsPlayer(players, { name: "Jon Lester", team: "CHC", salary: -1, isStarter: true, battingOrder: "NA" });
             //specUtils.assertContainsPlayer(players, { name: "Chase Utley", team: "LOS", salary: 0, isStarter: true, battingOrder: "1st" });
@@ -34,7 +34,7 @@ describe("RGStarting", () => {
             const players = target.parsePlayers(playerFactory, data, "mlb");
 
             // Assert
-            assert.equal(players.length, 2);
+            assert.strictEqual(players.length, 2);
             specUtils.assertContainsPlayer(players, { name: "Clayton Kershaw", team: "LOS", salary: -1, isStarter: true, battingOrder: "NA" });
             specUtils.assertContainsPlayer(players, { name: "Jon Lester", team: "CHC", salary: -1, isStarter: true, battingOrder: "NA" });
             //specUtils.assertContainsPlayer(players, { name: "Chase Utley", team: "LOS", salary: 0, isStarter: true, battingOrder: "1st" });
@@ -51,7 +51,7 @@ describe("RGStarting", () => {
             const players = target.parsePlayers(playerFactory, data, "mlb");
 
             // Assert
-            assert.equal(players.length, 2);
+            assert.strictEqual(players.length, 2);
             specUtils.assertContainsPlayer(players, { name: "Clayton Kershaw", team: "LOS", salary: -1, isStarter: true, battingOrder: "NA" });
             specUtils.assertContainsPlayer(players, { name: "Jon Lester", team: "CHC", salary: -1, isStarter: true, battingOrder: "NA" });
             //specUtils.assertContainsPlayer(players, { name: "Chase Utley", team: "LOS", salary: 0, isStarter: true, battingOrder: "1st" });
@@ -68,7 +68,7 @@ describe("RGStarting", () => {
             const players = target.parsePlayers(playerFactory, data, "nba");
 
             // Assert
-            assert.equal(players.length, 30);
+            assert.strictEqual(players.length, 30);
             specUtils.assertContainsPlayer(players, { name: "Carmelo Anthony", team: "NY", salary: 7600, isStarter: true });
             specUtils.assertContainsPlayer(players, { name: "LeBron James", team: "CLE", salary: 9000, isStarter: true });
             specUtils.assertContainsPlayer(players, { name: "Stephen Curry", team: "GS", salary: 9600, isStarter: true });
@@ -84,7 +84,7 @@ describe("RGStarting", () => {
             const players = target.parsePlayers(playerFactory, data, "nba");
 
             // Assert
-            assert.equal(players.length, 30);
+            assert.strictEqual(players.length, 30);
             specUtils.assertContainsPlayer(players, { name: "Carmelo Anthony", team: "NY", salary: 8000, isStarter: true });
             specUtils.assertContainsPlayer(players, { name: "LeBron James", team: "CLE", salary: 9600, isStarter: true });
             specUtils.assertContainsPlayer(players, { name: "Stephen Curry", team: "GS", salary: 9300, isStarter: true });
@@ -100,7 +100,7 @@ describe("RGStarting", () => {
             const players = target.parsePlayers(playerFactory, data, "nba");
 
             // Assert
-            assert.equal(players.length, 29);
+            assert.strictEqual(players.length, 29);
             specUtils.assertContainsPlayer(players, { name: "Carmelo Anthony", team: "NY", salary: 41, isStarter: true });
             specUtils.assertContainsPlayer(players, { name: "LeBron James", team: "CLE", salary: 52, isStarter: true });
             specUtils.assertContainsPlayer(players, { name: "Stephen Curry", team: "GS", salary: 53, isStarter: true });
