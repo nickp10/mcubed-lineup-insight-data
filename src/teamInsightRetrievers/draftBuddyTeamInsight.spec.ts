@@ -4,8 +4,8 @@ import PlayerFactory from "../playerFactory";
 import { ITeamInsight, Sport } from "../interfaces";
 import specUtils from "../specUtils.spec";
 
-describe("DFSR", () => {
-    describe("#parsePositionData()", () => {
+describe("DraftBuddyTeamInsight", () => {
+    describe("#parseTeamInsight()", () => {
         it("should parse the team insight for an MLB DraftKings contest", () => {
             // Arrange
             const target = new DraftBuddyTeamInsight();
