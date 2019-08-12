@@ -215,6 +215,7 @@ Thanks to the following third-parties for providing the data that makes this nod
 * [FanDuel](https://www.fanduel.com)
 * [Yahoo](https://sports.yahoo.com/dailyfantasy/)
 * [Daily Fantasy Sports Rankings](https://www.dailyfantasysportsrankings.com/)
+* [Draft Buddy](https://www.draftbuddy.com/)
 * [NumberFire](https://www.numberfire.com/)
 * [RotoGrinders](https://www.rotogrinders.com/)
 * [RotoWire](http://www.rotowire.com/)
