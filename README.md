@@ -218,4 +218,4 @@ Thanks to the following third-parties for providing the data that makes this nod
 * [Draft Buddy](https://www.draftbuddy.com/)
 * [NumberFire](https://www.numberfire.com/)
 * [RotoGrinders](https://www.rotogrinders.com/)
-* [RotoWire](http://www.rotowire.com/)
+* [RotoWire](https://www.rotowire.com/)
