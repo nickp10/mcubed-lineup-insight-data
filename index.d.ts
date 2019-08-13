@@ -112,6 +112,7 @@ declare module 'mcubed-lineup-insight-data/interfaces' {
     export interface PositionPoints {
         position: string;
         points: number;
+        source: string;
     }
     export enum ContestType {
         DraftKings = 1,

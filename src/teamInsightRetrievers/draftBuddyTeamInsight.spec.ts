@@ -19,9 +19,9 @@ describe("DraftBuddyTeamInsight", () => {
 
             // Assert
             const teamInsightArray = [...teamInsight.values()];
-            specUtils.assertContainsTeamInsight(teamInsightArray, { code: "BAL", fullName: "Baltimore Orioles", pointsAllowedPerPosition: [ { position, points: 5851 } ] });
-            specUtils.assertContainsTeamInsight(teamInsightArray, { code: "HOU", fullName: "Houston Astros", pointsAllowedPerPosition: [ { position, points: 3643 } ] });
-            specUtils.assertContainsTeamInsight(teamInsightArray, { code: "KAN", fullName: "Kansas City Royals", pointsAllowedPerPosition: [ { position, points: 4030 } ] });
+            specUtils.assertContainsTeamInsight(teamInsightArray, { code: "BAL", fullName: "Baltimore Orioles", pointsAllowedPerPosition: [ { position, points: 5851, source: "Draft Buddy" } ] });
+            specUtils.assertContainsTeamInsight(teamInsightArray, { code: "HOU", fullName: "Houston Astros", pointsAllowedPerPosition: [ { position, points: 3643, source: "Draft Buddy" } ] });
+            specUtils.assertContainsTeamInsight(teamInsightArray, { code: "KAN", fullName: "Kansas City Royals", pointsAllowedPerPosition: [ { position, points: 4030, source: "Draft Buddy" } ] });
         });
     });
 });

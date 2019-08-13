@@ -1,6 +1,6 @@
 {
   "name": "mcubed-lineup-insight-data",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "Retrieves fantasy sports data",
   "bin": "build/cli.js",
   "main": "build/exports.js",
@@ -28,7 +28,7 @@
   "dependencies": {
     "argv": "0.0.2",
     "cheerio": "^1.0.0-rc.3",
-    "core-js": "^3.2.0",
+    "core-js": "^3.2.1",
     "latinize": "^0.4.0",
     "regenerator-runtime": "^0.13.3",
     "set-cookie-parser": "^2.3.8"
@@ -49,7 +49,7 @@
     "ts-loader": "^6.0.4",
     "ts-node": "^8.3.0",
     "typescript": "^3.5.3",
-    "webpack": "^4.39.1",
+    "webpack": "^4.39.2",
     "webpack-cli": "^3.3.6",
     "webpack-merge": "^4.2.1"
   }

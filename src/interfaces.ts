@@ -107,6 +107,7 @@ export interface ITeamInsight {
 export interface PositionPoints {
     position: string;
     points: number;
+    source: string;
 }
 
 export enum ContestType {

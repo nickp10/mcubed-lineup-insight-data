@@ -98,7 +98,8 @@ export default class DraftBuddyTeamInsight implements ITeamInsightRetriever {
                 }
                 currentTeam.pointsAllowedPerPosition.push({
                     position,
-                    points: positionDataElement.points
+                    points: positionDataElement.points,
+                    source: "Draft Buddy"
                 });
             }
         }
