@@ -101,10 +101,10 @@ export interface ITeamInsightRetriever {
 export interface ITeamInsight {
     code: string;
     fullName: string;
-    pointsAllowedPerPosition?: PositionPoints[];
+    pointsAllowedPerPosition?: IPositionPoints[];
 }
 
-export interface PositionPoints {
+export interface IPositionPoints {
     position: string;
     points: number;
     source: string;
