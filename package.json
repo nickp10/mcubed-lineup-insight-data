@@ -1,6 +1,6 @@
 {
   "name": "mcubed-lineup-insight-data",
-  "version": "6.0.1",
+  "version": "6.0.2",
   "description": "Retrieves fantasy sports data",
   "bin": "build/cli.js",
   "main": "build/exports.js",
