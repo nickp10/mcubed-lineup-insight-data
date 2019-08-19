@@ -23,138 +23,98 @@ describe("FanDuelContestRetriever", () => {
         it("should parse the specific contest data retreived from FanDuel", () => {
             // Arrange
             const target = new FanDuelContestRetriever();
-            const contest: IContest = { ID: "FD27134", contestType: ContestType.FanDuel, label: "Main", sport: Sport.MLB };
+            const contest: IContest = { ID: "FD37771", contestType: ContestType.FanDuel, label: "Main", sport: Sport.MLB };
             const contestData = fs.readFileSync("spec-content/fanDuelContest.json", "utf-8");
             const expectedGames: IGame[] = [{
                 awayTeam: {
-                    code: "WAS",
-                    fullName: "Washington Nationals"
-                },
-                homeTeam: {
-                    code: "MIL",
-                    fullName: "Milwaukee Brewers"
-                },
-                startTime: new Date(Date.UTC(2018, 6, 24, 0, 10))
-            }, {
-                awayTeam: {
                     code: "CWS",
-                    fullName: "Chicago White Sox",
+                    fullName: "Chicago White Sox"
                 },
                 homeTeam: {
-                    code: "LAA",
-                    fullName: "Los Angeles Angels",
+                    code: "MIN",
+                    fullName: "Minnesota Twins"
                 },
-                startTime: new Date(Date.UTC(2018, 6, 24, 2, 7))
-            }, {
-                awayTeam: {
-                    code: "BOS",
-                    fullName: "Boston Red Sox",
-                },
-                homeTeam: {
-                    code: "BAL",
-                    fullName: "Baltimore Orioles",
-                },
-                startTime: new Date(Date.UTC(2018, 6, 23, 23, 5))
+                startTime: new Date(Date.UTC(2019, 7, 20, 0, 10))
             }, {
                 awayTeam: {
                     code: "DET",
                     fullName: "Detroit Tigers",
                 },
                 homeTeam: {
-                    code: "KAN",
-                    fullName: "Kansas City Royals",
+                    code: "HOU",
+                    fullName: "Houston Astros",
                 },
-                startTime: new Date(Date.UTC(2018, 6, 24, 0, 15))
+                startTime: new Date(Date.UTC(2019, 7, 20, 0, 10))
             }, {
                 awayTeam: {
+                    code: "COL",
+                    fullName: "Colorado Rockies",
+                },
+                homeTeam: {
                     code: "ARI",
                     fullName: "Arizona Diamondbacks",
                 },
-                homeTeam: {
-                    code: "CHC",
-                    fullName: "Chicago Cubs",
-                },
-                startTime: new Date(Date.UTC(2018, 6, 24, 0, 5))
+                startTime: new Date(Date.UTC(2019, 7, 20, 1, 40))
             }, {
                 awayTeam: {
-                    code: "OAK",
-                    fullName: "Oakland Athletics",
+                    code: "LAA",
+                    fullName: "Los Angeles Angels",
                 },
                 homeTeam: {
                     code: "TEX",
                     fullName: "Texas Rangers",
                 },
-                startTime: new Date(Date.UTC(2018, 6, 24, 0, 5))
+                startTime: new Date(Date.UTC(2019, 7, 20, 0, 5))
             }, {
                 awayTeam: {
-                    code: "PIT",
-                    fullName: "Pittsburgh Pirates",
+                    code: "MIL",
+                    fullName: "Milwaukee Brewers",
                 },
                 homeTeam: {
-                    code: "CLE",
-                    fullName: "Cleveland Indians",
-                },
-                startTime: new Date(Date.UTC(2018, 6, 23, 23, 10))
-            }, {
-                awayTeam: {
-                    code: "MIN",
-                    fullName: "Minnesota Twins",
-                },
-                homeTeam: {
-                    code: "TOR",
-                    fullName: "Toronto Blue Jays",
-                },
-                startTime: new Date(Date.UTC(2018, 6, 23, 23, 7))
-            }, {
-                awayTeam: {
-                    code: "LOS",
-                    fullName: "Los Angeles Dodgers",
-                },
-                homeTeam: {
-                    code: "PHI",
-                    fullName: "Philadelphia Phillies",
-                },
-                startTime: new Date(Date.UTC(2018, 6, 23, 23, 5))
-            }, {
-                awayTeam: {
-                    code: "NYY",
-                    fullName: "New York Yankees",
-                },
-                homeTeam: {
-                    code: "TAM",
-                    fullName: "Tampa Bay Rays",
-                },
-                startTime: new Date(Date.UTC(2018, 6, 23, 23, 10))
-            }, {
-                awayTeam: {
                     code: "STL",
                     fullName: "St. Louis Cardinals",
                 },
-                homeTeam: {
-                    code: "CIN",
-                    fullName: "Cincinnati Reds",
+                startTime: new Date(Date.UTC(2019, 7, 19, 23, 45))
+            }, {
+                awayTeam: {
+                    code: "KAN",
+                    fullName: "Kansas City Royals",
                 },
-                startTime: new Date(Date.UTC(2018, 6, 23, 23, 10))
+                homeTeam: {
+                    code: "BAL",
+                    fullName: "Baltimore Orioles",
+                },
+                startTime: new Date(Date.UTC(2019, 7, 19, 23, 5))
+            }, {
+                awayTeam: {
+                    code: "WAS",
+                    fullName: "Washington Nationals",
+                },
+                homeTeam: {
+                    code: "PIT",
+                    fullName: "Pittsburgh Pirates",
+                },
+                startTime: new Date(Date.UTC(2019, 7, 19, 23, 5))
             }, {
                 awayTeam: {
                     code: "SDP",
                     fullName: "San Diego Padres",
                 },
                 homeTeam: {
-                    code: "NYM",
-                    fullName: "New York Mets",
+                    code: "CIN",
+                    fullName: "Cincinnati Reds",
                 },
-                startTime: new Date(Date.UTC(2018, 6, 23, 23, 10))
+                startTime: new Date(Date.UTC(2019, 7, 19, 23, 10))
             }, {
                 awayTeam: {
-                    code: "ATL",
-                    fullName: "Atlanta Braves",
+                    code: "SEA",
+                    fullName: "Seattle Mariners",
                 },
                 homeTeam: {
-                    code: "MIA",
-                    fullName: "Miami Marlins",
+                    code: "TAM",
+                    fullName: "Tampa Bay Rays",
                 },
-                startTime: new Date(Date.UTC(2018, 6, 23, 23, 10))
+                startTime: new Date(Date.UTC(2019, 7, 19, 23, 10))
             }];
             const expectedPositions = [
                 {
@@ -199,7 +159,7 @@ describe("FanDuelContestRetriever", () => {
             target.parseContestSpecificData(contest, contestData);
 
             // Assert
-            specUtils.assertContestEquals(contest, { ID: "FD27134", contestType: ContestType.FanDuel, label: "Main", maxPlayersPerTeam: 5, positions: expectedPositions, sport: Sport.MLB, games: expectedGames });
+            specUtils.assertContestEquals(contest, { ID: "FD37771", contestType: ContestType.FanDuel, label: "Main", maxPlayersPerTeam: 5, positions: expectedPositions, sport: Sport.MLB, games: expectedGames });
         });
     });
 
@@ -207,7 +167,7 @@ describe("FanDuelContestRetriever", () => {
         it("should parse the contest player list retreived from FanDuel", () => {
             // Arrange
             const target = new FanDuelContestRetriever();
-            const contest: IContest = { ID: "FD27134", contestType: ContestType.FanDuel, label: "Main", sport: Sport.MLB };
+            const contest: IContest = { ID: "FD37771", contestType: ContestType.FanDuel, label: "Main", sport: Sport.MLB };
             const contestData = fs.readFileSync("spec-content/fanDuelContest.json", "utf-8");
             const playerListData = fs.readFileSync("spec-content/fanDuelPlayerList.json", "utf-8");
             target.parseContestSpecificData(contest, contestData);
@@ -216,9 +176,9 @@ describe("FanDuelContestRetriever", () => {
             target.parseContestPlayerList(contest, playerListData);
 
             // Assert
-            specUtils.assertContainsPlayer(contest.games[0].awayTeam.players, { name: "Bryce Harper", team: "WAS", position: "OF", salary: 4100, isProbablePitcher: false, isStarter: false, battingOrder: "NA", stats: [{ source: "FanDuel", seasonAveragePoints: 12.039583841959635 }] });
-            specUtils.assertContainsPlayer(contest.games[0].homeTeam.players, { name: "Jesus Aguilar", team: "MIL", position: "1B", salary: 4000, isProbablePitcher: false, isStarter: false, battingOrder: "NA", stats: [{ source: "FanDuel", seasonAveragePoints: 11.702247191011235 }] });
-            specUtils.assertContainsPlayer(contest.games[12].awayTeam.players, { name: "Ozzie Albies", team: "ATL", position: "2B", salary: 4100, isProbablePitcher: false, isStarter: false, battingOrder: "NA", stats: [{ source: "FanDuel", seasonAveragePoints: 12.74468085106383 }] });
+            specUtils.assertContainsPlayer(contest.games[6].awayTeam.players, { name: "Max Scherzer", team: "WAS", position: "P", salary: 12000, isProbablePitcher: false, isStarter: false, battingOrder: "NA", stats: [{ source: "FanDuel", seasonAveragePoints: 46.666666666666667 }] });
+            specUtils.assertContainsPlayer(contest.games[6].homeTeam.players, { name: "Josh Bell", team: "PIT", position: "1B", salary: 4100, isProbablePitcher: false, isStarter: false, battingOrder: "NA", stats: [{ source: "FanDuel", seasonAveragePoints: 13.371186854475635 }] });
+            specUtils.assertContainsPlayer(contest.games[8].homeTeam.players, { name: "Brandon Lowe", team: "TAM", position: "2B", salary: 3400, isProbablePitcher: false, isStarter: false, battingOrder: "NA", stats: [{ source: "FanDuel", seasonAveragePoints: 11.164473684210526 }] });
         });
     });
 });

@@ -114,6 +114,7 @@ export class SpecUtils {
         assert.strictEqual(actualPlayer.isProbablePitcher, expectedPlayer.isProbablePitcher);
         assert.strictEqual(actualPlayer.isStarter, expectedPlayer.isStarter);
         assert.strictEqual(actualPlayer.battingOrder, expectedPlayer.battingOrder);
+        assert.strictEqual(actualPlayer.position, expectedPlayer.position);
         if (expectedPlayer.stats) {
             assert.strictEqual(actualPlayer.stats.length, expectedPlayer.stats.length);
             for (let i = 0; i < actualPlayer.stats.length; i++) {

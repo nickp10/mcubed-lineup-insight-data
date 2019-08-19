@@ -1,1520 +1,1465 @@
 {
-	"game_descriptions": [{
-		"roster_restrictions": {
-			"max_players_from_team": 5,
-			"min_fixtures": 2,
-			"min_teams": 3,
-			"max_players": 9,
-			"min_players": 9,
-			"player_position_restrictions": [{
-				"positions": ["2B",
-				"SS",
-				"1B",
-				"C",
-				"CF",
-				"RF",
-				"OF",
-				"LF",
-				"3B"],
-				"max_per_team": 4,
-				"min": null,
-				"max": null
-			}]
-		},
-		"tag": null,
-		"image_url": null,
-		"name": "Full Roster",
-		"id": "96",
-		"short_description": "Our classic, 9-player roster with salary cap.",
-		"long_description": null,
-		"roster_format": [{
-			"id": "616",
-			"tier": null,
-			"order": 0,
-			"player_positions": ["P"],
-			"name": "P"
-		},
-		{
-			"id": "617",
-			"tier": null,
-			"order": 1,
-			"player_positions": ["1B",
-			"C"],
-			"name": "C/1B"
-		},
-		{
-			"id": "618",
-			"tier": null,
-			"order": 2,
-			"player_positions": ["2B"],
-			"name": "2B"
-		},
-		{
-			"id": "619",
-			"tier": null,
-			"order": 3,
-			"player_positions": ["3B"],
-			"name": "3B"
-		},
-		{
-			"id": "620",
-			"tier": null,
-			"order": 4,
-			"player_positions": ["SS"],
-			"name": "SS"
-		},
-		{
-			"id": "621",
-			"tier": null,
-			"order": 5,
-			"player_positions": ["OF"],
-			"name": "OF"
-		},
-		{
-			"id": "622",
-			"tier": null,
-			"order": 6,
-			"player_positions": ["OF"],
-			"name": "OF"
-		},
-		{
-			"id": "623",
-			"tier": null,
-			"order": 7,
-			"player_positions": ["OF"],
-			"name": "OF"
-		},
-		{
-			"id": "624",
-			"tier": null,
-			"order": 8,
-			"player_positions": ["2B",
-			"OF",
-			"SS",
-			"1B",
-			"C",
-			"3B"],
-			"name": "UTIL"
-		}],
-		"display_priority": 1
-	}],
-	"fixtures": [{
-		"status": {
-			"stadium_type": "RETRACTABLE",
-			"final": false,
-			"weather": null,
-			"label": "PENDING",
-			"started": false
-		},
-		"sport": "MLB",
-		"name": null,
-		"id": "127491",
-		"away_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["609"],
-				"_ref": "teams.id"
-			}
-		},
-		"weather": null,
-		"start_date": "2018-07-24T00:10:00Z",
-		"home_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["613"],
-				"_ref": "teams.id"
-			}
-		}
-	},
-	{
-		"status": {
-			"stadium_type": "OPEN",
-			"final": false,
-			"weather": "CLEAR_NIGHT",
-			"label": "PENDING",
-			"started": false
-		},
-		"sport": "MLB",
-		"name": null,
-		"id": "128738",
-		"away_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["596"],
-				"_ref": "teams.id"
-			}
-		},
-		"weather": {
-			"wind": {
-				"bearing": 209,
-				"speed": 6
-			},
-			"time": "2018-07-24T02:07:00Z",
-			"precipitation": [{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-24T01:00:00Z"
-			},
-			{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-24T02:00:00Z"
-			},
-			{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-24T03:00:00Z"
-			},
-			{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-24T04:00:00Z"
-			},
-			{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-24T05:00:00Z"
-			},
-			{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-24T06:00:00Z"
-			}],
-			"temperature": 81,
-			"condition": "CLEAR_NIGHT"
-		},
-		"start_date": "2018-07-24T02:07:00Z",
-		"home_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["601"],
-				"_ref": "teams.id"
-			}
-		}
-	},
-	{
-		"status": {
-			"stadium_type": "OPEN",
-			"final": false,
-			"weather": "RAIN",
-			"label": "PENDING",
-			"started": false
-		},
-		"sport": "MLB",
-		"name": null,
-		"id": "126823",
-		"away_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["592"],
-				"_ref": "teams.id"
-			}
-		},
-		"weather": {
-			"wind": {
-				"bearing": 140,
-				"speed": 12
-			},
-			"time": "2018-07-23T23:05:00Z",
-			"precipitation": [{
-				"probability": 38,
-				"intensity": "LIGHT",
-				"time": "2018-07-23T22:00:00Z"
-			},
-			{
-				"probability": 43,
-				"intensity": "LIGHT",
-				"time": "2018-07-23T23:00:00Z"
-			},
-			{
-				"probability": 44,
-				"intensity": "LIGHT",
-				"time": "2018-07-24T00:00:00Z"
-			},
-			{
-				"probability": 39,
-				"intensity": "LIGHT",
-				"time": "2018-07-24T01:00:00Z"
-			},
-			{
-				"probability": 42,
-				"intensity": "LIGHT",
-				"time": "2018-07-24T02:00:00Z"
-			},
-			{
-				"probability": 45,
-				"intensity": "LIGHT",
-				"time": "2018-07-24T03:00:00Z"
-			}],
-			"temperature": 78,
-			"condition": "RAIN"
-		},
-		"start_date": "2018-07-23T23:05:00Z",
-		"home_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["591"],
-				"_ref": "teams.id"
-			}
-		}
-	},
-	{
-		"status": {
-			"stadium_type": "OPEN",
-			"final": false,
-			"weather": "PARTLY_CLOUDY_DAY",
-			"label": "PENDING",
-			"started": false
-		},
-		"sport": "MLB",
-		"name": null,
-		"id": "127656",
-		"away_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["598"],
-				"_ref": "teams.id"
-			}
-		},
-		"weather": {
-			"wind": {
-				"bearing": 7,
-				"speed": 5
-			},
-			"time": "2018-07-24T00:15:00Z",
-			"precipitation": [{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-23T23:00:00Z"
-			},
-			{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-24T00:00:00Z"
-			},
-			{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-24T01:00:00Z"
-			},
-			{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-24T02:00:00Z"
-			},
-			{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-24T03:00:00Z"
-			},
-			{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-24T04:00:00Z"
-			}],
-			"temperature": 88,
-			"condition": "PARTLY_CLOUDY_DAY"
-		},
-		"start_date": "2018-07-24T00:15:00Z",
-		"home_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["599"],
-				"_ref": "teams.id"
-			}
-		}
-	},
-	{
-		"status": {
-			"stadium_type": "OPEN",
-			"final": false,
-			"weather": "CLEAR_DAY",
-			"label": "PENDING",
-			"started": false
-		},
-		"sport": "MLB",
-		"name": null,
-		"id": "126474",
-		"away_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["616"],
-				"_ref": "teams.id"
-			}
-		},
-		"weather": {
-			"wind": {
-				"bearing": 27,
-				"speed": 6
-			},
-			"time": "2018-07-24T00:05:00Z",
-			"precipitation": [{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-23T23:00:00Z"
-			},
-			{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-24T00:00:00Z"
-			},
-			{
-				"probability": 1,
-				"intensity": "VERY_LIGHT",
-				"time": "2018-07-24T01:00:00Z"
-			},
-			{
-				"probability": 3,
-				"intensity": "VERY_LIGHT",
-				"time": "2018-07-24T02:00:00Z"
-			},
-			{
-				"probability": 3,
-				"intensity": "VERY_LIGHT",
-				"time": "2018-07-24T03:00:00Z"
-			},
-			{
-				"probability": 2,
-				"intensity": "VERY_LIGHT",
-				"time": "2018-07-24T04:00:00Z"
-			}],
-			"temperature": 73,
-			"condition": "CLEAR_DAY"
-		},
-		"start_date": "2018-07-24T00:05:00Z",
-		"home_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["610"],
-				"_ref": "teams.id"
-			}
-		}
-	},
-	{
-		"status": {
-			"stadium_type": "OPEN",
-			"final": false,
-			"weather": "PARTLY_CLOUDY_DAY",
-			"label": "PENDING",
-			"started": false
-		},
-		"sport": "MLB",
-		"name": null,
-		"id": "128590",
-		"away_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["602"],
-				"_ref": "teams.id"
-			}
-		},
-		"weather": {
-			"wind": {
-				"bearing": 48,
-				"speed": 12
-			},
-			"time": "2018-07-24T00:05:00Z",
-			"precipitation": [{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-23T23:00:00Z"
-			},
-			{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-24T00:00:00Z"
-			},
-			{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-24T01:00:00Z"
-			},
-			{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-24T02:00:00Z"
-			},
-			{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-24T03:00:00Z"
-			},
-			{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-24T04:00:00Z"
-			}],
-			"temperature": 99,
-			"condition": "PARTLY_CLOUDY_DAY"
-		},
-		"start_date": "2018-07-24T00:05:00Z",
-		"home_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["604"],
-				"_ref": "teams.id"
-			}
-		}
-	},
-	{
-		"status": {
-			"stadium_type": "OPEN",
-			"final": false,
-			"weather": "PARTLY_CLOUDY_DAY",
-			"label": "PENDING",
-			"started": false
-		},
-		"sport": "MLB",
-		"name": null,
-		"id": "126768",
-		"away_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["614"],
-				"_ref": "teams.id"
-			}
-		},
-		"weather": {
-			"wind": {
-				"bearing": 84,
-				"speed": 5
-			},
-			"time": "2018-07-23T23:10:00Z",
-			"precipitation": [{
-				"probability": 20,
-				"intensity": "LIGHT",
-				"time": "2018-07-23T22:00:00Z"
-			},
-			{
-				"probability": 16,
-				"intensity": "VERY_LIGHT",
-				"time": "2018-07-23T23:00:00Z"
-			},
-			{
-				"probability": 14,
-				"intensity": "VERY_LIGHT",
-				"time": "2018-07-24T00:00:00Z"
-			},
-			{
-				"probability": 18,
-				"intensity": "VERY_LIGHT",
-				"time": "2018-07-24T01:00:00Z"
-			},
-			{
-				"probability": 20,
-				"intensity": "LIGHT",
-				"time": "2018-07-24T02:00:00Z"
-			},
-			{
-				"probability": 12,
-				"intensity": "VERY_LIGHT",
-				"time": "2018-07-24T03:00:00Z"
-			}],
-			"temperature": 79,
-			"condition": "PARTLY_CLOUDY_DAY"
-		},
-		"start_date": "2018-07-23T23:10:00Z",
-		"home_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["597"],
-				"_ref": "teams.id"
-			}
-		}
-	},
-	{
-		"status": {
-			"stadium_type": "RETRACTABLE",
-			"final": false,
-			"weather": null,
-			"label": "PENDING",
-			"started": false
-		},
-		"sport": "MLB",
-		"name": null,
-		"id": "128019",
-		"away_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["600"],
-				"_ref": "teams.id"
-			}
-		},
-		"weather": null,
-		"start_date": "2018-07-23T23:07:00Z",
-		"home_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["595"],
-				"_ref": "teams.id"
-			}
-		}
-	},
-	{
-		"status": {
-			"stadium_type": "OPEN",
-			"final": false,
-			"weather": "PARTLY_CLOUDY_DAY",
-			"label": "PENDING",
-			"started": false
-		},
-		"sport": "MLB",
-		"name": null,
-		"id": "128020",
-		"away_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["618"],
-				"_ref": "teams.id"
-			}
-		},
-		"weather": {
-			"wind": {
-				"bearing": 145,
-				"speed": 11
-			},
-			"time": "2018-07-23T23:05:00Z",
-			"precipitation": [{
-				"probability": 30,
-				"intensity": "LIGHT",
-				"time": "2018-07-23T22:00:00Z"
-			},
-			{
-				"probability": 31,
-				"intensity": "LIGHT",
-				"time": "2018-07-23T23:00:00Z"
-			},
-			{
-				"probability": 28,
-				"intensity": "LIGHT",
-				"time": "2018-07-24T00:00:00Z"
-			},
-			{
-				"probability": 22,
-				"intensity": "VERY_LIGHT",
-				"time": "2018-07-24T01:00:00Z"
-			},
-			{
-				"probability": 15,
-				"intensity": "VERY_LIGHT",
-				"time": "2018-07-24T02:00:00Z"
-			},
-			{
-				"probability": 14,
-				"intensity": "VERY_LIGHT",
-				"time": "2018-07-24T03:00:00Z"
-			}],
-			"temperature": 78,
-			"condition": "PARTLY_CLOUDY_DAY"
-		},
-		"start_date": "2018-07-23T23:05:00Z",
-		"home_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["608"],
-				"_ref": "teams.id"
-			}
-		}
-	},
-	{
-		"status": {
-			"stadium_type": "FIXED",
-			"final": false,
-			"weather": null,
-			"label": "PENDING",
-			"started": false
-		},
-		"sport": "MLB",
-		"name": null,
-		"id": "127607",
-		"away_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["593"],
-				"_ref": "teams.id"
-			}
-		},
-		"weather": null,
-		"start_date": "2018-07-23T23:10:00Z",
-		"home_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["594"],
-				"_ref": "teams.id"
-			}
-		}
-	},
-	{
-		"status": {
-			"stadium_type": "OPEN",
-			"final": false,
-			"weather": "PARTLY_CLOUDY_DAY",
-			"label": "PENDING",
-			"started": false
-		},
-		"sport": "MLB",
-		"name": null,
-		"id": "128631",
-		"away_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["615"],
-				"_ref": "teams.id"
-			}
-		},
-		"weather": {
-			"wind": {
-				"bearing": 120,
-				"speed": 3
-			},
-			"time": "2018-07-23T23:10:00Z",
-			"precipitation": [{
-				"probability": 10,
-				"intensity": "VERY_LIGHT",
-				"time": "2018-07-23T22:00:00Z"
-			},
-			{
-				"probability": 9,
-				"intensity": "VERY_LIGHT",
-				"time": "2018-07-23T23:00:00Z"
-			},
-			{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-24T00:00:00Z"
-			},
-			{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-24T01:00:00Z"
-			},
-			{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-24T02:00:00Z"
-			},
-			{
-				"probability": 0,
-				"intensity": "NONE",
-				"time": "2018-07-24T03:00:00Z"
-			}],
-			"temperature": 77,
-			"condition": "PARTLY_CLOUDY_DAY"
-		},
-		"start_date": "2018-07-23T23:10:00Z",
-		"home_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["611"],
-				"_ref": "teams.id"
-			}
-		}
-	},
-	{
-		"status": {
-			"stadium_type": "OPEN",
-			"final": false,
-			"weather": "RAIN",
-			"label": "PENDING",
-			"started": false
-		},
-		"sport": "MLB",
-		"name": null,
-		"id": "127382",
-		"away_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["619"],
-				"_ref": "teams.id"
-			}
-		},
-		"weather": {
-			"wind": {
-				"bearing": 151,
-				"speed": 13
-			},
-			"time": "2018-07-23T23:10:00Z",
-			"precipitation": [{
-				"probability": 34,
-				"intensity": "LIGHT",
-				"time": "2018-07-23T22:00:00Z"
-			},
-			{
-				"probability": 32,
-				"intensity": "LIGHT",
-				"time": "2018-07-23T23:00:00Z"
-			},
-			{
-				"probability": 31,
-				"intensity": "LIGHT",
-				"time": "2018-07-24T00:00:00Z"
-			},
-			{
-				"probability": 26,
-				"intensity": "LIGHT",
-				"time": "2018-07-24T01:00:00Z"
-			},
-			{
-				"probability": 22,
-				"intensity": "LIGHT",
-				"time": "2018-07-24T02:00:00Z"
-			},
-			{
-				"probability": 16,
-				"intensity": "LIGHT",
-				"time": "2018-07-24T03:00:00Z"
-			}],
-			"temperature": 77,
-			"condition": "RAIN"
-		},
-		"start_date": "2018-07-23T23:10:00Z",
-		"home_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["607"],
-				"_ref": "teams.id"
-			}
-		}
-	},
-	{
-		"status": {
-			"stadium_type": "RETRACTABLE",
-			"final": false,
-			"weather": null,
-			"label": "PENDING",
-			"started": false
-		},
-		"sport": "MLB",
-		"name": null,
-		"id": "127674",
-		"away_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["605"],
-				"_ref": "teams.id"
-			}
-		},
-		"weather": null,
-		"start_date": "2018-07-23T23:10:00Z",
-		"home_team": {
-			"score": null,
-			"sport_specific": {
-				"at_bat": null
-			},
-			"team": {
-				"_members": ["606"],
-				"_ref": "teams.id"
-			}
-		}
-	}],
 	"_meta": {
+		"_primary_document": "fixture_lists",
 		"fixture_lists": {
 			"count": 1
-		},
-		"_primary_document": "fixture_lists"
+		}
 	},
-	"teams": [{
-		"name": "Orioles",
-		"full_name": "Baltimore Orioles",
-		"id": "591",
-		"colors": ["#1F1F1F",
-		"#DF4601"],
-		"city": "Baltimore",
-		"code": "BAL"
-	},
-	{
-		"name": "Red Sox",
-		"full_name": "Boston Red Sox",
-		"id": "592",
-		"colors": ["#193454",
-		"#CB172F"],
-		"city": "Boston",
-		"code": "BOS"
-	},
-	{
-		"name": "Yankees",
-		"full_name": "New York Yankees",
-		"id": "593",
-		"colors": ["#0F1C43",
-		"#FFFFFF"],
-		"city": "New York",
-		"code": "NYY"
-	},
-	{
-		"name": "Rays",
-		"full_name": "Tampa Bay Rays",
-		"id": "594",
-		"colors": ["#092C5C",
-		"#8FBCE6"],
-		"city": "Tampa Bay",
-		"code": "TAM"
-	},
-	{
-		"name": "Blue Jays",
-		"full_name": "Toronto Blue Jays",
-		"id": "595",
-		"colors": ["#134A8E",
-		"#E8291C"],
-		"city": "Toronto",
-		"code": "TOR"
-	},
-	{
-		"name": "White Sox",
-		"full_name": "Chicago White Sox",
-		"id": "596",
-		"colors": ["#1F1F1F",
-		"#C4CED4"],
-		"city": "Chicago",
-		"code": "CWS"
-	},
-	{
-		"name": "Indians",
-		"full_name": "Cleveland Indians",
-		"id": "597",
-		"colors": ["#0A2953",
-		"#E40A1B"],
-		"city": "Cleveland",
-		"code": "CLE"
-	},
-	{
-		"name": "Tigers",
-		"full_name": "Detroit Tigers",
-		"id": "598",
-		"colors": ["#0C2C56",
-		"#FF3D00"],
-		"city": "Detroit",
-		"code": "DET"
-	},
-	{
-		"name": "Royals",
-		"full_name": "Kansas City Royals",
-		"id": "599",
-		"colors": ["#004687",
-		"#FFFFFF"],
-		"city": "Kansas City",
-		"code": "KAN"
-	},
-	{
-		"name": "Twins",
-		"full_name": "Minnesota Twins",
-		"id": "600",
-		"colors": ["#0A2953",
-		"#D31145"],
-		"city": "Minnesota",
-		"code": "MIN"
-	},
-	{
-		"name": "Angels",
-		"full_name": "Los Angeles Angels",
-		"id": "601",
-		"colors": ["#BA0021",
-		"#003263"],
-		"city": "Los Angeles",
-		"code": "LAA"
-	},
-	{
-		"name": "Athletics",
-		"full_name": "Oakland Athletics",
-		"id": "602",
-		"colors": ["#00483A",
-		"#F9B31D"],
-		"city": "Oakland",
-		"code": "OAK"
-	},
-	{
-		"name": "Rangers",
-		"full_name": "Texas Rangers",
-		"id": "604",
-		"colors": ["#00307B",
-		"#C0111F"],
-		"city": "Texas",
-		"code": "TEX"
-	},
-	{
-		"name": "Braves",
-		"full_name": "Atlanta Braves",
-		"id": "605",
-		"colors": ["#13274F",
-		"#CE1141"],
-		"city": "Atlanta",
-		"code": "ATL"
-	},
-	{
-		"name": "Marlins",
-		"full_name": "Miami Marlins",
-		"id": "606",
-		"colors": ["#0077C8",
-		"#FF6600"],
-		"city": "Miami",
-		"code": "MIA"
-	},
-	{
-		"name": "Mets",
-		"full_name": "New York Mets",
-		"id": "607",
-		"colors": ["#00357C",
-		"#F36700"],
-		"city": "New York",
-		"code": "NYM"
-	},
-	{
-		"name": "Phillies",
-		"full_name": "Philadelphia Phillies",
-		"id": "608",
-		"colors": ["#BD061C",
-		"#062F6E"],
-		"city": "Philadelphia",
-		"code": "PHI"
-	},
-	{
-		"name": "Nationals",
-		"full_name": "Washington Nationals",
-		"id": "609",
-		"colors": ["#B9092E",
-		"#021D43"],
-		"city": "Washington",
-		"code": "WAS"
-	},
-	{
-		"name": "Cubs",
-		"full_name": "Chicago Cubs",
-		"id": "610",
-		"colors": ["#052E70",
-		"#CF0B26"],
-		"city": "Chicago",
-		"code": "CHC"
-	},
-	{
-		"name": "Reds",
-		"full_name": "Cincinnati Reds",
-		"id": "611",
-		"colors": ["#B80B1D",
-		"#FFFFFF"],
-		"city": "Cincinnati",
-		"code": "CIN"
-	},
-	{
-		"name": "Brewers",
-		"full_name": "Milwaukee Brewers",
-		"id": "613",
-		"colors": ["#08204C",
-		"#B6922E"],
-		"city": "Milwaukee",
-		"code": "MIL"
-	},
-	{
-		"name": "Pirates",
-		"full_name": "Pittsburgh Pirates",
-		"id": "614",
-		"colors": ["#1F1F1F",
-		"#FFC324"],
-		"city": "Pittsburgh",
-		"code": "PIT"
-	},
-	{
-		"name": "Cardinals",
-		"full_name": "St. Louis Cardinals",
-		"id": "615",
-		"colors": ["#B60939",
-		"#F9B31D"],
-		"city": "St. Louis",
-		"code": "STL"
-	},
-	{
-		"name": "Diamondbacks",
-		"full_name": "Arizona Diamondbacks",
-		"id": "616",
-		"colors": ["#A71930",
-		"#E3D4AD"],
-		"city": "Arizona",
-		"code": "ARI"
-	},
-	{
-		"name": "Dodgers",
-		"full_name": "Los Angeles Dodgers",
-		"id": "618",
-		"colors": ["#004587",
-		"#C09A5B"],
-		"city": "Los Angeles",
-		"code": "LOS"
-	},
-	{
-		"name": "Padres",
-		"full_name": "San Diego Padres",
-		"id": "619",
-		"colors": ["#022F5C",
-		"#AFA26D"],
-		"city": "San Diego",
-		"code": "SDP"
-	}],
-	"fixture_lists": [{
-		"roster_restrictions": {
-			"max_players_from_team": 5,
-			"min_fixtures": 2,
-			"min_teams": 3,
-			"max_players": 9,
-			"min_players": 9,
-			"player_position_restrictions": [{
-				"positions": ["2B",
-				"SS",
-				"1B",
-				"C",
-				"CF",
-				"RF",
-				"OF",
-				"LF",
-				"3B"],
-				"max_per_team": 4,
-				"min": null,
-				"max": null
-			}]
-		},
-		"id": "27134",
-		"game_description": {
-			"_members": ["96"],
-			"_ref": "game_descriptions.id"
-		},
-		"sport": "MLB",
-		"_url": "https://api.fanduel.com/fixture-lists/27134",
-		"scoring_rules": {
-			"notes": ["IP: Fractional scoring per out.",
-			"QSTART: When a starting pitcher completes at least six innings and permits no more than three earned runs."],
-			"groups": [{
-				"rules": [{
-					"full": "Earned Runs",
-					"abbr": "ER",
-					"points": -3
-				},
-				{
-					"full": "Innings Pitched",
-					"abbr": "IP",
-					"points": 3
-				},
-				{
-					"full": "Quality Start",
-					"abbr": "QSTART",
-					"points": 4
-				},
-				{
-					"full": "Strikeouts",
-					"abbr": "SO",
-					"points": 3
-				},
-				{
-					"full": "Wins",
-					"abbr": "W",
-					"points": 6
-				}],
-				"name": "P"
+	"fixture_lists": [
+		{
+			"id": "37771",
+			"_url": "https://api.fanduel.com/fixture-lists/37771",
+			"sport": "MLB",
+			"game_description_name": "MLB Full Roster",
+			"game_description": {
+				"_members": [
+					"96"
+				],
+				"_ref": "game_descriptions.id"
 			},
-			{
-				"rules": [{
-					"full": "Singles",
-					"abbr": "1B",
-					"points": 3
+			"salary_cap": 35000,
+			"start_date": "2019-08-19T23:05:00Z",
+			"label": "Main",
+			"late_swap": true,
+			"status": {
+				"started": false,
+				"final": false
+			},
+			"fixture_counts": {
+				"pending": 9,
+				"live": 0,
+				"completed": 0
+			},
+			"players": {
+				"_url": "https://api.fanduel.com/fixture-lists/37771/players"
+			},
+			"selection_priority": 100,
+			"fixtures": {
+				"_members": [
+					"143378",
+					"142160",
+					"141894",
+					"143398",
+					"142520",
+					"143736",
+					"141327",
+					"142781",
+					"143533"
+				],
+				"_ref": "fixtures.id"
+			},
+			"roster_positions": [
+				{
+					"id": "616",
+					"order": 0,
+					"abbr": "P",
+					"full": "P",
+					"valid_player_positions": [
+						"P"
+					],
+					"tier": null
 				},
 				{
-					"full": "Doubles",
+					"id": "617",
+					"order": 1,
+					"abbr": "C/1B",
+					"full": "C/1B",
+					"valid_player_positions": [
+						"1B",
+						"C"
+					],
+					"tier": null
+				},
+				{
+					"id": "618",
+					"order": 2,
 					"abbr": "2B",
-					"points": 6
+					"full": "2B",
+					"valid_player_positions": [
+						"2B"
+					],
+					"tier": null
 				},
 				{
-					"full": "Triples",
+					"id": "619",
+					"order": 3,
 					"abbr": "3B",
-					"points": 9
+					"full": "3B",
+					"valid_player_positions": [
+						"3B"
+					],
+					"tier": null
 				},
 				{
-					"full": "Walks",
-					"abbr": "BB",
-					"points": 3
+					"id": "620",
+					"order": 4,
+					"abbr": "SS",
+					"full": "SS",
+					"valid_player_positions": [
+						"SS"
+					],
+					"tier": null
 				},
 				{
-					"full": "Hit by Pitches",
-					"abbr": "HBP",
-					"points": 3
+					"id": "621",
+					"order": 5,
+					"abbr": "OF",
+					"full": "OF",
+					"valid_player_positions": [
+						"OF"
+					],
+					"tier": null
 				},
 				{
-					"full": "Home Runs",
-					"abbr": "HR",
-					"points": 12
+					"id": "622",
+					"order": 6,
+					"abbr": "OF",
+					"full": "OF",
+					"valid_player_positions": [
+						"OF"
+					],
+					"tier": null
 				},
 				{
-					"full": "Runs",
-					"abbr": "R",
-					"points": 3.2
+					"id": "623",
+					"order": 7,
+					"abbr": "OF",
+					"full": "OF",
+					"valid_player_positions": [
+						"OF"
+					],
+					"tier": null
 				},
 				{
-					"full": "RBI",
-					"abbr": "RBI",
-					"points": 3.5
+					"id": "624",
+					"order": 8,
+					"abbr": "UTIL",
+					"full": "UTIL",
+					"valid_player_positions": [
+						"2B",
+						"SS",
+						"1B",
+						"C",
+						"OF",
+						"3B"
+					],
+					"tier": null
+				}
+			],
+			"scoring_rules": {
+				"notes": [
+					"IP: Fractional scoring per out.",
+					"QSTART: When a starting pitcher completes at least six innings and permits no more than three earned runs."
+				],
+				"groups": [
+					{
+						"name": "P",
+						"rules": [
+							{
+								"abbr": "ER",
+								"full": "Earned Runs",
+								"points": -3
+							},
+							{
+								"abbr": "IP",
+								"full": "Innings Pitched",
+								"points": 3
+							},
+							{
+								"abbr": "QSTART",
+								"full": "Quality Start",
+								"points": 4
+							},
+							{
+								"abbr": "SO",
+								"full": "Strikeouts",
+								"points": 3
+							},
+							{
+								"abbr": "W",
+								"full": "Wins",
+								"points": 6
+							}
+						]
+					},
+					{
+						"name": "C/1B, 2B, 3B, SS, OF, UTIL",
+						"rules": [
+							{
+								"abbr": "1B",
+								"full": "Singles",
+								"points": 3
+							},
+							{
+								"abbr": "2B",
+								"full": "Doubles",
+								"points": 6
+							},
+							{
+								"abbr": "3B",
+								"full": "Triples",
+								"points": 9
+							},
+							{
+								"abbr": "BB",
+								"full": "Walks",
+								"points": 3
+							},
+							{
+								"abbr": "HBP",
+								"full": "Hit by Pitches",
+								"points": 3
+							},
+							{
+								"abbr": "HR",
+								"full": "Home Runs",
+								"points": 12
+							},
+							{
+								"abbr": "R",
+								"full": "Runs",
+								"points": 3.2
+							},
+							{
+								"abbr": "RBI",
+								"full": "RBI",
+								"points": 3.5
+							},
+							{
+								"abbr": "SB",
+								"full": "Stolen Bases",
+								"points": 6
+							}
+						]
+					}
+				]
+			},
+			"h2h_buyins": [
+				{
+					"entry_fee": 0,
+					"prize": 0,
+					"entry_fee_fdp": 0
 				},
 				{
-					"full": "Stolen Bases",
-					"abbr": "SB",
-					"points": 6
-				}],
-				"name": "C/1B, 2B, 3B, SS, OF, UTIL"
-			}]
-		},
-		"late_swap": true,
-		"players": {
-			"_url": "https://api.fanduel.com/fixture-lists/27134/players"
-		},
-		"game_description_name": "MLB Full Roster",
-		"fixtures": {
-			"_members": ["127491",
-			"128738",
-			"126823",
-			"127656",
-			"126474",
-			"128590",
-			"126768",
-			"128019",
-			"128020",
-			"127607",
-			"128631",
-			"127382",
-			"127674"],
-			"_ref": "fixtures.id"
-		},
-		"start_date": "2018-07-23T23:05:00Z",
-		"label": "Main",
-		"fixture_counts": {
-			"pending": 13,
-			"completed": 0,
-			"live": 0
-		},
-		"roster_positions": [{
-			"tier": null,
-			"order": 0,
-			"full": "P",
-			"id": "616",
-			"valid_player_positions": ["P"],
-			"abbr": "P"
-		},
-		{
-			"tier": null,
-			"order": 1,
-			"full": "C/1B",
-			"id": "617",
-			"valid_player_positions": ["1B",
-			"C"],
-			"abbr": "C/1B"
-		},
-		{
-			"tier": null,
-			"order": 2,
-			"full": "2B",
-			"id": "618",
-			"valid_player_positions": ["2B"],
-			"abbr": "2B"
-		},
-		{
-			"tier": null,
-			"order": 3,
-			"full": "3B",
-			"id": "619",
-			"valid_player_positions": ["3B"],
-			"abbr": "3B"
-		},
-		{
-			"tier": null,
-			"order": 4,
-			"full": "SS",
-			"id": "620",
-			"valid_player_positions": ["SS"],
-			"abbr": "SS"
-		},
-		{
-			"tier": null,
-			"order": 5,
-			"full": "OF",
-			"id": "621",
-			"valid_player_positions": ["OF"],
-			"abbr": "OF"
-		},
-		{
-			"tier": null,
-			"order": 6,
-			"full": "OF",
-			"id": "622",
-			"valid_player_positions": ["OF"],
-			"abbr": "OF"
-		},
-		{
-			"tier": null,
-			"order": 7,
-			"full": "OF",
-			"id": "623",
-			"valid_player_positions": ["OF"],
-			"abbr": "OF"
-		},
-		{
-			"tier": null,
-			"order": 8,
-			"full": "UTIL",
-			"id": "624",
-			"valid_player_positions": ["2B",
-			"SS",
-			"1B",
-			"C",
-			"OF",
-			"3B"],
-			"abbr": "UTIL"
-		}],
-		"salary_cap": 35000,
-		"contests": {
-			"open": {
-				"_url": "https://api.fanduel.com/contests?fixture_list=27134&status=open"
+					"entry_fee": 1,
+					"prize": 1.8,
+					"entry_fee_fdp": 2400
+				},
+				{
+					"entry_fee": 2,
+					"prize": 3.6,
+					"entry_fee_fdp": 4800
+				},
+				{
+					"entry_fee": 5,
+					"prize": 9,
+					"entry_fee_fdp": 12000
+				},
+				{
+					"entry_fee": 10,
+					"prize": 18,
+					"entry_fee_fdp": 24000
+				},
+				{
+					"entry_fee": 25,
+					"prize": 45,
+					"entry_fee_fdp": 60000
+				},
+				{
+					"entry_fee": 50,
+					"prize": 90,
+					"entry_fee_fdp": 120000
+				},
+				{
+					"entry_fee": 105,
+					"prize": 200,
+					"entry_fee_fdp": 252000
+				},
+				{
+					"entry_fee": 260,
+					"prize": 500,
+					"entry_fee_fdp": 624000
+				},
+				{
+					"entry_fee": 515,
+					"prize": 1000,
+					"entry_fee_fdp": 1236000
+				},
+				{
+					"entry_fee": 1030,
+					"prize": 2000,
+					"entry_fee_fdp": 2472000
+				},
+				{
+					"entry_fee": 5150,
+					"prize": 10000,
+					"entry_fee_fdp": 12360000
+				},
+				{
+					"entry_fee": 10300,
+					"prize": 20000,
+					"entry_fee_fdp": 24720000
+				}
+			],
+			"contest_specs": [
+				{
+					"id": "LEAGUE",
+					"contest_type": "LEAGUE",
+					"entry_fees": [
+						{
+							"entry_fee": 0,
+							"entry_fee_fdp": 0
+						},
+						{
+							"entry_fee": 1,
+							"entry_fee_fdp": 2400
+						},
+						{
+							"entry_fee": 2,
+							"entry_fee_fdp": 4800
+						},
+						{
+							"entry_fee": 5,
+							"entry_fee_fdp": 12000
+						},
+						{
+							"entry_fee": 10,
+							"entry_fee_fdp": 24000
+						},
+						{
+							"entry_fee": 25,
+							"entry_fee_fdp": 60000
+						},
+						{
+							"entry_fee": 50,
+							"entry_fee_fdp": 120000
+						},
+						{
+							"entry_fee": 100,
+							"entry_fee_fdp": 240000
+						}
+					],
+					"min_size": 3,
+					"max_size": 20,
+					"prize_structures": [
+						{
+							"name": "free",
+							"description": "Bragging rights",
+							"entry_fees": [
+								0
+							]
+						},
+						{
+							"name": "winner",
+							"description": "Winner takes all",
+							"entry_fees": [
+								1,
+								2,
+								5,
+								10,
+								25,
+								50,
+								100
+							]
+						},
+						{
+							"name": "top3",
+							"description": "Top 3 get prizes",
+							"entry_fees": [
+								1,
+								2,
+								5,
+								10,
+								25,
+								50,
+								100
+							]
+						},
+						{
+							"name": "top3rd",
+							"description": "Top third get prizes",
+							"entry_fees": [
+								1,
+								2,
+								5,
+								10,
+								25,
+								50,
+								100
+							]
+						}
+					]
+				}
+			],
+			"player_positions": [
+				{
+					"abbr": "1B",
+					"full": "1st Base"
+				},
+				{
+					"abbr": "2B",
+					"full": "2nd Base"
+				},
+				{
+					"abbr": "3B",
+					"full": "3rd Base"
+				},
+				{
+					"abbr": "C",
+					"full": "Catcher"
+				},
+				{
+					"abbr": "OF",
+					"full": "Outfield"
+				},
+				{
+					"abbr": "P",
+					"full": "Pitcher"
+				},
+				{
+					"abbr": "SS",
+					"full": "Shortstop"
+				}
+			],
+			"roster_restrictions": {
+				"min_players": 9,
+				"max_players": 9,
+				"max_players_from_team": 5,
+				"min_fixtures": 2,
+				"min_teams": 3,
+				"player_position_restrictions": [
+					{
+						"positions": [
+							"2B",
+							"SS",
+							"1B",
+							"C",
+							"CF",
+							"RF",
+							"OF",
+							"LF",
+							"3B"
+						],
+						"min": null,
+						"max": null,
+						"max_per_team": 4
+					}
+				]
+			},
+			"contests": {
+				"open": {
+					"_url": "https://api.fanduel.com/contests?fixture_list=37771&status=open"
+				}
 			}
-		},
-		"status": {
-			"final": false,
-			"started": false
-		},
-		"player_positions": [{
-			"full": "1st Base",
-			"abbr": "1B"
-		},
+		}
+	],
+	"fixtures": [
 		{
-			"full": "2nd Base",
-			"abbr": "2B"
-		},
-		{
-			"full": "3rd Base",
-			"abbr": "3B"
-		},
-		{
-			"full": "Catcher",
-			"abbr": "C"
-		},
-		{
-			"full": "Outfield",
-			"abbr": "OF"
-		},
-		{
-			"full": "Pitcher",
-			"abbr": "P"
-		},
-		{
-			"full": "Shortstop",
-			"abbr": "SS"
-		}],
-		"contest_specs": [{
-			"entry_fees": [{
-				"entry_fee_fdp": 0,
-				"entry_fee": 0
+			"id": "143378",
+			"start_date": "2019-08-20T00:10:00Z",
+			"sport": "MLB",
+			"type": "REGULAR_SEASON",
+			"home_team": {
+				"team": {
+					"_members": [
+						"600"
+					],
+					"_ref": "teams.id"
+				},
+				"score": null,
+				"sport_specific": {
+					"at_bat": null
+				}
 			},
-			{
-				"entry_fee_fdp": 2400,
-				"entry_fee": 1
+			"away_team": {
+				"team": {
+					"_members": [
+						"596"
+					],
+					"_ref": "teams.id"
+				},
+				"score": null,
+				"sport_specific": {
+					"at_bat": null
+				}
 			},
-			{
-				"entry_fee_fdp": 4800,
-				"entry_fee": 2
+			"weather": {
+				"condition": "CLEAR_DAY",
+				"temperature": 80,
+				"time": "2019-08-20T00:10:00Z",
+				"wind": {
+					"bearing": 184,
+					"speed": 8
+				},
+				"precipitation": [
+					{
+						"intensity": "NONE",
+						"probability": 0,
+						"time": "2019-08-19T23:00:00Z"
+					},
+					{
+						"intensity": "NONE",
+						"probability": 0,
+						"time": "2019-08-20T00:00:00Z"
+					},
+					{
+						"intensity": "NONE",
+						"probability": 0,
+						"time": "2019-08-20T01:00:00Z"
+					},
+					{
+						"intensity": "NONE",
+						"probability": 0,
+						"time": "2019-08-20T02:00:00Z"
+					},
+					{
+						"intensity": "NONE",
+						"probability": 0,
+						"time": "2019-08-20T03:00:00Z"
+					},
+					{
+						"intensity": "NONE",
+						"probability": 0,
+						"time": "2019-08-20T04:00:00Z"
+					}
+				]
 			},
-			{
-				"entry_fee_fdp": 12000,
-				"entry_fee": 5
+			"status": {
+				"started": false,
+				"final": false,
+				"label": "PENDING",
+				"weather": "CLEAR_DAY",
+				"stadium_type": "OPEN",
+				"stadium_name": "Target Field",
+				"stadium_city": "Minneapolis, Minnesota",
+				"total_periods": 9,
+				"period_labels": {
+					"singular": "inning",
+					"plural": "innings"
+				}
 			},
-			{
-				"entry_fee_fdp": 24000,
-				"entry_fee": 10
+			"name": null,
+			"target_periods": null,
+			"home_player": null,
+			"away_player": null
+		},
+		{
+			"id": "142160",
+			"start_date": "2019-08-20T00:10:00Z",
+			"sport": "MLB",
+			"type": "REGULAR_SEASON",
+			"home_team": {
+				"team": {
+					"_members": [
+						"612"
+					],
+					"_ref": "teams.id"
+				},
+				"score": null,
+				"sport_specific": {
+					"at_bat": null
+				}
 			},
-			{
-				"entry_fee_fdp": 60000,
-				"entry_fee": 25
+			"away_team": {
+				"team": {
+					"_members": [
+						"598"
+					],
+					"_ref": "teams.id"
+				},
+				"score": null,
+				"sport_specific": {
+					"at_bat": null
+				}
 			},
-			{
-				"entry_fee_fdp": 120000,
-				"entry_fee": 50
+			"weather": null,
+			"status": {
+				"started": false,
+				"final": false,
+				"label": "PENDING",
+				"weather": null,
+				"stadium_type": "RETRACTABLE",
+				"stadium_name": "Minute Maid Park",
+				"stadium_city": "Houston, Texas",
+				"total_periods": 9,
+				"period_labels": {
+					"singular": "inning",
+					"plural": "innings"
+				}
 			},
-			{
-				"entry_fee_fdp": 240000,
-				"entry_fee": 100
-			}],
-			"min_size": 3,
-			"contest_type": "LEAGUE",
-			"id": "LEAGUE",
-			"max_size": 20,
-			"prize_structures": [{
-				"entry_fees": [0],
-				"description": "Bragging rights",
-				"name": "free"
+			"name": null,
+			"target_periods": null,
+			"home_player": null,
+			"away_player": null
+		},
+		{
+			"id": "141894",
+			"start_date": "2019-08-20T01:40:00Z",
+			"sport": "MLB",
+			"type": "REGULAR_SEASON",
+			"home_team": {
+				"team": {
+					"_members": [
+						"616"
+					],
+					"_ref": "teams.id"
+				},
+				"score": null,
+				"sport_specific": {
+					"at_bat": null
+				}
 			},
-			{
-				"entry_fees": [1,
-				2,
-				5,
-				10,
-				25,
-				50,
-				100],
-				"description": "Winner takes all",
-				"name": "winner"
+			"away_team": {
+				"team": {
+					"_members": [
+						"617"
+					],
+					"_ref": "teams.id"
+				},
+				"score": null,
+				"sport_specific": {
+					"at_bat": null
+				}
 			},
-			{
-				"entry_fees": [1,
-				2,
-				5,
-				10,
-				25,
-				50,
-				100],
-				"description": "Top 3 get prizes",
-				"name": "top3"
+			"weather": null,
+			"status": {
+				"started": false,
+				"final": false,
+				"label": "PENDING",
+				"weather": null,
+				"stadium_type": "RETRACTABLE",
+				"stadium_name": "Chase Field",
+				"stadium_city": "Phoenix, Arizona",
+				"total_periods": 9,
+				"period_labels": {
+					"singular": "inning",
+					"plural": "innings"
+				}
 			},
-			{
-				"entry_fees": [1,
-				2,
-				5,
-				10,
-				25,
-				50,
-				100],
-				"description": "Top third get prizes",
-				"name": "top3rd"
-			}]
-		}],
-		"h2h_buyins": [{
-			"prize": 0,
-			"entry_fee_fdp": 0,
-			"entry_fee": 0
+			"name": null,
+			"target_periods": null,
+			"home_player": null,
+			"away_player": null
 		},
 		{
-			"prize": 1.8,
-			"entry_fee_fdp": 2400,
-			"entry_fee": 1
+			"id": "143398",
+			"start_date": "2019-08-20T00:05:00Z",
+			"sport": "MLB",
+			"type": "REGULAR_SEASON",
+			"home_team": {
+				"team": {
+					"_members": [
+						"604"
+					],
+					"_ref": "teams.id"
+				},
+				"score": null,
+				"sport_specific": {
+					"at_bat": null
+				}
+			},
+			"away_team": {
+				"team": {
+					"_members": [
+						"601"
+					],
+					"_ref": "teams.id"
+				},
+				"score": null,
+				"sport_specific": {
+					"at_bat": null
+				}
+			},
+			"weather": {
+				"condition": "CLEAR_DAY",
+				"temperature": 98,
+				"time": "2019-08-20T00:05:00Z",
+				"wind": {
+					"bearing": 132,
+					"speed": 9
+				},
+				"precipitation": [
+					{
+						"intensity": "NONE",
+						"probability": 0,
+						"time": "2019-08-19T23:00:00Z"
+					},
+					{
+						"intensity": "NONE",
+						"probability": 0,
+						"time": "2019-08-20T00:00:00Z"
+					},
+					{
+						"intensity": "NONE",
+						"probability": 0,
+						"time": "2019-08-20T01:00:00Z"
+					},
+					{
+						"intensity": "NONE",
+						"probability": 0,
+						"time": "2019-08-20T02:00:00Z"
+					},
+					{
+						"intensity": "NONE",
+						"probability": 0,
+						"time": "2019-08-20T03:00:00Z"
+					},
+					{
+						"intensity": "NONE",
+						"probability": 0,
+						"time": "2019-08-20T04:00:00Z"
+					}
+				]
+			},
+			"status": {
+				"started": false,
+				"final": false,
+				"label": "PENDING",
+				"weather": "CLEAR_DAY",
+				"stadium_type": "OPEN",
+				"stadium_name": "Globe Life Park in Arlington",
+				"stadium_city": "Arlington, Texas",
+				"total_periods": 9,
+				"period_labels": {
+					"singular": "inning",
+					"plural": "innings"
+				}
+			},
+			"name": null,
+			"target_periods": null,
+			"home_player": null,
+			"away_player": null
 		},
 		{
-			"prize": 3.6,
-			"entry_fee_fdp": 4800,
-			"entry_fee": 2
+			"id": "142520",
+			"start_date": "2019-08-19T23:45:00Z",
+			"sport": "MLB",
+			"type": "REGULAR_SEASON",
+			"home_team": {
+				"team": {
+					"_members": [
+						"615"
+					],
+					"_ref": "teams.id"
+				},
+				"score": null,
+				"sport_specific": {
+					"at_bat": null
+				}
+			},
+			"away_team": {
+				"team": {
+					"_members": [
+						"613"
+					],
+					"_ref": "teams.id"
+				},
+				"score": null,
+				"sport_specific": {
+					"at_bat": null
+				}
+			},
+			"weather": {
+				"condition": "PARTLY_CLOUDY_NIGHT",
+				"temperature": 87,
+				"time": "2019-08-19T23:45:00Z",
+				"wind": {
+					"bearing": 99,
+					"speed": 3
+				},
+				"precipitation": [
+					{
+						"intensity": "LIGHT",
+						"probability": 12,
+						"time": "2019-08-19T23:00:00Z"
+					},
+					{
+						"intensity": "LIGHT",
+						"probability": 12,
+						"time": "2019-08-20T00:00:00Z"
+					},
+					{
+						"intensity": "LIGHT",
+						"probability": 9,
+						"time": "2019-08-20T01:00:00Z"
+					},
+					{
+						"intensity": "VERY_LIGHT",
+						"probability": 5,
+						"time": "2019-08-20T02:00:00Z"
+					},
+					{
+						"intensity": "VERY_LIGHT",
+						"probability": 1,
+						"time": "2019-08-20T03:00:00Z"
+					},
+					{
+						"intensity": "NONE",
+						"probability": 0,
+						"time": "2019-08-20T04:00:00Z"
+					}
+				]
+			},
+			"status": {
+				"started": false,
+				"final": false,
+				"label": "PENDING",
+				"weather": "PARTLY_CLOUDY_NIGHT",
+				"stadium_type": "OPEN",
+				"stadium_name": "Busch Stadium",
+				"stadium_city": "St. Louis, Missouri",
+				"total_periods": 9,
+				"period_labels": {
+					"singular": "inning",
+					"plural": "innings"
+				}
+			},
+			"name": null,
+			"target_periods": null,
+			"home_player": null,
+			"away_player": null
 		},
 		{
-			"prize": 9,
-			"entry_fee_fdp": 12000,
-			"entry_fee": 5
+			"id": "143736",
+			"start_date": "2019-08-19T23:05:00Z",
+			"sport": "MLB",
+			"type": "REGULAR_SEASON",
+			"home_team": {
+				"team": {
+					"_members": [
+						"591"
+					],
+					"_ref": "teams.id"
+				},
+				"score": null,
+				"sport_specific": {
+					"at_bat": null
+				}
+			},
+			"away_team": {
+				"team": {
+					"_members": [
+						"599"
+					],
+					"_ref": "teams.id"
+				},
+				"score": null,
+				"sport_specific": {
+					"at_bat": null
+				}
+			},
+			"weather": {
+				"condition": "PARTLY_CLOUDY_NIGHT",
+				"temperature": 89,
+				"time": "2019-08-19T23:05:00Z",
+				"wind": {
+					"bearing": 182,
+					"speed": 4
+				},
+				"precipitation": [
+					{
+						"intensity": "VERY_LIGHT",
+						"probability": 5,
+						"time": "2019-08-19T22:00:00Z"
+					},
+					{
+						"intensity": "VERY_LIGHT",
+						"probability": 6,
+						"time": "2019-08-19T23:00:00Z"
+					},
+					{
+						"intensity": "VERY_LIGHT",
+						"probability": 7,
+						"time": "2019-08-20T00:00:00Z"
+					},
+					{
+						"intensity": "VERY_LIGHT",
+						"probability": 5,
+						"time": "2019-08-20T01:00:00Z"
+					},
+					{
+						"intensity": "VERY_LIGHT",
+						"probability": 3,
+						"time": "2019-08-20T02:00:00Z"
+					},
+					{
+						"intensity": "VERY_LIGHT",
+						"probability": 2,
+						"time": "2019-08-20T03:00:00Z"
+					}
+				]
+			},
+			"status": {
+				"started": false,
+				"final": false,
+				"label": "PENDING",
+				"weather": "PARTLY_CLOUDY_NIGHT",
+				"stadium_type": "OPEN",
+				"stadium_name": "Oriole Park at Camden Yards",
+				"stadium_city": "Baltimore, Maryland",
+				"total_periods": 9,
+				"period_labels": {
+					"singular": "inning",
+					"plural": "innings"
+				}
+			},
+			"name": null,
+			"target_periods": null,
+			"home_player": null,
+			"away_player": null
 		},
 		{
-			"prize": 18,
-			"entry_fee_fdp": 24000,
-			"entry_fee": 10
+			"id": "141327",
+			"start_date": "2019-08-19T23:05:00Z",
+			"sport": "MLB",
+			"type": "REGULAR_SEASON",
+			"home_team": {
+				"team": {
+					"_members": [
+						"614"
+					],
+					"_ref": "teams.id"
+				},
+				"score": null,
+				"sport_specific": {
+					"at_bat": null
+				}
+			},
+			"away_team": {
+				"team": {
+					"_members": [
+						"609"
+					],
+					"_ref": "teams.id"
+				},
+				"score": null,
+				"sport_specific": {
+					"at_bat": null
+				}
+			},
+			"weather": {
+				"condition": "PARTLY_CLOUDY_DAY",
+				"temperature": 85,
+				"time": "2019-08-19T23:05:00Z",
+				"wind": {
+					"bearing": 112,
+					"speed": 3
+				},
+				"precipitation": [
+					{
+						"intensity": "LIGHT",
+						"probability": 13,
+						"time": "2019-08-19T22:00:00Z"
+					},
+					{
+						"intensity": "VERY_LIGHT",
+						"probability": 6,
+						"time": "2019-08-19T23:00:00Z"
+					},
+					{
+						"intensity": "VERY_LIGHT",
+						"probability": 3,
+						"time": "2019-08-20T00:00:00Z"
+					},
+					{
+						"intensity": "VERY_LIGHT",
+						"probability": 3,
+						"time": "2019-08-20T01:00:00Z"
+					},
+					{
+						"intensity": "VERY_LIGHT",
+						"probability": 3,
+						"time": "2019-08-20T02:00:00Z"
+					},
+					{
+						"intensity": "VERY_LIGHT",
+						"probability": 4,
+						"time": "2019-08-20T03:00:00Z"
+					}
+				]
+			},
+			"status": {
+				"started": false,
+				"final": false,
+				"label": "PENDING",
+				"weather": "PARTLY_CLOUDY_DAY",
+				"stadium_type": "OPEN",
+				"stadium_name": "PNC Park",
+				"stadium_city": "Pittsburgh, Pennsylvania",
+				"total_periods": 9,
+				"period_labels": {
+					"singular": "inning",
+					"plural": "innings"
+				}
+			},
+			"name": null,
+			"target_periods": null,
+			"home_player": null,
+			"away_player": null
 		},
 		{
-			"prize": 45,
-			"entry_fee_fdp": 60000,
-			"entry_fee": 25
+			"id": "142781",
+			"start_date": "2019-08-19T23:10:00Z",
+			"sport": "MLB",
+			"type": "REGULAR_SEASON",
+			"home_team": {
+				"team": {
+					"_members": [
+						"611"
+					],
+					"_ref": "teams.id"
+				},
+				"score": null,
+				"sport_specific": {
+					"at_bat": null
+				}
+			},
+			"away_team": {
+				"team": {
+					"_members": [
+						"619"
+					],
+					"_ref": "teams.id"
+				},
+				"score": null,
+				"sport_specific": {
+					"at_bat": null
+				}
+			},
+			"weather": {
+				"condition": "PARTLY_CLOUDY_DAY",
+				"temperature": 87,
+				"time": "2019-08-19T23:10:00Z",
+				"wind": {
+					"bearing": 287,
+					"speed": 4
+				},
+				"precipitation": [
+					{
+						"intensity": "VERY_LIGHT",
+						"probability": 8,
+						"time": "2019-08-19T22:00:00Z"
+					},
+					{
+						"intensity": "VERY_LIGHT",
+						"probability": 11,
+						"time": "2019-08-19T23:00:00Z"
+					},
+					{
+						"intensity": "VERY_LIGHT",
+						"probability": 13,
+						"time": "2019-08-20T00:00:00Z"
+					},
+					{
+						"intensity": "VERY_LIGHT",
+						"probability": 11,
+						"time": "2019-08-20T01:00:00Z"
+					},
+					{
+						"intensity": "VERY_LIGHT",
+						"probability": 9,
+						"time": "2019-08-20T02:00:00Z"
+					},
+					{
+						"intensity": "VERY_LIGHT",
+						"probability": 7,
+						"time": "2019-08-20T03:00:00Z"
+					}
+				]
+			},
+			"status": {
+				"started": false,
+				"final": false,
+				"label": "PENDING",
+				"weather": "PARTLY_CLOUDY_DAY",
+				"stadium_type": "OPEN",
+				"stadium_name": "Great American Ball Park",
+				"stadium_city": "Cincinnati, Ohio",
+				"total_periods": 9,
+				"period_labels": {
+					"singular": "inning",
+					"plural": "innings"
+				}
+			},
+			"name": null,
+			"target_periods": null,
+			"home_player": null,
+			"away_player": null
 		},
 		{
-			"prize": 90,
-			"entry_fee_fdp": 120000,
-			"entry_fee": 50
+			"id": "143533",
+			"start_date": "2019-08-19T23:10:00Z",
+			"sport": "MLB",
+			"type": "REGULAR_SEASON",
+			"home_team": {
+				"team": {
+					"_members": [
+						"594"
+					],
+					"_ref": "teams.id"
+				},
+				"score": null,
+				"sport_specific": {
+					"at_bat": null
+				}
+			},
+			"away_team": {
+				"team": {
+					"_members": [
+						"603"
+					],
+					"_ref": "teams.id"
+				},
+				"score": null,
+				"sport_specific": {
+					"at_bat": null
+				}
+			},
+			"weather": null,
+			"status": {
+				"started": false,
+				"final": false,
+				"label": "PENDING",
+				"weather": null,
+				"stadium_type": "FIXED",
+				"stadium_name": "Tropicana Field",
+				"stadium_city": "St. Petersburg, Florida",
+				"total_periods": 9,
+				"period_labels": {
+					"singular": "inning",
+					"plural": "innings"
+				}
+			},
+			"name": null,
+			"target_periods": null,
+			"home_player": null,
+			"away_player": null
+		}
+	],
+	"teams": [
+		{
+			"id": "591",
+			"code": "BAL",
+			"city": "Baltimore",
+			"name": "Orioles",
+			"full_name": "Baltimore Orioles",
+			"colors": [
+				"#1F1F1F",
+				"#DF4601"
+			]
 		},
 		{
-			"prize": 200,
-			"entry_fee_fdp": 261600,
-			"entry_fee": 109
+			"id": "594",
+			"code": "TAM",
+			"city": "Tampa Bay",
+			"name": "Rays",
+			"full_name": "Tampa Bay Rays",
+			"colors": [
+				"#092C5C",
+				"#8FBCE6"
+			]
 		},
 		{
-			"prize": 500,
-			"entry_fee_fdp": 648000,
-			"entry_fee": 270
+			"id": "596",
+			"code": "CWS",
+			"city": "Chicago",
+			"name": "White Sox",
+			"full_name": "Chicago White Sox",
+			"colors": [
+				"#1F1F1F",
+				"#C4CED4"
+			]
 		},
 		{
-			"prize": 1000,
-			"entry_fee_fdp": 1284000,
-			"entry_fee": 535
+			"id": "598",
+			"code": "DET",
+			"city": "Detroit",
+			"name": "Tigers",
+			"full_name": "Detroit Tigers",
+			"colors": [
+				"#0C2C56",
+				"#FF3D00"
+			]
 		},
 		{
-			"prize": 2000,
-			"entry_fee_fdp": 2556000,
-			"entry_fee": 1065
+			"id": "599",
+			"code": "KAN",
+			"city": "Kansas City",
+			"name": "Royals",
+			"full_name": "Kansas City Royals",
+			"colors": [
+				"#004687",
+				"#FFFFFF"
+			]
 		},
 		{
-			"prize": 10000,
-			"entry_fee_fdp": 12720000,
-			"entry_fee": 5300
+			"id": "600",
+			"code": "MIN",
+			"city": "Minnesota",
+			"name": "Twins",
+			"full_name": "Minnesota Twins",
+			"colors": [
+				"#0A2953",
+				"#D31145"
+			]
 		},
 		{
-			"prize": 20000,
-			"entry_fee_fdp": 25440000,
-			"entry_fee": 10600
-		}]
-	}]
+			"id": "601",
+			"code": "LAA",
+			"city": "Los Angeles",
+			"name": "Angels",
+			"full_name": "Los Angeles Angels",
+			"colors": [
+				"#BA0021",
+				"#003263"
+			]
+		},
+		{
+			"id": "603",
+			"code": "SEA",
+			"city": "Seattle",
+			"name": "Mariners",
+			"full_name": "Seattle Mariners",
+			"colors": [
+				"#0C2C56",
+				"#0A6D6D"
+			]
+		},
+		{
+			"id": "604",
+			"code": "TEX",
+			"city": "Texas",
+			"name": "Rangers",
+			"full_name": "Texas Rangers",
+			"colors": [
+				"#00307B",
+				"#C0111F"
+			]
+		},
+		{
+			"id": "609",
+			"code": "WAS",
+			"city": "Washington",
+			"name": "Nationals",
+			"full_name": "Washington Nationals",
+			"colors": [
+				"#B9092E",
+				"#021D43"
+			]
+		},
+		{
+			"id": "611",
+			"code": "CIN",
+			"city": "Cincinnati",
+			"name": "Reds",
+			"full_name": "Cincinnati Reds",
+			"colors": [
+				"#B80B1D",
+				"#FFFFFF"
+			]
+		},
+		{
+			"id": "612",
+			"code": "HOU",
+			"city": "Houston",
+			"name": "Astros",
+			"full_name": "Houston Astros",
+			"colors": [
+				"#002B63",
+				"#E66C07"
+			]
+		},
+		{
+			"id": "613",
+			"code": "MIL",
+			"city": "Milwaukee",
+			"name": "Brewers",
+			"full_name": "Milwaukee Brewers",
+			"colors": [
+				"#08204C",
+				"#B6922E"
+			]
+		},
+		{
+			"id": "614",
+			"code": "PIT",
+			"city": "Pittsburgh",
+			"name": "Pirates",
+			"full_name": "Pittsburgh Pirates",
+			"colors": [
+				"#1F1F1F",
+				"#FFC324"
+			]
+		},
+		{
+			"id": "615",
+			"code": "STL",
+			"city": "St. Louis",
+			"name": "Cardinals",
+			"full_name": "St. Louis Cardinals",
+			"colors": [
+				"#B60939",
+				"#F9B31D"
+			]
+		},
+		{
+			"id": "616",
+			"code": "ARI",
+			"city": "Arizona",
+			"name": "Diamondbacks",
+			"full_name": "Arizona Diamondbacks",
+			"colors": [
+				"#A71930",
+				"#E3D4AD"
+			]
+		},
+		{
+			"id": "617",
+			"code": "COL",
+			"city": "Colorado",
+			"name": "Rockies",
+			"full_name": "Colorado Rockies",
+			"colors": [
+				"#333366",
+				"#C4CED4"
+			]
+		},
+		{
+			"id": "619",
+			"code": "SDP",
+			"city": "San Diego",
+			"name": "Padres",
+			"full_name": "San Diego Padres",
+			"colors": [
+				"#022F5C",
+				"#AFA26D"
+			]
+		}
+	],
+	"game_descriptions": [
+		{
+			"id": "96",
+			"name": "Full Roster",
+			"short_description": "Our classic, 9-player roster with salary cap.",
+			"long_description": null,
+			"image_url": null,
+			"display_priority": 1,
+			"roster_format": [
+				{
+					"id": "616",
+					"name": "P",
+					"player_positions": [
+						"P"
+					],
+					"order": 0,
+					"tier": null
+				},
+				{
+					"id": "617",
+					"name": "C/1B",
+					"player_positions": [
+						"1B",
+						"C"
+					],
+					"order": 1,
+					"tier": null
+				},
+				{
+					"id": "618",
+					"name": "2B",
+					"player_positions": [
+						"2B"
+					],
+					"order": 2,
+					"tier": null
+				},
+				{
+					"id": "619",
+					"name": "3B",
+					"player_positions": [
+						"3B"
+					],
+					"order": 3,
+					"tier": null
+				},
+				{
+					"id": "620",
+					"name": "SS",
+					"player_positions": [
+						"SS"
+					],
+					"order": 4,
+					"tier": null
+				},
+				{
+					"id": "621",
+					"name": "OF",
+					"player_positions": [
+						"OF"
+					],
+					"order": 5,
+					"tier": null
+				},
+				{
+					"id": "622",
+					"name": "OF",
+					"player_positions": [
+						"OF"
+					],
+					"order": 6,
+					"tier": null
+				},
+				{
+					"id": "623",
+					"name": "OF",
+					"player_positions": [
+						"OF"
+					],
+					"order": 7,
+					"tier": null
+				},
+				{
+					"id": "624",
+					"name": "UTIL",
+					"player_positions": [
+						"2B",
+						"OF",
+						"SS",
+						"1B",
+						"C",
+						"3B"
+					],
+					"order": 8,
+					"tier": null
+				}
+			],
+			"tag": null,
+			"only_score_top": null,
+			"roster_restrictions": {
+				"min_players": 9,
+				"max_players": 9,
+				"max_players_from_team": 5,
+				"min_fixtures": 2,
+				"min_teams": 3,
+				"player_position_restrictions": [
+					{
+						"positions": [
+							"2B",
+							"SS",
+							"1B",
+							"C",
+							"CF",
+							"RF",
+							"OF",
+							"LF",
+							"3B"
+						],
+						"min": null,
+						"max": null,
+						"max_per_team": 4
+					}
+				]
+			}
+		}
+	]
 }
