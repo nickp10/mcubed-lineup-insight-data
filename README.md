@@ -74,6 +74,8 @@ Instances of this class are returned from calling the `getPlayerInsight` functio
 Instances of this class are associated with a [Player](#Player). These will only be created if the player is participating in an MLB contest.
 
 * `battingOrder?: string` - Optionally specifies the batting order of the player for an MLB contest.
+* `handednessBat?: string` - Optionally specifies the batting handedness of the player for an MLB contest. This will be one of `R`, `L`, or `S`.
+* `handednessThrow?: string` - Optionally specifies the throwing handedness of the player for an MLB contest. This will be one of `R`, `L`, or `S`.
 * `isProbablePitcher?: boolean` - Optionally specifies if the player is expected to be the starting pitcher for an MLB contest.
 
 #### <a name="PlayerInjury"></a>PlayerInjury

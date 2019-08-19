@@ -155,6 +155,8 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
                     if (fdContest.sport === Sport.MLB) {
                         player.mlbSpecific = {
                             battingOrder: this.parseBattingOrder(jsonPlayer["starting_order"]),
+                            handednessBat: this.parseHandedness(jsonPlayer, "bat_handedness"),
+                            handednessThrow: this.parseHandedness(jsonPlayer, "handedness"),
                             isProbablePitcher: jsonPlayer["probable_pitcher"]
                         };
                     }
@@ -185,6 +187,23 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
             return `${order}th`;
         }
         return "NA";
+    }
+
+    private parseHandedness(jsonPlayer: any, handednessKey: string): string {
+        const sportSpecific = jsonPlayer["sport_specific"];
+        if (sportSpecific) {
+            const handedness = sportSpecific[handednessKey];
+            if (handedness) {
+                if (handedness.toUpperCase() === "RIGHT") {
+                    return "R";
+                } else if (handedness.toUpperCase() === "LEFT") {
+                    return "L";
+                } else if (handedness.toUpperCase() === "SWITCH") {
+                    return "S";
+                }
+            }
+        }
+        return undefined;
     }
 
     private parsePlayerID(id: string): string {

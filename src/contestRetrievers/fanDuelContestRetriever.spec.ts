@@ -176,9 +176,9 @@ describe("FanDuelContestRetriever", () => {
             target.parseContestPlayerList(contest, playerListData);
 
             // Assert
-            specUtils.assertContainsPlayer(contest.games[6].awayTeam.players, { name: "Max Scherzer", team: "WAS", position: "P", salary: 12000, isStarter: false, mlbSpecific: { battingOrder: "NA", isProbablePitcher: false }, stats: [{ source: "FanDuel", seasonAveragePoints: 46.666666666666667 }] });
-            specUtils.assertContainsPlayer(contest.games[6].homeTeam.players, { name: "Josh Bell", team: "PIT", position: "1B", salary: 4100, isStarter: false, mlbSpecific: { battingOrder: "NA", isProbablePitcher: false }, stats: [{ source: "FanDuel", seasonAveragePoints: 13.371186854475635 }] });
-            specUtils.assertContainsPlayer(contest.games[8].homeTeam.players, { name: "Brandon Lowe", team: "TAM", position: "2B", salary: 3400, isStarter: false, mlbSpecific: { battingOrder: "NA", isProbablePitcher: false }, stats: [{ source: "FanDuel", seasonAveragePoints: 11.164473684210526 }] });
+            specUtils.assertContainsPlayer(contest.games[6].awayTeam.players, { name: "Max Scherzer", team: "WAS", position: "P", salary: 12000, isStarter: false, mlbSpecific: { battingOrder: "NA", handednessBat: "R", handednessThrow: "R", isProbablePitcher: false }, stats: [{ source: "FanDuel", seasonAveragePoints: 46.666666666666667 }] });
+            specUtils.assertContainsPlayer(contest.games[6].homeTeam.players, { name: "Josh Bell", team: "PIT", position: "1B", salary: 4100, isStarter: false, mlbSpecific: { battingOrder: "NA", handednessBat: "S", handednessThrow: "R", isProbablePitcher: false }, stats: [{ source: "FanDuel", seasonAveragePoints: 13.371186854475635 }] });
+            specUtils.assertContainsPlayer(contest.games[8].homeTeam.players, { name: "Brandon Lowe", team: "TAM", position: "2B", salary: 3400, isStarter: false, mlbSpecific: { battingOrder: "NA", handednessBat: "L", handednessThrow: "R", isProbablePitcher: false }, stats: [{ source: "FanDuel", seasonAveragePoints: 11.164473684210526 }] });
         });
     });
 });
