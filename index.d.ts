@@ -46,17 +46,22 @@ declare module 'mcubed-lineup-insight-data/interfaces' {
         playerInsight: (contest: ContestType, sport: Sport) => Promise<IPlayer[]>;
     }
     export interface IPlayer {
-        battingOrder?: string;
         ID?: string;
         injury?: IPlayerInjury;
-        isProbablePitcher?: boolean;
         isStarter?: boolean;
+        mlbSpecific?: IPlayerMLBSpecific;
         name: string;
         newsStatus?: NewsStatus;
         position?: string;
         salary: number;
         stats?: IPlayerStats[];
         team: string;
+    }
+    export interface IPlayerMLBSpecific {
+        battingOrder?: string;
+        handednessBat?: string;
+        handednessThrow?: string;
+        isProbablePitcher?: boolean;
     }
     export interface IPlayerInjury {
         display: string;

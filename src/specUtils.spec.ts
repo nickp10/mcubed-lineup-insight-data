@@ -1,4 +1,4 @@
-import { IContest, IGame, IPlayer, IPlayerCard, ITeam, ITeamInsight } from "./interfaces";
+import { IContest, IGame, IPlayer, IPlayerCard, IPlayerMLBSpecific, ITeam, ITeamInsight } from "./interfaces";
 import * as assert from "assert";
 
 export class SpecUtils {
@@ -111,10 +111,9 @@ export class SpecUtils {
     assertPlayerEquals(actualPlayer: IPlayer, expectedPlayer: IPlayer): void {
         assert.strictEqual(actualPlayer.team, expectedPlayer.team);
         assert.strictEqual(actualPlayer.salary, expectedPlayer.salary);
-        assert.strictEqual(actualPlayer.isProbablePitcher, expectedPlayer.isProbablePitcher);
         assert.strictEqual(actualPlayer.isStarter, expectedPlayer.isStarter);
-        assert.strictEqual(actualPlayer.battingOrder, expectedPlayer.battingOrder);
         assert.strictEqual(actualPlayer.position, expectedPlayer.position);
+        this.assertPlayerMLBSpecificEquals(actualPlayer.mlbSpecific, expectedPlayer.mlbSpecific);
         if (expectedPlayer.stats) {
             assert.strictEqual(actualPlayer.stats.length, expectedPlayer.stats.length);
             for (let i = 0; i < actualPlayer.stats.length; i++) {
@@ -131,7 +130,25 @@ export class SpecUtils {
             assert.strictEqual(actualPlayer.stats, undefined);
         }
     }
-    
+
+    /**
+     * Asserts that the actual specific MLB player data matches the expected specific MLB player data.
+     * 
+     * @param actual The actual MLB player data to assert.
+     * @param expected The expected MLB player data to assert.
+     */
+    assertPlayerMLBSpecificEquals(actual: IPlayerMLBSpecific, expected: IPlayerMLBSpecific): void {
+        if (expected) {
+            assert.notStrictEqual(actual, undefined);
+            assert.strictEqual(actual.battingOrder, expected.battingOrder);
+            assert.strictEqual(actual.handednessBat, expected.handednessBat);
+            assert.strictEqual(actual.handednessThrow, expected.handednessThrow);
+            assert.strictEqual(actual.isProbablePitcher, expected.isProbablePitcher);
+        } else {
+            assert.strictEqual(actual, undefined);
+        }
+    }
+
     /**
      * Asserts that the actual player card matches the expected player card.
      * 

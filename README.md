@@ -59,17 +59,22 @@ An instance of this class is returned when requiring `mcubed-lineup-insight-data
 #### <a name="Player"></a>Player
 Instances of this class are returned from calling the `getPlayerInsight` function from the [InsightData](#InsightData) object or serialized to JSON when using the command line interface.
 
-* `battingOrder?: string` - Optionally specifies the batting order of the player for MLB contests.
 * `ID?: string` - Optionally specifies a unique identifier for the player.
 * `injury?: PlayerInjury` - Optionally specifies [Injury](#PlayerInjury) information for the player.
-* `isProbablePitcher?: boolean` - Optionally specifies if the player is expected to be the starting pitcher for an MLB game.
 * `isStarter?: boolean` - Optionally specifies if the player is in the starting lineup.
+* `mlbSpecific?: PlayerMLBSpecific` - Optionally specifies the [PlayerMLBSpecific](#PlayerMLBSpecific) identifying more information about the player. This data will only exists for players participating in MLB contests.
 * `name: string` - Specifies the name of the player (formatted as "First Last Suffix").
 * `newsStatus?: NewsStatus` - Optionally specifies the [NewsStatus](#NewsStatus) for the player.
 * `position?: string` - Optionally specifies the position the player plays.
 * `salary: number` - Specifies how much the player costs for the contest.
 * `stats?: PlayerStats[]` - Optionally specifies an array of [PlayerStats](#PlayerStats) associated with the player.
 * `team: string` - Specifies the team abbreviation the player plays for.
+
+#### <a name="PlayerMLBSpecific"></a>PlayerMLBSpecific
+Instances of this class are associated with a [Player](#Player). These will only be created if the player is participating in an MLB contest.
+
+* `battingOrder?: string` - Optionally specifies the batting order of the player for an MLB contest.
+* `isProbablePitcher?: boolean` - Optionally specifies if the player is expected to be the starting pitcher for an MLB contest.
 
 #### <a name="PlayerInjury"></a>PlayerInjury
 Instances of this class are associated with a [Player](#Player).

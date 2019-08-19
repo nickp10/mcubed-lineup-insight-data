@@ -18,10 +18,10 @@ describe("RGStarting", () => {
 
             // Assert
             assert.strictEqual(players.length, 2);
-            specUtils.assertContainsPlayer(players, { name: "Clayton Kershaw", team: "LOS", salary: -1, isStarter: true, battingOrder: "NA" });
-            specUtils.assertContainsPlayer(players, { name: "Jon Lester", team: "CHC", salary: -1, isStarter: true, battingOrder: "NA" });
-            //specUtils.assertContainsPlayer(players, { name: "Chase Utley", team: "LOS", salary: 0, isStarter: true, battingOrder: "1st" });
-            //specUtils.assertContainsPlayer(players, { name: "Anthony Rizzo", team: "CHC", salary: 0, isStarter: true, battingOrder: "3rd" });
+            specUtils.assertContainsPlayer(players, { name: "Clayton Kershaw", team: "LOS", salary: -1, isStarter: true, mlbSpecific: { battingOrder: "NA" } });
+            specUtils.assertContainsPlayer(players, { name: "Jon Lester", team: "CHC", salary: -1, isStarter: true, mlbSpecific: { battingOrder: "NA" } });
+            //specUtils.assertContainsPlayer(players, { name: "Chase Utley", team: "LOS", salary: 0, isStarter: true, mlbSpecific: { battingOrder: "1st" } });
+            //specUtils.assertContainsPlayer(players, { name: "Anthony Rizzo", team: "CHC", salary: 0, isStarter: true, mlbSpecific: { battingOrder: "3rd" } });
         });
 
         it("should parse the starting player information for an MLB FanDuel contest", () => {
@@ -35,10 +35,10 @@ describe("RGStarting", () => {
 
             // Assert
             assert.strictEqual(players.length, 2);
-            specUtils.assertContainsPlayer(players, { name: "Clayton Kershaw", team: "LOS", salary: -1, isStarter: true, battingOrder: "NA" });
-            specUtils.assertContainsPlayer(players, { name: "Jon Lester", team: "CHC", salary: -1, isStarter: true, battingOrder: "NA" });
-            //specUtils.assertContainsPlayer(players, { name: "Chase Utley", team: "LOS", salary: 0, isStarter: true, battingOrder: "1st" });
-            //specUtils.assertContainsPlayer(players, { name: "Anthony Rizzo", team: "CHC", salary: 0, isStarter: true, battingOrder: "3rd" });
+            specUtils.assertContainsPlayer(players, { name: "Clayton Kershaw", team: "LOS", salary: -1, isStarter: true, mlbSpecific: { battingOrder: "NA" } });
+            specUtils.assertContainsPlayer(players, { name: "Jon Lester", team: "CHC", salary: -1, isStarter: true, mlbSpecific: { battingOrder: "NA" } });
+            //specUtils.assertContainsPlayer(players, { name: "Chase Utley", team: "LOS", salary: 0, isStarter: true, mlbSpecific: { battingOrder: "1st" } });
+            //specUtils.assertContainsPlayer(players, { name: "Anthony Rizzo", team: "CHC", salary: 0, isStarter: true, mlbSpecific: { battingOrder: "3rd" } });
         });
 
         it("should parse the starting player information for an MLB Yahoo contest", () => {
@@ -52,10 +52,10 @@ describe("RGStarting", () => {
 
             // Assert
             assert.strictEqual(players.length, 2);
-            specUtils.assertContainsPlayer(players, { name: "Clayton Kershaw", team: "LOS", salary: -1, isStarter: true, battingOrder: "NA" });
-            specUtils.assertContainsPlayer(players, { name: "Jon Lester", team: "CHC", salary: -1, isStarter: true, battingOrder: "NA" });
-            //specUtils.assertContainsPlayer(players, { name: "Chase Utley", team: "LOS", salary: 0, isStarter: true, battingOrder: "1st" });
-            //specUtils.assertContainsPlayer(players, { name: "Anthony Rizzo", team: "CHC", salary: 0, isStarter: true, battingOrder: "3rd" });
+            specUtils.assertContainsPlayer(players, { name: "Clayton Kershaw", team: "LOS", salary: -1, isStarter: true, mlbSpecific: { battingOrder: "NA" } });
+            specUtils.assertContainsPlayer(players, { name: "Jon Lester", team: "CHC", salary: -1, isStarter: true, mlbSpecific: { battingOrder: "NA" } });
+            //specUtils.assertContainsPlayer(players, { name: "Chase Utley", team: "LOS", salary: 0, isStarter: true, mlbSpecific: { battingOrder: "1st" } });
+            //specUtils.assertContainsPlayer(players, { name: "Anthony Rizzo", team: "CHC", salary: 0, isStarter: true, mlbSpecific: { battingOrder: "3rd" } });
         });
 
         it("should parse the starting player information for an NBA DraftKings contest", () => {

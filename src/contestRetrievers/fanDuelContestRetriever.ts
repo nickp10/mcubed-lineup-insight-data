@@ -149,11 +149,15 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
                     const teamID = jsonPlayer["team"]["_members"][0];
                     const team = jsonData["teams"].find(t => t["id"] === teamID);
                     const player = playerFactory.createPlayer(name, team["code"], jsonPlayer["salary"]);
-                    player.battingOrder = this.parseBattingOrder(jsonPlayer["starting_order"]);
                     player.ID = this.parsePlayerID(jsonPlayer["id"]);
                     player.injury = this.parseInjuryStatus(jsonPlayer["injury_status"]);
-                    player.isProbablePitcher = jsonPlayer["probable_pitcher"];
-                    player.isStarter = fdContest.sport === Sport.NFL && utils.equalsIgnoreCase(jsonPlayer["position"], "D")
+                    player.isStarter = fdContest.sport === Sport.NFL && utils.equalsIgnoreCase(jsonPlayer["position"], "D");
+                    if (fdContest.sport === Sport.MLB) {
+                        player.mlbSpecific = {
+                            battingOrder: this.parseBattingOrder(jsonPlayer["starting_order"]),
+                            isProbablePitcher: jsonPlayer["probable_pitcher"]
+                        };
+                    }
                     player.newsStatus = this.parseNewsStatus(jsonPlayer);
                     player.position = jsonPlayer["position"];
                     player.stats = [

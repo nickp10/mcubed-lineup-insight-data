@@ -136,7 +136,12 @@ export default class RGStarting implements IPlayerInsightRetriever {
             const player = playerFactory.createPlayer(name, team, salary);
             if (sport === "mlb") {
                 const startingOrder = cheerio("span[class=order]", playerItem).html();
-                player.battingOrder = this.parseBattingOrder(startingOrder);
+                let mlbSpecific = player.mlbSpecific;
+                if (!mlbSpecific) {
+                    mlbSpecific = { };
+                    player.mlbSpecific = mlbSpecific;
+                }
+                mlbSpecific.battingOrder = this.parseBattingOrder(startingOrder);
             }
             player.isStarter = true;
             return player;
