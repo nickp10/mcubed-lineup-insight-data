@@ -41,6 +41,7 @@ export interface IPlayer {
     salary: number;
     stats?: IPlayerStats[];
     team: string;
+    thumbnailURL?: string;
 }
 
 export interface IPlayerMLBSpecific {

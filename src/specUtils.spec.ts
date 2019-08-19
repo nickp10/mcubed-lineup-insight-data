@@ -109,10 +109,13 @@ export class SpecUtils {
      * @param expectedPlayer The expected player to assert.
      */
     assertPlayerEquals(actualPlayer: IPlayer, expectedPlayer: IPlayer): void {
+        assert.strictEqual(actualPlayer.ID, expectedPlayer.ID);
+        assert.strictEqual(actualPlayer.name, expectedPlayer.name);
         assert.strictEqual(actualPlayer.team, expectedPlayer.team);
         assert.strictEqual(actualPlayer.salary, expectedPlayer.salary);
         assert.strictEqual(actualPlayer.isStarter, expectedPlayer.isStarter);
         assert.strictEqual(actualPlayer.position, expectedPlayer.position);
+        assert.strictEqual(actualPlayer.thumbnailURL, expectedPlayer.thumbnailURL);
         this.assertPlayerMLBSpecificEquals(actualPlayer.mlbSpecific, expectedPlayer.mlbSpecific);
         if (expectedPlayer.stats) {
             assert.strictEqual(actualPlayer.stats.length, expectedPlayer.stats.length);

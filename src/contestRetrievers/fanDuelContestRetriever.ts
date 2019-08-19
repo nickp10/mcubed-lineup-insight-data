@@ -168,6 +168,7 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
                             seasonAveragePoints: utils.coerceFloat(jsonPlayer["fppg"])
                         }
                     ];
+                    player.thumbnailURL = this.parseThumbnailURL(jsonPlayer)
                     players.push(player);
                 }
             }
@@ -200,6 +201,20 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
                     return "L";
                 } else if (handedness.toUpperCase() === "SWITCH") {
                     return "S";
+                }
+            }
+        }
+        return undefined;
+    }
+
+    private parseThumbnailURL(jsonPlayer: any): string {
+        const images = jsonPlayer["images"];
+        if (images) {
+            const defaultImage = images["default"];
+            if (defaultImage) {
+                const url = defaultImage["url"];
+                if (url) {
+                    return url;
                 }
             }
         }

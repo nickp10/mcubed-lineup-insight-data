@@ -69,6 +69,7 @@ Instances of this class are returned from calling the `getPlayerInsight` functio
 * `salary: number` - Specifies how much the player costs for the contest.
 * `stats?: PlayerStats[]` - Optionally specifies an array of [PlayerStats](#PlayerStats) associated with the player.
 * `team: string` - Specifies the team abbreviation the player plays for.
+* `thumbnailURL?: string` - Optionally specifies a URL to a thumbnail image of the player.
 
 #### <a name="PlayerMLBSpecific"></a>PlayerMLBSpecific
 Instances of this class are associated with a [Player](#Player). These will only be created if the player is participating in an MLB contest.

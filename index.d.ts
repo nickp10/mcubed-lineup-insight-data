@@ -56,6 +56,7 @@ declare module 'mcubed-lineup-insight-data/interfaces' {
         salary: number;
         stats?: IPlayerStats[];
         team: string;
+        thumbnailURL?: string;
     }
     export interface IPlayerMLBSpecific {
         battingOrder?: string;
