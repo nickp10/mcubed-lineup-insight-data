@@ -156,9 +156,9 @@ Instances of this class are returned from calling the `getTeamInsight` function 
 * `pointsAllowedPerPosition?: PositionPoints[]` - Optionally specifies an array of [PositionPoints](#PositionPoints) representing the fantasy points allowed to a particular position.
 
 #### <a name="PositionPoints"></a>PositionPoints
-Instances of this class are associated with a [TeamInsight](#TeamInsight) and represents the number of fantasy points allowed to the opposing position. For MLB, instead of basing it on the opposing position, it is based on the opposing hitters' handedness. Therefore, the position would be one of `R` (right handers), `L` (left handers), or `S` (switch hitters).
+Instances of this class are associated with a [TeamInsight](#TeamInsight) and represents the number of fantasy points allowed to the opposing position. For MLB, instead of basing it on the opposing position, it is based on the opposing handedness. For points allowed to opposing hitters, the position would be one of `BAT-R` (right handers), `BAT-L` (left handers), or `BAT-S` (switch hitters). For points allowed to opposing pitchers, the position would be one of `PITCH-R` (right handers) or `PITCH-L` (left handers).
 
-* `position: string` - Specifies the position the points were allowed to (e.g., "QB", "RB", "PG", "SF"). For MLB, specifies the handedness of the hitters the points were allowed to (e.g., "R", "L", "S").
+* `position: string` - Specifies the position the points were allowed to (e.g., "QB", "RB", "PG", "SF"). For MLB, specifies the handedness the points were allowed to (e.g., "BAT-R", "BAT-L", "BAT-S", "PITCH-R", "PITCH-L").
 * `points: number` - Specifies the number of fantasy points allowed to the position.
 * `source: string` - Specifies the source of which the data came from.
 

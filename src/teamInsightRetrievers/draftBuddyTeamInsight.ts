@@ -51,9 +51,11 @@ export default class DraftBuddyTeamInsight implements ITeamInsightRetriever {
         switch (sport) {
             case Sport.MLB:
                 return [
-                    { position: "R", query: "Pos=H&Side=R" },
-                    { position: "L", query: "Pos=H&Side=L" },
-                    { position: "S", query: "Pos=H&Side=S" }
+                    { position: "BAT-R", query: "Pos=H&Side=R" },
+                    { position: "BAT-L", query: "Pos=H&Side=L" },
+                    { position: "BAT-S", query: "Pos=H&Side=S" },
+                    { position: "PITCH-R", query: "Pos=P&Side=R" },
+                    { position: "PITCH-L", query: "Pos=P&Side=L" }
                 ];
             case Sport.NFL:
                 return [

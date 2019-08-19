@@ -12,7 +12,7 @@ describe("DraftBuddyTeamInsight", () => {
             const data = fs.readFileSync("spec-content/draftBuddyMLBDraftKings.html", "utf-8");
             const playerFactory = new PlayerFactory(Sport.MLB);
             const teamInsight = new Map<string, ITeamInsight>();
-            const position = "R";
+            const position = "BAT-R";
 
             // Act
             target.parseTeamInsight(teamInsight, position, playerFactory, data);
