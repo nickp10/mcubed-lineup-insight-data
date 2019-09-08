@@ -34,13 +34,13 @@
     "set-cookie-parser": "^2.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
     "@types/argv": "0.0.4",
     "@types/cheerio": "^0.22.13",
     "@types/latinize": "^0.2.15",
     "@types/mocha": "^5.2.7",
-    "@types/node": "^12.7.2",
+    "@types/node": "^12.7.4",
     "@types/set-cookie-parser": "0.0.5",
     "babel-loader": "^8.0.6",
     "dts-bundle-webpack": "^1.0.2",
@@ -48,9 +48,9 @@
     "source-map-support": "^0.5.13",
     "ts-loader": "^6.0.4",
     "ts-node": "^8.3.0",
-    "typescript": "^3.5.3",
-    "webpack": "^4.39.2",
-    "webpack-cli": "^3.3.7",
-    "webpack-merge": "^4.2.1"
+    "typescript": "^3.6.2",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.8",
+    "webpack-merge": "^4.2.2"
   }
 }
