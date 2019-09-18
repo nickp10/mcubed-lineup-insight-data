@@ -38,6 +38,7 @@ export interface IPlayer {
     name: string;
     newsStatus?: NewsStatus;
     position?: string;
+    positionEligibility?: string[];
     salary: number;
     stats?: IPlayerStats[];
     team: string;
@@ -87,6 +88,7 @@ export interface IContest {
 export interface IContestPosition {
     eligiblePlayerPositions: string[];
     label: string;
+    tier?: string;
 }
 
 export interface IGame {

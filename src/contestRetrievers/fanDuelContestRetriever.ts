@@ -106,7 +106,8 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
                         fdContest.positions = rosterPositions.map<IContestPosition>(p => {
                             return {
                                 eligiblePlayerPositions: p["valid_player_positions"],
-                                label: p["full"]
+                                label: p["full"],
+                                tier: p["tier"] || undefined
                             };
                         });
                     }
@@ -162,6 +163,7 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
                     }
                     player.newsStatus = this.parseNewsStatus(jsonPlayer);
                     player.position = jsonPlayer["position"];
+                    player.positionEligibility = this.parsePositionEligibility(fdContest.positions, player.position, jsonPlayer["tier"]);
                     player.stats = [
                         {
                             source: "FanDuel",
@@ -174,6 +176,19 @@ export default class FanDuelContestRetriever implements IContestListRetriever {
             }
         }
         this.attachPlayersToTeams(fdContest, players);
+    }
+
+    private parsePositionEligibility(contestPositions: IContestPosition[], position: string, tier: string): string[] {
+        if (Array.isArray(contestPositions) && position) {
+            const eligiblePositions: string[] = [];
+            for (const contestPosition of contestPositions) {
+                if (contestPosition.eligiblePlayerPositions.indexOf(position) >= 0 && (!tier || !contestPosition.tier || contestPosition.tier === tier)) {
+                    eligiblePositions.push(contestPosition.label);
+                }
+            }
+            return eligiblePositions;
+        }
+        return undefined;
     }
 
     private parseBattingOrder(battingOrder: string): string {

@@ -1,0 +1,1270 @@
+
+{
+   "_meta":
+   {
+      "_primary_document": "fixture_lists",
+      "fixture_lists":
+      {
+         "count": 1
+      }
+   },
+   "fixture_lists": [
+      {
+         "id": "38553",
+         "_url": "https://api.fanduel.com/fixture-lists/38553",
+         "sport": "NFL",
+         "game_description_name": "Gemini Man",
+         "game_description":
+         {
+            "_members": ["5041"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 0,
+         "start_date": "2019-09-22T17:00:00Z",
+         "label": "Gemini Man",
+         "late_swap": true,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 14,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38553/players"
+         },
+         "selection_priority": 100,
+         "fixtures":
+         {
+            "_members": ["156418", "155424", "155140", "155077", "156075", "155209", "155305", "156334", "155058", "155699", "156151", "156215", "155476", "154974"],
+            "_ref": "fixtures.id"
+         },
+         "roster_positions": [
+            {
+               "id": "5231",
+               "order": 0,
+               "abbr": "Sr QB",
+               "full": "Sr QB",
+               "valid_player_positions": ["QB"],
+               "tier": "T1"
+            },
+            {
+               "id": "5232",
+               "order": 1,
+               "abbr": "Jr QB",
+               "full": "Jr QB",
+               "valid_player_positions": ["QB"],
+               "tier": "T2"
+            },
+            {
+               "id": "5233",
+               "order": 2,
+               "abbr": "Sr RB",
+               "full": "Sr RB",
+               "valid_player_positions": ["RB"],
+               "tier": "T3"
+            },
+            {
+               "id": "5234",
+               "order": 3,
+               "abbr": "Jr RB",
+               "full": "Jr RB",
+               "valid_player_positions": ["RB"],
+               "tier": "T4"
+            },
+            {
+               "id": "5235",
+               "order": 4,
+               "abbr": "Sr WR",
+               "full": "Sr WR",
+               "valid_player_positions": ["TE", "WR"],
+               "tier": "T5"
+            },
+            {
+               "id": "5236",
+               "order": 5,
+               "abbr": "Jr WR",
+               "full": "Jr WR",
+               "valid_player_positions": ["TE", "WR"],
+               "tier": "T6"
+            }
+         ],
+         "scoring_rules":
+         {
+            "notes": ["For purposes of defensive scoring, points allowed are calculated as: 6 * (Rushing TD + Receiving TD + Own fumbles recovered for TD ) + 2 * (Two point conversions) + Extra points + 3 *(Field Goals)"],
+            "groups": [
+               {
+                  "name": "All",
+                  "rules": [
+                     {
+                        "abbr": "2PC/P",
+                        "full": "Two-point Conversion Passes",
+                        "points": 2
+                     },
+                     {
+                        "abbr": "2PC/S",
+                        "full": "Two-point Conversions Scored",
+                        "points": 2
+                     },
+                     {
+                        "abbr": "FGo50",
+                        "full": "50+ Yards",
+                        "points": 5
+                     },
+                     {
+                        "abbr": "FGu20",
+                        "full": "0-19 Yards",
+                        "points": 3
+                     },
+                     {
+                        "abbr": "FGu30",
+                        "full": "20-29 Yards",
+                        "points": 3
+                     },
+                     {
+                        "abbr": "FGu40",
+                        "full": "30-39 Yards",
+                        "points": 3
+                     },
+                     {
+                        "abbr": "FGu50",
+                        "full": "40-49 Yards",
+                        "points": 4
+                     },
+                     {
+                        "abbr": "FU/L",
+                        "full": "Fumbles Lost",
+                        "points": -2
+                     },
+                     {
+                        "abbr": "FU/TD",
+                        "full": "Own Fumbles Recovered TDs",
+                        "points": 6
+                     },
+                     {
+                        "abbr": "I",
+                        "full": "Interceptions",
+                        "points": -1
+                     },
+                     {
+                        "abbr": "KR/TD",
+                        "full": "Kickoff Return TDs",
+                        "points": 6
+                     },
+                     {
+                        "abbr": "PR/TD",
+                        "full": "Punt Return TDs",
+                        "points": 6
+                     },
+                     {
+                        "abbr": "PaTD",
+                        "full": "Passing TDs",
+                        "points": 4
+                     },
+                     {
+                        "abbr": "PaY",
+                        "full": "Passing Yards",
+                        "points": 0.04
+                     },
+                     {
+                        "abbr": "Re",
+                        "full": "Receptions",
+                        "points": 0.5
+                     },
+                     {
+                        "abbr": "ReTD",
+                        "full": "Receiving TDs",
+                        "points": 6
+                     },
+                     {
+                        "abbr": "ReY",
+                        "full": "Receiving Yards",
+                        "points": 0.1
+                     },
+                     {
+                        "abbr": "RuTD",
+                        "full": "Rushing TDs",
+                        "points": 6
+                     },
+                     {
+                        "abbr": "RuY",
+                        "full": "Rushing Yards",
+                        "points": 0.1
+                     },
+                     {
+                        "abbr": "XP",
+                        "full": "Extra-point Conversions",
+                        "points": 1
+                     }
+                  ]
+               }
+            ]
+         },
+         "h2h_buyins": [
+            {
+               "entry_fee": 0,
+               "prize": 0,
+               "entry_fee_fdp": 0
+            },
+            {
+               "entry_fee": 1,
+               "prize": 1.8,
+               "entry_fee_fdp": 2400
+            },
+            {
+               "entry_fee": 2,
+               "prize": 3.6,
+               "entry_fee_fdp": 4800
+            },
+            {
+               "entry_fee": 5,
+               "prize": 9,
+               "entry_fee_fdp": 12000
+            },
+            {
+               "entry_fee": 10,
+               "prize": 18,
+               "entry_fee_fdp": 24000
+            },
+            {
+               "entry_fee": 25,
+               "prize": 45,
+               "entry_fee_fdp": 60000
+            },
+            {
+               "entry_fee": 50,
+               "prize": 90,
+               "entry_fee_fdp": 120000
+            },
+            {
+               "entry_fee": 109,
+               "prize": 200,
+               "entry_fee_fdp": 261600
+            },
+            {
+               "entry_fee": 270,
+               "prize": 500,
+               "entry_fee_fdp": 648000
+            },
+            {
+               "entry_fee": 530,
+               "prize": 1000,
+               "entry_fee_fdp": 1272000
+            },
+            {
+               "entry_fee": 1060,
+               "prize": 2000,
+               "entry_fee_fdp": 2544000
+            },
+            {
+               "entry_fee": 5300,
+               "prize": 10000,
+               "entry_fee_fdp": 12720000
+            },
+            {
+               "entry_fee": 10600,
+               "prize": 20000,
+               "entry_fee_fdp": 25440000
+            }
+         ],
+         "contest_specs": [
+            {
+               "id": "LEAGUE",
+               "contest_type": "LEAGUE",
+               "entry_fees": [
+                  {
+                     "entry_fee": 0,
+                     "entry_fee_fdp": 0
+                  },
+                  {
+                     "entry_fee": 1,
+                     "entry_fee_fdp": 2400
+                  },
+                  {
+                     "entry_fee": 2,
+                     "entry_fee_fdp": 4800
+                  },
+                  {
+                     "entry_fee": 5,
+                     "entry_fee_fdp": 12000
+                  },
+                  {
+                     "entry_fee": 10,
+                     "entry_fee_fdp": 24000
+                  },
+                  {
+                     "entry_fee": 25,
+                     "entry_fee_fdp": 60000
+                  },
+                  {
+                     "entry_fee": 50,
+                     "entry_fee_fdp": 120000
+                  },
+                  {
+                     "entry_fee": 100,
+                     "entry_fee_fdp": 240000
+                  }
+               ],
+               "min_size": 3,
+               "max_size": 20,
+               "prize_structures": [
+                  {
+                     "name": "free",
+                     "description": "Bragging rights",
+                     "entry_fees": [0]
+                  },
+                  {
+                     "name": "winner",
+                     "description": "Winner takes all",
+                     "entry_fees": [1, 2, 5, 10, 25, 50, 100]
+                  },
+                  {
+                     "name": "top3",
+                     "description": "Top 3 get prizes",
+                     "entry_fees": [1, 2, 5, 10, 25, 50, 100]
+                  },
+                  {
+                     "name": "top3rd",
+                     "description": "Top third get prizes",
+                     "entry_fees": [1, 2, 5, 10, 25, 50, 100]
+                  }
+               ]
+            }
+         ],
+         "player_positions": [
+            {
+               "abbr": "QB",
+               "full": "Quarterback"
+            },
+            {
+               "abbr": "RB",
+               "full": "Running Back"
+            },
+            {
+               "abbr": "TE",
+               "full": "Tight End"
+            },
+            {
+               "abbr": "WR",
+               "full": "Wide Receiver"
+            }
+         ],
+         "roster_restrictions":
+         {
+            "min_players": 6,
+            "max_players": 6,
+            "max_players_from_team": 2147483647,
+            "min_fixtures": 1,
+            "min_teams": 0,
+            "player_position_restrictions": []
+         },
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38553&status=open"
+            }
+         }
+      }
+   ],
+   "fixtures": [
+      {
+         "id": "156418",
+         "start_date": "2019-09-22T20:25:00Z",
+         "sport": "NFL",
+         "type": "REGULAR_SEASON",
+         "home_team":
+         {
+            "team":
+            {
+               "_members": ["31"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "away_team":
+         {
+            "team":
+            {
+               "_members": ["28"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "weather": null,
+         "status":
+         {
+            "started": false,
+            "final": false,
+            "label": "PENDING",
+            "total_periods": 4,
+            "period_labels":
+            {
+               "singular": "quarter",
+               "plural": "quarters"
+            }
+         },
+         "name": null,
+         "target_periods": null,
+         "home_player": null,
+         "away_player": null
+      },
+      {
+         "id": "155424",
+         "start_date": "2019-09-22T20:25:00Z",
+         "sport": "NFL",
+         "type": "REGULAR_SEASON",
+         "home_team":
+         {
+            "team":
+            {
+               "_members": ["14"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "away_team":
+         {
+            "team":
+            {
+               "_members": ["11"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "weather": null,
+         "status":
+         {
+            "started": false,
+            "final": false,
+            "label": "PENDING",
+            "total_periods": 4,
+            "period_labels":
+            {
+               "singular": "quarter",
+               "plural": "quarters"
+            }
+         },
+         "name": null,
+         "target_periods": null,
+         "home_player": null,
+         "away_player": null
+      },
+      {
+         "id": "155140",
+         "start_date": "2019-09-22T17:00:00Z",
+         "sport": "NFL",
+         "type": "REGULAR_SEASON",
+         "home_team":
+         {
+            "team":
+            {
+               "_members": ["21"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "away_team":
+         {
+            "team":
+            {
+               "_members": ["15"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "weather": null,
+         "status":
+         {
+            "started": false,
+            "final": false,
+            "label": "PENDING",
+            "total_periods": 4,
+            "period_labels":
+            {
+               "singular": "quarter",
+               "plural": "quarters"
+            }
+         },
+         "name": null,
+         "target_periods": null,
+         "home_player": null,
+         "away_player": null
+      },
+      {
+         "id": "155077",
+         "start_date": "2019-09-22T20:05:00Z",
+         "sport": "NFL",
+         "type": "REGULAR_SEASON",
+         "home_team":
+         {
+            "team":
+            {
+               "_members": ["29"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "away_team":
+         {
+            "team":
+            {
+               "_members": ["25"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "weather": null,
+         "status":
+         {
+            "started": false,
+            "final": false,
+            "label": "PENDING",
+            "total_periods": 4,
+            "period_labels":
+            {
+               "singular": "quarter",
+               "plural": "quarters"
+            }
+         },
+         "name": null,
+         "target_periods": null,
+         "home_player": null,
+         "away_player": null
+      },
+      {
+         "id": "156075",
+         "start_date": "2019-09-23T00:20:00Z",
+         "sport": "NFL",
+         "type": "REGULAR_SEASON",
+         "home_team":
+         {
+            "team":
+            {
+               "_members": ["7"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "away_team":
+         {
+            "team":
+            {
+               "_members": ["32"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "weather": null,
+         "status":
+         {
+            "started": false,
+            "final": false,
+            "label": "PENDING",
+            "total_periods": 4,
+            "period_labels":
+            {
+               "singular": "quarter",
+               "plural": "quarters"
+            }
+         },
+         "name": null,
+         "target_periods": null,
+         "home_player": null,
+         "away_player": null
+      },
+      {
+         "id": "155209",
+         "start_date": "2019-09-22T20:05:00Z",
+         "sport": "NFL",
+         "type": "REGULAR_SEASON",
+         "home_team":
+         {
+            "team":
+            {
+               "_members": ["26"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "away_team":
+         {
+            "team":
+            {
+               "_members": ["17"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "weather": null,
+         "status":
+         {
+            "started": false,
+            "final": false,
+            "label": "PENDING",
+            "total_periods": 4,
+            "period_labels":
+            {
+               "singular": "quarter",
+               "plural": "quarters"
+            }
+         },
+         "name": null,
+         "target_periods": null,
+         "home_player": null,
+         "away_player": null
+      },
+      {
+         "id": "155305",
+         "start_date": "2019-09-22T17:00:00Z",
+         "sport": "NFL",
+         "type": "REGULAR_SEASON",
+         "home_team":
+         {
+            "team":
+            {
+               "_members": ["10"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "away_team":
+         {
+            "team":
+            {
+               "_members": ["27"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "weather": null,
+         "status":
+         {
+            "started": false,
+            "final": false,
+            "label": "PENDING",
+            "total_periods": 4,
+            "period_labels":
+            {
+               "singular": "quarter",
+               "plural": "quarters"
+            }
+         },
+         "name": null,
+         "target_periods": null,
+         "home_player": null,
+         "away_player": null
+      },
+      {
+         "id": "156334",
+         "start_date": "2019-09-22T17:00:00Z",
+         "sport": "NFL",
+         "type": "REGULAR_SEASON",
+         "home_team":
+         {
+            "team":
+            {
+               "_members": ["19"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "away_team":
+         {
+            "team":
+            {
+               "_members": ["24"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "weather": null,
+         "status":
+         {
+            "started": false,
+            "final": false,
+            "label": "PENDING",
+            "total_periods": 4,
+            "period_labels":
+            {
+               "singular": "quarter",
+               "plural": "quarters"
+            }
+         },
+         "name": null,
+         "target_periods": null,
+         "home_player": null,
+         "away_player": null
+      },
+      {
+         "id": "155058",
+         "start_date": "2019-09-22T17:00:00Z",
+         "sport": "NFL",
+         "type": "REGULAR_SEASON",
+         "home_team":
+         {
+            "team":
+            {
+               "_members": ["23"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "away_team":
+         {
+            "team":
+            {
+               "_members": ["13"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "weather": null,
+         "status":
+         {
+            "started": false,
+            "final": false,
+            "label": "PENDING",
+            "total_periods": 4,
+            "period_labels":
+            {
+               "singular": "quarter",
+               "plural": "quarters"
+            }
+         },
+         "name": null,
+         "target_periods": null,
+         "home_player": null,
+         "away_player": null
+      },
+      {
+         "id": "155699",
+         "start_date": "2019-09-22T17:00:00Z",
+         "sport": "NFL",
+         "type": "REGULAR_SEASON",
+         "home_team":
+         {
+            "team":
+            {
+               "_members": ["3"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "away_team":
+         {
+            "team":
+            {
+               "_members": ["1"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "weather": null,
+         "status":
+         {
+            "started": false,
+            "final": false,
+            "label": "PENDING",
+            "total_periods": 4,
+            "period_labels":
+            {
+               "singular": "quarter",
+               "plural": "quarters"
+            }
+         },
+         "name": null,
+         "target_periods": null,
+         "home_player": null,
+         "away_player": null
+      },
+      {
+         "id": "156151",
+         "start_date": "2019-09-22T20:25:00Z",
+         "sport": "NFL",
+         "type": "REGULAR_SEASON",
+         "home_team":
+         {
+            "team":
+            {
+               "_members": ["30"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "away_team":
+         {
+            "team":
+            {
+               "_members": ["5"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "weather": null,
+         "status":
+         {
+            "started": false,
+            "final": false,
+            "label": "PENDING",
+            "total_periods": 4,
+            "period_labels":
+            {
+               "singular": "quarter",
+               "plural": "quarters"
+            }
+         },
+         "name": null,
+         "target_periods": null,
+         "home_player": null,
+         "away_player": null
+      },
+      {
+         "id": "156215",
+         "start_date": "2019-09-22T17:00:00Z",
+         "sport": "NFL",
+         "type": "REGULAR_SEASON",
+         "home_team":
+         {
+            "team":
+            {
+               "_members": ["16"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "away_team":
+         {
+            "team":
+            {
+               "_members": ["6"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "weather": null,
+         "status":
+         {
+            "started": false,
+            "final": false,
+            "label": "PENDING",
+            "total_periods": 4,
+            "period_labels":
+            {
+               "singular": "quarter",
+               "plural": "quarters"
+            }
+         },
+         "name": null,
+         "target_periods": null,
+         "home_player": null,
+         "away_player": null
+      },
+      {
+         "id": "155476",
+         "start_date": "2019-09-22T17:00:00Z",
+         "sport": "NFL",
+         "type": "REGULAR_SEASON",
+         "home_team":
+         {
+            "team":
+            {
+               "_members": ["18"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "away_team":
+         {
+            "team":
+            {
+               "_members": ["2"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "weather": null,
+         "status":
+         {
+            "started": false,
+            "final": false,
+            "label": "PENDING",
+            "total_periods": 4,
+            "period_labels":
+            {
+               "singular": "quarter",
+               "plural": "quarters"
+            }
+         },
+         "name": null,
+         "target_periods": null,
+         "home_player": null,
+         "away_player": null
+      },
+      {
+         "id": "154974",
+         "start_date": "2019-09-22T17:00:00Z",
+         "sport": "NFL",
+         "type": "REGULAR_SEASON",
+         "home_team":
+         {
+            "team":
+            {
+               "_members": ["4"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "away_team":
+         {
+            "team":
+            {
+               "_members": ["8"],
+               "_ref": "teams.id"
+            },
+            "score": null,
+            "sport_specific": {}
+         },
+         "weather": null,
+         "status":
+         {
+            "started": false,
+            "final": false,
+            "label": "PENDING",
+            "total_periods": 4,
+            "period_labels":
+            {
+               "singular": "quarter",
+               "plural": "quarters"
+            }
+         },
+         "name": null,
+         "target_periods": null,
+         "home_player": null,
+         "away_player": null
+      }
+   ],
+   "teams": [
+      {
+         "id": "1",
+         "code": "NYJ",
+         "city": "New York",
+         "name": "Jets",
+         "full_name": "New York Jets",
+         "colors": ["#0F5C3E", "#FFFFFF"]
+      },
+      {
+         "id": "2",
+         "code": "MIA",
+         "city": "Miami",
+         "name": "Dolphins",
+         "full_name": "Miami Dolphins",
+         "colors": ["#008E97", "#F58220"]
+      },
+      {
+         "id": "3",
+         "code": "NE",
+         "city": "New England",
+         "name": "Patriots",
+         "full_name": "New England Patriots",
+         "colors": ["#0B234E", "#D40015"]
+      },
+      {
+         "id": "4",
+         "code": "BUF",
+         "city": "Buffalo",
+         "name": "Bills",
+         "full_name": "Buffalo Bills",
+         "colors": ["#113B77", "#C60C30"]
+      },
+      {
+         "id": "5",
+         "code": "PIT",
+         "city": "Pittsburgh",
+         "name": "Steelers",
+         "full_name": "Pittsburgh Steelers",
+         "colors": ["#232323", "#FFB612"]
+      },
+      {
+         "id": "6",
+         "code": "BAL",
+         "city": "Baltimore",
+         "name": "Ravens",
+         "full_name": "Baltimore Ravens",
+         "colors": ["#42387F", "#9E7C0C"]
+      },
+      {
+         "id": "7",
+         "code": "CLE",
+         "city": "Cleveland",
+         "name": "Browns",
+         "full_name": "Cleveland Browns",
+         "colors": ["#301D02", "#F23F12"]
+      },
+      {
+         "id": "8",
+         "code": "CIN",
+         "city": "Cincinnati",
+         "name": "Bengals",
+         "full_name": "Cincinnati Bengals",
+         "colors": ["#262626", "#F34D10"]
+      },
+      {
+         "id": "10",
+         "code": "IND",
+         "city": "Indianapolis",
+         "name": "Colts",
+         "full_name": "Indianapolis Colts",
+         "colors": ["#003B7B", "#E5E8EA"]
+      },
+      {
+         "id": "11",
+         "code": "HOU",
+         "city": "Houston",
+         "name": "Texans",
+         "full_name": "Houston Texans",
+         "colors": ["#00123F", "#B80014"]
+      },
+      {
+         "id": "13",
+         "code": "DEN",
+         "city": "Denver",
+         "name": "Broncos",
+         "full_name": "Denver Broncos",
+         "colors": ["#00265A", "#F56A0B"]
+      },
+      {
+         "id": "14",
+         "code": "LAC",
+         "city": "Los Angeles",
+         "name": "Chargers",
+         "full_name": "Los Angeles Chargers",
+         "colors": ["#00275D", "#FFC20F"]
+      },
+      {
+         "id": "15",
+         "code": "OAK",
+         "city": "Oakland",
+         "name": "Raiders",
+         "full_name": "Oakland Raiders",
+         "colors": ["#232323", "#AAAAAA"]
+      },
+      {
+         "id": "16",
+         "code": "KC",
+         "city": "Kansas City",
+         "name": "Chiefs",
+         "full_name": "Kansas City Chiefs",
+         "colors": ["#CD2727", "#FFB612"]
+      },
+      {
+         "id": "17",
+         "code": "NYG",
+         "city": "New York",
+         "name": "Giants",
+         "full_name": "New York Giants",
+         "colors": ["#1D3371", "#CD000E"]
+      },
+      {
+         "id": "18",
+         "code": "DAL",
+         "city": "Dallas",
+         "name": "Cowboys",
+         "full_name": "Dallas Cowboys",
+         "colors": ["#132850", "#ACC0C6"]
+      },
+      {
+         "id": "19",
+         "code": "PHI",
+         "city": "Philadelphia",
+         "name": "Eagles",
+         "full_name": "Philadelphia Eagles",
+         "colors": ["#004953", "#BBC4C9"]
+      },
+      {
+         "id": "21",
+         "code": "MIN",
+         "city": "Minnesota",
+         "name": "Vikings",
+         "full_name": "Minnesota Vikings",
+         "colors": ["#3E2966", "#FFC62F"]
+      },
+      {
+         "id": "23",
+         "code": "GB",
+         "city": "Green Bay",
+         "name": "Packers",
+         "full_name": "Green Bay Packers",
+         "colors": ["#234828", "#FFC400"]
+      },
+      {
+         "id": "24",
+         "code": "DET",
+         "city": "Detroit",
+         "name": "Lions",
+         "full_name": "Detroit Lions",
+         "colors": ["#0060AB", "#B0B7BC"]
+      },
+      {
+         "id": "25",
+         "code": "CAR",
+         "city": "Carolina",
+         "name": "Panthers",
+         "full_name": "Carolina Panthers",
+         "colors": ["#0085CA", "#BFC0BF"]
+      },
+      {
+         "id": "26",
+         "code": "TB",
+         "city": "Tampa Bay",
+         "name": "Buccaneers",
+         "full_name": "Tampa Bay Buccaneers",
+         "colors": ["#6B6258", "#D80100"]
+      },
+      {
+         "id": "27",
+         "code": "ATL",
+         "city": "Atlanta",
+         "name": "Falcons",
+         "full_name": "Atlanta Falcons",
+         "colors": ["#A71930", "#A5ACAF"]
+      },
+      {
+         "id": "28",
+         "code": "NO",
+         "city": "New Orleans",
+         "name": "Saints",
+         "full_name": "New Orleans Saints",
+         "colors": ["#9F8958", "#FFFFFF"]
+      },
+      {
+         "id": "29",
+         "code": "ARI",
+         "city": "Arizona",
+         "name": "Cardinals",
+         "full_name": "Arizona Cardinals",
+         "colors": ["#99213E", "#FFB612"]
+      },
+      {
+         "id": "30",
+         "code": "SF",
+         "city": "San Francisco",
+         "name": "49ers",
+         "full_name": "San Francisco 49ers",
+         "colors": ["#B00718", "#D7B76D"]
+      },
+      {
+         "id": "31",
+         "code": "SEA",
+         "city": "Seattle",
+         "name": "Seahawks",
+         "full_name": "Seattle Seahawks",
+         "colors": ["#002244", "#52C600"]
+      },
+      {
+         "id": "32",
+         "code": "LAR",
+         "city": "Los Angeles",
+         "name": "Rams",
+         "full_name": "Los Angeles Rams",
+         "colors": ["#00265A", "#BC9741"]
+      }
+   ],
+   "game_descriptions": [
+      {
+         "id": "5041",
+         "name": "Gemini Man",
+         "short_description": "Choose six players tiered by youth and experience",
+         "long_description": null,
+         "image_url": null,
+         "display_priority": 50,
+         "roster_format": [
+            {
+               "id": "5231",
+               "name": "Sr QB",
+               "player_positions": ["QB"],
+               "order": 0,
+               "tier": "T1"
+            },
+            {
+               "id": "5232",
+               "name": "Jr QB",
+               "player_positions": ["QB"],
+               "order": 1,
+               "tier": "T2"
+            },
+            {
+               "id": "5233",
+               "name": "Sr RB",
+               "player_positions": ["RB"],
+               "order": 2,
+               "tier": "T3"
+            },
+            {
+               "id": "5234",
+               "name": "Jr RB",
+               "player_positions": ["RB"],
+               "order": 3,
+               "tier": "T4"
+            },
+            {
+               "id": "5235",
+               "name": "Sr WR",
+               "player_positions": ["WR", "TE"],
+               "order": 4,
+               "tier": "T5"
+            },
+            {
+               "id": "5236",
+               "name": "Jr WR",
+               "player_positions": ["WR", "TE"],
+               "order": 5,
+               "tier": "T6"
+            }
+         ],
+         "tag": null,
+         "only_score_top": null,
+         "roster_restrictions":
+         {
+            "min_players": 6,
+            "max_players": 6,
+            "max_players_from_team": 2147483647,
+            "min_fixtures": 1,
+            "min_teams": 0,
+            "player_position_restrictions": []
+         }
+      }
+   ]
+}

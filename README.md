@@ -66,6 +66,7 @@ Instances of this class are returned from calling the `getPlayerInsight` functio
 * `name: string` - Specifies the name of the player (formatted as "First Last Suffix").
 * `newsStatus?: NewsStatus` - Optionally specifies the [NewsStatus](#NewsStatus) for the player.
 * `position?: string` - Optionally specifies the position the player plays.
+* `positionEligibility?: string[]` - Optionally specifies an array of positions the player is eligible for within a given contest. For instance, a RB may be eligible for the "RB" and the "RB/WR/TE" positions. This eligibility will be more reliable than the `eligiblePlayerPositions` from a [Contest's](#Contest) [ContestPosition](#ContestPosition). This occurs when DFS sites run unordinary contests such as tier-based RB positions where there is a RB Tier 1 and a RB Tier 2 position available. For both of these positions, the [ContestPosition](#ContestPosition) will return "RB" as an `eligiblePlayerPosition`. However, a player is likely only truly eligible for one of the two tiers. If a RB is only available for the RB Tier 1 position, this `positionEligibility` array will only contain "RB Tier 1".
 * `salary: number` - Specifies how much the player costs for the contest.
 * `stats?: PlayerStats[]` - Optionally specifies an array of [PlayerStats](#PlayerStats) associated with the player.
 * `team: string` - Specifies the team abbreviation the player plays for.
@@ -131,8 +132,9 @@ Instances of this class are returned from calling the `getContestList` function 
 #### <a name="ContestPosition"></a>ContestPosition
 Instances of this classes are associated with a [Contest](#Contest) and represent a position needed to fulfill the contest requirements. A player may be listed for a single position, but that player may be used to fulfill any number of available positions in the contest lineup. For instance, a player listed as a RB may be eligble to fulfill a RB slot, a RB/WR/TE slot, a Util slot, an MVP slot, etc.
 
-* `eligiblePlayerPosition: string[]` - Specifies the array of positions that may be used to fulfill the player slot. For a RB/WR/TE slot, this would be an array containing "RB", "WR", and "TE".
+* `eligiblePlayerPositions: string[]` - Specifies the array of positions that may be used to fulfill the player slot. For a RB/WR/TE slot, this would be an array containing "RB", "WR", and "TE".
 * `label: string` - Specifies the label that is listed on the contest for the player slot. For a RB/WR/TE slot, this would return "RB/WR/TE".
+* `tier?: string` - Optionally specifies a tier used internally for calculating the `positionEligibility` of a [Player](#Player).
 
 #### <a name="Game"></a>Game
 Instances of this class are associated with a [Contest](#Contest) and represent a game that will be played as part of the contest.

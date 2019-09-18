@@ -181,6 +181,7 @@ describe("FanDuelContestRetriever", () => {
                 name: "Max Scherzer",
                 team: "WAS",
                 position: "P",
+                positionEligibility: ["P"],
                 salary: 12000,
                 isStarter: false,
                 mlbSpecific: { battingOrder: "NA", handednessBat: "R", handednessThrow: "R", isProbablePitcher: false },
@@ -192,6 +193,7 @@ describe("FanDuelContestRetriever", () => {
                 name: "Josh Bell",
                 team: "PIT",
                 position: "1B",
+                positionEligibility: ["C/1B", "UTIL"],
                 salary: 4100,
                 isStarter: false,
                 mlbSpecific: { battingOrder: "NA", handednessBat: "S", handednessThrow: "R", isProbablePitcher: false },
@@ -203,11 +205,48 @@ describe("FanDuelContestRetriever", () => {
                 name: "Brandon Lowe",
                 team: "TAM",
                 position: "2B",
+                positionEligibility: ["2B", "UTIL"],
                 salary: 3400,
                 isStarter: false,
                 mlbSpecific: { battingOrder: "NA", handednessBat: "L", handednessThrow: "R", isProbablePitcher: false },
                 stats: [{ source: "FanDuel", seasonAveragePoints: 11.164473684210526 }],
                 thumbnailURL: "https://d17odppiik753x.cloudfront.net/playerimages/mlb/85504.png"
+            });
+        });
+
+        it("should parse an unordinary contest player list (Gemini Man) retreived from FanDuel", () => {
+            // Arrange
+            const target = new FanDuelContestRetriever();
+            const contest: IContest = { ID: "FD38553", contestType: ContestType.FanDuel, label: "Gemini Man", sport: Sport.NFL };
+            const contestData = fs.readFileSync("spec-content/fanDuelGeminiContest.json", "utf-8");
+            const playerListData = fs.readFileSync("spec-content/fanDuelGeminiPlayerList.json", "utf-8");
+            target.parseContestSpecificData(contest, contestData);
+
+            // Act
+            target.parseContestPlayerList(contest, playerListData);
+
+            // Assert
+            specUtils.assertContainsPlayer(contest.games[0].awayTeam.players, {
+                ID: "34331",
+                name: "Latavius Murray",
+                team: "NO",
+                position: "RB",
+                positionEligibility: ["Sr RB"],
+                salary: 0,
+                isStarter: false,
+                stats: [{ source: "FanDuel", seasonAveragePoints: 7.25 }],
+                thumbnailURL: "https://d17odppiik753x.cloudfront.net/playerimages/nfl/34331.png"
+            });
+            specUtils.assertContainsPlayer(contest.games[3].awayTeam.players, {
+                ID: "55050",
+                name: "Christian McCaffrey",
+                team: "CAR",
+                position: "RB",
+                positionEligibility: ["Jr RB"],
+                salary: 0,
+                isStarter: false,
+                stats: [{ source: "FanDuel", seasonAveragePoints: 22.100000381469727 }],
+                thumbnailURL: "https://d17odppiik753x.cloudfront.net/playerimages/nfl/55050.png"
             });
         });
     });

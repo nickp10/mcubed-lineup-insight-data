@@ -117,6 +117,15 @@ export class SpecUtils {
         assert.strictEqual(actualPlayer.position, expectedPlayer.position);
         assert.strictEqual(actualPlayer.thumbnailURL, expectedPlayer.thumbnailURL);
         this.assertPlayerMLBSpecificEquals(actualPlayer.mlbSpecific, expectedPlayer.mlbSpecific);
+        if (expectedPlayer.positionEligibility) {
+            assert.notStrictEqual(actualPlayer.positionEligibility, undefined);
+            assert.strictEqual(actualPlayer.positionEligibility.length, expectedPlayer.positionEligibility.length);
+            for (let i = 0; i < actualPlayer.positionEligibility.length; i++) {
+                assert.strictEqual(actualPlayer.positionEligibility[i], expectedPlayer.positionEligibility[i]);
+            }
+        } else {
+            assert.strictEqual(actualPlayer.positionEligibility, undefined);
+        }
         if (expectedPlayer.stats) {
             assert.strictEqual(actualPlayer.stats.length, expectedPlayer.stats.length);
             for (let i = 0; i < actualPlayer.stats.length; i++) {

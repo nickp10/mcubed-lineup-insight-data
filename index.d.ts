@@ -53,6 +53,7 @@ declare module 'mcubed-lineup-insight-data/interfaces' {
         name: string;
         newsStatus?: NewsStatus;
         position?: string;
+        positionEligibility?: string[];
         salary: number;
         stats?: IPlayerStats[];
         team: string;
@@ -96,6 +97,7 @@ declare module 'mcubed-lineup-insight-data/interfaces' {
     export interface IContestPosition {
         eligiblePlayerPositions: string[];
         label: string;
+        tier?: string;
     }
     export interface IGame {
         awayTeam: ITeam;

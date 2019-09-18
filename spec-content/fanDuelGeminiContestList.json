@@ -1,0 +1,2884 @@
+
+{
+   "_meta":
+   {
+      "_primary_document": "fixture_lists",
+      "fixture_lists":
+      {
+         "count": 26
+      }
+   },
+   "fixture_lists": [
+      {
+         "id": "38602",
+         "_url": "https://api.fanduel.com/fixture-lists/38602",
+         "sport": "UCL",
+         "game_description_name": "UCL",
+         "game_description":
+         {
+            "_members": ["5042"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 100,
+         "start_date": "2019-09-18T16:55:00Z",
+         "label": "Early Only",
+         "late_swap": false,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 2,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38602/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38602&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 3
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["H2H"],
+                     "count": 13
+                  }
+               ],
+               "count": 16,
+               "pinned_count": 3
+            }
+         }
+      },
+      {
+         "id": "38618",
+         "_url": "https://api.fanduel.com/fixture-lists/38618",
+         "sport": "MLB",
+         "game_description_name": "MLB Full Roster",
+         "game_description":
+         {
+            "_members": ["96"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 35000,
+         "start_date": "2019-09-18T17:15:00Z",
+         "label": "All Day",
+         "late_swap": true,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 15,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38618/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38618&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 16
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["MULTIPLIER"],
+                     "count": 3
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 50
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 39
+                  }
+               ],
+               "count": 108,
+               "pinned_count": 4
+            }
+         }
+      },
+      {
+         "id": "38619",
+         "_url": "https://api.fanduel.com/fixture-lists/38619",
+         "sport": "MLB",
+         "game_description_name": "MLB Full Roster",
+         "game_description":
+         {
+            "_members": ["96"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 35000,
+         "start_date": "2019-09-18T17:15:00Z",
+         "label": "Early Only",
+         "late_swap": true,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 4,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38619/players"
+         },
+         "selection_priority": 98,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38619&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 50
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["MULTIPLIER"],
+                     "count": 19
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["H2H"],
+                     "count": 32
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 85
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 67
+                  }
+               ],
+               "count": 253,
+               "pinned_count": 13
+            }
+         }
+      },
+      {
+         "id": "38600",
+         "_url": "https://api.fanduel.com/fixture-lists/38600",
+         "sport": "UCL",
+         "game_description_name": "UCL",
+         "game_description":
+         {
+            "_members": ["5042"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 100,
+         "start_date": "2019-09-18T19:00:00Z",
+         "label": "Main",
+         "late_swap": false,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 6,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38600/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38600&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 22
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["MULTIPLIER"],
+                     "count": 11
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["H2H"],
+                     "count": 24
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 74
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 37
+                  }
+               ],
+               "count": 168,
+               "pinned_count": 10
+            }
+         }
+      },
+      {
+         "id": "38621",
+         "_url": "https://api.fanduel.com/fixture-lists/38621",
+         "sport": "MLB",
+         "game_description_name": "MLB_SINGLE_GAME_V4_2019",
+         "game_description":
+         {
+            "_members": ["3086"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 35000,
+         "start_date": "2019-09-18T22:35:00Z",
+         "label": "LAA @ NYY",
+         "late_swap": false,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 1,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38621/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38621&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 18
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["MULTIPLIER"],
+                     "count": 3
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["H2H"],
+                     "count": 2
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 54
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 38
+                  }
+               ],
+               "count": 115,
+               "pinned_count": 6
+            }
+         }
+      },
+      {
+         "id": "38617",
+         "_url": "https://api.fanduel.com/fixture-lists/38617",
+         "sport": "MLB",
+         "game_description_name": "MLB Full Roster",
+         "game_description":
+         {
+            "_members": ["96"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 35000,
+         "start_date": "2019-09-18T23:05:00Z",
+         "label": "Main",
+         "late_swap": true,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 10,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38617/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38617&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 78
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["BEAT_THE_SCORE"],
+                     "count": 4
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["MULTIPLIER"],
+                     "count": 40
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["H2H"],
+                     "count": 43
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 141
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 104
+                  }
+               ],
+               "count": 410,
+               "pinned_count": 38
+            }
+         }
+      },
+      {
+         "id": "38623",
+         "_url": "https://api.fanduel.com/fixture-lists/38623",
+         "sport": "MLB",
+         "game_description_name": "3-Man Challenge",
+         "game_description":
+         {
+            "_members": ["5011"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 7,
+         "start_date": "2019-09-18T23:20:00Z",
+         "label": "3-Man Challenge",
+         "late_swap": true,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 3,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38623/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38623&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 14
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["MULTIPLIER"],
+                     "count": 3
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 51
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 36
+                  }
+               ],
+               "count": 104,
+               "pinned_count": 5
+            }
+         }
+      },
+      {
+         "id": "38573",
+         "_url": "https://api.fanduel.com/fixture-lists/38573",
+         "sport": "PGA",
+         "game_description_name": "PGA New",
+         "game_description":
+         {
+            "_members": ["3084"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 60000,
+         "start_date": "2019-09-19T11:00:00Z",
+         "label": "Sanderson Farms Championship",
+         "late_swap": false,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 1,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38573/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38573&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 30
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["MULTIPLIER"],
+                     "count": 19
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["H2H"],
+                     "count": 10
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 90
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 71
+                  }
+               ],
+               "count": 220,
+               "pinned_count": 21
+            }
+         }
+      },
+      {
+         "id": "38576",
+         "_url": "https://api.fanduel.com/fixture-lists/38576",
+         "sport": "PGA",
+         "game_description_name": "PGA QuickPick",
+         "game_description":
+         {
+            "_members": ["3010"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 0,
+         "start_date": "2019-09-19T11:00:00Z",
+         "label": "Sanderson Farms Championship QP",
+         "late_swap": false,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 1,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38576/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38576&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 5
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["MULTIPLIER"],
+                     "count": 1
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 61
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 42
+                  }
+               ],
+               "count": 109,
+               "pinned_count": 3
+            }
+         }
+      },
+      {
+         "id": "38624",
+         "_url": "https://api.fanduel.com/fixture-lists/38624",
+         "sport": "WNBA",
+         "game_description_name": "WNBA",
+         "game_description":
+         {
+            "_members": ["26"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 40000,
+         "start_date": "2019-09-19T22:30:00Z",
+         "label": "Main",
+         "late_swap": false,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 2,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38624/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38624&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 19
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["MULTIPLIER"],
+                     "count": 4
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 54
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 27
+                  }
+               ],
+               "count": 104,
+               "pinned_count": 6
+            }
+         }
+      },
+      {
+         "id": "38566",
+         "_url": "https://api.fanduel.com/fixture-lists/38566",
+         "sport": "CFB",
+         "game_description_name": "CFB Single Game",
+         "game_description":
+         {
+            "_members": ["3054"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 60000,
+         "start_date": "2019-09-20T00:00:00Z",
+         "label": "HOU @ TULN",
+         "late_swap": false,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 1,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38566/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38566&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 19
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["H2H"],
+                     "count": 28
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 76
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 70
+                  }
+               ],
+               "count": 193,
+               "pinned_count": 9
+            }
+         }
+      },
+      {
+         "id": "38546",
+         "_url": "https://api.fanduel.com/fixture-lists/38546",
+         "sport": "NFL",
+         "game_description_name": "NFL Single Game",
+         "game_description":
+         {
+            "_members": ["3040"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 60000,
+         "start_date": "2019-09-20T00:20:00Z",
+         "label": "TEN @ JAC",
+         "late_swap": false,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 1,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38546/players"
+         },
+         "selection_priority": 97,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38546&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 72
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["MULTIPLIER"],
+                     "count": 8
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["H2H"],
+                     "count": 178
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 182
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 100
+                  }
+               ],
+               "count": 540,
+               "pinned_count": 20
+            }
+         }
+      },
+      {
+         "id": "38558",
+         "_url": "https://api.fanduel.com/fixture-lists/38558",
+         "sport": "NFL",
+         "game_description_name": "NFL Main",
+         "game_description":
+         {
+            "_members": ["3036"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 60000,
+         "start_date": "2019-09-20T00:20:00Z",
+         "label": "Thu-Mon",
+         "late_swap": true,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 16,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38558/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38558&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 59
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["MULTIPLIER"],
+                     "count": 28
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["H2H"],
+                     "count": 343
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 164
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 103
+                  }
+               ],
+               "count": 697,
+               "pinned_count": 23
+            }
+         }
+      },
+      {
+         "id": "38625",
+         "_url": "https://api.fanduel.com/fixture-lists/38625",
+         "sport": "WNBA",
+         "game_description_name": "WNBA Single Game",
+         "game_description":
+         {
+            "_members": ["3003"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 40000,
+         "start_date": "2019-09-20T00:30:00Z",
+         "label": "LV @ WAS",
+         "late_swap": false,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 1,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38625/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38625&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 10
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["MULTIPLIER"],
+                     "count": 4
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 55
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 26
+                  }
+               ],
+               "count": 95,
+               "pinned_count": 4
+            }
+         }
+      },
+      {
+         "id": "38598",
+         "_url": "https://api.fanduel.com/fixture-lists/38598",
+         "sport": "CFB",
+         "game_description_name": "CFB",
+         "game_description":
+         {
+            "_members": ["3051"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 60000,
+         "start_date": "2019-09-21T00:00:00Z",
+         "label": "Main",
+         "late_swap": true,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 3,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38598/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38598&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 25
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["H2H"],
+                     "count": 50
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 79
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 65
+                  }
+               ],
+               "count": 219,
+               "pinned_count": 14
+            }
+         }
+      },
+      {
+         "id": "38582",
+         "_url": "https://api.fanduel.com/fixture-lists/38582",
+         "sport": "EPL",
+         "game_description_name": "EPL",
+         "game_description":
+         {
+            "_members": ["5029"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 100,
+         "start_date": "2019-09-21T14:00:00Z",
+         "label": "Main",
+         "late_swap": true,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 4,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38582/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38582&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 23
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["MULTIPLIER"],
+                     "count": 11
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["H2H"],
+                     "count": 4
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 67
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 36
+                  }
+               ],
+               "count": 141,
+               "pinned_count": 11
+            }
+         }
+      },
+      {
+         "id": "38596",
+         "_url": "https://api.fanduel.com/fixture-lists/38596",
+         "sport": "CFB",
+         "game_description_name": "CFB",
+         "game_description":
+         {
+            "_members": ["3051"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 60000,
+         "start_date": "2019-09-21T16:00:00Z",
+         "label": "Main",
+         "late_swap": true,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 16,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38596/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38596&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 30
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["MULTIPLIER"],
+                     "count": 4
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["H2H"],
+                     "count": 49
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 82
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 71
+                  }
+               ],
+               "count": 236,
+               "pinned_count": 25
+            }
+         }
+      },
+      {
+         "id": "38615",
+         "_url": "https://api.fanduel.com/fixture-lists/38615",
+         "sport": "NASCAR",
+         "game_description_name": "NASCAR",
+         "game_description":
+         {
+            "_members": ["2013"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 50000,
+         "start_date": "2019-09-21T23:30:00Z",
+         "label": "Federated Auto 400",
+         "late_swap": false,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 1,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38615/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38615&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 24
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["MULTIPLIER"],
+                     "count": 17
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 52
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 46
+                  }
+               ],
+               "count": 139,
+               "pinned_count": 23
+            }
+         }
+      },
+      {
+         "id": "38616",
+         "_url": "https://api.fanduel.com/fixture-lists/38616",
+         "sport": "NASCAR",
+         "game_description_name": "NASCAR Quick Pick_4",
+         "game_description":
+         {
+            "_members": ["3047"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 0,
+         "start_date": "2019-09-21T23:30:00Z",
+         "label": "Federated Auto 400 QP",
+         "late_swap": false,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 1,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38616/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38616&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 3
+                  }
+               ],
+               "count": 3,
+               "pinned_count": 3
+            }
+         }
+      },
+      {
+         "id": "38547",
+         "_url": "https://api.fanduel.com/fixture-lists/38547",
+         "sport": "NFL",
+         "game_description_name": "NFL Main",
+         "game_description":
+         {
+            "_members": ["3036"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 60000,
+         "start_date": "2019-09-22T17:00:00Z",
+         "label": "Main",
+         "late_swap": true,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 13,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38547/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38547&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 143
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["BEAT_THE_SCORE"],
+                     "count": 5
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["MULTIPLIER"],
+                     "count": 147
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["H2H"],
+                     "count": 525
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 301
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 129
+                  }
+               ],
+               "count": 1250,
+               "pinned_count": 60
+            }
+         }
+      },
+      {
+         "id": "38553",
+         "_url": "https://api.fanduel.com/fixture-lists/38553",
+         "sport": "NFL",
+         "game_description_name": "Gemini Man",
+         "game_description":
+         {
+            "_members": ["5041"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 0,
+         "start_date": "2019-09-22T17:00:00Z",
+         "label": "Gemini Man",
+         "late_swap": true,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 14,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38553/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38553&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 2
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["MULTIPLIER"],
+                     "count": 7
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["H2H"],
+                     "count": 86
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 93
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 96
+                  }
+               ],
+               "count": 284,
+               "pinned_count": 1
+            }
+         }
+      },
+      {
+         "id": "38567",
+         "_url": "https://api.fanduel.com/fixture-lists/38567",
+         "sport": "NFL",
+         "game_description_name": "NFL Main",
+         "game_description":
+         {
+            "_members": ["3036"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 60000,
+         "start_date": "2019-09-22T17:00:00Z",
+         "label": "1pm Only",
+         "late_swap": false,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 8,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38567/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38567&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 58
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["MULTIPLIER"],
+                     "count": 27
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["H2H"],
+                     "count": 265
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 158
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 104
+                  }
+               ],
+               "count": 612,
+               "pinned_count": 19
+            }
+         }
+      },
+      {
+         "id": "38569",
+         "_url": "https://api.fanduel.com/fixture-lists/38569",
+         "sport": "NFL",
+         "game_description_name": "NFL Main",
+         "game_description":
+         {
+            "_members": ["3036"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 60000,
+         "start_date": "2019-09-22T17:00:00Z",
+         "label": "Sun-Mon",
+         "late_swap": true,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 15,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38569/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38569&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 29
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["MULTIPLIER"],
+                     "count": 7
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["H2H"],
+                     "count": 195
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 144
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 73
+                  }
+               ],
+               "count": 448,
+               "pinned_count": 9
+            }
+         }
+      },
+      {
+         "id": "38577",
+         "_url": "https://api.fanduel.com/fixture-lists/38577",
+         "sport": "NFL",
+         "game_description_name": "QuickPick Kickers",
+         "game_description":
+         {
+            "_members": ["3048"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 0,
+         "start_date": "2019-09-22T17:00:00Z",
+         "label": "Sun-Mon QPK",
+         "late_swap": true,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 15,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38577/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38577&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 1
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["MULTIPLIER"],
+                     "count": 7
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["H2H"],
+                     "count": 40
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 86
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 85
+                  }
+               ],
+               "count": 219,
+               "pinned_count": 1
+            }
+         }
+      },
+      {
+         "id": "38604",
+         "_url": "https://api.fanduel.com/fixture-lists/38604",
+         "sport": "NFL",
+         "game_description_name": "SuperFlex",
+         "game_description":
+         {
+            "_members": ["3053"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 60000,
+         "start_date": "2019-09-22T17:00:00Z",
+         "label": "SuperFlex",
+         "late_swap": true,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 14,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38604/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38604&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 18
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["MULTIPLIER"],
+                     "count": 7
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["H2H"],
+                     "count": 110
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 103
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 107
+                  }
+               ],
+               "count": 345,
+               "pinned_count": 13
+            }
+         }
+      },
+      {
+         "id": "38568",
+         "_url": "https://api.fanduel.com/fixture-lists/38568",
+         "sport": "NFL",
+         "game_description_name": "NFL Main",
+         "game_description":
+         {
+            "_members": ["3036"],
+            "_ref": "game_descriptions.id"
+         },
+         "salary_cap": 60000,
+         "start_date": "2019-09-22T20:05:00Z",
+         "label": "4pm Only",
+         "late_swap": true,
+         "status":
+         {
+            "started": false,
+            "final": false
+         },
+         "fixture_counts":
+         {
+            "pending": 5,
+            "live": 0,
+            "completed": 0
+         },
+         "players":
+         {
+            "_url": "https://api.fanduel.com/fixture-lists/38568/players"
+         },
+         "selection_priority": 100,
+         "contests":
+         {
+            "open":
+            {
+               "_url": "https://api.fanduel.com/contests?fixture_list=38568&status=open",
+               "contest_types": [
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["TOURNAMENT"],
+                     "count": 55
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["MULTIPLIER"],
+                     "count": 27
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["H2H"],
+                     "count": 178
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["LEAGUE"],
+                     "count": 158
+                  },
+                  {
+                     "_ref": "contest_types.id",
+                     "_members": ["FIFTY_FIFTY"],
+                     "count": 104
+                  }
+               ],
+               "count": 522,
+               "pinned_count": 17
+            }
+         }
+      }
+   ],
+   "contest_types": [
+      {
+         "id": "TOURNAMENT",
+         "label": "Tournament",
+         "description": "Large contests with guaranteed prize pools"
+      },
+      {
+         "id": "BEAT_THE_SCORE",
+         "label": "Beat the Score",
+         "description": "Tournament where the prize pool is shared evenly across all winners"
+      },
+      {
+         "id": "MULTIPLIER",
+         "label": "Multiplier",
+         "description": "Double your money or play for more"
+      },
+      {
+         "id": "H2H",
+         "label": "Head to Head",
+         "description": "Challenge one opponent of your choice"
+      },
+      {
+         "id": "LEAGUE",
+         "label": "3-100 Player",
+         "description": "Multiple opponents and prize structures"
+      },
+      {
+         "id": "FIFTY_FIFTY",
+         "label": "50/50",
+         "description": "Finish in the top half to win"
+      }
+   ],
+   "game_descriptions": [
+      {
+         "id": "5042",
+         "name": "Full Roster",
+         "short_description": "4 Forwards/Midfielders, 2 Defenders and 1 Goalkeeper",
+         "long_description": null,
+         "image_url": null,
+         "display_priority": 2,
+         "roster_format": [
+            {
+               "id": "5237",
+               "name": "FWD / MID",
+               "player_positions": ["FWD", "MID"],
+               "order": 0,
+               "tier": null
+            },
+            {
+               "id": "5238",
+               "name": "FWD / MID",
+               "player_positions": ["FWD", "MID"],
+               "order": 1,
+               "tier": null
+            },
+            {
+               "id": "5239",
+               "name": "FWD / MID",
+               "player_positions": ["FWD", "MID"],
+               "order": 2,
+               "tier": null
+            },
+            {
+               "id": "5240",
+               "name": "FWD / MID",
+               "player_positions": ["FWD", "MID"],
+               "order": 3,
+               "tier": null
+            },
+            {
+               "id": "5241",
+               "name": "DEF",
+               "player_positions": ["DEF"],
+               "order": 4,
+               "tier": null
+            },
+            {
+               "id": "5242",
+               "name": "DEF",
+               "player_positions": ["DEF"],
+               "order": 5,
+               "tier": null
+            },
+            {
+               "id": "5243",
+               "name": "GK",
+               "player_positions": ["GK"],
+               "order": 6,
+               "tier": null
+            }
+         ],
+         "tag": null,
+         "only_score_top": null,
+         "roster_restrictions":
+         {
+            "min_players": 7,
+            "max_players": 7,
+            "max_players_from_team": 4,
+            "min_fixtures": 2,
+            "min_teams": 3,
+            "player_position_restrictions": []
+         }
+      },
+      {
+         "id": "96",
+         "name": "Full Roster",
+         "short_description": "Our classic, 9-player roster with salary cap.",
+         "long_description": null,
+         "image_url": null,
+         "display_priority": 1,
+         "roster_format": [
+            {
+               "id": "616",
+               "name": "P",
+               "player_positions": ["P"],
+               "order": 0,
+               "tier": null
+            },
+            {
+               "id": "617",
+               "name": "C/1B",
+               "player_positions": ["1B", "C"],
+               "order": 1,
+               "tier": null
+            },
+            {
+               "id": "618",
+               "name": "2B",
+               "player_positions": ["2B"],
+               "order": 2,
+               "tier": null
+            },
+            {
+               "id": "619",
+               "name": "3B",
+               "player_positions": ["3B"],
+               "order": 3,
+               "tier": null
+            },
+            {
+               "id": "620",
+               "name": "SS",
+               "player_positions": ["SS"],
+               "order": 4,
+               "tier": null
+            },
+            {
+               "id": "621",
+               "name": "OF",
+               "player_positions": ["OF"],
+               "order": 5,
+               "tier": null
+            },
+            {
+               "id": "622",
+               "name": "OF",
+               "player_positions": ["OF"],
+               "order": 6,
+               "tier": null
+            },
+            {
+               "id": "623",
+               "name": "OF",
+               "player_positions": ["OF"],
+               "order": 7,
+               "tier": null
+            },
+            {
+               "id": "624",
+               "name": "UTIL",
+               "player_positions": ["2B", "OF", "SS", "1B", "C", "3B"],
+               "order": 8,
+               "tier": null
+            }
+         ],
+         "tag": null,
+         "only_score_top": null,
+         "roster_restrictions":
+         {
+            "min_players": 9,
+            "max_players": 9,
+            "max_players_from_team": 5,
+            "min_fixtures": 2,
+            "min_teams": 3,
+            "player_position_restrictions": [
+               {
+                  "positions": ["2B", "SS", "1B", "C", "CF", "RF", "OF", "LF", "3B"],
+                  "min": null,
+                  "max": null,
+                  "max_per_team": 4
+               }
+            ]
+         }
+      },
+      {
+         "id": "3086",
+         "name": "Single Game",
+         "short_description": "5-player roster w/ MVP (2x Points), All-Star (1.5x Points) and 3 UTIL.",
+         "long_description": "MLB Single Game is new for 2019!\r\n\r\nWe're giving you more flexibility this season to boost your stats and draft the players you want, regardless of their position.\r\n\r\nSelect an MVP (2X points), All-Star (1.5X points), and three UTIL from anywhere on the diamond to score the most points!",
+         "image_url": null,
+         "display_priority": 2,
+         "roster_format": [
+            {
+               "id": "3502",
+               "name": "MVP 2X",
+               "player_positions": ["2B", "OF", "SS", "1B", "C", "3B"],
+               "order": 0,
+               "tier": null
+            },
+            {
+               "id": "3503",
+               "name": "All-Star 1.5X",
+               "player_positions": ["2B", "OF", "SS", "1B", "C", "3B"],
+               "order": 1,
+               "tier": null
+            },
+            {
+               "id": "3504",
+               "name": "UTIL",
+               "player_positions": ["2B", "OF", "SS", "1B", "C", "3B"],
+               "order": 2,
+               "tier": null
+            },
+            {
+               "id": "3505",
+               "name": "UTIL",
+               "player_positions": ["2B", "OF", "SS", "1B", "C", "3B"],
+               "order": 3,
+               "tier": null
+            },
+            {
+               "id": "3506",
+               "name": "UTIL",
+               "player_positions": ["2B", "OF", "SS", "1B", "C", "3B"],
+               "order": 4,
+               "tier": null
+            }
+         ],
+         "tag": null,
+         "only_score_top": null,
+         "roster_restrictions":
+         {
+            "min_players": 5,
+            "max_players": 5,
+            "max_players_from_team": 2147483647,
+            "min_fixtures": 1,
+            "min_teams": 2,
+            "player_position_restrictions": []
+         }
+      },
+      {
+         "id": "5011",
+         "name": "3-Man Challenge",
+         "short_description": "3 batters, only hits, HRs, and RBIs count, MVP scores 1.5X points.",
+         "long_description": null,
+         "image_url": null,
+         "display_priority": 5,
+         "roster_format": [
+            {
+               "id": "5088",
+               "name": "MVP - 1.5X Points",
+               "player_positions": ["2B", "OF", "SS", "1B", "C", "3B"],
+               "order": 0,
+               "tier": null
+            },
+            {
+               "id": "5089",
+               "name": "Batter",
+               "player_positions": ["2B", "OF", "SS", "1B", "C", "3B"],
+               "order": 1,
+               "tier": null
+            },
+            {
+               "id": "5090",
+               "name": "Batter",
+               "player_positions": ["2B", "OF", "SS", "1B", "C", "3B"],
+               "order": 2,
+               "tier": null
+            }
+         ],
+         "tag":
+         {
+            "label": "NEW",
+            "text_color": "#1F375B",
+            "background_color": "#FFCB4D"
+         },
+         "only_score_top": null,
+         "roster_restrictions":
+         {
+            "min_players": 3,
+            "max_players": 3,
+            "max_players_from_team": 2147483647,
+            "min_fixtures": 1,
+            "min_teams": 2,
+            "player_position_restrictions": []
+         }
+      },
+      {
+         "id": "3084",
+         "name": "Full Roster",
+         "short_description": "Our classic, 6-player roster with salary cap.",
+         "long_description": null,
+         "image_url": null,
+         "display_priority": 1,
+         "roster_format": [
+            {
+               "id": "3491",
+               "name": "G",
+               "player_positions": ["G"],
+               "order": 0,
+               "tier": null
+            },
+            {
+               "id": "3492",
+               "name": "G",
+               "player_positions": ["G"],
+               "order": 1,
+               "tier": null
+            },
+            {
+               "id": "3493",
+               "name": "G",
+               "player_positions": ["G"],
+               "order": 2,
+               "tier": null
+            },
+            {
+               "id": "3494",
+               "name": "G",
+               "player_positions": ["G"],
+               "order": 3,
+               "tier": null
+            },
+            {
+               "id": "3495",
+               "name": "G",
+               "player_positions": ["G"],
+               "order": 4,
+               "tier": null
+            },
+            {
+               "id": "3496",
+               "name": "G",
+               "player_positions": ["G"],
+               "order": 5,
+               "tier": null
+            }
+         ],
+         "tag": null,
+         "only_score_top": null,
+         "roster_restrictions":
+         {
+            "min_players": 6,
+            "max_players": 6,
+            "max_players_from_team": 2147483647,
+            "min_fixtures": 1,
+            "min_teams": 0,
+            "player_position_restrictions": []
+         }
+      },
+      {
+         "id": "3010",
+         "name": "QuickPick",
+         "short_description": "Pick 1 player from tiers A - D and 2 from the field. Standard Scoring.",
+         "long_description": null,
+         "image_url": null,
+         "display_priority": 25,
+         "roster_format": [
+            {
+               "id": "3048",
+               "name": "Tier A",
+               "player_positions": ["G"],
+               "order": 0,
+               "tier": "T1"
+            },
+            {
+               "id": "3049",
+               "name": "Tier B",
+               "player_positions": ["G"],
+               "order": 1,
+               "tier": "T2"
+            },
+            {
+               "id": "3050",
+               "name": "Tier C",
+               "player_positions": ["G"],
+               "order": 2,
+               "tier": "T3"
+            },
+            {
+               "id": "3051",
+               "name": "Tier D",
+               "player_positions": ["G"],
+               "order": 3,
+               "tier": "T4"
+            },
+            {
+               "id": "3052",
+               "name": "Field",
+               "player_positions": ["G"],
+               "order": 4,
+               "tier": "T5"
+            },
+            {
+               "id": "3053",
+               "name": "Field",
+               "player_positions": ["G"],
+               "order": 5,
+               "tier": "T5"
+            }
+         ],
+         "tag": null,
+         "only_score_top": null,
+         "roster_restrictions":
+         {
+            "min_players": 6,
+            "max_players": 6,
+            "max_players_from_team": 2147483647,
+            "min_fixtures": 1,
+            "min_teams": 0,
+            "player_position_restrictions": []
+         }
+      },
+      {
+         "id": "26",
+         "name": "Full Roster",
+         "short_description": "Our classic, 7-player roster with salary cap.",
+         "long_description": null,
+         "image_url": null,
+         "display_priority": 1,
+         "roster_format": [
+            {
+               "id": "213",
+               "name": "G",
+               "player_positions": ["G"],
+               "order": 0,
+               "tier": null
+            },
+            {
+               "id": "214",
+               "name": "G",
+               "player_positions": ["G"],
+               "order": 1,
+               "tier": null
+            },
+            {
+               "id": "215",
+               "name": "G",
+               "player_positions": ["G"],
+               "order": 2,
+               "tier": null
+            },
+            {
+               "id": "216",
+               "name": "F",
+               "player_positions": ["F"],
+               "order": 3,
+               "tier": null
+            },
+            {
+               "id": "217",
+               "name": "F",
+               "player_positions": ["F"],
+               "order": 4,
+               "tier": null
+            },
+            {
+               "id": "218",
+               "name": "F",
+               "player_positions": ["F"],
+               "order": 5,
+               "tier": null
+            },
+            {
+               "id": "219",
+               "name": "F",
+               "player_positions": ["F"],
+               "order": 6,
+               "tier": null
+            }
+         ],
+         "tag": null,
+         "only_score_top": null,
+         "roster_restrictions":
+         {
+            "min_players": 7,
+            "max_players": 7,
+            "max_players_from_team": 4,
+            "min_fixtures": 2,
+            "min_teams": 3,
+            "player_position_restrictions": []
+         }
+      },
+      {
+         "id": "3054",
+         "name": "Single Game",
+         "short_description": "5 Flex positions. MVP scores 1.5x points",
+         "long_description": null,
+         "image_url": null,
+         "display_priority": 50,
+         "roster_format": [
+            {
+               "id": "3318",
+               "name": "MVP - 1.5x Points",
+               "player_positions": ["TE", "RB", "WR", "QB"],
+               "order": 0,
+               "tier": null
+            },
+            {
+               "id": "3319",
+               "name": "FLEX",
+               "player_positions": ["TE", "RB", "WR", "QB"],
+               "order": 1,
+               "tier": null
+            },
+            {
+               "id": "3320",
+               "name": "FLEX",
+               "player_positions": ["TE", "RB", "WR", "QB"],
+               "order": 2,
+               "tier": null
+            },
+            {
+               "id": "3321",
+               "name": "FLEX",
+               "player_positions": ["TE", "RB", "WR", "QB"],
+               "order": 3,
+               "tier": null
+            },
+            {
+               "id": "3322",
+               "name": "FLEX",
+               "player_positions": ["TE", "RB", "WR", "QB"],
+               "order": 4,
+               "tier": null
+            }
+         ],
+         "tag": null,
+         "only_score_top": null,
+         "roster_restrictions":
+         {
+            "min_players": 5,
+            "max_players": 5,
+            "max_players_from_team": 2147483647,
+            "min_fixtures": 1,
+            "min_teams": 2,
+            "player_position_restrictions": []
+         }
+      },
+      {
+         "id": "3040",
+         "name": "Single Game",
+         "short_description": "5 AnyFLEX positions including K. MVP scores 1.5x.",
+         "long_description": null,
+         "image_url": null,
+         "display_priority": 3,
+         "roster_format": [
+            {
+               "id": "3236",
+               "name": "MVP - 1.5X Points",
+               "player_positions": ["WR", "RB", "TE", "K", "QB"],
+               "order": 0,
+               "tier": null
+            },
+            {
+               "id": "3237",
+               "name": "AnyFLEX",
+               "player_positions": ["WR", "RB", "TE", "K", "QB"],
+               "order": 1,
+               "tier": null
+            },
+            {
+               "id": "3238",
+               "name": "AnyFLEX",
+               "player_positions": ["WR", "RB", "TE", "K", "QB"],
+               "order": 2,
+               "tier": null
+            },
+            {
+               "id": "3239",
+               "name": "AnyFLEX",
+               "player_positions": ["WR", "RB", "TE", "K", "QB"],
+               "order": 3,
+               "tier": null
+            },
+            {
+               "id": "3240",
+               "name": "AnyFLEX",
+               "player_positions": ["WR", "RB", "TE", "K", "QB"],
+               "order": 4,
+               "tier": null
+            }
+         ],
+         "tag": null,
+         "only_score_top": null,
+         "roster_restrictions":
+         {
+            "min_players": 5,
+            "max_players": 5,
+            "max_players_from_team": 2147483647,
+            "min_fixtures": 1,
+            "min_teams": 2,
+            "player_position_restrictions": []
+         }
+      },
+      {
+         "id": "3036",
+         "name": "Full Roster",
+         "short_description": "Our classic 9-player roster with salary cap.",
+         "long_description": null,
+         "image_url": null,
+         "display_priority": 2,
+         "roster_format": [
+            {
+               "id": "3204",
+               "name": "QB",
+               "player_positions": ["QB"],
+               "order": 0,
+               "tier": null
+            },
+            {
+               "id": "3205",
+               "name": "RB",
+               "player_positions": ["RB"],
+               "order": 1,
+               "tier": null
+            },
+            {
+               "id": "3206",
+               "name": "RB",
+               "player_positions": ["RB"],
+               "order": 2,
+               "tier": null
+            },
+            {
+               "id": "3207",
+               "name": "WR",
+               "player_positions": ["WR"],
+               "order": 3,
+               "tier": null
+            },
+            {
+               "id": "3208",
+               "name": "WR",
+               "player_positions": ["WR"],
+               "order": 4,
+               "tier": null
+            },
+            {
+               "id": "3209",
+               "name": "WR",
+               "player_positions": ["WR"],
+               "order": 5,
+               "tier": null
+            },
+            {
+               "id": "3210",
+               "name": "TE",
+               "player_positions": ["TE"],
+               "order": 6,
+               "tier": null
+            },
+            {
+               "id": "3211",
+               "name": "FLEX",
+               "player_positions": ["WR", "RB", "TE"],
+               "order": 7,
+               "tier": null
+            },
+            {
+               "id": "3212",
+               "name": "DEF",
+               "player_positions": ["D"],
+               "order": 8,
+               "tier": null
+            }
+         ],
+         "tag": null,
+         "only_score_top": null,
+         "roster_restrictions":
+         {
+            "min_players": 9,
+            "max_players": 9,
+            "max_players_from_team": 4,
+            "min_fixtures": 2,
+            "min_teams": 3,
+            "player_position_restrictions": []
+         }
+      },
+      {
+         "id": "3003",
+         "name": "Single Game",
+         "short_description": "5-player roster w/ MVP (2x), STAR (1.5x), PRO (1.2x), 2 UTIL.",
+         "long_description": null,
+         "image_url": null,
+         "display_priority": 2,
+         "roster_format": [
+            {
+               "id": "3017",
+               "name": "MVP - 2X Points",
+               "player_positions": ["F", "G"],
+               "order": 0,
+               "tier": null
+            },
+            {
+               "id": "3018",
+               "name": "STAR - 1.5X Points",
+               "player_positions": ["F", "G"],
+               "order": 1,
+               "tier": null
+            },
+            {
+               "id": "3019",
+               "name": "PRO - 1.2X Points",
+               "player_positions": ["F", "G"],
+               "order": 2,
+               "tier": null
+            },
+            {
+               "id": "3020",
+               "name": "UTIL",
+               "player_positions": ["F", "G"],
+               "order": 3,
+               "tier": null
+            },
+            {
+               "id": "3021",
+               "name": "UTIL",
+               "player_positions": ["F", "G"],
+               "order": 4,
+               "tier": null
+            }
+         ],
+         "tag": null,
+         "only_score_top": null,
+         "roster_restrictions":
+         {
+            "min_players": 5,
+            "max_players": 5,
+            "max_players_from_team": 2147483647,
+            "min_fixtures": 1,
+            "min_teams": 2,
+            "player_position_restrictions": []
+         }
+      },
+      {
+         "id": "3051",
+         "name": "Full Roster",
+         "short_description": "1 QB, 2 RB, 3 WR, and 1 Super FLEX",
+         "long_description": null,
+         "image_url": null,
+         "display_priority": 49,
+         "roster_format": [
+            {
+               "id": "3298",
+               "name": "QB",
+               "player_positions": ["QB"],
+               "order": 0,
+               "tier": null
+            },
+            {
+               "id": "3299",
+               "name": "RB",
+               "player_positions": ["RB"],
+               "order": 1,
+               "tier": null
+            },
+            {
+               "id": "3300",
+               "name": "RB",
+               "player_positions": ["RB"],
+               "order": 2,
+               "tier": null
+            },
+            {
+               "id": "3301",
+               "name": "WR",
+               "player_positions": ["TE", "WR"],
+               "order": 3,
+               "tier": null
+            },
+            {
+               "id": "3302",
+               "name": "WR",
+               "player_positions": ["TE", "WR"],
+               "order": 4,
+               "tier": null
+            },
+            {
+               "id": "3303",
+               "name": "WR",
+               "player_positions": ["TE", "WR"],
+               "order": 5,
+               "tier": null
+            },
+            {
+               "id": "3304",
+               "name": "Super FLEX",
+               "player_positions": ["TE", "RB", "WR", "QB"],
+               "order": 6,
+               "tier": null
+            }
+         ],
+         "tag": null,
+         "only_score_top": null,
+         "roster_restrictions":
+         {
+            "min_players": 7,
+            "max_players": 7,
+            "max_players_from_team": 4,
+            "min_fixtures": 2,
+            "min_teams": 3,
+            "player_position_restrictions": []
+         }
+      },
+      {
+         "id": "5029",
+         "name": "Full Roster",
+         "short_description": "4 Forwards/Midfielders, 2 Defenders and 1 Goalkeeper",
+         "long_description": null,
+         "image_url": null,
+         "display_priority": 2,
+         "roster_format": [
+            {
+               "id": "5177",
+               "name": "FWD / MID",
+               "player_positions": ["FWD", "MID"],
+               "order": 0,
+               "tier": null
+            },
+            {
+               "id": "5178",
+               "name": "FWD / MID",
+               "player_positions": ["FWD", "MID"],
+               "order": 1,
+               "tier": null
+            },
+            {
+               "id": "5179",
+               "name": "FWD / MID",
+               "player_positions": ["FWD", "MID"],
+               "order": 2,
+               "tier": null
+            },
+            {
+               "id": "5180",
+               "name": "FWD / MID",
+               "player_positions": ["FWD", "MID"],
+               "order": 3,
+               "tier": null
+            },
+            {
+               "id": "5181",
+               "name": "DEF",
+               "player_positions": ["DEF"],
+               "order": 4,
+               "tier": null
+            },
+            {
+               "id": "5182",
+               "name": "DEF",
+               "player_positions": ["DEF"],
+               "order": 5,
+               "tier": null
+            },
+            {
+               "id": "5183",
+               "name": "GK",
+               "player_positions": ["GK"],
+               "order": 6,
+               "tier": null
+            }
+         ],
+         "tag": null,
+         "only_score_top": null,
+         "roster_restrictions":
+         {
+            "min_players": 7,
+            "max_players": 7,
+            "max_players_from_team": 4,
+            "min_fixtures": 2,
+            "min_teams": 3,
+            "player_position_restrictions": []
+         }
+      },
+      {
+         "id": "2013",
+         "name": "Full Roster",
+         "short_description": "Our classic, 5-driver roster with salary cap",
+         "long_description": null,
+         "image_url": null,
+         "display_priority": 10,
+         "roster_format": [
+            {
+               "id": "2065",
+               "name": "Driver",
+               "player_positions": ["D"],
+               "order": 0,
+               "tier": null
+            },
+            {
+               "id": "2066",
+               "name": "Driver",
+               "player_positions": ["D"],
+               "order": 1,
+               "tier": null
+            },
+            {
+               "id": "2067",
+               "name": "Driver",
+               "player_positions": ["D"],
+               "order": 2,
+               "tier": null
+            },
+            {
+               "id": "2068",
+               "name": "Driver",
+               "player_positions": ["D"],
+               "order": 3,
+               "tier": null
+            },
+            {
+               "id": "2069",
+               "name": "Driver",
+               "player_positions": ["D"],
+               "order": 4,
+               "tier": null
+            }
+         ],
+         "tag": null,
+         "only_score_top": null,
+         "roster_restrictions":
+         {
+            "min_players": 5,
+            "max_players": 5,
+            "max_players_from_team": 2147483647,
+            "min_fixtures": 1,
+            "min_teams": 0,
+            "player_position_restrictions": []
+         }
+      },
+      {
+         "id": "3047",
+         "name": "QuickPick",
+         "short_description": "Pick drivers from each tier to score the most points",
+         "long_description": null,
+         "image_url": null,
+         "display_priority": 99,
+         "roster_format": [
+            {
+               "id": "3276",
+               "name": "Dominator",
+               "player_positions": ["D"],
+               "order": 0,
+               "tier": "T1"
+            },
+            {
+               "id": "3277",
+               "name": "Contender",
+               "player_positions": ["D"],
+               "order": 1,
+               "tier": "T2"
+            },
+            {
+               "id": "3278",
+               "name": "Underdog",
+               "player_positions": ["D"],
+               "order": 2,
+               "tier": "T3"
+            },
+            {
+               "id": "3279",
+               "name": "Underdog",
+               "player_positions": ["D"],
+               "order": 3,
+               "tier": "T3"
+            },
+            {
+               "id": "3280",
+               "name": "Field",
+               "player_positions": ["D"],
+               "order": 4,
+               "tier": "T4"
+            }
+         ],
+         "tag": null,
+         "only_score_top": null,
+         "roster_restrictions":
+         {
+            "min_players": 5,
+            "max_players": 5,
+            "max_players_from_team": 2147483647,
+            "min_fixtures": 1,
+            "min_teams": 0,
+            "player_position_restrictions": []
+         }
+      },
+      {
+         "id": "5041",
+         "name": "Gemini Man",
+         "short_description": "Choose six players tiered by youth and experience",
+         "long_description": null,
+         "image_url": null,
+         "display_priority": 50,
+         "roster_format": [
+            {
+               "id": "5231",
+               "name": "Sr QB",
+               "player_positions": ["QB"],
+               "order": 0,
+               "tier": "T1"
+            },
+            {
+               "id": "5232",
+               "name": "Jr QB",
+               "player_positions": ["QB"],
+               "order": 1,
+               "tier": "T2"
+            },
+            {
+               "id": "5233",
+               "name": "Sr RB",
+               "player_positions": ["RB"],
+               "order": 2,
+               "tier": "T3"
+            },
+            {
+               "id": "5234",
+               "name": "Jr RB",
+               "player_positions": ["RB"],
+               "order": 3,
+               "tier": "T4"
+            },
+            {
+               "id": "5235",
+               "name": "Sr WR",
+               "player_positions": ["WR", "TE"],
+               "order": 4,
+               "tier": "T5"
+            },
+            {
+               "id": "5236",
+               "name": "Jr WR",
+               "player_positions": ["WR", "TE"],
+               "order": 5,
+               "tier": "T6"
+            }
+         ],
+         "tag": null,
+         "only_score_top": null,
+         "roster_restrictions":
+         {
+            "min_players": 6,
+            "max_players": 6,
+            "max_players_from_team": 2147483647,
+            "min_fixtures": 1,
+            "min_teams": 0,
+            "player_position_restrictions": []
+         }
+      },
+      {
+         "id": "3048",
+         "name": "QuickPick Kickers",
+         "short_description": "Pick 1 kicker from each of 4 player tiers and 1 SuperFlex",
+         "long_description": null,
+         "image_url": null,
+         "display_priority": 75,
+         "roster_format": [
+            {
+               "id": "3281",
+               "name": "Tier A",
+               "player_positions": ["K"],
+               "order": 0,
+               "tier": "T1"
+            },
+            {
+               "id": "3282",
+               "name": "Tier B",
+               "player_positions": ["K"],
+               "order": 1,
+               "tier": "T2"
+            },
+            {
+               "id": "3283",
+               "name": "Tier C",
+               "player_positions": ["K"],
+               "order": 2,
+               "tier": "T3"
+            },
+            {
+               "id": "3284",
+               "name": "Tier D",
+               "player_positions": ["K"],
+               "order": 3,
+               "tier": "T4"
+            },
+            {
+               "id": "3285",
+               "name": "SuperFlex",
+               "player_positions": ["WR", "RB", "TE", "K", "QB"],
+               "order": 4,
+               "tier": "T5"
+            }
+         ],
+         "tag": null,
+         "only_score_top": null,
+         "roster_restrictions":
+         {
+            "min_players": 5,
+            "max_players": 5,
+            "max_players_from_team": 2147483647,
+            "min_fixtures": 1,
+            "min_teams": 0,
+            "player_position_restrictions": []
+         }
+      },
+      {
+         "id": "3053",
+         "name": "SuperFlex",
+         "short_description": "8-player roster with FLEX and SuperFlex (includes QB).",
+         "long_description": null,
+         "image_url": null,
+         "display_priority": 11,
+         "roster_format": [
+            {
+               "id": "3310",
+               "name": "QB",
+               "player_positions": ["QB"],
+               "order": 0,
+               "tier": null
+            },
+            {
+               "id": "3311",
+               "name": "RB",
+               "player_positions": ["RB"],
+               "order": 1,
+               "tier": null
+            },
+            {
+               "id": "3312",
+               "name": "RB",
+               "player_positions": ["RB"],
+               "order": 2,
+               "tier": null
+            },
+            {
+               "id": "3313",
+               "name": "WR",
+               "player_positions": ["WR"],
+               "order": 3,
+               "tier": null
+            },
+            {
+               "id": "3314",
+               "name": "WR",
+               "player_positions": ["WR"],
+               "order": 4,
+               "tier": null
+            },
+            {
+               "id": "3315",
+               "name": "TE",
+               "player_positions": ["TE"],
+               "order": 5,
+               "tier": null
+            },
+            {
+               "id": "3316",
+               "name": "FLEX",
+               "player_positions": ["WR", "RB", "TE"],
+               "order": 6,
+               "tier": null
+            },
+            {
+               "id": "3317",
+               "name": "SuperFlex",
+               "player_positions": ["WR", "RB", "TE", "QB"],
+               "order": 7,
+               "tier": null
+            }
+         ],
+         "tag": null,
+         "only_score_top": null,
+         "roster_restrictions":
+         {
+            "min_players": 8,
+            "max_players": 8,
+            "max_players_from_team": 4,
+            "min_fixtures": 2,
+            "min_teams": 3,
+            "player_position_restrictions": []
+         }
+      }
+   ]
+}
