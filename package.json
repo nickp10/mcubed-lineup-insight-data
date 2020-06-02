@@ -32,16 +32,16 @@
     "latinize": "^0.4.1",
     "lodash": "^4.17.15",
     "regenerator-runtime": "^0.13.5",
-    "set-cookie-parser": "^2.4.5"
+    "set-cookie-parser": "^2.4.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.1",
-    "@babel/preset-env": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
     "@types/argv": "0.0.4",
     "@types/cheerio": "^0.22.18",
     "@types/latinize": "^0.2.15",
     "@types/mocha": "^7.0.2",
-    "@types/node": "^14.0.5",
+    "@types/node": "^14.0.9",
     "@types/set-cookie-parser": "0.0.6",
     "babel-loader": "^8.1.0",
     "dts-bundle-webpack": "^1.0.2",
