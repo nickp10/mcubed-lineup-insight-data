@@ -6,6 +6,7 @@ module.exports = merge(common, {
     mode: "development",
     devtool: "inline-source-map",
     output: {
-        path: path.resolve(__dirname, "./debug")
+        path: path.resolve(__dirname, "./debug"),
+        devtoolModuleFilenameTemplate: "[absolute-resource-path]"
     }
 });
